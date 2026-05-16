@@ -88,7 +88,7 @@ class Taxonomies {
 		// Allow filtering of taxonomy arguments
 		$args = apply_filters( "wolf_store_{$taxonomy_slug}_taxonomy_args", $args );
 
-		register_taxonomy( $taxonomy_slug, array( 'release' ), $args );
+		register_taxonomy( $taxonomy_slug, array( 'wolf_theme' ), $args );
 	}
 
 	/**
