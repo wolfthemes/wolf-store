@@ -65,11 +65,11 @@ class Plugin {
 		$this->taxonomy_manager->register();
 
 		if ( $this->is_request( 'admin' ) ) {
-			/* $this->admin_handler = new Admin_Handler(); */
+			$this->admin_handler = new Admin_Handler();
 		}
 
 		if ( $this->is_request( 'frontend' ) ) {
-			/* $this->frontend_handler = new Frontend_Handler(); */
+			$this->frontend_handler = new Frontend_Handler();
 		}
 	}
 

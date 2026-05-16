@@ -46,6 +46,18 @@ class Admin_Handler {
 
 		// Load specialized admin classes
 		new Metabox_Manager(); // Handles all metaboxes
+		new Admin_Columns();      // Handles admin list columns
+		new Options();           // Handles settings page
+	}
+
+	/**
+	 * add settings link in plugin page
+	 */
+	public function settings_action_links( $links ) {
+		$setting_link = array(
+			'<a href="' . admin_url( 'edit.php?post_type=wolf_theme&page=wolf-store-settings' ) . '">' . esc_html__( 'settings', 'wolf-discography' ) . '</a>',
+		);
+		return array_merge( $links, $setting_link );
 	}
 
 	/**
