@@ -1,0 +1,14 @@
+{
+	"version": "1.0.0",
+	"updated": "2026-05-24",
+	"slug": "wolf-store",
+	"name": "Wolf Store",
+	"packagename": "WolfStore",
+	"created": "2026-05-24",
+	"createdNice": "24th May 2026",
+	"description": "WolfThemes Store CPT.",
+	"link": "https://github.com/wolfthemes/wolf-store/",
+	"shortlink": "https://wlfthm.es/store",
+	"author": "WolfThemes",
+	"authorURI": "https://wolfthemes.com"
+}
