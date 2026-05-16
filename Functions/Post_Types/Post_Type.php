@@ -2,10 +2,8 @@
 /**
  * Post Type
  *
- * Handles registration of the custom post type
- *
- * @package WolfDiscography
- * @subpackage PostTypes
+ * @package WolfStore
+ * @subpackage Post_Types
  * @since 1.0.0
  */
 
@@ -14,136 +12,66 @@ namespace Wolf_Store\Post_Types;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Discography Post Type Class
- *
- * Manages the registration and configuration of the release post type
+ * Theme Post Type Class
  */
 class Post_Type {
 
 	/**
 	 * Post type slug
-	 *
-	 * @var string
 	 */
-	private string $post_type = 'release';
+	private string $post_type = 'wolf_theme';
 
 	/**
-	 * Constructor
+	 * Register hooks
 	 */
-	public function __construct() {
-		// Constructor is kept light - actual registration happens in register()
+	public function register(): void {
+		add_action( 'init', array( $this, 'register_post_type' ) );
 	}
 
 	/**
 	 * Register the post type
 	 */
-	public function register(): void {
-		add_action( 'init', array( $this, 'registerPostType' ) );
-	}
-
-	/**
-	 * Register the discography post type
-	 */
-	public function registerPostType(): void {
-
-		$admin_skin = get_user_option( 'admin_color' );
-
-		if ( $admin_skin == 'light' ) {
-
-			$icon_url = WD_URI . '/assets/img/admin/vynil-dark.png';
-		} else {
-
-			$icon_url = WD_URI . '/assets/img/admin/vynil.png';
-		}
+	public function register_post_type(): void {
 
 		$labels = array(
-			'name'               => esc_html__( 'Releases', 'wolf-discography' ),
-			'singular_name'      => esc_html__( 'Release', 'wolf-discography' ),
-			'add_new'            => esc_html__( 'Add New', 'wolf-discography' ),
-			'add_new_item'       => esc_html__( 'Add New Release', 'wolf-discography' ),
-			'all_items'          => esc_html__( 'All Releases', 'wolf-discography' ),
-			'edit_item'          => esc_html__( 'Edit Release', 'wolf-discography' ),
-			'new_item'           => esc_html__( 'New Release', 'wolf-discography' ),
-			'view_item'          => esc_html__( 'View Release', 'wolf-discography' ),
-			'search_items'       => esc_html__( 'Search Releases', 'wolf-discography' ),
-			'not_found'          => esc_html__( 'No releases found', 'wolf-discography' ),
-			'not_found_in_trash' => esc_html__( 'No releases found in Trash', 'wolf-discography' ),
-			'parent_item_colon'  => '',
-			'menu_name'          => esc_html__( 'Releases', 'wolf-discography' ),
+			'name'               => esc_html__( 'Themes', 'wolf-store' ),
+			'singular_name'      => esc_html__( 'Theme', 'wolf-store' ),
+			'add_new'            => esc_html__( 'Add New', 'wolf-store' ),
+			'add_new_item'       => esc_html__( 'Add New Theme', 'wolf-store' ),
+			'all_items'          => esc_html__( 'All Themes', 'wolf-store' ),
+			'edit_item'          => esc_html__( 'Edit Theme', 'wolf-store' ),
+			'new_item'           => esc_html__( 'New Theme', 'wolf-store' ),
+			'view_item'          => esc_html__( 'View Theme', 'wolf-store' ),
+			'search_items'       => esc_html__( 'Search Themes', 'wolf-store' ),
+			'not_found'          => esc_html__( 'No themes found', 'wolf-store' ),
+			'not_found_in_trash' => esc_html__( 'No themes found in Trash', 'wolf-store' ),
+			'menu_name'          => esc_html__( 'Themes', 'wolf-store' ),
 		);
 
 		$args = array(
-
-			'labels'              => $labels,
-			'public'              => true,
-			'publicly_queryable'  => true,
-			'show_ui'             => true,
-			'show_in_menu'        => true,
-			'query_var'           => false,
-			'rewrite'             => array( 'slug' => 'release' ),
-			'capability_type'     => 'post',
-			'has_archive'         => false,
-			'hierarchical'        => false,
-			'menu_position'       => 5,
-			'taxonomies'          => array(),
-			'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'comments' ),
-			'exclude_from_search' => false,
-			'menu_icon'           => $icon_url,
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'themes' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 5,
+			'menu_icon'          => 'dashicons-art',
+			'show_in_rest'       => true,
+			'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
 		);
 
-		register_post_type( $this->post_type, $args );
+		register_post_type( $this->post_type, apply_filters( 'wolf_store_post_type_args', $args ) );
 	}
 
 	/**
-	 * Get the post type slug
-	 *
-	 * @return string
+	 * Get post type slug
 	 */
-	public function getPostTypeSlug(): string {
-		return apply_filters( 'wolf_discography_post_type_slug', $this->post_type );
-	}
-
-	/**
-	 * Get post type labels
-	 *
-	 * @return array
-	 */
-	public function getLabels(): array {
-		return apply_filters(
-			'wolf_discography_post_type_labels',
-			array(
-				'name'          => _x( 'Releases', 'Post type general name', 'wolf-discography' ),
-				'singular_name' => _x( 'Release', 'Post type singular name', 'wolf-discography' ),
-				'menu_name'     => _x( 'Discography', 'Admin Menu text', 'wolf-discography' ),
-			// Add more labels as needed
-			)
-		);
-	}
-
-	/**
-	 * Get post type arguments
-	 *
-	 * @return array
-	 */
-	public function getArgs(): array {
-		return apply_filters(
-			'wolf_discography_post_type_args',
-			array(
-				'labels'             => $this->getLabels(),
-				'public'             => true,
-				'publicly_queryable' => true,
-				'show_ui'            => true,
-				'show_in_menu'       => true,
-				'query_var'          => true,
-				'rewrite'            => array( 'slug' => $this->getPostTypeSlug() ),
-				'capability_type'    => 'post',
-				'has_archive'        => true,
-				'hierarchical'       => false,
-				'menu_position'      => 20,
-				'menu_icon'          => 'dashicons-album',
-				'show_in_rest'       => true,
-				'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
-			)
-		);
+	public function get_post_type_slug(): string {
+		return $this->post_type;
 	}
 }

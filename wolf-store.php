@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Wolf Themes Store
+ * Plugin Name: WolfThemes Store
  * Version: 1.0.0
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-WolfThemes\Store\Plugin::instance();
+Wolf_Store\Core\Plugin::get_instance();
