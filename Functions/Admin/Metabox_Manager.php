@@ -229,7 +229,7 @@ class Metabox_Manager {
 		}
 
 		// Only process our post type
-		if ( $post->post_type !== 'release' ) {
+		if ( $post->post_type !== 'wolf_theme' ) {
 			return;
 		}
 
@@ -277,28 +277,28 @@ class Metabox_Manager {
 
 		if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ) ) ||
 			! $post ||
-			$post->post_type !== 'release' ) {
+			$post->post_type !== 'wolf_theme' ) {
 			return;
 		}
 
 		// Enqueue datepicker
-		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_style( 'jquery-ui-custom', WD_CSS . '/admin/jquery-ui-custom.min.css', array(), WD_VERSION );
+		//wp_enqueue_script( 'jquery-ui-datepicker' );
+		//wp_enqueue_style( 'jquery-ui-custom', WOLF_STORE_CSS . '/admin/jquery-ui-custom.min.css', array(), WOLF_STORE_VERSION );
 
 		// Enqueue repeatable fields script
-		wp_enqueue_script(
-			'wolf-store-metabox',
-			WD_JS . '/admin/metabox.js',
-			array( 'jquery', 'jquery-ui-sortable' ),
-			WD_VERSION,
-			true
-		);
+		// wp_enqueue_script(
+		// 	'wolf-store-metabox',
+		// 	WOLF_STORE_JS . '/admin/metabox.js',
+		// 	array( 'jquery', 'jquery-ui-sortable' ),
+		// 	WOLF_STORE_VERSION,
+		// 	true
+		// );
 
 		wp_enqueue_style(
 			'wolf-store-metabox',
-			WD_CSS . '/admin/metabox.css',
+			WOLF_STORE_CSS . '/admin/metabox.css',
 			array(),
-			WD_VERSION
+			WOLF_STORE_VERSION
 		);
 	}
 }

@@ -36,13 +36,9 @@ class Options {
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->license_validator = new License_Validator();
 
 		add_action( 'init', array( $this, 'init_options_panel' ) );
-		add_action( 'wolf_options_panel_before_form_wolf-store-settings', array( $this, 'render_license_status' ) );
 
-		// Add shortcode help page
-		add_action( 'admin_menu', array( $this, 'add_shortcode_help_menu' ) );
 	}
 
 	/**
@@ -58,28 +54,13 @@ class Options {
 			'parent_slug'     => 'edit.php?post_type=wolf_theme',
 			'tabs'            => array(
 				'general' => esc_html__( 'General', 'wolf-store' ),
-				'display' => esc_html__( 'Display', 'wolf-store' ),
-				'license' => esc_html__( 'License', 'wolf-store' ),
+				//'display' => esc_html__( 'Display', 'wolf-store' ),
 			),
 		);
 
 		$panel_settings = $this->get_panel_settings();
 
 		$this->options_panel = new Options_Panel( $panel_args, $panel_settings );
-	}
-
-	/**
-	 * Add shortcode help menu
-	 */
-	public function add_shortcode_help_menu() {
-		add_submenu_page(
-			'edit.php?post_type=wolf_theme',
-			esc_html__( 'Shortcode Help', 'wolf-store' ),
-			esc_html__( 'Shortcode Help', 'wolf-store' ),
-			'edit_plugins',
-			'wolf-store-shortcode-help',
-			array( $this, 'render_shortcode_help' )
-		);
 	}
 
 	/**

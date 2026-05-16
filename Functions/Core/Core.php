@@ -14,5 +14,9 @@ use Wolf_Store\Admin\Options;
 defined( 'ABSPATH' ) || exit;
 
 class Core {
+    public static function get_store_page_id() {
+        $page_id = Options::get_option( 'store_page' );
 
+        return $page_id;
+    }
 }
