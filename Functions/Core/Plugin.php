@@ -70,8 +70,8 @@ class Plugin {
 		$this->post_type_manager = new Post_Type();
 		$this->taxonomy_manager  = new Taxonomies();
 
-		$this->post_type_manager->register();
-		$this->taxonomy_manager->register();
+		$this->post_type_manager->register_post_type();
+		$this->taxonomy_manager->register_taxonomies();
 
 		if ( $this->is_request( 'admin' ) ) {
 			$this->admin_handler = new Admin_Handler();

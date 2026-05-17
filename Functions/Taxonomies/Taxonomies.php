@@ -48,7 +48,7 @@ class Taxonomies {
 	 * Register all taxonomies
 	 */
 	public function register(): void {
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'register_taxonomies' ), 11 );
 	}
 
 	/**

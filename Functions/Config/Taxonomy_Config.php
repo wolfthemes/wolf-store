@@ -58,6 +58,7 @@ class Taxonomy_Config {
 			'hierarchical'          => true,
 			'public'                => true,
 			'show_ui'               => true,
+			'show_in_rest' => true,
 			'query_var'             => true,
 			'update_count_callback' => '_update_post_term_count',
 			'rewrite'               => array(
@@ -95,6 +96,7 @@ class Taxonomy_Config {
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
+			'show_in_rest' => true,
 			'query_var'             => true,
 			'update_count_callback' => '_update_post_term_count',
 			'rewrite'               => array(
