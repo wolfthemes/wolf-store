@@ -9,9 +9,9 @@
 
 namespace Wolf_Store\Frontend;
 
-defined( 'ABSPATH' ) || exit;
-
 use Wolf_Store\Admin\Options;
+
+defined( 'ABSPATH' ) || exit;
 
 class Enqueues {
 
