@@ -43,6 +43,7 @@ class Frontend_Handler {
 	 */
 	private function load_frontend_classes(): void {
 		$this->template = new Template();
+		new Hooks();
 		new Enqueues();
 	}
 

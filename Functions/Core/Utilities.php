@@ -39,7 +39,7 @@ class Utilities {
 				$img_src = wp_get_attachment_image_src( $attachment_id, $format );
 
 				if ( $img_src && isset( $img_src[0] ) ) {
-					return esc_url( $img_src[0] );
+					return apply_filters( 'wolf_store_theme_thumbnail_url', esc_url( $img_src[0] ) );
 				}
 			}
 		}
