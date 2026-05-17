@@ -10,6 +10,7 @@
 namespace Wolf_Store\Core;
 
 use Wolf_Store\Admin\Admin_Handler;
+use Wolf_Store\Frontend\Frontend_Handler;
 use Wolf_Store\Post_Types\Post_Type;
 use Wolf_Store\Taxonomies\Taxonomies;
 
