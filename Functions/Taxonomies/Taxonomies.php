@@ -48,15 +48,15 @@ class Taxonomies {
 	 * Register all taxonomies
 	 */
 	public function register(): void {
-		add_action( 'init', array( $this, 'registerTaxonomies' ) );
+		add_action( 'init', array( $this, 'register_taxonomies' ) );
 	}
 
 	/**
 	 * Register the store taxonomies
 	 */
-	public function registerTaxonomies(): void {
+	public function register_taxonomies(): void {
 		foreach ( $this->taxonomies as $taxonomy_slug => $config ) {
-			$this->registerTaxonomy( $taxonomy_slug, $config );
+			$this->register_taxonomy( $taxonomy_slug, $config );
 		}
 	}
 
@@ -66,7 +66,7 @@ class Taxonomies {
 	 * @param string $taxonomy_slug Taxonomy slug
 	 * @param array  $config        Taxonomy configuration
 	 */
-	private function registerTaxonomy( string $taxonomy_slug, array $config ): void {
+	private function register_taxonomy( string $taxonomy_slug, array $config ): void {
 		// Translate labels
 		$labels = array();
 		foreach ( $config['labels'] as $key => $label ) {
@@ -96,7 +96,7 @@ class Taxonomies {
 	 *
 	 * @return array
 	 */
-	public function getTaxonomies(): array {
+	public function get_taxonomies(): array {
 		return apply_filters( 'wolf_store_taxonomies', $this->taxonomies );
 	}
 
@@ -106,7 +106,7 @@ class Taxonomies {
 	 * @param string $taxonomy_slug Taxonomy slug
 	 * @return array|null
 	 */
-	public function getTaxonomyConfig( string $taxonomy_slug ): ?array {
+	public function get_taxonomy_config( string $taxonomy_slug ): ?array {
 		return $this->taxonomies[ $taxonomy_slug ] ?? null;
 	}
 
@@ -116,7 +116,7 @@ class Taxonomies {
 	 * @param string $taxonomy_slug Taxonomy slug
 	 * @return bool
 	 */
-	public function hasTaxonomy( string $taxonomy_slug ): bool {
+	public function has_taxonomy( string $taxonomy_slug ): bool {
 		return isset( $this->taxonomies[ $taxonomy_slug ] );
 	}
 }

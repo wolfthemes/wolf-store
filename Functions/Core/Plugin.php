@@ -52,6 +52,13 @@ class Plugin {
 		register_activation_hook( $this->get_plugin_path() . '/wolf-store.php', array( $this, 'activate' ) );
 	}
 
+	public function activate(): void {
+		add_option( '_wolf_store_needs_page', true );
+		if ( ! get_option( '_wolf_store_flush_rewrite_rules_flag' ) ) {
+			add_option( '_wolf_store_flush_rewrite_rules_flag', true );
+		}
+	}
+
 	public function init(): void {
 
 		$this->initialize_components();

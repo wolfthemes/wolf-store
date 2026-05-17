@@ -60,7 +60,7 @@ class Utilities {
 		$post_attrs['data-post-id'] = $post_id;
 		if ( 'wolf_theme' === get_post_type() ) {
 			$post_attrs['itemscope'] = '';
-			$post_attrs['itemtype']  = 'https://schema.org/MusicAlbum';
+			$post_attrs['itemtype']  = 'https://schema.org/Product';
 		}
 
 		if ( has_post_thumbnail( $post_id ) ) {
