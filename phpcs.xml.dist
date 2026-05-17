@@ -42,16 +42,7 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="CHILD_THEME"/>
-				<element value="CHILD_TEXT_DOMAIN"/>
-				<element value="alceste_kses"/>
-				<element value="alceste_"/>
-				<element value="wolf_"/>
-				<element value="woocommerce_"/>
-				<element value="ThemeClass_"/>
-				<element value="wvc_"/>
-				<element value="wolf_core_"/>
-				<element value="mptt_"/>
+				<element value="wolf_store_"/>
 			</property>
 		</properties>
 	</rule>
