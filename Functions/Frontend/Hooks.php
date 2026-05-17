@@ -40,27 +40,33 @@ class Hooks {
 	}
 
 	/**
-	 * Output post microdata
+	 * Output product microdata
 	 *
 	 * @since 1.0.0
 	 */
 	public function theme_microdata() {
 
-		$category         = strip_tags( get_the_term_list( get_the_ID(), 'theme_cat', '', ', ', '' ) );
-		$meta         = Meta::get_meta();
-		$theme_date = $meta['date'];
-		$tracklist    = meta::theme_get_tracklist();
+		$category = strip_tags( get_the_term_list( get_the_ID(), 'theme_cat', '', ', ', '' ) );
+		$meta     = Meta::get_meta();
 		?>
-		<meta itemprop="publisher" content="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<link itemprop="mainEntityOfPage" content="<?php the_permalink(); ?>">
-		<meta itemprop="name" content="<?php the_title(); ?>">
-		<meta itemprop="image" content="<?php echo Utilities::get_post_thumbnail_url( 'large' ); ?>">
+		<meta itemprop="name" content="<?php the_title_attribute(); ?>">
+		<link itemprop="url" content="<?php the_permalink(); ?>">
+		<meta itemprop="image" content="<?php echo esc_url( Utilities::get_post_thumbnail_url( 'large' ) ); ?>">
+		<meta itemprop="description" content="<?php echo esc_attr( get_the_excerpt() ); ?>">
+
 		<?php if ( $category ) : ?>
-			<meta itemprop="byArtist" content="<?php echo esc_attr( $category ); ?>">
+			<meta itemprop="category" content="<?php echo esc_attr( $category ); ?>">
 		<?php endif; ?>
-		<?php if ( $theme_date ) : ?>
-			<meta itemprop="datePublished" content="<?php echo esc_attr( $theme_date ); ?>">
-		<?php endif; ?>
+
+		<div itemprop="brand" itemscope itemtype="https://schema.org/Brand">
+			<meta itemprop="name" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+		</div>
+
+		<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+			<meta itemprop="url" content="<?php the_permalink(); ?>">
+			<meta itemprop="priceCurrency" content="USD">
+			<meta itemprop="availability" content="https://schema.org/InStock">
+		</div>
 		<?php
 	}
 
