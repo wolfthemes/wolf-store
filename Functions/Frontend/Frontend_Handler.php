@@ -25,7 +25,7 @@ class Frontend_Handler {
 	 */
 	public function __construct() {
 		$this->initHooks();
-		$this->loadFrontendClasses();
+		$this->load_frontend_classes();
 	}
 
 	/**
@@ -33,13 +33,13 @@ class Frontend_Handler {
 	 */
 	private function initHooks(): void {
 
-		add_filter( 'template_include', array( $this, 'templateLoader' ) );
+		add_filter( 'template_include', array( $this, 'template_loader' ) );
 	}
 
 	/**
 	 * Load frontend-related classes and files
 	 */
-	private function loadFrontendClasses(): void {
+	private function load_frontend_classes(): void {
 
 		new Enqueues();
 	}
@@ -53,7 +53,7 @@ class Frontend_Handler {
 	 * @param string $template Current template
 	 * @return string Modified template path
 	 */
-	public function templateLoader( string $template ): string {
+	public function template_loader( string $template ): string {
 		$find = array( 'wolf-store.php' );
 		$file = '';
 
@@ -81,7 +81,7 @@ class Frontend_Handler {
 		if ( $file ) {
 			$template = locate_template( $find );
 			if ( ! $template ) {
-				$plugin_template = WD_DIR . '/templates/' . $file;
+				$plugin_template = WOLF_STORE_DIR . '/templates/' . $file;
 				if ( file_exists( $plugin_template ) ) {
 					$template = $plugin_template;
 				}

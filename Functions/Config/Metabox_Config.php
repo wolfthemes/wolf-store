@@ -25,26 +25,31 @@ class Metabox_Config {
 	 */
 	public static function get_config(): array {
 		return array(
-			'release_details' => array(
+			'theme_details' => array(
 				'title'    => esc_html__( 'Theme Details', 'wolf-discography' ),
 				'screen'   => 'wolf_theme',
 				'context'  => 'normal',
 				'priority' => 'high',
-				'fields'   => self::get_release_detail_fields(),
+				'fields'   => self::get_theme_detail_fields(),
 			),
 		);
 	}
 
 	/**
-	 * Get release detail fields configuration
+	 * Get detail fields configuration
 	 *
 	 * @return array
 	 */
-	private static function get_release_detail_fields(): array {
+	private static function get_theme_detail_fields(): array {
 		return array(
 			array(
-				'label' => esc_html__( 'Title', 'wolf-discography' ),
+				'label' => esc_html__( 'Title', 'wolf-store' ),
 				'id'    => '_wolf_theme_title',
+				'type'  => 'text',
+			),
+			array(
+				'label' => esc_html__( 'Title', 'wolf-store' ),
+				'id'    => '_wolf_theme_',
 				'type'  => 'text',
 			),
 		);
