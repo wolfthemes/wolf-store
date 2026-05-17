@@ -64,7 +64,7 @@ class Metabox_Manager {
 			add_meta_box(
 				'wolf_' . $id,
 				$metabox['title'],
-				array( $this, 'renderMetabox' ),
+				array( $this, 'render_metabox' ),
 				$metabox['screen'],
 				$metabox['context'],
 				$metabox['priority'],
@@ -76,7 +76,7 @@ class Metabox_Manager {
 	/**
 	 * Generic metabox renderer
 	 */
-	public function renderMetabox( \WP_Post $post, array $args ): void {
+	public function render_metabox( \WP_Post $post, array $args ): void {
 		$metabox_id = $args['args']['metabox_id'];
 		$fields     = $this->metaboxes[ $metabox_id ]['fields'];
 
@@ -86,7 +86,7 @@ class Metabox_Manager {
 		echo '<table class="form-table wolf-store-metabox-table">';
 
 		foreach ( $fields as $field ) {
-			$this->renderField( $post, $field );
+			$this->render_field( $post, $field );
 		}
 
 		echo '</table>';
@@ -95,7 +95,7 @@ class Metabox_Manager {
 	/**
 	 * Render individual field
 	 */
-	private function renderField( \WP_Post $post, array $field ): void {
+	private function render_field( \WP_Post $post, array $field ): void {
 		$field_id = $field['id'];
 		$value    = get_post_meta( $post->ID, $field_id, true );
 
@@ -109,27 +109,27 @@ class Metabox_Manager {
 
 		switch ( $field['type'] ) {
 			case 'text':
-				$this->renderTextField( $field_id, $value );
+				$this->render_text_field( $field_id, $value );
 				break;
 
 			case 'url':
-				$this->renderUrlField( $field_id, $value );
+				$this->render_url_field( $field_id, $value );
 				break;
 
 			case 'datepicker':
-				$this->renderDatepickerField( $field_id, $value );
+				$this->render_datepicker_field( $field_id, $value );
 				break;
 
 			case 'select':
-				$this->renderSelectField( $field_id, $value, $field['choices'] );
+				$this->render_select_field( $field_id, $value, $field['choices'] );
 				break;
 
 			case 'repeatable':
-				$this->renderRepeatableField( $field_id, $value );
+				$this->render_repeatable_field( $field_id, $value );
 				break;
 
 			default:
-				$this->renderTextField( $field_id, $value );
+				$this->render_text_field( $field_id, $value );
 		}
 
 		if ( ! empty( $field['desc'] ) ) {
@@ -142,28 +142,28 @@ class Metabox_Manager {
 	/**
 	 * Render text field
 	 */
-	private function renderTextField( string $field_id, $value ): void {
+	private function render_text_field( string $field_id, $value ): void {
 		echo '<input type="text" name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $value ) . '" class="regular-text" />';
 	}
 
 	/**
 	 * Render URL field
 	 */
-	private function renderUrlField( string $field_id, $value ): void {
+	private function render_url_field( string $field_id, $value ): void {
 		echo '<input type="url" name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_url( $value ) . '" class="regular-text" />';
 	}
 
 	/**
 	 * Render datepicker field
 	 */
-	private function renderDatepickerField( string $field_id, $value ): void {
+	private function render_datepicker_field( string $field_id, $value ): void {
 		echo '<input type="text" class="wd-metabox-datepicker" name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $value ) . '" />';
 	}
 
 	/**
 	 * Render select field
 	 */
-	private function renderSelectField( string $field_id, $value, array $choices ): void {
+	private function render_select_field( string $field_id, $value, array $choices ): void {
 		echo '<select name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '">';
 
 		foreach ( $choices as $key => $choice ) {
@@ -180,7 +180,7 @@ class Metabox_Manager {
 	/**
 	 * Render repeatable field
 	 */
-	private function renderRepeatableField( string $field_id, $value ): void {
+	private function render_repeatable_field( string $field_id, $value ): void {
 		$values = is_array( $value ) ? $value : array();
 
 		echo '<div class="wd-repeatable-wrapper">';
@@ -236,7 +236,7 @@ class Metabox_Manager {
 		// Save all fields
 		foreach ( $this->metaboxes as $metabox ) {
 			foreach ( $metabox['fields'] as $field ) {
-				$this->saveField( $post_id, $field );
+				$this->save_field( $post_id, $field );
 			}
 		}
 	}
@@ -244,7 +244,7 @@ class Metabox_Manager {
 	/**
 	 * Save individual field
 	 */
-	private function saveField( int $post_id, array $field ): void {
+	private function save_field( int $post_id, array $field ): void {
 		$field_id = $field['id'];
 
 		if ( ! isset( $_POST[ $field_id ] ) ) {
@@ -254,9 +254,9 @@ class Metabox_Manager {
 		$value = $_POST[ $field_id ];
 
 		// Use MetaboxConfig to determine field type handling
-		if ( in_array( $field_id, Metabox_Config::getUrlFields() ) ) {
+		if ( in_array( $field_id, Metabox_Config::get_url_fields() ) ) {
 			$value = esc_url_raw( $value );
-		} elseif ( in_array( $field_id, Metabox_Config::getRepeatableFields() ) ) {
+		} elseif ( in_array( $field_id, Metabox_Config::get_repeatable_fields() ) ) {
 			$value = is_array( $value ) ? array_filter( $value ) : array();
 		} else {
 			$value = sanitize_text_field( $value );

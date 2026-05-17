@@ -2,9 +2,9 @@
 /**
  * Hooks
  *
- * @package WolfDiscography
+ * @package WolfStore
  * @subpackage Frontend
- * @since 2.0.0
+ * @since 1.0.0
  */
 
 namespace Wolf_Store\Frontend;
@@ -586,23 +586,23 @@ class Helpers {
 	}
 
 	/**
-	 * Check if we're on a discography page
+	 * Check if we're on a store page
 	 *
 	 * @return bool
 	 */
-	public static function is_discography_archives() {
-		return is_page( Core::get_discography_page_id() ) ||
+	public static function is_store_archives() {
+		return is_page( Core::get_store_page_id() ) ||
 				is_post_type_archive( 'wolf_theme' ) ||
 				is_tax( array( 'theme_cat', 'theme_tag', ) );
 	}
 
 	/**
-	 * Check if we're on a discography page
+	 * Check if we're on a store page
 	 *
 	 * @return bool
 	 */
-	public static function is_discography() {
-		return self::is_discography_archives() || is_singular( 'wolf_theme' );
+	public static function is_store() {
+		return self::is_store_archives() || is_singular( 'wolf_theme' );
 	}
 
 	/**
