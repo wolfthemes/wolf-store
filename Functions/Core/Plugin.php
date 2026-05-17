@@ -37,7 +37,7 @@ class Plugin {
 
 	private function __construct() {
 
-		Constants::define( $this->get_plugin_path(), $this->getPluginUrl() );
+		Constants::define( $this->get_plugin_path(), $this->get_plugin_url() );
 		$this->init_hooks();
 	}
 
@@ -105,8 +105,12 @@ class Plugin {
 		}
 	}
 
-	public function getPluginUrl(): string {
-		return untrailingslashit( plugins_url( '/', dirname( __DIR__, 2 ) . '/wolf-store.php' ) );
+	public function get_template(): \Wolf_Store\Frontend\Template {
+		return $this->frontend_handler->get_template();
+	}
+
+	public function get_plugin_url(): string {
+			return untrailingslashit( plugins_url( '/', dirname( __DIR__, 2 ) . '/wolf-store.php' ) );
 	}
 
 	public function get_plugin_path(): string {

@@ -1,33 +1,21 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * Single Theme Template
  *
- * @author WolfThemes
- * @package Wolf_Store/Templates
- * @version 1.0.0
- * @since 1.0.0
+ * @package WolfStore
  */
+
+defined( 'ABSPATH' ) || exit;
+
 get_header();
-	/**
-	 * wolf_store_before_main_content hook
-	 *
-	 * @hooked wolf_store_output_content_wrapper - 10 (outputs opening divs for the content)
-	 */
-	do_action( 'wolf_store_before_main_content' );
 
 while ( have_posts() ) :
-	the_post();
+    the_post();
 
-	//wolf_store_get_template_part( 'content', 'single' );
-	//wolf_store_nav();
+    // Pass $template into partials if needed
+    $template = wolf_store()->get_template(); // see below
+    $template->load( 'partials/content-single-wolf_theme.php' );
 
-	endwhile;
+endwhile;
 
-	/**
-	 * wolf_store_after_main_content hook
-	 *
-	 * @hooked wolf_store_output_content_wrapper_end - 10 (outputs closing divs for the content)
-	 */
-	do_action( 'wolf_store_after_main_content' );
-// get_sidebar();
 get_footer();
