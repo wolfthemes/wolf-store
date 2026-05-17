@@ -20,3 +20,6 @@ indent_size = 4
 
 [{*.txt,wp-config-sample.php}]
 end_of_line = crlf
+
+[*.php]
+end_of_line = lf
