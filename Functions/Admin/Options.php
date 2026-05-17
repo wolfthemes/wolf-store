@@ -11,7 +11,7 @@
 
 namespace Wolf_Store\Admin;
 
-use Wolf_Store\Config\Opions_Params;
+use Wolf_Store\Config\Options_Params;
 use Wolf_Store\Core\Core;
 use Wolf_Store\Core\Utilities;
 
