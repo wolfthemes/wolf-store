@@ -157,7 +157,7 @@ class Metabox_Manager {
 	 * Render datepicker field
 	 */
 	private function render_datepicker_field( string $field_id, $value ): void {
-		echo '<input type="text" class="wd-metabox-datepicker" name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $value ) . '" />';
+		echo '<input type="text" class="wolf-store-metabox-datepicker" name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $value ) . '" />';
 	}
 
 	/**
@@ -183,16 +183,16 @@ class Metabox_Manager {
 	private function render_repeatable_field( string $field_id, $value ): void {
 		$values = is_array( $value ) ? $value : array();
 
-		echo '<div class="wd-repeatable-wrapper">';
-		echo '<a class="wd-repeatable-add button" href="#" data-field="' . esc_attr( $field_id ) . '">+</a>';
-		echo '<ul id="' . esc_attr( $field_id ) . '-repeatable" class="wd-custom-repeatable">';
+		echo '<div class="wolf-store-repeatable-wrapper">';
+		echo '<a class="wolf-store-repeatable-add button" href="#" data-field="' . esc_attr( $field_id ) . '">+</a>';
+		echo '<ul id="' . esc_attr( $field_id ) . '-repeatable" class="wolf-store-custom-repeatable">';
 
 		if ( ! empty( $values ) ) {
 			foreach ( $values as $i => $item_value ) {
 				echo '<li>';
 				echo '<span class="sort hndle">|||</span>';
 				echo '<input type="text" name="' . esc_attr( $field_id ) . '[' . $i . ']" value="' . esc_attr( $item_value ) . '" class="regular-text" />';
-				echo '<a class="wd-repeatable-remove button" href="#">-</a>';
+				echo '<a class="wolf-store-repeatable-remove button" href="#">-</a>';
 				echo '</li>';
 			}
 		} else {
@@ -200,7 +200,7 @@ class Metabox_Manager {
 			echo '<li>';
 			echo '<span class="sort hndle">|||</span>';
 			echo '<input type="text" name="' . esc_attr( $field_id ) . '[0]" value="" class="regular-text" />';
-			echo '<a class="wd-repeatable-remove button" href="#">-</a>';
+			echo '<a class="wolf-store-repeatable-remove button" href="#">-</a>';
 			echo '</li>';
 		}
 

@@ -37,8 +37,8 @@ class Options {
 	 */
 	public function __construct() {
 
-		add_action( 'init', array( $this, 'init_options_panel' ) );
-
+		//add_action( 'init', array( $this, 'init_options_panel' ) );
+		$this->init_options_panel();
 	}
 
 	/**
