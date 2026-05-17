@@ -9,9 +9,9 @@
 
 namespace Wolf_Store\Frontend;
 
-use Wolf_Store\Core\Core;
-
 defined( 'ABSPATH' ) || exit;
+
+use Wolf_Store\Core\Core;
 
 class Helpers {
 	/**

@@ -50,14 +50,10 @@ class Frontend_Handler {
 
 	public function template_loader( string $template ): string {
 		$file = $this->resolve_template_file();
-
 		if ( $file ) {
 			$located = $this->template->locate( $file );
-			if ( $located ) {
-				return $located;
-			}
+			if ( $located ) return $located;
 		}
-
 		return $template;
 	}
 

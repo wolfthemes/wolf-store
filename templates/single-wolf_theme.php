@@ -1,21 +1,7 @@
-<?php
-/**
- * Single Theme Template
- *
- * @package WolfStore
- */
-
-defined( 'ABSPATH' ) || exit;
-
-get_header();
-
-while ( have_posts() ) :
-    the_post();
-
-    // Pass $template into partials if needed
-    $template = wolf_store()->get_template(); // see below
-    $template->load( 'partials/content-single-wolf_theme.php' );
-
-endwhile;
-
-get_footer();
+<?php get_header(); ?>
+<div id="wolf-store-root"
+     data-type="single"
+     data-post-id="<?php echo get_the_ID(); ?>"
+     data-base-url="<?php echo esc_url( rest_url('wp/v2/wolf_theme') ); ?>">
+</div>
+<?php get_footer(); ?>
