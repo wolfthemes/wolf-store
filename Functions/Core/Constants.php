@@ -24,7 +24,7 @@ class Constants {
 			'WOLF_STORE_CSS'         => $plugin_url . '/assets/css',
 			'WOLF_STORE_JS'          => $plugin_url . '/assets/js',
 			'WOLF_STORE_SLUG'        => plugin_basename( $plugin_path ),
-			'WOLF_STORE_PATH'        => plugin_basename( $plugin_path . '/wolf-discography.php' ),
+			'WOLF_STORE_PATH'        => plugin_basename( $plugin_path . '/wolf-store.php' ),
 			'WOLF_STORE_VERSION'     => self::VERSION,
 		);
 

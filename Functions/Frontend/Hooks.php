@@ -100,8 +100,8 @@ class Hooks {
 		}
 
 		if (
-			! is_singular( 'theme' )
-			&& ( 'theme' == get_post_type() || is_page( Core::get_store_page_id() ) )
+			! is_singular( 'wolf_theme' )
+			&& ( 'wolf_theme' == get_post_type() || is_page( Core::get_store_page_id() ) )
 		) {
 			$classes[] = 'wolf-store';
 		}

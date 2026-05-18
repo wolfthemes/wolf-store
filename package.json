@@ -1,7 +1,7 @@
 {
-  "name": "Emotions",
+  "name": "WolfStore",
   "version": "1.0.0",
-  "description": "Aurenza Child Theme",
+  "description": "WolfThemes Store WordPress Plugin",
   "main": "index.js",
   "scripts": {
     "build": "wp-scripts build",

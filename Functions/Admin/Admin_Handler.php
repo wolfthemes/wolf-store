@@ -55,7 +55,7 @@ class Admin_Handler {
 	 */
 	public function settings_action_links( $links ) {
 		$setting_link = array(
-			'<a href="' . admin_url( 'edit.php?post_type=wolf_theme&page=wolf-store-settings' ) . '">' . esc_html__( 'settings', 'wolf-discography' ) . '</a>',
+			'<a href="' . admin_url( 'edit.php?post_type=wolf_theme&page=wolf-store-settings' ) . '">' . esc_html__( 'settings', 'wolf-store' ) . '</a>',
 		);
 		return array_merge( $links, $setting_link );
 	}

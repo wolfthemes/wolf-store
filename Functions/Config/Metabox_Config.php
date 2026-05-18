@@ -26,7 +26,7 @@ class Metabox_Config {
 	public static function get_config(): array {
 		return array(
 			'theme_details' => array(
-				'title'    => esc_html__( 'Theme Details', 'wolf-discography' ),
+				'title'    => esc_html__( 'Theme Details', 'wolf-store' ),
 				'screen'   => 'wolf_theme',
 				'context'  => 'normal',
 				'priority' => 'high',

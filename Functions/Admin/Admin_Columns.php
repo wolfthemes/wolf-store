@@ -27,8 +27,8 @@ class Admin_Columns {
 		add_action( 'admin_head', array( $this, 'hide_wpb_editor' ) );
 
 		// Add columns to post list
-		add_filter( 'manage_release_posts_columns', array( $this, 'admin_columns_head_post_thumb' ), 10 );
-		add_action( 'manage_release_posts_custom_column', array( $this, 'admin_columns_content_release_thumb' ), 10, 2 );
+		add_filter( 'manage_wolf_theme_posts_columns', array( $this, 'admin_columns_head_post_thumb' ), 10 );
+		add_action( 'manage_wolf_theme_posts_custom_column', array( $this, 'admin_columns_content_wolf_theme_thumb' ), 10, 2 );
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Admin_Columns {
 	 * @param string $column_name
 	 * @param int    $post_id
 	 */
-	public function admin_columns_content_release_thumb( $column_name, $post_id ) {
+	public function admin_columns_content_wolf_theme_thumb( $column_name, $post_id ) {
 
 		$thumbnail = get_the_post_thumbnail();
 

@@ -64,18 +64,6 @@
 	<rule ref="WordPress.Security.EscapeOutput">
 	<properties>
 			<property name="customAutoEscapedFunctions" type="array">
-				<element value="alceste_kses"/>
-				<element value="alceste_sanitize_html_classes"/>
-				<element value="alceste_esc_style_attr"/>
-				<element value="alceste_sample"/>
-				<element value="alceste_background_img"/>
-				<element value="alceste_background_video"/>
-				<element value="alceste_background_slideshow"/>
-				<element value="alceste_post_thumbnail"/>
-				<element value="alceste_sanitize_style_attr"/>
-				<element value="alceste_get_color_scheme_css"/>
-				<element value="we_sanitize_date"/>
-				<element value="we_sanitize_action"/>
 			</property>
 		</properties>
 	</rule>
