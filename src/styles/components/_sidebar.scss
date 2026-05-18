@@ -23,6 +23,7 @@
 	&__meta {
         border-top: 1px solid #eee;
         margin-bottom: 32px;
+		font-size:0.9em;
     }
 
     &__row {
@@ -31,7 +32,7 @@
         padding: 10px 0;
         border-bottom: 1px solid currentColor;
         opacity: 0.8;
-        font-size: 0.9rem;
+        // font-size: 0.9em;
     }
 
     &__label {
@@ -51,7 +52,7 @@
 
 	&__section-title{
 		font-size:0.9em;
-		margin-bottom:5px;
+		margin-bottom:10px;
 	}
     &__support-links {
 

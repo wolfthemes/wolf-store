@@ -10,7 +10,8 @@
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 60px;
-  margin: 40px 0;
+  margin: 40px auto;
+  max-width: 1400px;
 }
 @media (max-width: 768px) {
   .wolf-theme-single {
@@ -74,6 +75,7 @@
 .wolf-theme-sidebar__meta {
   border-top: 1px solid #eee;
   margin-bottom: 32px;
+  font-size: 0.9em;
 }
 .wolf-theme-sidebar__row {
   display: flex;
@@ -81,7 +83,6 @@
   padding: 10px 0;
   border-bottom: 1px solid currentColor;
   opacity: 0.8;
-  font-size: 0.9rem;
 }
 .wolf-theme-sidebar__label {
   font-weight: 500;
@@ -96,7 +97,7 @@
 }
 .wolf-theme-sidebar__section-title {
   font-size: 0.9em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .wolf-theme-sidebar__support-links {
   list-style: none;
