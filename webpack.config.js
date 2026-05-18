@@ -4,15 +4,16 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
 
 module.exports = () => {
-	// npm run build-theme --theme=clix
-	const theme = process.env.npm_config_THEME || process.env.THEME;
+	// npm run build-plugin --plugin=clix
+	// const plugin = process.env.npm_config_PLUGIN || process.env.PLUGIN;
+	const plugin = "wolf-store"
 
-    if (!theme) {
+    if (!plugin) {
         console.error('Error: No plugin specified.');
         process.exit(1);
     }
 
-    console.log(`Building theme: ${theme}`);
+    console.log(`Building plugin: ${plugin}`);
 
 	return {
 	    ...defaultConfig,
