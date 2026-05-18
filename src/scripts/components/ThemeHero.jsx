@@ -49,7 +49,7 @@ export default function ThemeHero( { theme } ) {
                 <div className='wolf-theme-hero__ctas'>
 
                     <a    href={ demoUrl }
-                        className='wolf-theme-hero__cta wolf-theme-hero__cta--demo'
+                        className='theme-button-primary wolf-theme-hero__cta wolf-theme-hero__cta--demo'
                         target='_blank'
                         rel='noopener noreferrer'
                     >
@@ -57,7 +57,7 @@ export default function ThemeHero( { theme } ) {
                     </a>
 
                     <a    href={ buyUrl }
-                        className='wolf-theme-hero__cta wolf-theme-hero__cta--buy'
+                        className='theme-button-secondary wolf-theme-hero__cta wolf-theme-hero__cta--buy'
                         target='_blank'
                         rel='noopener noreferrer'
                     >

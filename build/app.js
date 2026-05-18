@@ -143,12 +143,12 @@ function ThemeHero({
     className: "wolf-theme-hero__ctas"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
-    className: "wolf-theme-hero__cta wolf-theme-hero__cta--demo",
+    className: "theme-button-primary wolf-theme-hero__cta wolf-theme-hero__cta--demo",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Live Demo"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
-    className: "wolf-theme-hero__cta wolf-theme-hero__cta--buy",
+    className: "theme-button-secondary wolf-theme-hero__cta wolf-theme-hero__cta--buy",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Purchase")), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -182,6 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 function ThemeSidebar({
   theme
 }) {
+  var _theme$theme_features, _theme$_embedded$wpT, _theme$_embedded$wpT2;
   const version = theme.theme_latest_version;
   const builder = theme.theme_builder;
   const requires = theme.theme_requires;
@@ -190,6 +191,12 @@ function ThemeSidebar({
   const shortlink = theme.theme_shortlink;
   const demoUrl = theme.theme_demo_url;
   const buyUrl = theme.theme_purchase_url;
+  const features = (_theme$theme_features = theme.theme_features) !== null && _theme$theme_features !== void 0 ? _theme$theme_features : [];
+  const slug = theme.theme_slug;
+  const categories = (_theme$_embedded$wpT = theme._embedded?.['wp:term']?.[0]) !== null && _theme$_embedded$wpT !== void 0 ? _theme$_embedded$wpT : [];
+  const tags = (_theme$_embedded$wpT2 = theme._embedded?.['wp:term']?.[1]) !== null && _theme$_embedded$wpT2 !== void 0 ? _theme$_embedded$wpT2 : [];
+  const docUrl = `https://doc.wolfthemes.com/theme/${slug}/`;
+  const forumUrl = `https://wolfthemes.com/support/`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -205,6 +212,49 @@ function ThemeSidebar({
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Live Demo")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-sidebar__benefits"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-sidebar__section-title"
+  }, "What's Included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-theme-sidebar__benefits-list"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Product updates & improvements"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Customer support ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-sidebar__info",
+    title: "Support is provided via our forum"
+  }, "\u24D8")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "7 days money-back guarantee"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-sidebar__support"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-sidebar__section-title"
+  }, "Support"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-theme-sidebar__support-links"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: docUrl,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "\uD83D\uDCD6 Documentation")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: forumUrl,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "\uD83D\uDCAC Support Forum")))), categories.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-sidebar__terms"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-sidebar__section-title"
+  }, "Categories"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-sidebar__categories"
+  }, categories.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    key: term.id,
+    href: term.link,
+    className: "wolf-theme-sidebar__category"
+  }, term.name)))), tags.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-sidebar__terms"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-sidebar__section-title"
+  }, "Tags"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-sidebar__tags tagcloud"
+  }, tags.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    key: term.id,
+    href: term.link,
+    className: "wolf-theme-sidebar__tag"
+  }, term.name)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar__meta"
   }, version && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar__row"
@@ -236,16 +286,7 @@ function ThemeSidebar({
     className: "wolf-theme-sidebar__label"
   }, "Last Update"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-sidebar__value"
-  }, updated)), shortlink && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-sidebar__row"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-sidebar__label"
-  }, "Shortlink"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: shortlink,
-    className: "wolf-theme-sidebar__value",
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, shortlink))));
+  }, updated))));
 }
 
 /***/ },
