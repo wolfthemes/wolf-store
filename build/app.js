@@ -163,14 +163,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var auto_bind__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! auto-bind */ "./node_modules/auto-bind/index.js");
-//import './styles/main.scss'
+
 
 
 
 class WolfStore {
   constructor() {
     (0,auto_bind__WEBPACK_IMPORTED_MODULE_2__["default"])(this);
+    this.RenderRoot();
     console.log('start');
+  }
+  RenderRoot() {
+    const root = document.getElementById('wolf-store-root');
+    if (root) {
+      console.log("root div OK");
+      const {
+        type,
+        postId
+      } = root.dataset;
+      const app = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
+      app.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        style: {
+          padding: '20px',
+          background: '#f0f0f0',
+          fontFamily: 'monospace'
+        }
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "\uD83D\uDC3A Wolf Store \u2014 React OK"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "Type:"), " ", type), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "Post ID:"), " ", postId || 'N/A'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "REST URL:"), " ", window.wolfStoreData?.restUrl), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "Per Page:"), " ", window.wolfStoreData?.perPage)));
+    }
   }
 }
 new WolfStore();

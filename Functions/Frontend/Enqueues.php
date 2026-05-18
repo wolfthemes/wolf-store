@@ -42,7 +42,7 @@ class Enqueues {
 		wp_enqueue_script(
 			'wolf-store-app',
 			WOLF_STORE_URI . '/build/app.js',
-			array(),
+			array( 'wp-element' ),
 			WOLF_STORE_VERSION,
 			true
 		);
