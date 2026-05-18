@@ -220,7 +220,7 @@ class Helpers {
 	 */
 	public static function get_shared_colors_hex() {
 
-		$wd_shared_colors_hex = array(
+		$wolf_store_shared_colors_hex = array(
 
 			'black'       => '#000000',
 			'lightergrey' => '#f7f7f7',
@@ -246,9 +246,9 @@ class Helpers {
 			'purple'      => '#B97EBB',
 		);
 
-		$wd_shared_colors_hex = apply_filters( 'wd_shared_colors_hex', $wd_shared_colors_hex );
+		$wolf_store_shared_colors_hex = apply_filters( 'wolf_store_shared_colors_hex', $wolf_store_shared_colors_hex );
 
-		return $wd_shared_colors_hex;
+		return $wolf_store_shared_colors_hex;
 	}
 
 	/**

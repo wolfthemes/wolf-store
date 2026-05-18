@@ -258,12 +258,12 @@ class Options_Panel {
 
 			<?php
 			// Allow custom content before tabs
-			do_action( "wolf_options_panel_before_tabs_{$this->slug}" );
+			do_action( "wolf_store_options_panel_before_tabs_{$this->slug}" );
 
 			$this->render_tabs();
 
 			// Allow custom content after tabs but before form
-			do_action( "wolf_options_panel_before_form_{$this->slug}" );
+			do_action( "wolf_store_options_panel_before_form_{$this->slug}" );
 			?>
 
 			<form action="options.php" method="post" class="wolf-store-options-form">
@@ -276,7 +276,7 @@ class Options_Panel {
 
 			<?php
 			// Allow custom content after form
-			do_action( "wolf_options_panel_after_form_{$this->slug}" );
+			do_action( "wolf_store_options_panel_after_form_{$this->slug}" );
 			?>
 		</div>
 		<?php

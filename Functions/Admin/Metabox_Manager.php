@@ -251,6 +251,7 @@ class Metabox_Manager {
 			return;
 		}
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$value = $_POST[ $field_id ];
 
 		// Use MetaboxConfig to determine field type handling
