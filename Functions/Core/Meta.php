@@ -118,44 +118,41 @@ class Meta {
 		return apply_filters( 'wolf_store_thumbnail_url', esc_url( $url ), $slug, $post_id );
 	}
 
-    /**
-     * Get all meta for a post — merged config + theme_meta
-     *
-     * @param int|null $post_id
-     * @return array
-     */
-    public static function get_meta( ?int $post_id = null ): array {
-        $post_id = $post_id ?? get_the_ID();
+	public static function get_meta( ?int $post_id = null ): array {
+		$post_id = $post_id ?? get_the_ID();
 
-        if ( ! $post_id ) {
-            return array();
-        }
+		if ( ! $post_id ) {
+			return array();
+		}
 
-        $slug = self::get_theme_slug( $post_id );
+		$slug = self::get_theme_slug( $post_id );
 
-        if ( ! $slug ) {
-            return array();
-        }
+		if ( ! $slug ) {
+			return array();
+		}
 
-        $config     = self::get_config( $slug );
-        $theme_meta = self::get_theme_meta( $slug );
+		// Three sources — XML has lowest priority, meta overrides win
+		$changelog_data = self::get_changelog_data( $slug ); // ← nouveau
+		$config         = self::get_config( $slug );
+		$theme_meta     = self::get_theme_meta( $slug );
 
-        // Merge with derived/overridden values
-        return array_merge(
-            $config,
-            $theme_meta,
-            array(
-                'slug'         => $slug,
-                'demo_url'     => self::get_demo_url( $post_id ),
-                'purchase_url' => self::get_purchase_url( $post_id ),
-                'thumbnail'    => array(
-                    'medium' => self::get_thumbnail_url( 'medium', $post_id ),
-                    'large'  => self::get_thumbnail_url( 'large', $post_id ),
-                    'full'   => self::get_thumbnail_url( 'full', $post_id ),
-                ),
-            )
-        );
-    }
+		return array_merge(
+			$changelog_data,  // base — données XML
+			$config,          // override — app.config.json
+			$theme_meta,      // override — theme_meta.json
+			array(
+				// Computed/overridden values always win
+				'slug'         => $slug,
+				'demo_url'     => self::get_demo_url( $post_id ),
+				'purchase_url' => self::get_purchase_url( $post_id ),
+				'thumbnail'    => array(
+					'medium' => self::get_thumbnail_url( 'medium', $post_id ),
+					'large'  => self::get_thumbnail_url( 'large', $post_id ),
+					'full'   => self::get_thumbnail_url( 'full', $post_id ),
+				),
+			)
+		);
+	}
 
     /**
      * Get a specific value from meta
@@ -268,29 +265,39 @@ class Meta {
 	}
 
 	/**
-	 * Get changelog as a clean array for REST API / React
+	 * Get full data from changelog XML as a clean array
 	 *
 	 * @param string|null $slug
 	 * @return array
 	 */
-	public static function get_changelog_array( ?string $slug = null ): array {
-		$xml = self::get_changelog( $slug );
+	public static function get_changelog_data( ?string $slug = null ): array {
+		$slug = $slug ?? self::get_theme_slug();
+		$xml  = self::get_changelog( $slug );
 
 		if ( ! $xml ) {
 			return array();
 		}
 
-		$entries = array();
-
-		foreach ( $xml->entry as $entry ) {
-			$entries[] = array(
-				'version' => (string) $entry->version,
-				'date'    => (string) $entry->date,
-				'changes' => (string) $entry->changes,
-			);
-		}
-
-		return $entries;
+		return array(
+			'slug'             => (string) $xml->slug,
+			'name'             => (string) $xml->name,
+			'latest_version'   => (string) $xml->latest,
+			'updated'          => (string) $xml->updated,
+			'created'          => (string) $xml->created,
+			'requires'         => (string) $xml->requires,
+			'tested'           => (string) $xml->tested,
+			'demo_url'         => (string) $xml->demourl,
+			'shortlink'        => (string) $xml->shortlink,
+			'url'              => (string) $xml->url,
+			'item_id'          => (string) $xml->item_id,
+			'category'         => (string) $xml->category,
+			'description'      => (string) $xml->description,
+			'long_description' => trim( (string) $xml->longdescription ),
+			'warning'          => trim( (string) $xml->warning ),
+			'info'             => trim( (string) $xml->info ),
+			'new'              => trim( (string) $xml->new ),
+			'changelog'        => trim( (string) $xml->changelog ), // HTML string
+		);
 	}
 
 	/**
