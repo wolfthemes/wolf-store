@@ -69,7 +69,7 @@ class Admin_Handler {
 	 */
 	public function custom_post_state( $states, $post ) {
 
-		if ( 'page' == get_post_type( $post->ID ) && absint( $post->ID ) === Core::get_store_page_id() ) {
+		if ( 'page' === get_post_type( $post->ID ) && absint( $post->ID ) === absint( Core::get_store_page_id() ) ) {
 
 			$states[] = esc_html__( 'Store Page', 'wolf-store' );
 		}

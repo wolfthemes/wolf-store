@@ -138,7 +138,7 @@ class Utilities {
 			if ( ! is_string( $desc ) ) {
 				print_r( $desc );
 			} else {
-				echo $desc;
+				echo esc_html( $desc );
 				echo ' ';
 				if ( $var ) {
 					print_r( $var ); // phpcs:ignore

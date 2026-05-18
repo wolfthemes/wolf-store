@@ -720,7 +720,7 @@ class Helpers {
 		 *
 		 * @since 1.0.0
 		 */
-		$attach_id   = apply_filters( 'wd_object_id', $attach_id );
+		$attach_id   = apply_filters( 'wolf_store_object_id', $attach_id );
 		$thumb_size  = $params['thumb_size'];
 		$thumb_class = ( isset( $params['class'] ) && '' !== $params['class'] ) ? $params['class'] . ' ' : '';
 
@@ -796,7 +796,7 @@ class Helpers {
 		 * @since 1.0.0
 		 */
 		return apply_filters(
-			'wd_get_img_by_size', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
+			'wolf_store_get_img_by_size', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
 			array(
 				'thumbnail'   => $thumbnail,
 				'p_img_large' => $p_img_large,

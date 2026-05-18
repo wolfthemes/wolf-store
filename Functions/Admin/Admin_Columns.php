@@ -36,7 +36,7 @@ class Admin_Columns {
 	 */
 	public function is_index_page() {
 
-		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) == Core::get_store_page_id() ) {
+		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) {
 			$message = esc_html__( 'You are currently editing the page that shows the store.', 'wolf-store' );
 
 			$output = '<div class="notice notice-warning inline"><p>';
@@ -45,7 +45,7 @@ class Admin_Columns {
 
 			$output .= '</p></div>';
 
-			echo $output;
+			echo wp_kses_post( $output );
 		}
 	}
 
@@ -53,7 +53,7 @@ class Admin_Columns {
 	 * Hide the editor if we're on the admin store page
 	 */
 	public function hide_editor() {
-		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) == Core::get_store_page_id() ) {
+		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) {
 			remove_post_type_support( 'page', 'editor' );
 		}
 	}
@@ -62,7 +62,7 @@ class Admin_Columns {
 	 * Hide the editor if we're on the admin store page
 	 */
 	public function hide_wpb_editor() {
-		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) == Core::get_store_page_id() ) {
+		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) {
 			?>
 			<style type="text/css">
 			.wpb-toggle-editor,
@@ -95,13 +95,18 @@ class Admin_Columns {
 	 */
 	public function admin_columns_content_wolf_theme_thumb( $column_name, $post_id ) {
 
-		$thumbnail = get_the_post_thumbnail();
+		if ( 'theme_thumbnail' !== $column_name ) {
+			return;
+		}
 
-		if ( 'theme_thumbnail' == $column_name ) {
+		$thumbnail = get_the_post_thumbnail( $post_id );
 
-			if ( $thumbnail ) {
-				echo '<a href="' . get_edit_post_link() . '" title="' . esc_attr( sprintf( esc_html__( 'Edit "%s"', 'wolf-store' ), get_the_title() ) ) . '">' . get_the_post_thumbnail( '', array( 60, 60 ), array( 'style' => 'max-width:60px;height:auto;' ) ) . '</a>';
-			}
+		if ( $thumbnail ) {
+			/* translators: %s: post title */
+			$title = esc_attr( sprintf( __( 'Edit "%s"', 'wolf-store' ), get_the_title( $post_id ) ) );
+			echo '<a href="' . esc_url( get_edit_post_link( $post_id ) ) . '" title="' . $title . '">';
+			echo wp_kses_post( get_the_post_thumbnail( $post_id, array( 60, 60 ), array( 'style' => 'max-width:60px;height:auto;' ) ) );
+			echo '</a>';
 		}
 	}
 }

@@ -214,7 +214,7 @@ class Metabox_Manager {
 	public function save_enqueue_as( int $post_id, \WP_Post $post ): void {
 		// Verify nonce
 		if ( ! isset( $_POST['wolf_store_metabox_nonce'] ) ||
-			! wp_verify_nonce( $_POST['wolf_store_metabox_nonce'], 'wolf_store_metabox' ) ) {
+			! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['wolf_store_metabox_nonce'] ) ), 'wolf_store_metabox' ) ) {
 			return;
 		}
 
@@ -229,7 +229,7 @@ class Metabox_Manager {
 		}
 
 		// Only process our post type
-		if ( $post->post_type !== 'wolf_theme' ) {
+		if ( 'wolf_theme' !== $post->post_type ) {
 			return;
 		}
 
@@ -251,8 +251,8 @@ class Metabox_Manager {
 			return;
 		}
 
-		// phpcs:ignore WordPress.Security.NonceVerification.Missing
-		$value = $_POST[ $field_id ];
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$value = wp_unslash( $_POST[ $field_id ] );
 
 		// Use MetaboxConfig to determine field type handling
 		if ( in_array( $field_id, Metabox_Config::get_url_fields() ) ) {
@@ -278,7 +278,7 @@ class Metabox_Manager {
 
 		if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ) ) ||
 			! $post ||
-			$post->post_type !== 'wolf_theme' ) {
+			'wolf_theme' !== $post->post_type ) {
 			return;
 		}
 
