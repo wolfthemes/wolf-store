@@ -51,6 +51,40 @@ function Single({
 
 /***/ },
 
+/***/ "./src/scripts/components/ThemeChangelog.jsx"
+/*!***************************************************!*\
+  !*** ./src/scripts/components/ThemeChangelog.jsx ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeChangelog)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function ThemeChangelog({
+  changelog
+}) {
+  const [open, setOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  if (!changelog) return null;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-changelog"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "wolf-theme-changelog__toggle",
+    onClick: () => setOpen(!open)
+  }, open ? 'Hide changelog ↑' : 'View changelog ↓'), open && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-changelog__content",
+    dangerouslySetInnerHTML: {
+      __html: changelog
+    }
+  }));
+}
+
+/***/ },
+
 /***/ "./src/scripts/components/ThemeHero.jsx"
 /*!**********************************************!*\
   !*** ./src/scripts/components/ThemeHero.jsx ***!
@@ -63,32 +97,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
+
+
 
 function ThemeHero({
   theme
 }) {
+  var _theme$theme_features;
   const thumbnail = theme.theme_thumbnail;
   const title = theme.title?.rendered;
   const excerpt = theme.excerpt?.rendered;
+  const description = theme.theme_short_description;
+  const longDescription = theme.theme_long_description;
   const demoUrl = theme.theme_demo_url;
   const buyUrl = theme.theme_purchase_url;
+  const features = (_theme$theme_features = theme.theme_features) !== null && _theme$theme_features !== void 0 ? _theme$theme_features : [];
+  const changelog = theme.theme_changelog;
+  const [changelogOpen, setChangelogOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero"
   }, thumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__thumbnail"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: demoUrl,
+    target: "_blank",
+    rel: "noopener noreferrer"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: thumbnail,
     alt: title
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "wolf-theme-hero__title"
-  }, title), excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, title), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-hero__tagline"
+  }, description), excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__excerpt",
     dangerouslySetInnerHTML: {
       __html: excerpt
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero__description"
+  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__ctas"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
@@ -100,7 +151,17 @@ function ThemeHero({
     className: "wolf-theme-hero__cta wolf-theme-hero__cta--buy",
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Purchase"))));
+  }, "Purchase")), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero__features"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-hero__section-title"
+  }, "Features"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-theme-hero__features-list"
+  }, features.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    key: i
+  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    changelog: changelog
+  })));
 }
 
 /***/ },
@@ -121,7 +182,6 @@ __webpack_require__.r(__webpack_exports__);
 function ThemeSidebar({
   theme
 }) {
-  var _theme$theme_features;
   const version = theme.theme_latest_version;
   const builder = theme.theme_builder;
   const requires = theme.theme_requires;
@@ -130,19 +190,18 @@ function ThemeSidebar({
   const shortlink = theme.theme_shortlink;
   const demoUrl = theme.theme_demo_url;
   const buyUrl = theme.theme_purchase_url;
-  const features = (_theme$theme_features = theme.theme_features) !== null && _theme$theme_features !== void 0 ? _theme$theme_features : [];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar__ctas"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
-    className: "wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy",
+    className: "theme-button-primary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Purchase"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
-    className: "wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo",
+    className: "theme-button-secondary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Live Demo")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -186,15 +245,7 @@ function ThemeSidebar({
     className: "wolf-theme-sidebar__value",
     target: "_blank",
     rel: "noopener noreferrer"
-  }, shortlink))), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-sidebar__features"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "wolf-theme-sidebar__section-title"
-  }, "Features"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "wolf-theme-sidebar__features-list"
-  }, features.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: i
-  }, feature)))));
+  }, shortlink))));
 }
 
 /***/ },

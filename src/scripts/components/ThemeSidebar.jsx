@@ -7,7 +7,6 @@ export default function ThemeSidebar({ theme }) {
     const shortlink = theme.theme_shortlink;
     const demoUrl = theme.theme_demo_url;
     const buyUrl = theme.theme_purchase_url;
-    const features = theme.theme_features ?? [];
 
     return (
         <div className='wolf-theme-sidebar'>
@@ -15,7 +14,7 @@ export default function ThemeSidebar({ theme }) {
             <div className='wolf-theme-sidebar__ctas'>
 
                 <a href={buyUrl}
-                    className='wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy'
+                    className='theme-button-primary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
@@ -23,7 +22,7 @@ export default function ThemeSidebar({ theme }) {
                 </a>
 
                 <a href={demoUrl}
-                    className='wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo'
+                    className='theme-button-secondary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
@@ -77,16 +76,6 @@ export default function ThemeSidebar({ theme }) {
                 )}
             </div>
 
-            {features.length > 0 && (
-                <div className='wolf-theme-sidebar__features'>
-                    <h3 className='wolf-theme-sidebar__section-title'>Features</h3>
-                    <ul className='wolf-theme-sidebar__features-list'>
-                        {features.map((feature, i) => (
-                            <li key={i}>{feature}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
 
         </div>
     );

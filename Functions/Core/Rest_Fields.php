@@ -77,6 +77,12 @@ class Rest_Fields {
 			return $data['tested'] ?? '';
 		} );
 
+		$this->register( 'theme_short_description', function( $post ) {
+			$slug = Meta::get_theme_slug( $post['id'] );
+			$data = Meta::get_changelog_data( $slug );
+			return $data['description'] ?? '';
+		} );
+
 		$this->register( 'theme_long_description', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_changelog_data( $slug );

@@ -4,57 +4,68 @@
 @charset "UTF-8";
 .wolf-theme-single {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 300px;
   gap: 60px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: 40px 0;
 }
+@media (max-width: 768px) {
+  .wolf-theme-single {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 .wolf-theme-hero__thumbnail {
-  margin-bottom: 40px;
-  border-radius: 8px;
-  overflow: hidden;
+  margin-bottom: 32px;
 }
 .wolf-theme-hero__thumbnail img {
   width: 100%;
   height: auto;
   display: block;
 }
-.wolf-theme-hero__title {
-  font-size: 2.5rem;
-  margin: 0 0 16px;
+.wolf-theme-hero__tagline {
+  margin: 8px 0 16px;
+  opacity: 0.7;
 }
-.wolf-theme-hero__excerpt {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 32px;
-}
-.wolf-theme-hero__excerpt p {
-  margin: 0;
+.wolf-theme-hero__description {
+  margin-bottom: 24px;
+  line-height: 1.8;
 }
 .wolf-theme-hero__ctas {
   display: flex;
   gap: 12px;
+  margin-bottom: 40px;
 }
 .wolf-theme-hero__cta {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 4px;
-  font-weight: 600;
+  padding: 12px 24px;
   text-decoration: none;
-  transition: opacity 0.2s;
-}
-.wolf-theme-hero__cta:hover {
-  opacity: 0.85;
-}
-.wolf-theme-hero__cta--demo {
-  background: transparent;
-  border: 2px solid currentColor;
+  border: 1px solid currentColor;
 }
 .wolf-theme-hero__cta--buy {
-  background: #000;
-  color: #fff;
+  font-weight: 700;
+}
+.wolf-theme-hero__features {
+  margin-bottom: 40px;
+}
+.wolf-theme-hero__features h3 {
+  margin-bottom: 12px;
+}
+.wolf-theme-hero__features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.wolf-theme-hero__features li {
+  list-style-type: none;
+  padding-left: 20px;
+  position: relative;
+}
+.wolf-theme-hero__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: 700;
 }
 
 .wolf-theme-sidebar__ctas {
@@ -65,24 +76,13 @@
 }
 .wolf-theme-sidebar__btn {
   display: block;
-  padding: 14px 20px;
+  padding: 12px;
   text-align: center;
-  border-radius: 4px;
-  font-weight: 600;
   text-decoration: none;
-  transition: opacity 0.2s;
-}
-.wolf-theme-sidebar__btn:hover {
-  opacity: 0.85;
+  border: 1px solid currentColor;
 }
 .wolf-theme-sidebar__btn--buy {
-  background: #000;
-  color: #fff;
-}
-.wolf-theme-sidebar__btn--demo {
-  background: transparent;
-  border: 2px solid #000;
-  color: #000;
+  font-weight: 700;
 }
 .wolf-theme-sidebar__meta {
   border-top: 1px solid #eee;
@@ -91,13 +91,12 @@
 .wolf-theme-sidebar__row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid currentColor;
+  opacity: 0.8;
   font-size: 0.9rem;
 }
 .wolf-theme-sidebar__label {
-  color: #888;
   font-weight: 500;
 }
 .wolf-theme-sidebar__value {
@@ -105,40 +104,40 @@
   color: #000;
   text-decoration: none;
 }
-.wolf-theme-sidebar__section-title {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #888;
-  margin: 0 0 16px;
-}
-.wolf-theme-sidebar__features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.wolf-theme-sidebar__features-list li {
-  list-style-type: none;
-  padding: 6px 0;
-  padding-left: 20px;
-  position: relative;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #f0f0f0;
-}
-.wolf-theme-sidebar__features-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #000;
-  font-weight: 700;
-}
 
-@media (max-width: 768px) {
-  .wolf-theme-single {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin: 40px auto;
-  }
+.wolf-theme-changelog {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid currentColor;
+}
+.wolf-theme-changelog__toggle {
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 0.85rem;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+}
+.wolf-theme-changelog__toggle:hover {
+  opacity: 1;
+}
+.wolf-theme-changelog__content {
+  margin-top: 24px;
+}
+.wolf-theme-changelog__content h1 {
+  display: none;
+}
+.wolf-theme-changelog__content h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+.wolf-theme-changelog__content ul {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.wolf-theme-changelog__content li {
+  font-size: 0.9em;
 }
 
 /*# sourceMappingURL=styles.css.map*/
