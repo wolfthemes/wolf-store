@@ -13,6 +13,7 @@ use Wolf_Store\Admin\Admin_Handler;
 use Wolf_Store\Frontend\Frontend_Handler;
 use Wolf_Store\Post_Types\Post_Type;
 use Wolf_Store\Taxonomies\Taxonomies;
+use Wolf_Store\Core\Rest_Fields;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -73,6 +74,9 @@ class Plugin {
 
 		$this->post_type_manager->register_post_type();
 		$this->taxonomy_manager->register_taxonomies();
+
+		// REST fields — always registered, admin and frontend
+		new Rest_Fields();
 
 		if ( $this->is_request( 'admin' ) ) {
 			$this->admin_handler = new Admin_Handler();

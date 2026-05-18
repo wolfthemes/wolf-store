@@ -43,14 +43,20 @@ class Metabox_Config {
 	private static function get_theme_detail_fields(): array {
 		return array(
 			array(
-				'label' => esc_html__( 'Title', 'wolf-store' ),
-				'id'    => '_wolf_theme_title',
+				'label' => esc_html__( 'Theme Slug', 'wolf-store' ),
+				'id'    => '_wolf_theme_slug',
+				'desc'  => esc_html__( 'e.g. sable — must match the folder name on changelog.wolfthemes.cloud', 'wolf-store' ),
 				'type'  => 'text',
 			),
 			array(
-				'label' => esc_html__( 'Title', 'wolf-store' ),
-				'id'    => '_wolf_theme_',
-				'type'  => 'text',
+				'label' => esc_html__( 'Demo URL', 'wolf-store' ),
+				'id'    => '_wolf_theme_demo_url',
+				'type'  => 'url',
+			),
+			array(
+				'label' => esc_html__( 'Purchase URL', 'wolf-store' ),
+				'id'    => '_wolf_theme_url',
+				'type'  => 'url',
 			),
 		);
 	}
