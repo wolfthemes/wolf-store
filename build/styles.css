@@ -1,4 +1,144 @@
 /*!*********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/styles/main.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wolf-theme-single {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.wolf-theme-hero__thumbnail {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.wolf-theme-hero__thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.wolf-theme-hero__title {
+  font-size: 2.5rem;
+  margin: 0 0 16px;
+}
+.wolf-theme-hero__excerpt {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 32px;
+}
+.wolf-theme-hero__excerpt p {
+  margin: 0;
+}
+.wolf-theme-hero__ctas {
+  display: flex;
+  gap: 12px;
+}
+.wolf-theme-hero__cta {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.wolf-theme-hero__cta:hover {
+  opacity: 0.85;
+}
+.wolf-theme-hero__cta--demo {
+  background: transparent;
+  border: 2px solid currentColor;
+}
+.wolf-theme-hero__cta--buy {
+  background: #000;
+  color: #fff;
+}
 
+.wolf-theme-sidebar__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.wolf-theme-sidebar__btn {
+  display: block;
+  padding: 14px 20px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.wolf-theme-sidebar__btn:hover {
+  opacity: 0.85;
+}
+.wolf-theme-sidebar__btn--buy {
+  background: #000;
+  color: #fff;
+}
+.wolf-theme-sidebar__btn--demo {
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+}
+.wolf-theme-sidebar__meta {
+  border-top: 1px solid #eee;
+  margin-bottom: 32px;
+}
+.wolf-theme-sidebar__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+.wolf-theme-sidebar__label {
+  color: #888;
+  font-weight: 500;
+}
+.wolf-theme-sidebar__value {
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+.wolf-theme-sidebar__section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+  margin: 0 0 16px;
+}
+.wolf-theme-sidebar__features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.wolf-theme-sidebar__features-list li {
+  list-style-type: none;
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+.wolf-theme-sidebar__features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .wolf-theme-single {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 40px auto;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map*/

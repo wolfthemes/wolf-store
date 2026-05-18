@@ -1,0 +1,166 @@
+.wolf-theme-single {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+    &__main {}
+    &__sidebar {}
+}
+
+// Hero
+.wolf-theme-hero {
+
+    &__thumbnail {
+        margin-bottom: 40px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        margin: 0 0 16px;
+    }
+
+    &__excerpt {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 32px;
+
+        p { margin: 0; }
+    }
+
+    &__ctas {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__cta {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: opacity 0.2s;
+
+        &:hover { opacity: 0.85; }
+
+        &--demo {
+            background: transparent;
+            border: 2px solid currentColor;
+        }
+
+        &--buy {
+            background: #000;
+            color: #fff;
+        }
+    }
+}
+
+// Sidebar
+.wolf-theme-sidebar {
+
+    &__ctas {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+
+    &__btn {
+        display: block;
+        padding: 14px 20px;
+        text-align: center;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: opacity 0.2s;
+
+        &:hover { opacity: 0.85; }
+
+        &--buy {
+            background: #000;
+            color: #fff;
+        }
+
+        &--demo {
+            background: transparent;
+            border: 2px solid #000;
+            color: #000;
+        }
+    }
+
+    &__meta {
+        border-top: 1px solid #eee;
+        margin-bottom: 32px;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+    }
+
+    &__label {
+        color: #888;
+        font-weight: 500;
+    }
+
+    &__value {
+        font-weight: 600;
+        color: #000;
+        text-decoration: none;
+    }
+
+    &__section-title {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #888;
+        margin: 0 0 16px;
+    }
+
+    &__features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+			list-style-type:none;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f0f0f0;
+
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: #000;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// Responsive
+@media ( max-width: 768px ) {
+    .wolf-theme-single {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 40px auto;
+    }
+}
