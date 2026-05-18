@@ -58,7 +58,6 @@ export default function ThemeHero( { theme } ) {
 
                     <a    href={ buyUrl }
                         className='theme-button-secondary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--buy'
-                        target='_blank'
                         rel='noopener noreferrer'
                     >
                         Purchase

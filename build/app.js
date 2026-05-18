@@ -149,7 +149,6 @@ function ThemeHero({
   }, "Live Demo"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
     className: "theme-button-secondary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--buy",
-    target: "_blank",
     rel: "noopener noreferrer"
   }, "Purchase")), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__features"
@@ -204,7 +203,6 @@ function ThemeSidebar({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
     className: "theme-button-primary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy",
-    target: "_blank",
     rel: "noopener noreferrer"
   }, "Purchase"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,

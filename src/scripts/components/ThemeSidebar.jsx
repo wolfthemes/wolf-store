@@ -23,7 +23,6 @@ export default function ThemeSidebar( { theme } ) {
 
                 <a    href={ buyUrl }
                     className='theme-button-primary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy'
-                    target='_blank'
                     rel='noopener noreferrer'
                 >
                     Purchase
