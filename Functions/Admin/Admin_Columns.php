@@ -6,7 +6,7 @@
  *
  * @package WolfStore
  * @subpackage Admin
- * @since 2.0.0
+ * @since 1.0.0
  */
 
 namespace Wolf_Store\Admin;
