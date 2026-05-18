@@ -215,11 +215,100 @@ class Meta {
         return $data;
     }
 
+	/**
+	 * Fetch the theme changelog XML
+	 * With failure count to avoid hammering the server
+	 *
+	 * @param string|null $slug
+	 * @return \SimpleXMLElement|null
+	 */
+	public static function get_changelog( ?string $slug = null ): ?\SimpleXMLElement {
+		$slug = $slug ?? self::get_theme_slug();
+
+		if ( ! $slug ) {
+			return null;
+		}
+
+		$cache_key    = 'wolf_store_changelog_' . sanitize_key( $slug );
+		$fail_key     = 'wolf_store_changelog_fail_' . sanitize_key( $slug );
+		$max_failures = 3;
+		$fail_timeout = 12 * HOUR_IN_SECONDS;
+		$url          = self::REMOTE_BASE_URL . '/' . $slug . '/changelog.xml';
+
+		// Stop if max failures reached
+		$fail_count = get_transient( $fail_key );
+		if ( $fail_count && $fail_count >= $max_failures ) {
+			return null;
+		}
+
+		// Return cached XML
+		$cached = get_transient( $cache_key );
+		if ( false !== $cached ) {
+			return @simplexml_load_string( $cached );
+		}
+
+		// Fetch remote
+		$response = wp_remote_get( $url, array( 'timeout' => 10 ) );
+
+		if (
+			! is_wp_error( $response ) &&
+			200 === wp_remote_retrieve_response_code( $response )
+		) {
+			$xml = wp_remote_retrieve_body( $response );
+			set_transient( $cache_key, $xml, 6 * HOUR_IN_SECONDS );
+			delete_transient( $fail_key ); // Reset failures on success
+			return @simplexml_load_string( $xml );
+		}
+
+		// Increment failure count
+		$fail_count = $fail_count ? $fail_count + 1 : 1;
+		set_transient( $fail_key, $fail_count, $fail_timeout );
+
+		return null;
+	}
+
+	/**
+	 * Get changelog as a clean array for REST API / React
+	 *
+	 * @param string|null $slug
+	 * @return array
+	 */
+	public static function get_changelog_array( ?string $slug = null ): array {
+		$xml = self::get_changelog( $slug );
+
+		if ( ! $xml ) {
+			return array();
+		}
+
+		$entries = array();
+
+		foreach ( $xml->entry as $entry ) {
+			$entries[] = array(
+				'version' => (string) $entry->version,
+				'date'    => (string) $entry->date,
+				'changes' => (string) $entry->changes,
+			);
+		}
+
+		return $entries;
+	}
+
+	/**
+	 * Flush changelog cache for a slug
+	 *
+	 * @param string $slug
+	 */
+	public static function flush_changelog_cache( string $slug ): void {
+		delete_transient( 'wolf_store_changelog_' . sanitize_key( $slug ) );
+		delete_transient( 'wolf_store_changelog_fail_' . sanitize_key( $slug ) );
+	}
+
     /**
      * Flush cache for a slug
      */
     public static function flush_cache( string $slug ): void {
         delete_transient( 'wolf_store_' . sanitize_key( $slug ) . '_app.config.json' );
         delete_transient( 'wolf_store_' . sanitize_key( $slug ) . '_theme_meta.json' );
+		self::flush_changelog_cache( $slug );
     }
 }
