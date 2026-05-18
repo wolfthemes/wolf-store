@@ -53,7 +53,7 @@ class Post_Type {
 			'public'             => true,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
-        	'rest_base'          => 'wolf_theme',
+			'rest_base'          => 'wolf_theme',
 			'show_in_menu'       => true,
 			'query_var'          => true,
 			'rewrite'            => array( 'slug' => 'theme' ),

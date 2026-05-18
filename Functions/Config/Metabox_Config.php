@@ -78,7 +78,6 @@ class Metabox_Config {
 	 * @return array
 	 */
 	public static function get_repeatable_fields(): array {
-		return array(
-		);
+		return array();
 	}
 }

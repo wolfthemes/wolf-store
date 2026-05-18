@@ -287,11 +287,11 @@ class Metabox_Manager {
 
 		// Enqueue repeatable fields script
 		// wp_enqueue_script(
-		// 	'wolf-store-metabox',
-		// 	WOLF_STORE_JS . '/admin/metabox.js',
-		// 	array( 'jquery', 'jquery-ui-sortable' ),
-		// 	WOLF_STORE_VERSION,
-		// 	true
+		//  'wolf-store-metabox',
+		//  WOLF_STORE_JS . '/admin/metabox.js',
+		//  array( 'jquery', 'jquery-ui-sortable' ),
+		//  WOLF_STORE_VERSION,
+		//  true
 		// );
 
 		wp_enqueue_style(

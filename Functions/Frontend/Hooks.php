@@ -36,7 +36,6 @@ class Hooks {
 		 */
 		add_action( 'get_the_generator_html', array( $this, 'generator_tag' ), 10, 2 );
 		add_action( 'get_the_generator_xhtml', array( $this, 'generator_tag' ), 10, 2 );
-
 	}
 
 	/**

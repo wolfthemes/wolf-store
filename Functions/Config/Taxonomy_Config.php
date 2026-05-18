@@ -25,7 +25,7 @@ class Taxonomy_Config {
 	 */
 	public static function get_config(): array {
 		return array(
-			'theme_cat'	=> self::get_category_config(),
+			'theme_cat' => self::get_category_config(),
 			'theme_tag' => self::get_tag_config(),
 		);
 	}

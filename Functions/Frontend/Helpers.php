@@ -595,7 +595,7 @@ class Helpers {
 	public static function is_store_archives() {
 		return is_page( Core::get_store_page_id() ) ||
 				is_post_type_archive( 'wolf_theme' ) ||
-				is_tax( array( 'theme_cat', 'theme_tag', ) );
+				is_tax( array( 'theme_cat', 'theme_tag' ) );
 	}
 
 	/**

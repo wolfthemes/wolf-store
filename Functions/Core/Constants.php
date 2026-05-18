@@ -13,9 +13,9 @@ defined( 'ABSPATH' ) || exit;
 
 class Constants {
 
-	public const VERSION              = '1.0.0';
-	public const TEXT_DOMAIN          = 'wolf-store';
-	public const CPT_SLUG             = 'wolf_theme';
+	public const VERSION     = '1.0.0';
+	public const TEXT_DOMAIN = 'wolf-store';
+	public const CPT_SLUG    = 'wolf_theme';
 
 	public static function define( string $plugin_path, string $plugin_url ): void {
 		$constants = array(

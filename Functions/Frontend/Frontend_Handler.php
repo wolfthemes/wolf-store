@@ -52,7 +52,9 @@ class Frontend_Handler {
 		$file = $this->resolve_template_file();
 		if ( $file ) {
 			$located = $this->template->locate( $file );
-			if ( $located ) return $located;
+			if ( $located ) {
+				return $located;
+			}
 		}
 		return $template;
 	}

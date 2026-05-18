@@ -65,7 +65,6 @@ class Plugin {
 
 		$this->initialize_components();
 		$this->flush_rewrite_rules();
-
 	}
 
 	private function initialize_components(): void {
