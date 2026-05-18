@@ -143,12 +143,12 @@ function ThemeHero({
     className: "wolf-theme-hero__ctas"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
-    className: "theme-button-primary wolf-theme-hero__cta wolf-theme-hero__cta--demo",
+    className: "theme-button-primary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--demo",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Live Demo"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
-    className: "theme-button-secondary wolf-theme-hero__cta wolf-theme-hero__cta--buy",
+    className: "theme-button-secondary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--buy",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Purchase")), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -203,12 +203,12 @@ function ThemeSidebar({
     className: "wolf-theme-sidebar__ctas"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
-    className: "theme-button-primary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy",
+    className: "theme-button-primary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Purchase"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
-    className: "theme-button-secondary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo",
+    className: "theme-button-secondary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo",
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Live Demo")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {

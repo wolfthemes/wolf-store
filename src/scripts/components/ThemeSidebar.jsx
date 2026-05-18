@@ -22,7 +22,7 @@ export default function ThemeSidebar( { theme } ) {
             <div className='wolf-theme-sidebar__ctas'>
 
                 <a    href={ buyUrl }
-                    className='theme-button-primary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy'
+                    className='theme-button-primary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
@@ -30,7 +30,7 @@ export default function ThemeSidebar( { theme } ) {
                 </a>
 
                 <a   href={ demoUrl }
-                    className='theme-button-secondary wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo'
+                    className='theme-button-secondary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
