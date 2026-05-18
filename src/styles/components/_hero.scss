@@ -11,10 +11,16 @@
         }
     }
 
+	&__title{
+		font-size:32px;
+		margin-bottom:0;
+	}
+
 
     &__tagline {
         margin: 8px 0 16px;
-        opacity: 0.7;
+		font-weight:700;
+		color:var(--strong-color);
     }
 
     &__description {

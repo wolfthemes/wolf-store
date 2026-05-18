@@ -28,9 +28,14 @@
   height: auto;
   display: block;
 }
+.wolf-theme-hero__title {
+  font-size: 32px;
+  margin-bottom: 0;
+}
 .wolf-theme-hero__tagline {
   margin: 8px 0 16px;
-  opacity: 0.7;
+  font-weight: 700;
+  color: var(--strong-color);
 }
 .wolf-theme-hero__description {
   margin-bottom: 24px;
