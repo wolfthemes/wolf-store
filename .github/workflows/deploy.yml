@@ -18,5 +18,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
+            cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
             git pull origin master
