@@ -1,0 +1,31 @@
+// ── ThemeCTAs ────────────────────────────────────────────────────────────────
+// Shared CTA block used in both the hero and the sidebar.
+
+.wolf-theme-ctas {
+    display: flex;
+    gap: 12px;
+
+    // Hero / inline usage — buttons side by side
+    &--row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+
+    // Sidebar usage — buttons stacked
+    &--column {
+        flex-direction: column;
+        margin-bottom: 32px;
+    }
+
+    &__btn {
+        // Base styles intentionally left to the theme via
+        // theme-button-primary / theme-button-secondary classes.
+        // Add layout-only overrides below if needed.
+
+        &--buy  { /* primary CTA — no extra rules needed */ }
+        &--demo { /* secondary CTA */ }
+    }
+}
+
+

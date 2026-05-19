@@ -2,6 +2,54 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/scripts/components/ElementorContent.jsx"
+/*!*****************************************************!*\
+  !*** ./src/scripts/components/ElementorContent.jsx ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ElementorContent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * ElementorContent
+ *
+ * Renders the WordPress post content (content.rendered) from the REST API.
+ * When the post is built with Elementor, this is the fully-rendered HTML
+ * Elementor produces — including sections, columns, widgets, etc.
+ *
+ * The component is intentionally a thin wrapper: Elementor's own CSS
+ * (elementor-frontend.css) is already enqueued by WordPress on the page,
+ * so the markup renders correctly without any extra styles here.
+ *
+ * Usage:
+ *   <ElementorContent content={ theme.content?.rendered } />
+ *
+ * @param {string}  content   HTML string from content.rendered
+ * @param {string}  className Extra class for the wrapper (optional)
+ */
+function ElementorContent({
+  content,
+  className = ''
+}) {
+  if (!content) return null;
+
+  // Strip the empty-paragraph WordPress sometimes wraps around Elementor output
+  const cleaned = content.trim();
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `wolf-theme-elementor-content${className ? ' ' + className : ''}`,
+    dangerouslySetInnerHTML: {
+      __html: cleaned
+    }
+  });
+}
+
+/***/ },
+
 /***/ "./src/scripts/components/Single.jsx"
 /*!*******************************************!*\
   !*** ./src/scripts/components/Single.jsx ***!
@@ -47,6 +95,51 @@ function Single({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeSidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     theme: theme
   })));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/ThemeCTAs.jsx"
+/*!**********************************************!*\
+  !*** ./src/scripts/components/ThemeCTAs.jsx ***!
+  \**********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeCTAs)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * ThemeCTAs
+ *
+ * Reusable CTA buttons — demo + purchase.
+ * Renders in both the hero and the sidebar.
+ *
+ * @param {string}  demoUrl   Live-demo URL
+ * @param {string}  buyUrl    Purchase URL
+ * @param {string}  layout    'row' (default) | 'column'
+ */
+function ThemeCTAs({
+  demoUrl,
+  buyUrl,
+  layout = 'row'
+}) {
+  if (!demoUrl && !buyUrl) return null;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `wolf-theme-ctas wolf-theme-ctas--${layout}`
+  }, buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: buyUrl,
+    className: "theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy",
+    rel: "noopener noreferrer"
+  }, "Purchase"), demoUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: demoUrl,
+    className: "theme-button-secondary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--demo",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Live Demo"));
 }
 
 /***/ },
@@ -98,6 +191,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
+/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+/* harmony import */ var _ElementorContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ElementorContent */ "./src/scripts/components/ElementorContent.jsx");
+
+
 
 
 
@@ -139,18 +236,11 @@ function ThemeHero({
     }
   }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__description"
-  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__ctas"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: demoUrl,
-    className: "theme-button-primary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--demo",
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, "Live Demo"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: buyUrl,
-    className: "theme-button-secondary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--buy",
-    rel: "noopener noreferrer"
-  }, "Purchase")), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    demoUrl: demoUrl,
+    buyUrl: buyUrl,
+    layout: "row"
+  }), features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__features"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "wolf-theme-hero__section-title"
@@ -158,7 +248,11 @@ function ThemeHero({
     className: "wolf-theme-hero__features-list"
   }, features.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: i
-  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    demoUrl: demoUrl,
+    buyUrl: buyUrl,
+    layout: "row"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
     changelog: changelog
   })));
 }
@@ -194,6 +288,7 @@ function ThemeSidebar({
   const slug = theme.theme_slug;
   const categories = (_theme$_embedded$wpT = theme._embedded?.['wp:term']?.[0]) !== null && _theme$_embedded$wpT !== void 0 ? _theme$_embedded$wpT : [];
   const tags = (_theme$_embedded$wpT2 = theme._embedded?.['wp:term']?.[1]) !== null && _theme$_embedded$wpT2 !== void 0 ? _theme$_embedded$wpT2 : [];
+  const wikiUrl = `https://wiki.wolfthemes.com/`;
   const docUrl = `https://doc.wolfthemes.com/theme/${slug}/`;
   const forumUrl = `https://wolfthemes.com/support/`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -229,6 +324,10 @@ function ThemeSidebar({
     target: "_blank",
     rel: "noopener noreferrer"
   }, "\uD83D\uDCD6 Documentation")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: wikiUrl,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "\uD83D\uDDC2\uFE0F Knowledge Base")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: forumUrl,
     target: "_blank",
     rel: "noopener noreferrer"

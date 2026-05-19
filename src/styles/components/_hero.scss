@@ -29,23 +29,6 @@
         line-height: 1.8;
     }
 
-    &__ctas {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 40px;
-    }
-
-    // Laisser le thème styler les liens
-    &__cta {
-        // padding: 12px 24px;
-        // text-decoration: none;
-        // border: 1px solid currentColor;
-        //
-        // &--buy {
-        //     font-weight: 700;
-        // }
-    }
-
     // Features dans le hero — à déplacer plus tard
     &__features {
         margin-bottom: 40px;

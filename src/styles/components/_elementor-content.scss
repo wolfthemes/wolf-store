@@ -1,0 +1,20 @@
+
+// ── ElementorContent ─────────────────────────────────────────────────────────
+// Wrapper for the Elementor-rendered post content injected via dangerouslySetInnerHTML.
+// Elementor's own CSS (elementor-frontend.css) handles the inner layout;
+// this block only sets the structural context inside the React tree.
+
+.wolf-theme-elementor-content {
+    margin: 40px 0;
+
+    // Prevent Elementor's full-width sections from escaping the column
+    .elementor-section,
+    .e-con {
+        max-width: 100% !important;
+    }
+
+    // Tighten spacing between the last Elementor widget and the next React block
+    > .elementor:last-child {
+        margin-bottom: 0;
+    }
+}

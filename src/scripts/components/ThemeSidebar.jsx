@@ -11,7 +11,7 @@ export default function ThemeSidebar( { theme } ) {
     const slug      = theme.theme_slug;
     const categories = theme._embedded?.[ 'wp:term' ]?.[ 0 ] ?? [];
     const tags       = theme._embedded?.[ 'wp:term' ]?.[ 1 ] ?? [];
-
+	const wikiUrl   = `https://wiki.wolfthemes.com/`;
     const docUrl    = `https://doc.wolfthemes.com/theme/${ slug }/`;
     const forumUrl  = `https://wolfthemes.com/support/`;
 
@@ -54,17 +54,23 @@ export default function ThemeSidebar( { theme } ) {
                 <h3 className='wolf-theme-sidebar__section-title'>Support</h3>
                 <ul className='wolf-theme-sidebar__support-links'>
                     <li>
-
-                    <a       href={ docUrl }
+						<a       href={ docUrl }
                             target='_blank'
                             rel='noopener noreferrer'
                         >
                             📖 Documentation
                         </a>
                     </li>
+                   <li>
+						<a       href={ wikiUrl}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                        >
+                            🗂️ Knowledge Base
+                        </a>
+                    </li>
                     <li>
-
-                    <a       href={ forumUrl }
+						<a       href={ forumUrl }
                             target='_blank'
                             rel='noopener noreferrer'
                         >

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import ThemeChangelog from './ThemeChangelog';
+import ThemeCTAs         from './ThemeCTAs';
+import ElementorContent  from './ElementorContent';
 
 export default function ThemeHero( { theme } ) {
     const thumbnail       = theme.theme_thumbnail;
@@ -46,24 +48,8 @@ export default function ThemeHero( { theme } ) {
                     </div>
                 ) }
 
-                <div className='wolf-theme-hero__ctas'>
-
-                    <a    href={ demoUrl }
-                        className='theme-button-primary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--demo'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        Live Demo
-                    </a>
-
-                    <a    href={ buyUrl }
-                        className='theme-button-secondary wolf-core-button-size-md wolf-theme-hero__cta wolf-theme-hero__cta--buy'
-                        rel='noopener noreferrer'
-                    >
-                        Purchase
-                    </a>
-                </div>
-
+                { /* Top CTAs — row layout */ }
+                <ThemeCTAs demoUrl={ demoUrl } buyUrl={ buyUrl } layout='row' />
                 { features.length > 0 && (
                     <div className='wolf-theme-hero__features'>
                         <h3 className='wolf-theme-hero__section-title'>Features</h3>
@@ -74,6 +60,10 @@ export default function ThemeHero( { theme } ) {
                         </ul>
                     </div>
                 ) }
+
+                { /* Top CTAs — row layout */ }
+                <ThemeCTAs demoUrl={ demoUrl } buyUrl={ buyUrl } layout='row' />
+
 
                 <ThemeChangelog changelog={ changelog } />
             </div>

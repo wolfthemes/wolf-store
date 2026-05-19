@@ -20,6 +20,10 @@
   }
 }
 
+.wolf-store-loading {
+  text-align: center;
+}
+
 .wolf-theme-hero__thumbnail {
   margin-bottom: 32px;
 }
@@ -41,11 +45,6 @@
   margin-bottom: 24px;
   max-width: 650px;
   line-height: 1.8;
-}
-.wolf-theme-hero__ctas {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 40px;
 }
 .wolf-theme-hero__features {
   margin-bottom: 40px;
@@ -69,6 +68,33 @@
   left: 0;
   color: #000;
   font-weight: 700;
+}
+
+.wolf-theme-ctas {
+  display: flex;
+  gap: 12px;
+}
+.wolf-theme-ctas--row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.wolf-theme-ctas--column {
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+.wolf-theme-ctas__btn--buy { /* primary CTA — no extra rules needed */ }
+.wolf-theme-ctas__btn--demo { /* secondary CTA */ }
+
+.wolf-theme-elementor-content {
+  margin: 40px 0;
+}
+.wolf-theme-elementor-content .elementor-section,
+.wolf-theme-elementor-content .e-con {
+  max-width: 100% !important;
+}
+.wolf-theme-elementor-content > .elementor:last-child {
+  margin-bottom: 0;
 }
 
 .wolf-theme-sidebar__ctas {
