@@ -23,10 +23,6 @@ export default function ThemeFooter( { theme } ) {
 				</div>
 			) }
 
-			{ /* Top CTAs — row layout */ }
-			<ThemeCTAs demoUrl={ demoUrl } buyUrl={ buyUrl } layout='row' />
-
-
 			<ThemeChangelog changelog={ changelog } />
         </div>
 

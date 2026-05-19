@@ -66,8 +66,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ThemeHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeHero */ "./src/scripts/components/ThemeHero.jsx");
 /* harmony import */ var _ThemeFooter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeFooter */ "./src/scripts/components/ThemeFooter.jsx");
 /* harmony import */ var _ThemeSidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeSidebar */ "./src/scripts/components/ThemeSidebar.jsx");
-/* harmony import */ var _ElementorContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ElementorContent */ "./src/scripts/components/ElementorContent.jsx");
-
 
 
 
@@ -95,8 +93,6 @@ function Single({
     className: "wolf-theme-single__main"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: theme
-  }), content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ElementorContent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    content: content
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeFooter__WEBPACK_IMPORTED_MODULE_3__["default"], {
     theme: theme
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
@@ -224,11 +220,7 @@ function ThemeFooter({
     className: "wolf-theme-hero__features-list"
   }, features.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: i
-  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    demoUrl: demoUrl,
-    buyUrl: buyUrl,
-    layout: "row"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
     changelog: changelog
   }));
 }
