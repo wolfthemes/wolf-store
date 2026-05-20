@@ -23,7 +23,9 @@
         // theme-button-primary / theme-button-secondary classes.
         // Add layout-only overrides below if needed.
 
-        &--buy  { /* primary CTA — no extra rules needed */ }
+        &--buy  {
+			background:var(--accent-hover-color);
+		}
         &--demo { /* secondary CTA */ }
     }
 }

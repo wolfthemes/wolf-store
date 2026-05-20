@@ -310,42 +310,51 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * ThemePriceBox
  *
- * Price display box at the top of the sidebar.
- * Just the price — CTAs are handled separately by ThemeCTAs.
+ * Evaluation zone — price display only, no CTAs.
+ * Annual is the hero, monthly shown as entry anchor below.
+ * TF price struck at top sets the reference point.
  */
 function ThemePriceBox({
   theme
 }) {
-  var _theme$theme_pricing, _ref, _ref2;
+  var _theme$theme_pricing;
   const {
     tf_price,
     price_monthly,
     price_annual,
     price_lifetime
   } = (_theme$theme_pricing = theme.theme_pricing) !== null && _theme$theme_pricing !== void 0 ? _theme$theme_pricing : {};
-  const wolfPrice = (_ref = (_ref2 = price_monthly !== null && price_monthly !== void 0 ? price_monthly : price_annual) !== null && _ref2 !== void 0 ? _ref2 : price_lifetime) !== null && _ref !== void 0 ? _ref : null;
-  const wolfPeriod = price_monthly ? '/mo' : price_annual ? '/yr' : price_lifetime ? ' lifetime' : null;
-  const hasSaving = wolfPrice && tf_price && wolfPrice < tf_price;
-  if (!tf_price && !wolfPrice) return null;
+  if (!tf_price && !price_annual && !price_monthly && !price_lifetime) return null;
+  const hasSaving = price_annual && tf_price && price_annual < tf_price;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box"
   }, tf_price && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-price-box__tf"
+    className: "wolf-theme-price-box__reference"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-price-box__tf-label"
+    className: "wolf-theme-price-box__reference-label"
   }, "On ThemeForest"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-price-box__tf-price"
-  }, "$", tf_price)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__reference-price"
+  }, "$", tf_price)), price_annual || price_monthly || price_lifetime ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__wolf"
-  }, wolfPrice ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, hasSaving && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-price-box__saving"
-  }, "Save $", Math.round(tf_price - wolfPrice)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-price-box__amount"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("sup", null, "$"), wolfPrice, wolfPeriod && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-price-box__period"
-  }, wolfPeriod))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, price_annual ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__hero"
+  }, hasSaving && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__badge"
+  }, "Best value \u2014 save $", Math.round(tf_price - price_annual)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__hero-amount"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("sup", null, "$"), price_annual, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__hero-period"
+  }, "/year"))) : price_lifetime ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__hero"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__hero-amount"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("sup", null, "$"), price_lifetime, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__hero-period"
+  }, " lifetime"))) : null, price_monthly && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__secondary"
+  }, "or ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "$", price_monthly), "/mo")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__coming-soon"
-  }, "New pricing coming soon")));
+  }, "New pricing coming soon"));
 }
 
 /***/ },

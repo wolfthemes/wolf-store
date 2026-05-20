@@ -1,79 +1,105 @@
 // ── ThemePriceBox ─────────────────────────────────────────────────────────────
 
 .wolf-theme-price-box {
+    padding: 20px;
+    border: 1px solid var(--theme-border-color);
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    padding: 20px;
-    margin-bottom: 12px;
-    border: 1px solid var(--theme-border-color);
+    gap: 12px;
 
-    // TF struck-through row
-    &__tf {
+    // ── Reference (TF struck) ─────────────────────────────────────────────────
+
+    &__reference {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        opacity: 0.5;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--theme-border-color);
     }
 
-    &__tf-label {
+    &__reference-label {
         font-size: 0.75rem;
+        opacity: 0.45;
     }
 
-    &__tf-price {
+    &__reference-price {
         font-size: 0.85rem;
         font-weight: 600;
+        opacity: 0.45;
         text-decoration: line-through;
     }
 
-    // WolfThemes featured price
+    // ── Wolf pricing ──────────────────────────────────────────────────────────
+
     &__wolf {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 8px;
     }
 
-    &__saving {
+    // ── Hero (annual) ─────────────────────────────────────────────────────────
+
+    &__hero {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__badge {
         display: inline-block;
         align-self: flex-start;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         font-weight: 700;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
-        padding: 2px 7px;
+        padding: 3px 8px;
         background: var(--checkmark-color);
         color: #fff;
-        margin-bottom: 4px;
     }
 
-    &__amount {
+    &__hero-amount {
         display: flex;
         align-items: baseline;
-        gap: 3px;
+        gap: 2px;
         line-height: 1;
-        font-size: 2.4rem;
-        font-weight: 700;
         color: var(--strong-color);
 
+        font-size: 3rem;
+        font-weight: 700;
+
         sup {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 400;
             align-self: flex-start;
-            margin-top: 6px;
+            margin-top: 8px;
         }
     }
 
-    &__period {
-        font-size: 0.85rem;
+    &__hero-period {
+        font-size: 1rem;
         font-weight: 400;
-        opacity: 0.6;
+        opacity: 0.55;
         margin-left: 2px;
     }
 
+    // ── Secondary (monthly anchor) ────────────────────────────────────────────
+
+    &__secondary {
+        font-size: 0.8rem;
+        opacity: 0.55;
+
+        strong {
+            font-weight: 600;
+            opacity: 1;
+        }
+    }
+
+    // ── Coming soon ───────────────────────────────────────────────────────────
+
     &__coming-soon {
         font-size: 0.85rem;
-        opacity: 0.5;
+        opacity: 0.45;
         font-style: italic;
-        padding: 4px 0;
     }
 }

@@ -83,74 +83,90 @@
   flex-direction: column;
   margin-bottom: 32px;
 }
-.wolf-theme-ctas__btn--buy { /* primary CTA — no extra rules needed */ }
+.wolf-theme-ctas__btn--buy {
+  background: var(--accent-hover-color);
+}
 .wolf-theme-ctas__btn--demo { /* secondary CTA */ }
 
 .wolf-theme-price-box {
+  padding: 20px;
+  border: 1px solid var(--theme-border-color);
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 20px;
-  margin-bottom: 12px;
-  border: 1px solid var(--theme-border-color);
+  gap: 12px;
 }
-.wolf-theme-price-box__tf {
+.wolf-theme-price-box__reference {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0.5;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--theme-border-color);
 }
-.wolf-theme-price-box__tf-label {
+.wolf-theme-price-box__reference-label {
   font-size: 0.75rem;
+  opacity: 0.45;
 }
-.wolf-theme-price-box__tf-price {
+.wolf-theme-price-box__reference-price {
   font-size: 0.85rem;
   font-weight: 600;
+  opacity: 0.45;
   text-decoration: line-through;
 }
 .wolf-theme-price-box__wolf {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
-.wolf-theme-price-box__saving {
+.wolf-theme-price-box__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.wolf-theme-price-box__badge {
   display: inline-block;
   align-self: flex-start;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 2px 7px;
+  padding: 3px 8px;
   background: var(--checkmark-color);
   color: #fff;
-  margin-bottom: 4px;
 }
-.wolf-theme-price-box__amount {
+.wolf-theme-price-box__hero-amount {
   display: flex;
   align-items: baseline;
-  gap: 3px;
+  gap: 2px;
   line-height: 1;
-  font-size: 2.4rem;
-  font-weight: 700;
   color: var(--strong-color);
+  font-size: 3rem;
+  font-weight: 700;
 }
-.wolf-theme-price-box__amount sup {
-  font-size: 1rem;
+.wolf-theme-price-box__hero-amount sup {
+  font-size: 1.1rem;
   font-weight: 400;
   align-self: flex-start;
-  margin-top: 6px;
+  margin-top: 8px;
 }
-.wolf-theme-price-box__period {
-  font-size: 0.85rem;
+.wolf-theme-price-box__hero-period {
+  font-size: 1rem;
   font-weight: 400;
-  opacity: 0.6;
+  opacity: 0.55;
   margin-left: 2px;
+}
+.wolf-theme-price-box__secondary {
+  font-size: 0.8rem;
+  opacity: 0.55;
+}
+.wolf-theme-price-box__secondary strong {
+  font-weight: 600;
+  opacity: 1;
 }
 .wolf-theme-price-box__coming-soon {
   font-size: 0.85rem;
-  opacity: 0.5;
+  opacity: 0.45;
   font-style: italic;
-  padding: 4px 0;
 }
 
 .wolf-theme-sidebar__ctas {
