@@ -1,3 +1,6 @@
+
+import ThemePriceBox from './ThemePriceBox';
+
 export default function ThemeSidebar( { theme } ) {
     const version   = theme.theme_latest_version;
     const builder   = theme.theme_builder;
@@ -17,6 +20,9 @@ export default function ThemeSidebar( { theme } ) {
 
     return (
         <div className='wolf-theme-sidebar'>
+
+			{ /* Hero CTA box — top of sidebar */ }
+            <ThemePriceBox theme={ theme } />
 
             { /* CTAs */ }
             <div className='wolf-theme-sidebar__ctas'>

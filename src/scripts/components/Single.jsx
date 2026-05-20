@@ -2,6 +2,7 @@ import { useTheme } from './hooks/useTheme';
 import ThemeHero    from './ThemeHero';
 import ThemeFooter    from './ThemeFooter';
 import ThemeSidebar from './ThemeSidebar';
+import ThemePricing from './ThemePricing';
 
 export default function Single( { postId } ) {
     const { theme, loading, error } = useTheme( postId );
@@ -17,6 +18,7 @@ export default function Single( { postId } ) {
             <div className='wolf-theme-single__main'>
                 <ThemeHero theme={ theme } />
                 <ThemeFooter theme={ theme } />
+				<ThemePricing theme={ theme } />
             </div>
             <aside className='wolf-theme-single__sidebar'>
                 <ThemeSidebar theme={ theme } />

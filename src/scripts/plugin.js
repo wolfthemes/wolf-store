@@ -9,7 +9,6 @@ class WolfStore {
 	constructor() {
 		AutoBind(this)
 		this.RenderRoot()
-		console.log( 'start' )
 	}
 
 
@@ -17,7 +16,6 @@ class WolfStore {
 		const root = document.getElementById( 'wolf-store-root' );
 
 		if ( root ) {
-			console.log( "root div OK" )
 			const { type, postId } = root.dataset;
 			const app = createRoot( root );
 

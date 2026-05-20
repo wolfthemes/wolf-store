@@ -149,6 +149,17 @@ class Rest_Fields {
 			$data = Meta::get_theme_meta( $slug );
 			return $data['design_features'] ?? array();
 		} );
+
+		$this->register( 'theme_pricing', function ( $post ) {
+			$slug = Meta::get_theme_slug( $post['id'] );
+			$data = Meta::get_config( $slug );
+			return [
+				'tf_price'        => isset( $data['tf_price'] )        ? (float) $data['tf_price']        : null,
+				'price_monthly'   => isset( $data['price_monthly'] )   ? (float) $data['price_monthly']   : null,
+				'price_annual'    => isset( $data['price_annual'] )    ? (float) $data['price_annual']    : null,
+				'price_lifetime'  => isset( $data['price_lifetime'] )  ? (float) $data['price_lifetime']  : null,
+			];
+} );
 	}
 
 	/**

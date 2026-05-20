@@ -66,6 +66,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ThemeHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeHero */ "./src/scripts/components/ThemeHero.jsx");
 /* harmony import */ var _ThemeFooter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeFooter */ "./src/scripts/components/ThemeFooter.jsx");
 /* harmony import */ var _ThemeSidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeSidebar */ "./src/scripts/components/ThemeSidebar.jsx");
+/* harmony import */ var _ThemePricing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemePricing */ "./src/scripts/components/ThemePricing.jsx");
+
 
 
 
@@ -94,6 +96,8 @@ function Single({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: theme
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeFooter__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    theme: theme
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePricing__WEBPACK_IMPORTED_MODULE_5__["default"], {
     theme: theme
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
     className: "wolf-theme-single__sidebar"
@@ -290,6 +294,210 @@ function ThemeHero({
 
 /***/ },
 
+/***/ "./src/scripts/components/ThemePriceBox.jsx"
+/*!**************************************************!*\
+  !*** ./src/scripts/components/ThemePriceBox.jsx ***!
+  \**************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemePriceBox)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * ThemePriceBox
+ *
+ * Price display box at the top of the sidebar.
+ * Just the price — CTAs are handled separately by ThemeCTAs.
+ */
+function ThemePriceBox({
+  theme
+}) {
+  var _theme$theme_pricing, _ref, _ref2;
+  const {
+    tf_price,
+    price_monthly,
+    price_annual,
+    price_lifetime
+  } = (_theme$theme_pricing = theme.theme_pricing) !== null && _theme$theme_pricing !== void 0 ? _theme$theme_pricing : {};
+  const wolfPrice = (_ref = (_ref2 = price_monthly !== null && price_monthly !== void 0 ? price_monthly : price_annual) !== null && _ref2 !== void 0 ? _ref2 : price_lifetime) !== null && _ref !== void 0 ? _ref : null;
+  const wolfPeriod = price_monthly ? '/mo' : price_annual ? '/yr' : price_lifetime ? ' lifetime' : null;
+  const hasSaving = wolfPrice && tf_price && wolfPrice < tf_price;
+  if (!tf_price && !wolfPrice) return null;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box"
+  }, tf_price && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__tf"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__tf-label"
+  }, "On ThemeForest"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__tf-price"
+  }, "$", tf_price)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__wolf"
+  }, wolfPrice ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, hasSaving && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__saving"
+  }, "Save $", Math.round(tf_price - wolfPrice)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__amount"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("sup", null, "$"), wolfPrice, wolfPeriod && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__period"
+  }, wolfPeriod))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__coming-soon"
+  }, "New pricing coming soon")));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/ThemePricing.jsx"
+/*!*************************************************!*\
+  !*** ./src/scripts/components/ThemePricing.jsx ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemePricing)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * ThemePricing
+ *
+ * WolfThemes vs ThemeForest pricing comparison table.
+ * Renders at the bottom of the main column in Single.jsx.
+ * Gracefully handles unset Freemius prices with placeholder rows.
+ *
+ * @param {object} theme  Full theme REST object
+ */
+function ThemePricing({
+  theme
+}) {
+  const buyUrl = theme.theme_purchase_url;
+  const tfPrice = theme.theme_tf_price;
+  const priceMonthly = theme.theme_price_monthly;
+  const priceAnnual = theme.theme_price_annual;
+  const priceLifetime = theme.theme_price_lifetime;
+  const fmt = price => price ? `$${price}` : '—';
+  const rows = [{
+    feature: 'License',
+    wolf: 'Flexible (monthly, annual, lifetime)',
+    tf: 'Regular / Extended only',
+    wolfWins: true
+  }, {
+    feature: 'Updates',
+    wolf: '✓ Always included',
+    tf: '✓ 6 months included',
+    wolfWins: true
+  }, {
+    feature: 'Support',
+    wolf: '✓ Included',
+    tf: '✓ 6 months included',
+    wolfWins: false
+  }, {
+    feature: 'Money-back',
+    wolf: '✓ 7-day guarantee',
+    tf: '✗ No refunds',
+    wolfWins: true
+  }, {
+    feature: 'Direct from author',
+    wolf: '✓ Yes',
+    tf: '✗ Marketplace cut',
+    wolfWins: true
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "wolf-theme-pricing__title"
+  }, "Where to buy"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-pricing__intro"
+  }, "Get more flexibility buying directly from us."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__cards"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__card wolf-theme-pricing__card--wolf"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__card-header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__card-badge"
+  }, "Best value"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-pricing__card-title"
+  }, "WolfThemes.com"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-pricing__card-sub"
+  }, "Buy directly from the author")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__card-prices"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "Monthly"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, fmt(priceMonthly), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "/mo"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "Annual"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, fmt(priceAnnual), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "/yr"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "Lifetime"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, fmt(priceLifetime)))), buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: buyUrl,
+    className: "wolf-theme-pricing__card-cta theme-button-primary wolf-core-button-size-md",
+    rel: "noopener noreferrer"
+  }, "Purchase on WolfThemes")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__card wolf-theme-pricing__card--tf"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__card-header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-pricing__card-title"
+  }, "ThemeForest"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-pricing__card-sub"
+  }, "Available on the marketplace")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__card-prices"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "Regular license"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, fmt(tfPrice), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, " one-time"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--muted"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "Extended license"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, "\u2014")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--muted"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "Lifetime"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, "\u2717"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "https://themeforest.net/user/wolfthemes/portfolio",
+    className: "wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "View on ThemeForest"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", {
+    className: "wolf-theme-pricing__table"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", null, "\uD83D\uDC3A WolfThemes"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", null, "ThemeForest"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, rows.map((row, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", {
+    key: i,
+    className: row.wolfWins ? 'wolf-theme-pricing__row--win' : ''
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+    className: "wolf-theme-pricing__feature"
+  }, row.feature), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+    className: "wolf-theme-pricing__cell wolf-theme-pricing__cell--wolf"
+  }, row.wolf), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+    className: "wolf-theme-pricing__cell wolf-theme-pricing__cell--tf"
+  }, row.tf))))));
+}
+
+/***/ },
+
 /***/ "./src/scripts/components/ThemeSidebar.jsx"
 /*!*************************************************!*\
   !*** ./src/scripts/components/ThemeSidebar.jsx ***!
@@ -302,6 +510,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ThemePriceBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemePriceBox */ "./src/scripts/components/ThemePriceBox.jsx");
+
 
 function ThemeSidebar({
   theme
@@ -324,7 +534,9 @@ function ThemeSidebar({
   const forumUrl = `https://wolfthemes.com/support/`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePriceBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    theme: theme
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar__ctas"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
@@ -637,12 +849,10 @@ class WolfStore {
   constructor() {
     (0,auto_bind__WEBPACK_IMPORTED_MODULE_2__["default"])(this);
     this.RenderRoot();
-    console.log('start');
   }
   RenderRoot() {
     const root = document.getElementById('wolf-store-root');
     if (root) {
-      console.log("root div OK");
       const {
         type,
         postId

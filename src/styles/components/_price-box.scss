@@ -1,0 +1,79 @@
+// ── ThemePriceBox ─────────────────────────────────────────────────────────────
+
+.wolf-theme-price-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border: 1px solid var(--theme-border-color);
+
+    // TF struck-through row
+    &__tf {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 0.5;
+    }
+
+    &__tf-label {
+        font-size: 0.75rem;
+    }
+
+    &__tf-price {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: line-through;
+    }
+
+    // WolfThemes featured price
+    &__wolf {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__saving {
+        display: inline-block;
+        align-self: flex-start;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 2px 7px;
+        background: var(--checkmark-color);
+        color: #fff;
+        margin-bottom: 4px;
+    }
+
+    &__amount {
+        display: flex;
+        align-items: baseline;
+        gap: 3px;
+        line-height: 1;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--strong-color);
+
+        sup {
+            font-size: 1rem;
+            font-weight: 400;
+            align-self: flex-start;
+            margin-top: 6px;
+        }
+    }
+
+    &__period {
+        font-size: 0.85rem;
+        font-weight: 400;
+        opacity: 0.6;
+        margin-left: 2px;
+    }
+
+    &__coming-soon {
+        font-size: 0.85rem;
+        opacity: 0.5;
+        font-style: italic;
+        padding: 4px 0;
+    }
+}
