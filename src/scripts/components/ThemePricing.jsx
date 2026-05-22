@@ -113,7 +113,7 @@ export default function ThemePricing( { theme } ) {
                         </div>
                     </div>
                     <a
-                        href='https://themeforest.net/user/wolfthemes/portfolio'
+                        href='https://wlfthm.es/tf'
                         className='wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md'
                         target='_blank'
                         rel='noopener noreferrer'

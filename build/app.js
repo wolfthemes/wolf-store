@@ -705,7 +705,7 @@ function ThemePricing({
   }, "Lifetime"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
   }, "\u2717"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "https://themeforest.net/user/wolfthemes/portfolio",
+    href: "https://wlfthm.es/tf",
     className: "wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md",
     target: "_blank",
     rel: "noopener noreferrer"
