@@ -11,6 +11,8 @@
 
 namespace Wolf_Store\Frontend;
 
+use Wolf_Store\Core\Core;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -67,11 +69,12 @@ class Frontend_Handler {
 			return 'single-wolf_theme.php';
 		}
 
+		if ( is_page( \Wolf_Store\Core\Core::get_store_page_id() ) ) {
+			return 'archive-wolf_theme.php';
+		}
+
 		if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
-			$term = get_queried_object();
-			if ( $term ) {
-				return 'taxonomy-' . $term->taxonomy . '.php';
-			}
+			return 'archive-wolf_theme.php';
 		}
 
 		if ( is_post_type_archive( 'wolf_theme' ) ) {

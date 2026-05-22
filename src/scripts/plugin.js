@@ -16,7 +16,7 @@ class WolfStore {
         const root = document.getElementById( 'wolf-store-root' );
         if ( ! root ) return;
 
-        const { type, postId, taxonomy, term, termName } = root.dataset;
+        const { type, postId, taxonomy, term, termId, termName } = root.dataset;
         const app = createRoot( root );
 
         if ( 'single' === type ) {
@@ -28,6 +28,7 @@ class WolfStore {
                 <Archive
                     taxonomy={ taxonomy }
                     term={ term }
+					termId={ termId }
                     termName={ termName }
                 />
             );

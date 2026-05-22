@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function useThemes( { taxonomy = '', term = '', page = 1 } = {} ) {
+export function useThemes( { taxonomy = '', term = '', termId = 0, page = 1 } = {} ) {
     const [ themes,     setThemes     ] = useState( [] );
     const [ totalPages, setTotalPages ] = useState( 1 );
     const [ loading,    setLoading    ] = useState( true );
@@ -13,13 +13,13 @@ export function useThemes( { taxonomy = '', term = '', page = 1 } = {} ) {
         setError( null );
 
         const params = new URLSearchParams( {
-            _embed:   true,
+            _embed:   1,
             per_page: perPage,
             page,
         } );
 
-        if ( taxonomy && term ) {
-            params.set( taxonomy, term );
+        if ( taxonomy && termId ) {
+            params.set( taxonomy, termId );
         }
 
         fetch( `${ restUrl }?${ params }`, {
@@ -38,7 +38,7 @@ export function useThemes( { taxonomy = '', term = '', page = 1 } = {} ) {
                 setError( err.message );
                 setLoading( false );
             } );
-    }, [ taxonomy, term, page ] );
+    }, [ taxonomy, termId, page ] );
 
     return { themes, totalPages, loading, error };
 }

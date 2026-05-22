@@ -3,7 +3,7 @@ import { useThemes } from './hooks/useThemes';
 import ThemeCard   from './ThemeCard';
 import Pagination  from './Pagination';
 
-export default function Archive( { taxonomy, term, termName } ) {
+export default function Archive( { taxonomy, termId, term, termName } ) {
     const [ page, setPage ] = useState( 1 );
 
     const { pagination } = window.wolfStoreData;

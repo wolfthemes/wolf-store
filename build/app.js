@@ -24,6 +24,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Archive({
   taxonomy,
+  termId,
   term,
   termName
 }) {
@@ -920,6 +921,7 @@ __webpack_require__.r(__webpack_exports__);
 function useThemes({
   taxonomy = '',
   term = '',
+  termId = 0,
   page = 1
 } = {}) {
   const [themes, setThemes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
@@ -935,12 +937,12 @@ function useThemes({
     setLoading(true);
     setError(null);
     const params = new URLSearchParams({
-      _embed: true,
+      _embed: 1,
       per_page: perPage,
       page
     });
-    if (taxonomy && term) {
-      params.set(taxonomy, term);
+    if (taxonomy && termId) {
+      params.set(taxonomy, termId);
     }
     fetch(`${restUrl}?${params}`, {
       headers: {
@@ -957,7 +959,7 @@ function useThemes({
       setError(err.message);
       setLoading(false);
     });
-  }, [taxonomy, term, page]);
+  }, [taxonomy, termId, page]);
   return {
     themes,
     totalPages,
@@ -1150,6 +1152,7 @@ class WolfStore {
       postId,
       taxonomy,
       term,
+      termId,
       termName
     } = root.dataset;
     const app = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
@@ -1162,6 +1165,7 @@ class WolfStore {
       app.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Archive__WEBPACK_IMPORTED_MODULE_4__["default"], {
         taxonomy: taxonomy,
         term: term,
+        termId: termId,
         termName: termName
       }));
     }
