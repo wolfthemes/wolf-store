@@ -39,7 +39,7 @@ function Archive({
     error
   } = (0,_hooks_useThemes__WEBPACK_IMPORTED_MODULE_1__.useThemes)({
     taxonomy,
-    term,
+    termId: parseInt(termId) || 0,
     page
   });
   const handlePageChange = n => {

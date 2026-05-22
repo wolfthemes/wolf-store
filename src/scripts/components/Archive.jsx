@@ -6,8 +6,8 @@ import Pagination  from './Pagination';
 export default function Archive( { taxonomy, termId, term, termName } ) {
     const [ page, setPage ] = useState( 1 );
 
-    const { pagination } = window.wolfStoreData;
-    const { themes, totalPages, loading, error } = useThemes( { taxonomy, term, page } );
+	const { pagination } = window.wolfStoreData;
+	const { themes, totalPages, loading, error } = useThemes( { taxonomy, termId: parseInt( termId ) || 0, page } );
 
     const handlePageChange = ( n ) => {
         setPage( n );
