@@ -2,6 +2,79 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/scripts/components/Archive.jsx"
+/*!********************************************!*\
+  !*** ./src/scripts/components/Archive.jsx ***!
+  \********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Archive)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _hooks_useThemes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useThemes */ "./src/scripts/components/hooks/useThemes.js");
+/* harmony import */ var _ThemeCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCard */ "./src/scripts/components/ThemeCard.jsx");
+/* harmony import */ var _Pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Pagination */ "./src/scripts/components/Pagination.jsx");
+
+
+
+
+
+function Archive({
+  taxonomy,
+  term,
+  termName
+}) {
+  const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const {
+    pagination
+  } = window.wolfStoreData;
+  const {
+    themes,
+    totalPages,
+    loading,
+    error
+  } = (0,_hooks_useThemes__WEBPACK_IMPORTED_MODULE_1__.useThemes)({
+    taxonomy,
+    term,
+    page
+  });
+  const handlePageChange = n => {
+    setPage(n);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-archive"
+  }, termName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
+    className: "wolf-store-archive__header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+    className: "wolf-store-archive__title"
+  }, termName)), loading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-loading"
+  }, "Loading\u2026"), error && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-error"
+  }, error), !loading && !error && themes.length === 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-store-archive__empty"
+  }, "No themes found."), !loading && themes.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-archive__grid"
+  }, themes.map(theme => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    key: theme.id,
+    theme: theme
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    page: page,
+    totalPages: totalPages,
+    onChange: handlePageChange,
+    type: pagination
+  })));
+}
+
+/***/ },
+
 /***/ "./src/scripts/components/ElementorContent.jsx"
 /*!*****************************************************!*\
   !*** ./src/scripts/components/ElementorContent.jsx ***!
@@ -46,6 +119,52 @@ function ElementorContent({
       __html: cleaned
     }
   });
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/Pagination.jsx"
+/*!***********************************************!*\
+  !*** ./src/scripts/components/Pagination.jsx ***!
+  \***********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Pagination)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function Pagination({
+  page,
+  totalPages,
+  onChange,
+  type
+}) {
+  if (totalPages <= 1) return null;
+  if ('numbers' === type) {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav", {
+      className: "wolf-store-pagination",
+      "aria-label": "Themes pagination"
+    }, page > 1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "wolf-store-pagination__btn wolf-store-pagination__btn--prev",
+      onClick: () => onChange(page - 1)
+    }, "\u2039"), Array.from({
+      length: totalPages
+    }, (_, i) => i + 1).map(n => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      key: n,
+      className: `wolf-store-pagination__btn${n === page ? ' wolf-store-pagination__btn--active' : ''}`,
+      onClick: () => onChange(n),
+      "aria-current": n === page ? 'page' : undefined
+    }, n)), page < totalPages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "wolf-store-pagination__btn wolf-store-pagination__btn--next",
+      onClick: () => onChange(page + 1)
+    }, "\u203A"));
+  }
+
+  // 'none' or anything else — no pagination UI
+  return null;
 }
 
 /***/ },
@@ -149,6 +268,104 @@ function ThemeCTAs({
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Live Demo"));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/ThemeCard.jsx"
+/*!**********************************************!*\
+  !*** ./src/scripts/components/ThemeCard.jsx ***!
+  \**********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeCard)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * ThemeCard
+ *
+ * Used in archive grids and the (future) Elementor widget.
+ * Pulls from the same REST fields as Single.jsx.
+ *
+ * @param {object} theme  Full theme REST object
+ */
+function ThemeCard({
+  theme
+}) {
+  var _theme$_embedded$wpT, _theme$theme_pricing, _ref, _ref2;
+  const title = theme.title?.rendered;
+  const permalink = theme.link;
+  const thumbnail = theme.theme_thumbnail;
+  const tagline = theme.theme_short_description;
+  const demoUrl = theme.theme_demo_url;
+  const buyUrl = theme.theme_purchase_url;
+  const categories = (_theme$_embedded$wpT = theme._embedded?.['wp:term']?.[0]) !== null && _theme$_embedded$wpT !== void 0 ? _theme$_embedded$wpT : [];
+  const version = theme.theme_latest_version;
+  const {
+    tf_price,
+    price_monthly,
+    price_annual,
+    price_lifetime
+  } = (_theme$theme_pricing = theme.theme_pricing) !== null && _theme$theme_pricing !== void 0 ? _theme$theme_pricing : {};
+  const heroPrice = (_ref = (_ref2 = price_annual !== null && price_annual !== void 0 ? price_annual : price_lifetime) !== null && _ref2 !== void 0 ? _ref2 : price_monthly) !== null && _ref !== void 0 ? _ref : null;
+  const heroPeriod = price_annual ? '/yr' : price_lifetime ? ' lifetime' : price_monthly ? '/mo' : '';
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {
+    className: "wolf-theme-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: permalink,
+    className: "wolf-theme-card__thumbnail-link",
+    tabIndex: "-1",
+    "aria-hidden": "true"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-card__thumbnail"
+  }, thumbnail ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: thumbnail,
+    alt: title,
+    loading: "lazy"
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-card__thumbnail-placeholder"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-card__body"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "wolf-theme-card__title"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: permalink
+  }, title)), tagline && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-card__tagline"
+  }, tagline), categories.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-card__cats"
+  }, categories.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    key: term.id,
+    href: term.link,
+    className: "wolf-theme-card__cat"
+  }, term.name)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("footer", {
+    className: "wolf-theme-card__footer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-card__price"
+  }, heroPrice ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-card__price-main"
+  }, "$", heroPrice, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-card__price-period"
+  }, heroPeriod)), tf_price && tf_price > heroPrice && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-card__price-tf"
+  }, "$", tf_price, " on TF")) : tf_price ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-card__price-main"
+  }, "$", tf_price) : null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-card__ctas"
+  }, demoUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: demoUrl,
+    className: "theme-button-secondary wolf-theme-card__btn wolf-theme-card__btn--demo",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Demo"), buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: buyUrl,
+    className: "theme-button-primary wolf-theme-card__btn wolf-theme-card__btn--buy",
+    rel: "noopener noreferrer"
+  }, "Buy"))));
 }
 
 /***/ },
@@ -687,6 +904,70 @@ function useTheme(postId) {
 
 /***/ },
 
+/***/ "./src/scripts/components/hooks/useThemes.js"
+/*!***************************************************!*\
+  !*** ./src/scripts/components/hooks/useThemes.js ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useThemes: () => (/* binding */ useThemes)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function useThemes({
+  taxonomy = '',
+  term = '',
+  page = 1
+} = {}) {
+  const [themes, setThemes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [totalPages, setTotalPages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  const [error, setError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const {
+    restUrl,
+    restNonce,
+    perPage
+  } = window.wolfStoreData;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setLoading(true);
+    setError(null);
+    const params = new URLSearchParams({
+      _embed: true,
+      per_page: perPage,
+      page
+    });
+    if (taxonomy && term) {
+      params.set(taxonomy, term);
+    }
+    fetch(`${restUrl}?${params}`, {
+      headers: {
+        'X-WP-Nonce': restNonce
+      }
+    }).then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setTotalPages(parseInt(res.headers.get('X-WP-Total-Pages')) || 1);
+      return res.json();
+    }).then(data => {
+      setThemes(data);
+      setLoading(false);
+    }).catch(err => {
+      setError(err.message);
+      setLoading(false);
+    });
+  }, [taxonomy, term, page]);
+  return {
+    themes,
+    totalPages,
+    loading,
+    error
+  };
+}
+
+/***/ },
+
 /***/ "react"
 /*!************************!*\
   !*** external "React" ***!
@@ -849,6 +1130,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var auto_bind__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! auto-bind */ "./node_modules/auto-bind/index.js");
 /* harmony import */ var _components_Single__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Single */ "./src/scripts/components/Single.jsx");
+/* harmony import */ var _components_Archive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Archive */ "./src/scripts/components/Archive.jsx");
+
 
 
 
@@ -861,17 +1144,26 @@ class WolfStore {
   }
   RenderRoot() {
     const root = document.getElementById('wolf-store-root');
-    if (root) {
-      const {
-        type,
-        postId
-      } = root.dataset;
-      const app = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
-      if ('single' === type) {
-        app.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Single__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          postId: postId
-        }));
-      }
+    if (!root) return;
+    const {
+      type,
+      postId,
+      taxonomy,
+      term,
+      termName
+    } = root.dataset;
+    const app = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
+    if ('single' === type) {
+      app.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Single__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        postId: postId
+      }));
+    }
+    if ('archive' === type) {
+      app.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Archive__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        taxonomy: taxonomy,
+        term: term,
+        termName: termName
+      }));
     }
   }
 }

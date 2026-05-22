@@ -1,0 +1,62 @@
+// ── Archive grid ──────────────────────────────────────────────────────────────
+
+.wolf-store-archive {
+    margin: 40px auto;
+    max-width: 1400px;
+
+    &__header {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat( auto-fill, minmax( 280px, 1fr ) );
+        gap: 24px;
+    }
+
+    &__empty {
+        opacity: 0.5;
+    }
+}
+
+// ── Pagination ────────────────────────────────────────────────────────────────
+
+.wolf-store-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 48px;
+
+    &__btn {
+        min-width: 36px;
+        height: 36px;
+        padding: 0 10px;
+        border: 1px solid var(--theme-border-color);
+        background: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: inherit;
+        transition: border-color 0.15s;
+
+        &:hover {
+            border-color: currentColor;
+        }
+
+        &--active {
+            border-color: currentColor;
+            font-weight: 700;
+        }
+
+        &--prev,
+        &--next {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+    }
+}
