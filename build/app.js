@@ -616,12 +616,12 @@ function ThemePricing({
   }, {
     feature: 'Updates',
     wolf: '✓ Always included',
-    tf: '✓ 6 months included',
+    tf: '✓ Included',
     wolfWins: true
   }, {
     feature: 'Support',
-    wolf: '✓ Included',
-    tf: '✓ 6 months included',
+    wolf: '✓ Always Included',
+    tf: '✓ 6 months only',
     wolfWins: false
   }, {
     feature: 'Money-back',
