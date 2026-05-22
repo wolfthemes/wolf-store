@@ -20,3 +20,13 @@ class Core {
 		return $page_id;
 	}
 }
+
+/**
+ * Legacy shim — wolf-core breadcrumb widget calls this theme function.
+ * Returns the store page ID as a safe fallback when the theme doesn't define it.
+ */
+if ( ! function_exists( 'wolf_themes_get_page_id' ) ) {
+    function wolf_themes_get_page_id( $page = '' ) {
+        return \Wolf_Store\Core\Core::get_store_page_id();
+    }
+}
