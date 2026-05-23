@@ -25,14 +25,14 @@ export default function ThemePricing( { theme } ) {
         },
         {
             feature: 'Updates',
-            wolf: '✓ Always included',
-            tf:   '✓ Included',
+            wolf: '✓ Always included - Regular updates',
+            tf:   '✓ Included - Only major updates',
             wolfWins: true,
         },
         {
             feature: 'Support',
-            wolf: '✓ Always Included',
-            tf:   '✓ 6 months only',
+            wolf: '✓ Always Included - 24hr max reply',
+            tf:   '✓ 6 months only - 48hr max reply',
             wolfWins: false,
         },
         {
@@ -44,7 +44,7 @@ export default function ThemePricing( { theme } ) {
         {
             feature: 'Direct from author',
             wolf: '✓ Yes',
-            tf:   '✗ Marketplace cut',
+            tf:   '✗ Marketplace cut :()',
             wolfWins: true,
         },
     ];
