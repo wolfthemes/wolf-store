@@ -50,7 +50,7 @@ class Options_Params {
 					'none'    => esc_html__( 'None', 'wolf-store' ),
 					'numbers' => esc_html__( 'Numbered', 'wolf-store' ),
 				),
-				'default' => 'list',
+				'default' => 'numbers',
 			),
 		);
 

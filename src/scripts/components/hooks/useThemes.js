@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 
-export function useThemes( { taxonomy = '', term = '', termId = 0, page = 1 } = {} ) {
+export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPageProp = undefined } = {} ) {
     const [ themes,     setThemes     ] = useState( [] );
     const [ totalPages, setTotalPages ] = useState( 1 );
     const [ loading,    setLoading    ] = useState( true );
     const [ error,      setError      ] = useState( null );
 
-    const { restUrl, restNonce, perPage } = window.wolfStoreData;
+    const { restUrl, restNonce, perPage: perPageGlobal } = window.wolfStoreData;
+	const perPage = parseInt( perPageProp ) || parseInt( perPageGlobal ) || 12;
 
     useEffect( () => {
         setLoading( true );
@@ -38,7 +39,7 @@ export function useThemes( { taxonomy = '', term = '', termId = 0, page = 1 } = 
                 setError( err.message );
                 setLoading( false );
             } );
-    }, [ taxonomy, termId, page ] );
+    }, [ taxonomy, termId, page, perPage ] );
 
     return { themes, totalPages, loading, error };
 }

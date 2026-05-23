@@ -25,13 +25,15 @@ __webpack_require__.r(__webpack_exports__);
 function Archive({
   taxonomy,
   termId,
-  term,
-  termName
+  termName,
+  perPage,
+  pagination: paginationProp
 }) {
   const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
   const {
-    pagination
+    pagination: paginationGlobal
   } = window.wolfStoreData;
+  const pagination = paginationProp || paginationGlobal;
   const {
     themes,
     totalPages,
@@ -40,7 +42,8 @@ function Archive({
   } = (0,_hooks_useThemes__WEBPACK_IMPORTED_MODULE_1__.useThemes)({
     taxonomy,
     termId: parseInt(termId) || 0,
-    page
+    page,
+    perPage: parseInt(perPage) || undefined
   });
   const handlePageChange = n => {
     setPage(n);
@@ -920,9 +923,9 @@ __webpack_require__.r(__webpack_exports__);
 
 function useThemes({
   taxonomy = '',
-  term = '',
   termId = 0,
-  page = 1
+  page = 1,
+  perPage: perPageProp = undefined
 } = {}) {
   const [themes, setThemes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [totalPages, setTotalPages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
@@ -931,8 +934,9 @@ function useThemes({
   const {
     restUrl,
     restNonce,
-    perPage
+    perPage: perPageGlobal
   } = window.wolfStoreData;
+  const perPage = perPageProp || perPageGlobal;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     setLoading(true);
     setError(null);
@@ -959,7 +963,7 @@ function useThemes({
       setError(err.message);
       setLoading(false);
     });
-  }, [taxonomy, termId, page]);
+  }, [taxonomy, termId, page, perPage]);
   return {
     themes,
     totalPages,
@@ -1152,7 +1156,8 @@ class WolfStore {
         taxonomy,
         termId,
         termName,
-        perPage
+        perPage,
+        pagination
       } = root.dataset;
       const app = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
       if ('single' === type) {
@@ -1163,10 +1168,10 @@ class WolfStore {
       if ('archive' === type) {
         app.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Archive__WEBPACK_IMPORTED_MODULE_4__["default"], {
           taxonomy: taxonomy,
-          term: '',
           termId: termId,
           termName: termName,
-          perPage: perPage
+          perPage: perPage,
+          pagination: pagination
         }));
       }
     });

@@ -3,11 +3,18 @@ import { useThemes } from './hooks/useThemes';
 import ThemeCard   from './ThemeCard';
 import Pagination  from './Pagination';
 
-export default function Archive( { taxonomy, termId, term, termName } ) {
+export default function Archive( { taxonomy, termId, termName, perPage, pagination: paginationProp } ) {
     const [ page, setPage ] = useState( 1 );
 
-	const { pagination } = window.wolfStoreData;
-	const { themes, totalPages, loading, error } = useThemes( { taxonomy, termId: parseInt( termId ) || 0, page } );
+    const { pagination: paginationGlobal } = window.wolfStoreData;
+    const pagination = paginationProp || paginationGlobal;
+
+    const { themes, totalPages, loading, error } = useThemes( {
+        taxonomy,
+        termId: parseInt( termId ) || 0,
+        page,
+        perPage: parseInt( perPage ) || undefined,
+    } );
 
     const handlePageChange = ( n ) => {
         setPage( n );
