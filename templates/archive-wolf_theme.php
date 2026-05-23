@@ -22,7 +22,6 @@ if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
 
 get_header();
 ?>
-
 <div id="wolf-store-root"
     data-type="archive"
     data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
