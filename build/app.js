@@ -52,6 +52,11 @@ function Archive({
       behavior: 'smooth'
     });
   };
+  console.log({
+    totalPages,
+    pagination,
+    themes: themes.length
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-archive"
   }, termName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
