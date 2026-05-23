@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 $taxonomy  = '';
 $term      = '';
-$term_id   = '';
+$term_id   = 0;
 $term_name = '';
 
 if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
@@ -22,6 +22,7 @@ if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
 
 get_header();
 ?>
+
 <div id="wolf-store-root"
     data-type="archive"
     data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
@@ -30,4 +31,5 @@ get_header();
     data-term-name="<?php echo esc_attr( $term_name ); ?>"
     data-pagination="<?php echo esc_attr( \Wolf_Store\Admin\Options::get_option( 'pagination', 'numbers' ) ); ?>">
 </div>
+
 <?php get_footer(); ?>
