@@ -2,6 +2,7 @@
 dev
 pack
 bak
+build
 node_modules
 vendor
 
