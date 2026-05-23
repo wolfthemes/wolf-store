@@ -12,28 +12,28 @@ class WolfStore {
         this.RenderRoot();
     }
 
-    RenderRoot() {
-        const root = document.getElementById( 'wolf-store-root' );
-        if ( ! root ) return;
+	RenderRoot() {
+		document.querySelectorAll( '[data-type="archive"], [data-type="single"]' ).forEach( root => {
+			const { type, postId, taxonomy, termId, termName, perPage } = root.dataset;
+			const app = createRoot( root );
 
-        const { type, postId, taxonomy, term, termId, termName } = root.dataset;
-        const app = createRoot( root );
+			if ( 'single' === type ) {
+				app.render( <Single postId={ postId } /> );
+			}
 
-        if ( 'single' === type ) {
-            app.render( <Single postId={ postId } /> );
-        }
-
-        if ( 'archive' === type ) {
-            app.render(
-                <Archive
-                    taxonomy={ taxonomy }
-                    term={ term }
-					termId={ termId }
-                    termName={ termName }
-                />
-            );
-        }
-    }
+			if ( 'archive' === type ) {
+				app.render(
+					<Archive
+						taxonomy={ taxonomy }
+						term={ '' }
+						termId={ termId }
+						termName={ termName }
+						perPage={ perPage }
+					/>
+				);
+			}
+		} );
+	}
 }
 
 new WolfStore();

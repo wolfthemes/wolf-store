@@ -77,7 +77,7 @@ class Rest_Fields {
 			return $data['tested'] ?? '';
 		} );
 
-		$this->register( 'theme_short_description', function( $post ) {
+		$this->register( 'theme_short_description', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_changelog_data( $slug );
 			return $data['description'] ?? '';
@@ -153,13 +153,13 @@ class Rest_Fields {
 		$this->register( 'theme_pricing', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_config( $slug );
-			return [
+			return array(
 				'tf_price'        => isset( $data['tf_price'] )        ? (float) $data['tf_price']        : null,
 				'price_monthly'   => isset( $data['price_monthly'] )   ? (float) $data['price_monthly']   : null,
 				'price_annual'    => isset( $data['price_annual'] )    ? (float) $data['price_annual']    : null,
 				'price_lifetime'  => isset( $data['price_lifetime'] )  ? (float) $data['price_lifetime']  : null,
-			];
-} );
+			);
+		} );
 	}
 
 	/**

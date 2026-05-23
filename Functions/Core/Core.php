@@ -20,4 +20,3 @@ class Core {
 		return $page_id;
 	}
 }
-

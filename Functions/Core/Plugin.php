@@ -77,6 +77,9 @@ class Plugin {
 		// REST fields — always registered, admin and frontend
 		new Rest_Fields();
 
+		// Elementor widgets — must register in both admin and frontend
+		$this->register_elementor_widgets();
+
 		if ( $this->is_request( 'admin' ) ) {
 			$this->admin_handler = new Admin_Handler();
 		}
@@ -99,6 +102,28 @@ class Plugin {
 			default:
 				return false;
 		}
+	}
+
+	private function register_elementor_widgets(): void {
+		if ( ! did_action( 'elementor/loaded' ) ) {
+			add_action( 'elementor/loaded', array( $this, 'hook_elementor_widgets' ) );
+		} else {
+			$this->hook_elementor_widgets();
+		}
+	}
+
+	public function hook_elementor_widgets(): void {
+		add_action( 'elementor/elements/categories_registered', function ( $elements_manager ) {
+			$elements_manager->add_category( 'wolf-store', array(
+				'title' => esc_html__( 'Wolf Store', 'wolf-store' ),
+				'icon'  => 'fa fa-shopping-bag',
+			) );
+		} );
+
+		add_action( 'elementor/widgets/register', function ( $widgets_manager ) {
+			require_once WOLF_STORE_DIR . '/Functions/Elementor/Theme_Index_Widget.php';
+			$widgets_manager->register( new \Wolf_Store\Elementor\Theme_Index_Widget() );
+		} );
 	}
 
 	public function flush_rewrite_rules(): void {
