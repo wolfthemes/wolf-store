@@ -28,8 +28,8 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
         } )
             .then( res => {
 				if ( ! res.ok ) throw new Error( `HTTP ${ res.status }` );
-				const pages = parseInt( res.headers.get( 'X-WP-Total-Pages' ) ) || 1;
-				console.log( 'X-WP-Total-Pages header:', res.headers.get( 'X-WP-Total-Pages' ), '→', pages );
+				const total = parseInt( res.headers.get( 'X-Wp-Total' ) ) || 0;
+				const pages = total ? Math.ceil( total / perPage ) : 1;
 				setTotalPages( pages );
 				return res.json();
 			} )
