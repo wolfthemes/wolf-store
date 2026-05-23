@@ -20,6 +20,4 @@ jobs:
           script: |
             cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
             git pull origin master
-            npm ci --include=dev
-            ./node_modules/.bin/wp-scripts build
             composer install --no-dev --optimize-autoloader

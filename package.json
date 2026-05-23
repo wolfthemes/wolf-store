@@ -32,6 +32,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "@wordpress/i18n": "^4.29.0",
+    "@wordpress/scripts": "^24.6.0",
     "@wordpress/stylelint-config": "^19.1.0",
     "accordion-js": "^3.3.4",
     "auto-bind": "^5.0.1",
