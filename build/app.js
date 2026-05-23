@@ -936,7 +936,7 @@ function useThemes({
     restNonce,
     perPage: perPageGlobal
   } = window.wolfStoreData;
-  const perPage = perPageProp || perPageGlobal;
+  const perPage = parseInt(perPageProp) || parseInt(perPageGlobal) || 12;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     setLoading(true);
     setError(null);

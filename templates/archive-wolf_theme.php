@@ -24,10 +24,11 @@ get_header();
 ?>
 
 <div id="wolf-store-root"
-	data-type="archive"
-	data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
-	data-term="<?php echo esc_attr( $term ); ?>"
-	data-term-id="<?php echo absint( $term_id ); ?>"
-	data-term-name="<?php echo esc_attr( $term_name ); ?>">
+    data-type="archive"
+    data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
+    data-term="<?php echo esc_attr( $term ); ?>"
+    data-term-id="<?php echo absint( $term_id ); ?>"
+    data-term-name="<?php echo esc_attr( $term_name ); ?>"
+    data-pagination="<?php echo esc_attr( \Wolf_Store\Admin\Options::get_option( 'pagination', 'numbers' ) ); ?>">
 </div>
 <?php get_footer(); ?>
