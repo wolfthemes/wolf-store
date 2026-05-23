@@ -5,8 +5,6 @@ import Pagination  from './Pagination';
 
 export default function Archive( { taxonomy, termId, termName, perPage, pagination: paginationProp } ) {
     const [ page, setPage ] = useState( 1 );
-	console.log( { totalpages, pagination, themes: themes.length } );
-
     const { pagination: paginationGlobal } = window.wolfStoreData;
     const pagination = paginationProp || paginationGlobal;
 
@@ -21,7 +19,6 @@ export default function Archive( { taxonomy, termId, termName, perPage, paginati
         setPage( n );
         window.scrollTo( { top: 0, behavior: 'smooth' } );
     };
-
 
     return (
         <div className='wolf-store-archive'>

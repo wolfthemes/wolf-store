@@ -27,10 +27,12 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
             headers: { 'X-WP-Nonce': restNonce },
         } )
             .then( res => {
-                if ( ! res.ok ) throw new Error( `HTTP ${ res.status }` );
-                setTotalPages( parseInt( res.headers.get( 'X-WP-Total-Pages' ) ) || 1 );
-                return res.json();
-            } )
+				if ( ! res.ok ) throw new Error( `HTTP ${ res.status }` );
+				const pages = parseInt( res.headers.get( 'X-WP-Total-Pages' ) ) || 1;
+				console.log( 'X-WP-Total-Pages header:', res.headers.get( 'X-WP-Total-Pages' ), '→', pages );
+				setTotalPages( pages );
+				return res.json();
+			} )
             .then( data => {
                 setThemes( data );
                 setLoading( false );

@@ -52,11 +52,6 @@ function Archive({
       behavior: 'smooth'
     });
   };
-  console.log({
-    totalPages,
-    pagination,
-    themes: themes.length
-  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-archive"
   }, termName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
@@ -959,7 +954,9 @@ function useThemes({
       }
     }).then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setTotalPages(parseInt(res.headers.get('X-WP-Total-Pages')) || 1);
+      const pages = parseInt(res.headers.get('X-WP-Total-Pages')) || 1;
+      console.log('X-WP-Total-Pages header:', res.headers.get('X-WP-Total-Pages'), '→', pages);
+      setTotalPages(pages);
       return res.json();
     }).then(data => {
       setThemes(data);
