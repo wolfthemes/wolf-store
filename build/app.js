@@ -954,7 +954,7 @@ function useThemes({
       }
     }).then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const total = parseInt(res.headers.get('X-WP-Total')) || 0;
+      const total = parseInt(res.headers.get('X-Wp-Total')) || 0;
       const pages = total ? Math.ceil(total / perPage) : 1;
       setTotalPages(pages);
       return res.json();
