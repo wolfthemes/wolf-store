@@ -98,6 +98,10 @@ class Hooks {
 			$classes[] = 'store-page';
 		}
 
+		if ( is_term( 'theme_cat' ) || is_term( 'theme_tag' ) ) {
+			$classes[] = 'store-category-page';
+		}
+
 		if (
 			! is_singular( 'wolf_theme' )
 			&& ( 'wolf_theme' == get_post_type() || is_page( Core::get_store_page_id() ) )
