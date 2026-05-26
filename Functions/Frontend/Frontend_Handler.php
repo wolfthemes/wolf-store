@@ -49,7 +49,6 @@ class Frontend_Handler {
 		new Enqueues();
 	}
 
-
 	public function template_loader( string $template ): string {
 		$file = $this->resolve_template_file();
 		if ( $file ) {
