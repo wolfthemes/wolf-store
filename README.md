@@ -100,6 +100,20 @@ npm run start
 npm run build
 ```
 
+### Deployment
+
+Deployment is automated via GitHub Actions. Any push to the `master` branch triggers a workflow that SSHs into my server and runs `git pull` + `composer install` on the staging environment.
+
+```
+.github/workflows/deploy.yml
+```
+
+Secrets required in the GitHub repository:
+- `SSH_HOST`
+- `SSH_USER`
+- `SSH_PRIVATE_KEY`
+- `SSH_PORT`
+
 ### REST API
 
 The React frontend consumes the standard WP REST API endpoint:
