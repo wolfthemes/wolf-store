@@ -94,10 +94,10 @@ npm install
 
 ```bash
 # Development with watch + BrowserSync
-npm run start --theme=wolf-store
+npm run start
 
 # Production build
-npm run build --theme=wolf-store
+npm run build
 ```
 
 ### REST API
