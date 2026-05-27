@@ -277,12 +277,12 @@
 }
 .wolf-theme-price-box__reference-label {
   font-size: 0.75rem;
-  opacity: 0.45;
+  opacity: 0.7;
 }
 .wolf-theme-price-box__reference-price {
   font-size: 0.85rem;
   font-weight: 600;
-  opacity: 0.45;
+  opacity: 0.7;
   text-decoration: line-through;
 }
 .wolf-theme-price-box__wolf {
@@ -500,7 +500,7 @@
   position: relative;
 }
 .wolf-theme-pricing__card--tf {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 .wolf-theme-pricing__card-header {
   display: flex;
@@ -526,7 +526,6 @@
 }
 .wolf-theme-pricing__card-sub {
   font-size: 0.8rem;
-  opacity: 0.5;
   margin: 0;
 }
 .wolf-theme-pricing__card-prices {
@@ -554,9 +553,6 @@
 }
 .wolf-theme-pricing__plan--muted {
   opacity: 0.4;
-}
-.wolf-theme-pricing__plan-label {
-  opacity: 0.7;
 }
 .wolf-theme-pricing__plan-price {
   font-weight: 700;
@@ -601,7 +597,7 @@
   font-weight: 500;
 }
 .wolf-theme-pricing__cell--tf {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .wolf-theme-pricing__row--win .wolf-theme-pricing__cell--wolf {
   color: var(--checkmark-color);

@@ -154,10 +154,11 @@ class Rest_Fields {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_config( $slug );
 			return array(
-				'tf_price'        => isset( $data['tf_price'] )        ? (float) $data['tf_price']        : null,
-				'price_monthly'   => isset( $data['price_monthly'] )   ? (float) $data['price_monthly']   : null,
-				'price_annual'    => isset( $data['price_annual'] )    ? (float) $data['price_annual']    : null,
-				'price_lifetime'  => isset( $data['price_lifetime'] )  ? (float) $data['price_lifetime']  : null,
+				'tf_price'            => isset( $data['tf_price'] )            ? (float) $data['tf_price']            : null,
+				'price_annual'        => isset( $data['price_annual'] )        ? (float) $data['price_annual']        : null,
+				'price_annual_3sites' => isset( $data['price_annual_3sites'] ) ? (float) $data['price_annual_3sites'] : null,
+				'price_monthly'       => isset( $data['price_monthly'] )       ? (float) $data['price_monthly']       : null,
+				'price_lifetime'      => isset( $data['price_lifetime'] )      ? (float) $data['price_lifetime']      : null,
 			);
 		} );
 	}

@@ -42,7 +42,7 @@
         }
 
         &--tf {
-            opacity: 0.7;
+            opacity: 0.8;
         }
     }
 
@@ -73,7 +73,7 @@
 
     &__card-sub {
         font-size: 0.8rem;
-        opacity: 0.5;
+        // opacity: 0.5;
         margin: 0;
     }
 
@@ -109,7 +109,7 @@
     }
 
     &__plan-label {
-        opacity: 0.7;
+        // opacity: 0.7;
     }
 
     &__plan-price {
@@ -159,7 +159,7 @@
         font-size: 0.85rem;
 
         &--wolf { font-weight: 500; }
-        &--tf   { opacity: 0.6; }
+        &--tf   { opacity: 0.7; }
     }
 
     &__row--win {

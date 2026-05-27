@@ -531,9 +531,9 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * ThemePriceBox
  *
- * Evaluation zone — price display only, no CTAs.
- * Annual is the hero, monthly shown as entry anchor below.
- * TF price struck at top sets the reference point.
+ * Price display only — no CTAs.
+ * Annual single-site is the hero. 3-site tier shown below.
+ * TF price struck at top sets the reference anchor.
  */
 function ThemePriceBox({
   theme
@@ -541,12 +541,11 @@ function ThemePriceBox({
   var _theme$theme_pricing;
   const {
     tf_price,
-    price_monthly,
     price_annual,
-    price_lifetime
+    price_annual_3sites
   } = (_theme$theme_pricing = theme.theme_pricing) !== null && _theme$theme_pricing !== void 0 ? _theme$theme_pricing : {};
-  if (!tf_price && !price_annual && !price_monthly && !price_lifetime) return null;
-  const hasSaving = price_annual && tf_price && price_annual < tf_price;
+  if (!tf_price && !price_annual) return null;
+  const saving = price_annual && tf_price ? Math.round(tf_price - price_annual) : 0;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box"
   }, tf_price && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -555,25 +554,25 @@ function ThemePriceBox({
     className: "wolf-theme-price-box__reference-label"
   }, "On ThemeForest"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-price-box__reference-price"
-  }, "$", tf_price)), price_annual || price_monthly || price_lifetime ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "$", tf_price)), price_annual ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__wolf"
-  }, price_annual ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__hero"
-  }, hasSaving && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, saving > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-price-box__badge"
-  }, "Best value \u2014 save $", Math.round(tf_price - price_annual)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Save $", saving, " \u2014 support always included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__hero-amount"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("sup", null, "$"), price_annual, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-price-box__hero-period"
-  }, "/year"))) : price_lifetime ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-price-box__hero"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-price-box__hero-amount"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("sup", null, "$"), price_lifetime, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-price-box__hero-period"
-  }, " lifetime"))) : null, price_monthly && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "/year")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-price-box__hero-label"
+  }, "1 site")), price_annual_3sites && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__secondary"
-  }, "or ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "$", price_monthly), "/mo")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__secondary-price"
+  }, "$", price_annual_3sites, "/yr"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-price-box__secondary-label"
+  }, "for 3 sites"))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__coming-soon"
   }, "New pricing coming soon"));
 }
@@ -596,45 +595,53 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * ThemePricing
  *
- * WolfThemes vs ThemeForest pricing comparison table.
- * Renders at the bottom of the main column in Single.jsx.
- * Gracefully handles unset Freemius prices with placeholder rows.
+ * WolfThemes vs ThemeForest pricing comparison.
+ * Annual-only model. Two tiers: 1 site and 3 sites.
+ * Pulls all prices from theme_pricing (REST field).
  *
  * @param {object} theme  Full theme REST object
  */
 function ThemePricing({
   theme
 }) {
+  var _theme$theme_pricing;
   const buyUrl = theme.theme_purchase_url;
-  const tfPrice = theme.theme_tf_price;
-  const priceMonthly = theme.theme_price_monthly;
-  const priceAnnual = theme.theme_price_annual;
-  const priceLifetime = theme.theme_price_lifetime;
+  const {
+    tf_price,
+    price_annual,
+    price_annual_3sites
+  } = (_theme$theme_pricing = theme.theme_pricing) !== null && _theme$theme_pricing !== void 0 ? _theme$theme_pricing : {};
   const fmt = price => price ? `$${price}` : '—';
+  const tfSaving = price_annual && tf_price ? Math.round(tf_price - price_annual) : null;
   const rows = [{
-    feature: 'License',
-    wolf: 'Flexible (monthly, annual, lifetime)',
-    tf: 'Regular / Extended only',
+    feature: 'Price',
+    wolf: price_annual ? `$${price_annual}/yr — updates & support forever` : '—',
+    tf: tf_price ? `$${tf_price} one-time + support renewal` : '—',
     wolfWins: true
   }, {
     feature: 'Updates',
-    wolf: '✓ Always included - Regular updates',
-    tf: '✓ Included - Only major updates',
-    wolfWins: true
-  }, {
-    feature: 'Support',
-    wolf: '✓ Always Included - 24hr max reply',
-    tf: '✓ 6 months only - 48hr max reply',
+    wolf: 'Always included',
+    tf: 'Included (major updates only)',
     wolfWins: false
   }, {
-    feature: 'Money-back',
-    wolf: '✓ 7-day guarantee',
-    tf: '✗ No refunds',
+    feature: 'Support',
+    wolf: 'Always included — reply within 24h',
+    tf: '6 months only — reply within 48h',
     wolfWins: true
   }, {
-    feature: 'Direct from author',
-    wolf: '✓ Yes',
-    tf: '✗ Marketplace cut :()',
+    feature: 'Multiple sites',
+    wolf: price_annual_3sites ? `3-site license at $${price_annual_3sites}/yr` : 'Available',
+    tf: 'Separate purchase per site',
+    wolfWins: true
+  }, {
+    feature: 'Money-back',
+    wolf: '7-day guarantee',
+    tf: 'No refunds',
+    wolfWins: true
+  }, {
+    feature: 'Buy direct',
+    wolf: 'Yes — from the author',
+    tf: 'Marketplace cut on every sale',
     wolfWins: true
   }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -643,7 +650,7 @@ function ThemePricing({
     className: "wolf-theme-pricing__title"
   }, "Where to buy"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "wolf-theme-pricing__intro"
-  }, "Get more flexibility buying directly from us."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Buy directly from us and get more for less \u2014 support never expires."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__cards"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__card wolf-theme-pricing__card--wolf"
@@ -655,31 +662,31 @@ function ThemePricing({
     className: "wolf-theme-pricing__card-title"
   }, "WolfThemes.com"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "wolf-theme-pricing__card-sub"
-  }, "Buy directly from the author")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Direct from the author")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__card-prices"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--hero"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-pricing__plan-meta"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-label"
+  }, "1 site"), tfSaving > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-saving"
+  }, "$", tfSaving, " less than ThemeForest")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-pricing__plan-price"
+  }, fmt(price_annual), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "/yr"))), price_annual_3sites && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__plan"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-label"
-  }, "Monthly"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "3 sites"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
-  }, fmt(priceMonthly), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "/mo"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-pricing__plan"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-pricing__plan-label"
-  }, "Annual"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-pricing__plan-price"
-  }, fmt(priceAnnual), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "/yr"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-pricing__plan"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-pricing__plan-label"
-  }, "Lifetime"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-pricing__plan-price"
-  }, fmt(priceLifetime)))), buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, fmt(price_annual_3sites), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "/yr"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-pricing__card-note"
+  }, "Updates & support included \u2014 always.")), buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
     className: "wolf-theme-pricing__card-cta theme-button-primary wolf-core-button-size-md",
     rel: "noopener noreferrer"
-  }, "Purchase on WolfThemes")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Get this theme")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__card wolf-theme-pricing__card--tf"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__card-header"
@@ -695,19 +702,19 @@ function ThemePricing({
     className: "wolf-theme-pricing__plan-label"
   }, "Regular license"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
-  }, fmt(tfPrice), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, " one-time"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, fmt(tf_price), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, " one-time"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--muted"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-label"
-  }, "Extended license"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "Support included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
-  }, "\u2014")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "6 months only")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--muted"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-label"
-  }, "Lifetime"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "Multi-site"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
-  }, "\u2717"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, "Not available"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: "https://wlfthm.es/tf",
     className: "wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md",
     target: "_blank",

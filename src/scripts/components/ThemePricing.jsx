@@ -1,50 +1,54 @@
 /**
  * ThemePricing
  *
- * WolfThemes vs ThemeForest pricing comparison table.
- * Renders at the bottom of the main column in Single.jsx.
- * Gracefully handles unset Freemius prices with placeholder rows.
+ * WolfThemes vs ThemeForest pricing comparison.
+ * Annual-only model. Two tiers: 1 site and 3 sites.
+ * Pulls all prices from theme_pricing (REST field).
  *
  * @param {object} theme  Full theme REST object
  */
 export default function ThemePricing( { theme } ) {
-    const buyUrl        = theme.theme_purchase_url;
-    const tfPrice       = theme.theme_tf_price;
-    const priceMonthly  = theme.theme_price_monthly;
-    const priceAnnual   = theme.theme_price_annual;
-    const priceLifetime = theme.theme_price_lifetime;
+    const buyUrl              = theme.theme_purchase_url;
+    const { tf_price, price_annual, price_annual_3sites } = theme.theme_pricing ?? {};
 
-    const fmt = ( price ) => price ? `$${ price }` : '—';
+    const fmt       = ( price ) => price ? `$${ price }` : '—';
+    const tfSaving  = price_annual && tf_price ? Math.round( tf_price - price_annual ) : null;
 
     const rows = [
         {
-            feature: 'License',
-            wolf: 'Flexible (monthly, annual, lifetime)',
-            tf:   'Regular / Extended only',
+            feature:  'Price',
+            wolf:     price_annual ? `$${ price_annual }/yr — updates & support forever` : '—',
+            tf:       tf_price ? `$${ tf_price } one-time + support renewal` : '—',
             wolfWins: true,
         },
         {
-            feature: 'Updates',
-            wolf: '✓ Always included - Regular updates',
-            tf:   '✓ Included - Only major updates',
-            wolfWins: true,
-        },
-        {
-            feature: 'Support',
-            wolf: '✓ Always Included - 24hr max reply',
-            tf:   '✓ 6 months only - 48hr max reply',
+            feature:  'Updates',
+            wolf:     'Always included',
+            tf:       'Included (major updates only)',
             wolfWins: false,
         },
         {
-            feature: 'Money-back',
-            wolf: '✓ 7-day guarantee',
-            tf:   '✗ No refunds',
+            feature:  'Support',
+            wolf:     'Always included — reply within 24h',
+            tf:       '6 months only — reply within 48h',
             wolfWins: true,
         },
         {
-            feature: 'Direct from author',
-            wolf: '✓ Yes',
-            tf:   '✗ Marketplace cut :()',
+            feature:  'Multiple sites',
+            wolf:     price_annual_3sites ? `3-site license at $${ price_annual_3sites }/yr` : 'Available',
+            tf:       'Separate purchase per site',
+            wolfWins: true,
+        },
+        {
+            feature:  'Money-back',
+            wolf:     '7-day guarantee',
+            tf:       'No refunds',
+            wolfWins: true,
+        },
+        {
+            feature:  'Buy direct',
+            wolf:     'Yes — from the author',
+            tf:       'Marketplace cut on every sale',
             wolfWins: true,
         },
     ];
@@ -54,7 +58,7 @@ export default function ThemePricing( { theme } ) {
 
             <h2 className='wolf-theme-pricing__title'>Where to buy</h2>
             <p className='wolf-theme-pricing__intro'>
-                Get more flexibility buying directly from us.
+                Buy directly from us and get more for less — support never expires.
             </p>
 
             { /* Price cards */ }
@@ -65,29 +69,49 @@ export default function ThemePricing( { theme } ) {
                     <div className='wolf-theme-pricing__card-header'>
                         <span className='wolf-theme-pricing__card-badge'>Best value</span>
                         <h3 className='wolf-theme-pricing__card-title'>WolfThemes.com</h3>
-                        <p className='wolf-theme-pricing__card-sub'>Buy directly from the author</p>
+                        <p className='wolf-theme-pricing__card-sub'>Direct from the author</p>
                     </div>
+
                     <div className='wolf-theme-pricing__card-prices'>
-                        <div className='wolf-theme-pricing__plan'>
-                            <span className='wolf-theme-pricing__plan-label'>Monthly</span>
-                            <span className='wolf-theme-pricing__plan-price'>{ fmt( priceMonthly ) }<small>/mo</small></span>
+
+                        { /* 1 site */ }
+                        <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--hero'>
+                            <div className='wolf-theme-pricing__plan-meta'>
+                                <span className='wolf-theme-pricing__plan-label'>1 site</span>
+                                { tfSaving > 0 && (
+                                    <span className='wolf-theme-pricing__plan-saving'>
+                                        ${ tfSaving } less than ThemeForest
+                                    </span>
+                                ) }
+                            </div>
+                            <span className='wolf-theme-pricing__plan-price'>
+                                { fmt( price_annual ) }<small>/yr</small>
+                            </span>
                         </div>
-                        <div className='wolf-theme-pricing__plan'>
-                            <span className='wolf-theme-pricing__plan-label'>Annual</span>
-                            <span className='wolf-theme-pricing__plan-price'>{ fmt( priceAnnual ) }<small>/yr</small></span>
-                        </div>
-                        <div className='wolf-theme-pricing__plan'>
-                            <span className='wolf-theme-pricing__plan-label'>Lifetime</span>
-                            <span className='wolf-theme-pricing__plan-price'>{ fmt( priceLifetime ) }</span>
-                        </div>
+
+                        { /* 3 sites */ }
+                        { price_annual_3sites && (
+                            <div className='wolf-theme-pricing__plan'>
+                                <span className='wolf-theme-pricing__plan-label'>3 sites</span>
+                                <span className='wolf-theme-pricing__plan-price'>
+                                    { fmt( price_annual_3sites ) }<small>/yr</small>
+                                </span>
+                            </div>
+                        ) }
+
+                        <p className='wolf-theme-pricing__card-note'>
+                            Updates &amp; support included — always.
+                        </p>
+
                     </div>
+
                     { buyUrl && (
                         <a
                             href={ buyUrl }
                             className='wolf-theme-pricing__card-cta theme-button-primary wolf-core-button-size-md'
                             rel='noopener noreferrer'
                         >
-                            Purchase on WolfThemes
+                            Get this theme
                         </a>
                     ) }
                 </div>
@@ -98,20 +122,24 @@ export default function ThemePricing( { theme } ) {
                         <h3 className='wolf-theme-pricing__card-title'>ThemeForest</h3>
                         <p className='wolf-theme-pricing__card-sub'>Available on the marketplace</p>
                     </div>
+
                     <div className='wolf-theme-pricing__card-prices'>
                         <div className='wolf-theme-pricing__plan'>
                             <span className='wolf-theme-pricing__plan-label'>Regular license</span>
-                            <span className='wolf-theme-pricing__plan-price'>{ fmt( tfPrice ) }<small> one-time</small></span>
+                            <span className='wolf-theme-pricing__plan-price'>
+                                { fmt( tf_price ) }<small> one-time</small>
+                            </span>
                         </div>
                         <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
-                            <span className='wolf-theme-pricing__plan-label'>Extended license</span>
-                            <span className='wolf-theme-pricing__plan-price'>—</span>
+                            <span className='wolf-theme-pricing__plan-label'>Support included</span>
+                            <span className='wolf-theme-pricing__plan-price'>6 months only</span>
                         </div>
                         <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
-                            <span className='wolf-theme-pricing__plan-label'>Lifetime</span>
-                            <span className='wolf-theme-pricing__plan-price'>✗</span>
+                            <span className='wolf-theme-pricing__plan-label'>Multi-site</span>
+                            <span className='wolf-theme-pricing__plan-price'>Not available</span>
                         </div>
                     </div>
+
                     <a
                         href='https://wlfthm.es/tf'
                         className='wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md'
@@ -124,7 +152,7 @@ export default function ThemePricing( { theme } ) {
 
             </div>
 
-            { /* Comparison rows */ }
+            { /* Comparison table */ }
             <table className='wolf-theme-pricing__table'>
                 <thead>
                     <tr>
