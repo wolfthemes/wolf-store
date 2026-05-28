@@ -89,6 +89,16 @@
         text-align: center;
         text-decoration: none;
         margin-top: auto;
+
+		&--wolf{
+
+			background:var(--accent-hover-color)!important;
+			&.theme-button-primary{
+				&:hover {
+					background: var(--accent-color) !important;
+				}
+			}
+		}
     }
 
     // ── Plans ────────────────────────────────────────────────────────────────
@@ -115,6 +125,7 @@
     &__plan-price {
         font-weight: 700;
         font-size: 1.1rem;
+		color:var(--strong-color);
 
         small {
             font-weight: 400;

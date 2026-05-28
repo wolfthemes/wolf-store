@@ -265,6 +265,82 @@
   gap: 10px;
 }
 
+.wolf-theme-skeleton-single__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.wolf-theme-skeleton-single__pricebox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--card-border-color);
+  margin-bottom: 12px;
+}
+.wolf-theme-skeleton-single__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.wolf-theme-skeleton-single__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--card-border-color);
+  padding-top: 16px;
+}
+
+.wolf-skeleton--single-title {
+  height: 32px;
+  width: 40%;
+}
+.wolf-skeleton--single-tagline {
+  height: 16px;
+  width: 60%;
+}
+.wolf-skeleton--single-thumbnail {
+  width: 100%;
+  aspect-ratio: 16/10;
+  margin: 8px 0;
+}
+.wolf-skeleton--single-line {
+  height: 13px;
+  width: 95%;
+}
+.wolf-skeleton--single-line-short {
+  width: 70%;
+}
+.wolf-skeleton--single-price-ref {
+  height: 13px;
+  width: 80%;
+}
+.wolf-skeleton--single-price-badge {
+  height: 22px;
+  width: 100%;
+}
+.wolf-skeleton--single-price-main {
+  height: 48px;
+  width: 55%;
+}
+.wolf-skeleton--single-price-sub {
+  height: 13px;
+  width: 65%;
+}
+.wolf-skeleton--single-btn {
+  height: 42px;
+  width: 100%;
+}
+.wolf-skeleton--single-btn-secondary {
+  opacity: 0.5;
+}
+.wolf-skeleton--single-meta-row {
+  height: 13px;
+  width: 100%;
+}
+
 .wolf-theme-hero__thumbnail {
   margin-bottom: 32px;
 }
@@ -652,6 +728,12 @@
   text-decoration: none;
   margin-top: auto;
 }
+.wolf-theme-pricing__card-cta--wolf {
+  background: var(--accent-hover-color) !important;
+}
+.wolf-theme-pricing__card-cta--wolf.theme-button-primary:hover {
+  background: var(--accent-color) !important;
+}
 .wolf-theme-pricing__plan {
   display: flex;
   justify-content: space-between;
@@ -669,6 +751,7 @@
 .wolf-theme-pricing__plan-price {
   font-weight: 700;
   font-size: 1.1rem;
+  color: var(--strong-color);
 }
 .wolf-theme-pricing__plan-price small {
   font-weight: 400;
@@ -731,7 +814,7 @@
 }
 .wolf-theme-testimonials__item {
   padding: 20px;
-  border: 1px solid var(--theme-border-color);
+  border: 1px solid var(--card-border-color);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -755,6 +838,57 @@
 .wolf-theme-testimonials__author {
   font-size: 0.78rem;
   font-style: italic;
+}
+
+.wolf-theme-brand-story {
+  margin-top: 60px;
+  padding: 40px;
+  border: 1px solid var(--card-border-color);
+  background: var(--theme-subtle-bg, #f9f9f9);
+}
+.wolf-theme-brand-story__inner {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+.wolf-theme-brand-story__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.wolf-theme-brand-story__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.wolf-theme-brand-story__text {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 620px;
+}
+.wolf-theme-brand-story__stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.wolf-theme-brand-story__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.wolf-theme-brand-story__stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--strong-color);
+}
+.wolf-theme-brand-story__stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /*# sourceMappingURL=styles.css.map*/

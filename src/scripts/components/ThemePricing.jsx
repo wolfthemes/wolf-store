@@ -9,6 +9,7 @@
  */
 export default function ThemePricing( { theme } ) {
     const buyUrl              = theme.theme_purchase_url;
+    const title           = theme.title?.rendered;
     const { tf_price, price_annual, price_annual_3sites } = theme.theme_pricing ?? {};
 
     const fmt       = ( price ) => price ? `$${ price }` : '—';
@@ -108,10 +109,10 @@ export default function ThemePricing( { theme } ) {
                     { buyUrl && (
                         <a
                             href={ buyUrl }
-                            className='wolf-theme-pricing__card-cta theme-button-primary wolf-core-button-size-md'
+                            className='wolf-theme-pricing__card-cta--wolf theme-button-primary wolf-core-button-size-md'
                             rel='noopener noreferrer'
                         >
-                            Get this theme
+                            Get { title }
                         </a>
                     ) }
                 </div>

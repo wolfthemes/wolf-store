@@ -4,11 +4,13 @@ import ThemeFooter    from './ThemeFooter';
 import ThemeSidebar from './ThemeSidebar';
 import ThemePricing from './ThemePricing';
 import ThemeChangelog from './ThemeChangelog';
+import ThemeBrandStory from './ThemeBrandStory';
+import SkeletonSingle from './SkeletonSingle';
 
 export default function Single( { postId } ) {
     const { theme, loading, error } = useTheme( postId );
 
-    if ( loading ) return <div className='wolf-store-loading'>Loading...</div>;
+    if ( loading ) return <SkeletonSingle />;
     if ( error )   return <div className='wolf-store-error'>{ error }</div>;
     if ( ! theme ) return null;
 
@@ -20,6 +22,7 @@ export default function Single( { postId } ) {
                 <ThemeHero theme={ theme } />
 				<ThemePricing theme={ theme } />
                 <ThemeFooter theme={ theme } />
+				<ThemeBrandStory />
 				<ThemeChangelog theme={ theme } />
             </div>
             <aside className='wolf-theme-single__sidebar'>

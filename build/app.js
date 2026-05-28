@@ -288,6 +288,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ThemeSidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeSidebar */ "./src/scripts/components/ThemeSidebar.jsx");
 /* harmony import */ var _ThemePricing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemePricing */ "./src/scripts/components/ThemePricing.jsx");
 /* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
+/* harmony import */ var _ThemeBrandStory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeBrandStory */ "./src/scripts/components/ThemeBrandStory.jsx");
+/* harmony import */ var _SkeletonSingle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SkeletonSingle */ "./src/scripts/components/SkeletonSingle.jsx");
+
+
 
 
 
@@ -303,9 +307,7 @@ function Single({
     loading,
     error
   } = (0,_hooks_useTheme__WEBPACK_IMPORTED_MODULE_1__.useTheme)(postId);
-  if (loading) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-store-loading"
-  }, "Loading...");
+  if (loading) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SkeletonSingle__WEBPACK_IMPORTED_MODULE_8__["default"], null);
   if (error) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-error"
   }, error);
@@ -321,7 +323,7 @@ function Single({
     theme: theme
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeFooter__WEBPACK_IMPORTED_MODULE_3__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeBrandStory__WEBPACK_IMPORTED_MODULE_7__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_6__["default"], {
     theme: theme
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
     className: "wolf-theme-single__sidebar"
@@ -375,6 +377,127 @@ function SkeletonCard() {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-skeleton wolf-skeleton--btn"
   }))));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/SkeletonSingle.jsx"
+/*!***************************************************!*\
+  !*** ./src/scripts/components/SkeletonSingle.jsx ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SkeletonSingle)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function SkeletonSingle() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single__main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-skeleton-single__hero"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-title"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-tagline"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-thumbnail"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-line"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-line wolf-skeleton--single-line-short"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-line"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
+    className: "wolf-theme-single__sidebar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-skeleton-single__pricebox"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-price-ref"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-price-badge"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-price-main"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-price-sub"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-skeleton-single__ctas"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-btn"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-skeleton wolf-skeleton--single-btn wolf-skeleton--single-btn-secondary"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-skeleton-single__meta"
+  }, Array.from({
+    length: 5
+  }).map((_, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: i,
+    className: "wolf-skeleton wolf-skeleton--single-meta-row"
+  })))));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/ThemeBrandStory.jsx"
+/*!****************************************************!*\
+  !*** ./src/scripts/components/ThemeBrandStory.jsx ***!
+  \****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeBrandStory)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ThemeBrandStory() {
+  const {
+    siteUrl
+  } = window.wolfStoreData;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__inner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__avatar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: `${siteUrl}/wp-content/plugins/wolf-store/assets/images/avatar.jpg`,
+    alt: "Constantin \u2014 WolfThemes founder"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-brand-story__title"
+  }, "Built by WolfThemes"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-brand-story__text"
+  }, "I'm Constantin, founder of WolfThemes. For over 14 years, I've been creating WordPress themes for musicians, artists, photographers, and creative professionals worldwide. My goal has always been simple \u2014 themes that feel genuinely premium, stay maintainable long-term, and come with real support when you need it."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-brand-story__text"
+  }, "When you buy from WolfThemes, you're buying directly from the person who built it. No marketplace middleman. Just direct support from the creator."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__stats"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-brand-story__stat-value"
+  }, "35,000+"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-brand-story__stat-label"
+  }, "customers")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-brand-story__stat-value"
+  }, "14+"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-brand-story__stat-label"
+  }, "years experience")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-brand-story__stat"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-brand-story__stat-value"
+  }, "4.5/5"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-brand-story__stat-label"
+  }, "avg rating \xB7 1,500+ reviews"))))));
 }
 
 /***/ },
@@ -751,6 +874,7 @@ function ThemePricing({
 }) {
   var _theme$theme_pricing;
   const buyUrl = theme.theme_purchase_url;
+  const title = theme.title?.rendered;
   const {
     tf_price,
     price_annual,
@@ -829,9 +953,9 @@ function ThemePricing({
     className: "wolf-theme-pricing__card-note"
   }, "Updates & support included \u2014 always.")), buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
-    className: "wolf-theme-pricing__card-cta theme-button-primary wolf-core-button-size-md",
+    className: "wolf-theme-pricing__card-cta--wolf theme-button-primary wolf-core-button-size-md",
     rel: "noopener noreferrer"
-  }, "Get this theme")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Get ", title)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__card wolf-theme-pricing__card--tf"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__card-header"
@@ -931,10 +1055,10 @@ function ThemeSidebar({
     className: "wolf-theme-sidebar__section-title"
   }, "What's Included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "wolf-theme-sidebar__benefits-list"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Product updates & improvements"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Customer support ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Lifetime theme access"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Ongoing updates included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Direct support from the creator ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-sidebar__info",
-    title: "Support is provided via our forum"
-  }, "\u24D8")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "7 days money-back guarantee"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    title: "Support provided via our forum"
+  }, "\u24D8")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "7-day money-back guarantee"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar__support"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "wolf-theme-sidebar__section-title"
