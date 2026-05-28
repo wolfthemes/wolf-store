@@ -18,8 +18,8 @@ export default function Single( { postId } ) {
         <div className='wolf-theme-single'>
             <div className='wolf-theme-single__main'>
                 <ThemeHero theme={ theme } />
-                <ThemeFooter theme={ theme } />
 				<ThemePricing theme={ theme } />
+                <ThemeFooter theme={ theme } />
 				<ThemeChangelog theme={ theme } />
             </div>
             <aside className='wolf-theme-single__sidebar'>
