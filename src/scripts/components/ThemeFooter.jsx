@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ThemeChangelog from './ThemeChangelog';
 import ThemeCTAs         from './ThemeCTAs';
 import ThemeTestimonials from './ThemeTestimonials';
 
@@ -22,8 +21,6 @@ export default function ThemeFooter( { theme } ) {
 			) }
 
             <ThemeTestimonials theme={ theme } />
-
-			<ThemeChangelog theme={ theme } />
         </div>
 	);
 }
