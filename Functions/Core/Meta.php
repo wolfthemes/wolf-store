@@ -113,7 +113,7 @@ class Meta {
 
 		// Convention CDN
 		$slug = self::get_theme_slug( $post_id );
-		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/thumb.jpg';
+		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/screenshot.jpg';
 
 		return apply_filters( 'wolf_store_thumbnail_url', esc_url( $url ), $slug, $post_id );
 	}
