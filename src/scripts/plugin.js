@@ -30,7 +30,7 @@ class WolfStore {
                         perPage={ perPage }
                         pagination={ pagination }
 						featuredOnly={ root.dataset.featuredOnly }
-                    />
+						showSidebar={ root.dataset.showSidebar !== 'false' }                    />
                 );
             }
         } );

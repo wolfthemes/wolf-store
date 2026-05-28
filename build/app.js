@@ -32,7 +32,8 @@ function Archive({
   termName,
   perPage,
   pagination: paginationProp,
-  featuredOnly
+  featuredOnly,
+  showSidebar = true
 }) {
   const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
   const [activeTaxonomy, setActiveTaxonomy] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(taxonomyProp || '');
@@ -75,7 +76,7 @@ function Archive({
     className: "wolf-store-archive__title"
   }, termName)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-archive__layout"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, showSidebar && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     activeTaxonomy: activeTaxonomy,
     activeTermId: activeTermId,
     onChange: handleFilterChange
@@ -1366,7 +1367,8 @@ class WolfStore {
           termName: termName,
           perPage: perPage,
           pagination: pagination,
-          featuredOnly: root.dataset.featuredOnly
+          featuredOnly: root.dataset.featuredOnly,
+          showSidebar: root.dataset.showSidebar !== 'false'
         }));
       }
     });

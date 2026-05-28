@@ -5,7 +5,7 @@ import SkeletonCard   from './SkeletonCard';
 import Pagination     from './Pagination';
 import Sidebar        from './Sidebar';
 
-export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, termName, perPage, pagination: paginationProp, featuredOnly } ) {
+export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, termName, perPage, pagination: paginationProp, featuredOnly , showSidebar = true} ) {
     const [ page,           setPage           ] = useState( 1 );
     const [ activeTaxonomy, setActiveTaxonomy ] = useState( taxonomyProp || '' );
     const [ activeTermId,   setActiveTermId   ] = useState( parseInt( termIdProp ) || 0 );
@@ -44,11 +44,13 @@ export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, t
 
             <div className='wolf-store-archive__layout'>
 
-                <Sidebar
-                    activeTaxonomy={ activeTaxonomy }
-                    activeTermId={ activeTermId }
-                    onChange={ handleFilterChange }
-                />
+                { showSidebar && (
+					<Sidebar
+						activeTaxonomy={ activeTaxonomy }
+						activeTermId={ activeTermId }
+						onChange={ handleFilterChange }
+					/>
+				) }
 
                 <div className='wolf-store-archive__content'>
 

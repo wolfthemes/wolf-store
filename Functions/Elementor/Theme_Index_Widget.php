@@ -87,7 +87,8 @@ class Theme_Index_Widget extends \Elementor\Widget_Base {
 			data-order="<?php echo esc_attr( $settings['order'] ?? 'DESC' ); ?>"
 			data-offset="<?php echo absint( $settings['offset'] ?? 0 ); ?>"
 			data-include="<?php echo esc_attr( $settings['include_ids'] ?? '' ); ?>"
-			data-exclude="<?php echo esc_attr( $settings['exclude_ids'] ?? '' ); ?>">
+			data-exclude="<?php echo esc_attr( $settings['exclude_ids'] ?? '' ); ?>"
+			data-show-sidebar="false">
 		</div>
 		<?php
 	}
