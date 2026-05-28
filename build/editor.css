@@ -4,7 +4,7 @@
 .wolf-store-featured-toggle {
   font-size: 1.2rem;
   text-decoration: none;
-  opacity: 0.4;
+  opacity: 1;
   transition: opacity 0.15s, transform 0.15s;
   display: inline-block;
 }

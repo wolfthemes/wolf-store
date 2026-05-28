@@ -87,7 +87,7 @@ class Admin_Columns {
 	public function admin_columns_head_post_thumb( $columns ) {
 
 		$columns['theme_thumbnail'] = esc_html__( 'Thumbnail', 'wolf-store' );
-		$columns['theme_featured']  = '⭐';
+		$columns['theme_featured']  = '★';
 		return $columns;
 	}
 
@@ -106,7 +106,7 @@ class Admin_Columns {
 				$post_id,
 				$featured ? 1 : 0,
 				esc_attr__( 'Toggle featured', 'wolf-store' ),
-				$featured ? '⭐' : '☆'
+				$featured ? '★' : '☆'
 			);
 		}
 
@@ -151,7 +151,7 @@ class Admin_Columns {
 
 		wp_enqueue_style(
 			'wolf-store-admin-columns',
-			WOLF_STORE_CSS . '/build/editor.css',
+			WOLF_STORE_URI . '/build/editor.css',
 			array(),
 			WOLF_STORE_VERSION
 		);
