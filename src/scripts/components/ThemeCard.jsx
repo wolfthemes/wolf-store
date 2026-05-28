@@ -27,11 +27,15 @@ export default function ThemeCard( { theme } ) {
 
     return (
         <article className='wolf-theme-card'>
+
             <a    href={ permalink }
                 className='wolf-theme-card__thumbnail-link'
                 tabIndex='-1'
                 aria-hidden='true'
             >
+			{/* { theme.theme_featured && ( */}
+			{/* 	<span className='wolf-theme-card__featured-badge'>Featured</span> */}
+			{/* ) } */}
                 <div className='wolf-theme-card__thumbnail'>
                     { thumbnail
                         ? <img src={ thumbnail } alt={ title } loading='lazy' />

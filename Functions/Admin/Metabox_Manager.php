@@ -128,6 +128,10 @@ class Metabox_Manager {
 				$this->render_repeatable_field( $field_id, $value );
 				break;
 
+			case 'checkbox':
+				$this->render_checkbox_field( $field_id, $value );
+				break;
+
 			default:
 				$this->render_text_field( $field_id, $value );
 		}
@@ -208,6 +212,9 @@ class Metabox_Manager {
 		echo '</div>';
 	}
 
+	private function render_checkbox_field( string $field_id, $value ): void {
+		echo '<input type="checkbox" name="' . esc_attr( $field_id ) . '" id="' . esc_attr( $field_id ) . '" value="1"' . checked( 1, $value, false ) . ' />';
+	}
 	/**
 	 * Save metabox data
 	 */
@@ -253,6 +260,16 @@ class Metabox_Manager {
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$value = wp_unslash( $_POST[ $field_id ] );
+
+		// Checkboxes send nothing when unchecked — delete meta if not present
+		if ( 'checkbox' === $field['type'] ) {
+			if ( isset( $_POST[ $field_id ] ) ) {
+				update_post_meta( $post_id, $field_id, 1 );
+			} else {
+				delete_post_meta( $post_id, $field_id );
+			}
+			return;
+		}
 
 		// Use MetaboxConfig to determine field type handling
 		if ( in_array( $field_id, Metabox_Config::get_url_fields() ) ) {

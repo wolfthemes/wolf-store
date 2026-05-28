@@ -37,6 +37,17 @@ class Theme_Index_Params {
 
 			// Query section
 			array(
+				'label'      => esc_html__( 'Featured Only', 'wolf-store' ),
+				'param_name' => 'featured_only',
+				'type'       => 'select',
+				'options'    => array(
+					''  => esc_html__( 'No', 'wolf-store' ),
+					'1' => esc_html__( 'Yes', 'wolf-store' ),
+				),
+				'default'    => '',
+				'group'      => 'Query',
+			),
+			array(
 				'label'      => esc_html__( 'Category', 'wolf-store' ),
 				'param_name' => 'theme_cat',
 				'type'       => 'select',

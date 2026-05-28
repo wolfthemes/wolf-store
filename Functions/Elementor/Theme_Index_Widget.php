@@ -79,6 +79,7 @@ class Theme_Index_Widget extends \Elementor\Widget_Base {
 		?>
 		<div id="<?php echo esc_attr( $widget_id ); ?>"
 			data-type="archive"
+			data-featured-only="<?php echo esc_attr( $settings['featured_only'] ?? '' ); ?>"
 			data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
 			data-term-id="<?php echo absint( $term_id ); ?>"
 			data-per-page="<?php echo absint( $settings['posts_per_page'] ?? 12 ); ?>"

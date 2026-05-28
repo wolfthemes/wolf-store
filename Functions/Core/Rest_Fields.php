@@ -27,6 +27,10 @@ class Rest_Fields {
 	 */
 	public function register_fields(): void {
 
+		$this->register( 'theme_featured', function ( $post ) {
+			return (bool) get_post_meta( $post['id'], '_wolf_theme_featured', true );
+		} );
+
 		// --- From app.config.json ---
 		$this->register( 'theme_slug', function ( $post ) {
 			return Meta::get_theme_slug( $post['id'] );

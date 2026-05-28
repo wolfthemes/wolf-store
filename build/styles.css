@@ -57,11 +57,25 @@
 }
 
 .wolf-theme-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--card-border-color);
   overflow: hidden;
   transition: border-color 0.15s ease;
+}
+.wolf-theme-card__featured-badge {
+  position: absolute;
+  z-index: 999;
+  top: 12px;
+  left: 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--strong-color);
+  color: var(--theme-bg-color, #fff);
 }
 .wolf-theme-card:hover {
   border-color: currentColor;

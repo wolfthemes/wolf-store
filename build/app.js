@@ -29,7 +29,8 @@ function Archive({
   termId,
   termName,
   perPage,
-  pagination: paginationProp
+  pagination: paginationProp,
+  featuredOnly
 }) {
   const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
   const {
@@ -47,7 +48,8 @@ function Archive({
     taxonomy,
     termId: parseInt(termId) || 0,
     page,
-    perPage: parseInt(perPage) || undefined
+    perPage: parseInt(perPage) || undefined,
+    featuredOnly: featuredOnly === '1'
   });
   const handlePageChange = n => {
     setPage(n);
@@ -985,7 +987,8 @@ function useThemes({
   taxonomy = '',
   termId = 0,
   page = 1,
-  perPage: perPageProp = undefined
+  perPage: perPageProp = undefined,
+  featuredOnly = false
 } = {}) {
   const [themes, setThemes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [totalPages, setTotalPages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
@@ -1015,17 +1018,19 @@ function useThemes({
     }).then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const total = parseInt(res.headers.get('X-Wp-Total')) || 0;
-      const pages = total ? Math.ceil(total / perPage) : 1;
+      const pages = featuredOnly ? 1 : total ? Math.ceil(total / perPage) : 1;
       setTotalPages(pages);
       return res.json();
     }).then(data => {
-      setThemes(data);
+      const filtered = featuredOnly ? data.filter(t => t.theme_featured) : data;
+      const sorted = [...filtered.filter(t => t.theme_featured), ...filtered.filter(t => !t.theme_featured)];
+      setThemes(sorted);
       setLoading(false);
     }).catch(err => {
       setError(err.message);
       setLoading(false);
     });
-  }, [taxonomy, termId, page, perPage]);
+  }, [taxonomy, termId, page, perPage, featuredOnly]);
   return {
     themes,
     totalPages,
@@ -1233,7 +1238,8 @@ class WolfStore {
           termId: termId,
           termName: termName,
           perPage: perPage,
-          pagination: pagination
+          pagination: pagination,
+          featuredOnly: root.dataset.featuredOnly
         }));
       }
     });

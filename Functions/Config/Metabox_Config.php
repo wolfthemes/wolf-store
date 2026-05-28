@@ -43,6 +43,12 @@ class Metabox_Config {
 	private static function get_theme_detail_fields(): array {
 		return array(
 			array(
+				'label' => esc_html__( 'Featured', 'wolf-store' ),
+				'id'    => '_wolf_theme_featured',
+				'type'  => 'checkbox',
+				'desc'  => esc_html__( 'Display this theme first in the store.', 'wolf-store' ),
+			),
+			array(
 				'label' => esc_html__( 'Theme Slug', 'wolf-store' ),
 				'id'    => '_wolf_theme_slug',
 				'desc'  => esc_html__( 'e.g. sable — must match the folder name on changelog.wolfthemes.cloud', 'wolf-store' ),

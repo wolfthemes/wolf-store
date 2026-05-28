@@ -4,7 +4,7 @@ import ThemeCard    from './ThemeCard';
 import SkeletonCard from './SkeletonCard';
 import Pagination   from './Pagination';
 
-export default function Archive( { taxonomy, termId, termName, perPage, pagination: paginationProp } ) {
+export default function Archive( { taxonomy, termId, termName, perPage, pagination: paginationProp, featuredOnly } ) {
     const [ page, setPage ] = useState( 1 );
     const { pagination: paginationGlobal, perPage: perPageGlobal } = window.wolfStoreData;
     const pagination = paginationProp || paginationGlobal;
@@ -15,6 +15,7 @@ export default function Archive( { taxonomy, termId, termName, perPage, paginati
         termId: parseInt( termId ) || 0,
         page,
         perPage: parseInt( perPage ) || undefined,
+		featuredOnly: featuredOnly === '1',
     } );
 
     const handlePageChange = ( n ) => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPageProp = undefined } = {} ) {
+export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPageProp = undefined , featuredOnly = false } = {} ) {
     const [ themes,     setThemes     ] = useState( [] );
     const [ totalPages, setTotalPages ] = useState( 1 );
     const [ loading,    setLoading    ] = useState( true );
@@ -29,19 +29,27 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
             .then( res => {
 				if ( ! res.ok ) throw new Error( `HTTP ${ res.status }` );
 				const total = parseInt( res.headers.get( 'X-Wp-Total' ) ) || 0;
-				const pages = total ? Math.ceil( total / perPage ) : 1;
+				const pages = featuredOnly ? 1 : ( total ? Math.ceil( total / perPage ) : 1 );
 				setTotalPages( pages );
 				return res.json();
 			} )
             .then( data => {
-                setThemes( data );
-                setLoading( false );
-            } )
+                const filtered = featuredOnly
+					? data.filter( t => t.theme_featured )
+					: data;
+
+				const sorted = [
+					...filtered.filter( t => t.theme_featured ),
+					...filtered.filter( t => ! t.theme_featured ),
+				];
+				setThemes( sorted );
+				setLoading( false );
+			} )
             .catch( err => {
                 setError( err.message );
                 setLoading( false );
             } );
-    }, [ taxonomy, termId, page, perPage ] );
+    }, [ taxonomy, termId, page, perPage, featuredOnly] );
 
     return { themes, totalPages, loading, error };
 }

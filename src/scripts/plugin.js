@@ -29,6 +29,7 @@ class WolfStore {
                         termName={ termName }
                         perPage={ perPage }
                         pagination={ pagination }
+						featuredOnly={ root.dataset.featuredOnly }
                     />
                 );
             }
