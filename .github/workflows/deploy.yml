@@ -19,4 +19,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
+            git reset --hard HEAD
             git pull origin master
