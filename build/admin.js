@@ -17,7 +17,7 @@ jQuery(function ($) {
     }, function (response) {
       if (response.success) {
         const isFeatured = response.data.featured;
-        $btn.data('featured', isFeatured).text(isFeatured ? '⭐' : '☆').attr('data-featured', isFeatured).removeClass('is-loading');
+        $btn.data('featured', isFeatured).text(isFeatured ? '★' : '☆').attr('data-featured', isFeatured).removeClass('is-loading');
       }
     });
   });
