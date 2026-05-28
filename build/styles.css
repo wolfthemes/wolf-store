@@ -10,6 +10,15 @@
 .wolf-store-archive {
   margin: 0 auto 40px;
 }
+.wolf-store-archive__layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+.wolf-store-archive__content {
+  flex: 1;
+  min-width: 0;
+}
 .wolf-store-archive__header {
   margin-bottom: 32px;
 }
@@ -399,6 +408,51 @@
   font-size: 0.85rem;
   opacity: 0.45;
   font-style: italic;
+}
+
+.wolf-store-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+.wolf-store-sidebar__group {
+  margin-bottom: 32px;
+}
+.wolf-store-sidebar__title {
+  font-size: 18px;
+  margin: 0 0 12px;
+  color: var(--strong-color);
+}
+.wolf-store-sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.wolf-store-sidebar__list li {
+  list-style-type: none;
+}
+.wolf-store-sidebar__all, .wolf-store-sidebar__term {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  border-bottom: 1px solid transparent;
+}
+.wolf-store-sidebar__all:hover, .wolf-store-sidebar__term:hover {
+  opacity: 1;
+}
+.wolf-store-sidebar__all.is-active, .wolf-store-sidebar__term.is-active {
+  opacity: 1;
+  font-weight: 600;
+  border-bottom-color: currentColor;
+}
+.wolf-store-sidebar__count {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-left: 8px;
 }
 
 .wolf-theme-sidebar__ctas {

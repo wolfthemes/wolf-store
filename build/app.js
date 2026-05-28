@@ -18,6 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ThemeCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCard */ "./src/scripts/components/ThemeCard.jsx");
 /* harmony import */ var _SkeletonCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SkeletonCard */ "./src/scripts/components/SkeletonCard.jsx");
 /* harmony import */ var _Pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Pagination */ "./src/scripts/components/Pagination.jsx");
+/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Sidebar */ "./src/scripts/components/Sidebar.jsx");
+
 
 
 
@@ -25,14 +27,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Archive({
-  taxonomy,
-  termId,
+  taxonomy: taxonomyProp,
+  termId: termIdProp,
   termName,
   perPage,
   pagination: paginationProp,
   featuredOnly
 }) {
   const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+  const [activeTaxonomy, setActiveTaxonomy] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(taxonomyProp || '');
+  const [activeTermId, setActiveTermId] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(parseInt(termIdProp) || 0);
   const {
     pagination: paginationGlobal,
     perPage: perPageGlobal
@@ -45,8 +49,8 @@ function Archive({
     loading,
     error
   } = (0,_hooks_useThemes__WEBPACK_IMPORTED_MODULE_1__.useThemes)({
-    taxonomy,
-    termId: parseInt(termId) || 0,
+    taxonomy: activeTaxonomy,
+    termId: activeTermId,
     page,
     perPage: parseInt(perPage) || undefined,
     featuredOnly: featuredOnly === '1'
@@ -58,13 +62,26 @@ function Archive({
       behavior: 'smooth'
     });
   };
+  const handleFilterChange = (taxonomy, termId) => {
+    setActiveTaxonomy(taxonomy);
+    setActiveTermId(termId);
+    setPage(1); // reset to page 1 on filter change
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-archive"
   }, termName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
     className: "wolf-store-archive__header"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "wolf-store-archive__title"
-  }, termName)), error && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, termName)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-archive__layout"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    activeTaxonomy: activeTaxonomy,
+    activeTermId: activeTermId,
+    onChange: handleFilterChange
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-archive__content"
+  }, error && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-error"
   }, error), !loading && !error && themes.length === 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "wolf-store-archive__empty"
@@ -77,12 +94,12 @@ function Archive({
   })) : themes.map(theme => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     key: theme.id,
     theme: theme
-  }))), !loading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
     page: page,
     totalPages: totalPages,
     onChange: handlePageChange,
     type: pagination
-  }));
+  }))));
 }
 
 /***/ },
@@ -177,6 +194,77 @@ function Pagination({
 
   // 'none' or anything else — no pagination UI
   return null;
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/Sidebar.jsx"
+/*!********************************************!*\
+  !*** ./src/scripts/components/Sidebar.jsx ***!
+  \********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Sidebar)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useTerms */ "./src/scripts/components/hooks/useTerms.js");
+
+
+function Sidebar({
+  activeTaxonomy,
+  activeTermId,
+  onChange
+}) {
+  const {
+    terms: cats
+  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)('theme_cat');
+  const {
+    terms: tags
+  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)('theme_tag');
+  const handleClick = (e, taxonomy, termId) => {
+    e.preventDefault();
+    onChange(taxonomy, termId);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
+    className: "wolf-store-sidebar"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-sidebar__group"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    className: `wolf-store-sidebar__all${!activeTermId ? ' is-active' : ''}`,
+    onClick: e => handleClick(e, '', 0)
+  }, "All Themes")), cats.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-sidebar__group"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-store-sidebar__title"
+  }, "Categories"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-store-sidebar__list"
+  }, cats.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    key: term.id
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    className: `wolf-store-sidebar__term${activeTaxonomy === 'theme_cat' && activeTermId === term.id ? ' is-active' : ''}`,
+    onClick: e => handleClick(e, 'theme_cat', term.id)
+  }, term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-store-sidebar__count"
+  }, term.count)))))), tags.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-sidebar__group"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-store-sidebar__title"
+  }, "Tags"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-store-sidebar__list"
+  }, tags.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+    key: term.id
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    className: `wolf-store-sidebar__term${activeTaxonomy === 'theme_tag' && activeTermId === term.id ? ' is-active' : ''}`,
+    onClick: e => handleClick(e, 'theme_tag', term.id)
+  }, term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-store-sidebar__count"
+  }, term.count)))))));
 }
 
 /***/ },
@@ -919,6 +1007,44 @@ function ThemeSidebar({
   }, "Last Update"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-sidebar__value"
   }, updated))));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/hooks/useTerms.js"
+/*!**************************************************!*\
+  !*** ./src/scripts/components/hooks/useTerms.js ***!
+  \**************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useTerms: () => (/* binding */ useTerms)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function useTerms(taxonomy) {
+  const [terms, setTerms] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!taxonomy) return;
+    const {
+      restNonce
+    } = window.wolfStoreData;
+    fetch(`/wp-json/wp/v2/${taxonomy}?per_page=100&hide_empty=1`, {
+      headers: {
+        'X-WP-Nonce': restNonce
+      }
+    }).then(res => res.json()).then(data => {
+      setTerms(data);
+      setLoading(false);
+    }).catch(() => setLoading(false));
+  }, [taxonomy]);
+  return {
+    terms,
+    loading
+  };
 }
 
 /***/ },

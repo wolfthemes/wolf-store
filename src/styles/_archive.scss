@@ -3,7 +3,16 @@
 .wolf-store-archive {
     margin: 0 auto 40px;
     // max-width: 1400px;
+	&__layout {
+		display: flex;
+		gap: 48px;
+		align-items: flex-start;
+	}
 
+	&__content {
+		flex: 1;
+		min-width: 0; // prevents grid overflow
+	}
 
     &__header {
         margin-bottom: 32px;
