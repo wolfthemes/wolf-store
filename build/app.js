@@ -891,7 +891,7 @@ function ThemePricing({
     feature: 'Updates',
     wolf: 'Always included',
     tf: 'Included (major updates only)',
-    wolfWins: false
+    wolfWins: true
   }, {
     feature: 'Support',
     wolf: 'Always included — reply within 24h',

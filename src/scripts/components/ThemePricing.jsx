@@ -26,7 +26,7 @@ export default function ThemePricing( { theme } ) {
             feature:  'Updates',
             wolf:     'Always included',
             tf:       'Included (major updates only)',
-            wolfWins: false,
+            wolfWins: true,
         },
         {
             feature:  'Support',
