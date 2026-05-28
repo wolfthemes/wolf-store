@@ -4,6 +4,7 @@
 @charset "UTF-8";
 :root {
   --checkmark-color:#00a32a;
+  --card-border-color:rgba(0,0,0,.2);
 }
 
 .wolf-store-archive {
@@ -58,7 +59,7 @@
 .wolf-theme-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--theme-border-color);
+  border: 1px solid var(--card-border-color);
   overflow: hidden;
   transition: border-color 0.15s ease;
 }
@@ -130,7 +131,7 @@
 .wolf-theme-card__cat {
   font-size: 0.75rem;
   padding: 2px 8px;
-  border: 1px solid var(--theme-border-color);
+  border: 1px solid var(--card-border-color);
   text-decoration: none;
   color: inherit;
   opacity: 0.7;
@@ -141,7 +142,7 @@
 }
 .wolf-theme-card__footer {
   padding: 12px 16px;
-  border-top: 1px solid var(--theme-border-color);
+  border-top: 1px solid var(--card-border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,11 +201,11 @@
   }
 }
 .wolf-skeleton {
-  background: linear-gradient(90deg, var(--theme-border-color, #e8e8e8) 25%, color-mix(in srgb, var(--theme-border-color, #e8e8e8) 40%, transparent) 50%, var(--theme-border-color, #e8e8e8) 75%);
+  background: linear-gradient(90deg, var(--card-border-color, #e8e8e8) 25%, color-mix(in srgb, var(--card-border-color, #e8e8e8) 40%, transparent) 50%, var(--card-border-color, #e8e8e8) 75%);
   background-size: 600px 100%;
   animation: wolf-shimmer 1.4s ease-in-out infinite;
   border-radius: 2px;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .wolf-skeleton.wolf-theme-card__thumbnail {

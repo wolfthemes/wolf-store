@@ -3,7 +3,7 @@
 .wolf-theme-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--theme-border-color);
+    border: 1px solid var(--card-border-color);
     overflow: hidden;
     transition: border-color 0.15s ease;
 
@@ -91,7 +91,7 @@
     &__cat {
         font-size: 0.75rem;
         padding: 2px 8px;
-        border: 1px solid var(--theme-border-color);
+        border: 1px solid var(--card-border-color);
         text-decoration: none;
         color: inherit;
         opacity: 0.7;
@@ -106,7 +106,7 @@
 
     &__footer {
         padding: 12px 16px;
-        border-top: 1px solid var(--theme-border-color);
+        border-top: 1px solid var(--card-border-color);
         display: flex;
         align-items: center;
         justify-content: space-between;
