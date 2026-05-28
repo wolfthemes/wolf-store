@@ -65,7 +65,7 @@ module.exports = () => {
 				],
 				host: 'localhost',
 				port: 3000,
-				proxy: 'http://wolfthemes.local/',
+				proxy: 'http://localhost:8080/',
 				watchOptions: {
 					poll: 1000,
 					ignoreInitial: true,

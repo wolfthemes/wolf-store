@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useThemes } from './hooks/useThemes';
-import ThemeCard   from './ThemeCard';
-import Pagination  from './Pagination';
+import ThemeCard    from './ThemeCard';
+import SkeletonCard from './SkeletonCard';
+import Pagination   from './Pagination';
 
 export default function Archive( { taxonomy, termId, termName, perPage, pagination: paginationProp } ) {
     const [ page, setPage ] = useState( 1 );
-    const { pagination: paginationGlobal } = window.wolfStoreData;
+    const { pagination: paginationGlobal, perPage: perPageGlobal } = window.wolfStoreData;
     const pagination = paginationProp || paginationGlobal;
+    const skeletonCount = parseInt( perPage ) || parseInt( perPageGlobal ) || 12;
 
     const { themes, totalPages, loading, error } = useThemes( {
         taxonomy,
@@ -29,10 +31,6 @@ export default function Archive( { taxonomy, termId, termName, perPage, paginati
                 </header>
             ) }
 
-            { loading && (
-                <div className='wolf-store-loading'>Loading&hellip;</div>
-            ) }
-
             { error && (
                 <div className='wolf-store-error'>{ error }</div>
             ) }
@@ -41,21 +39,24 @@ export default function Archive( { taxonomy, termId, termName, perPage, paginati
                 <p className='wolf-store-archive__empty'>No themes found.</p>
             ) }
 
-            { ! loading && themes.length > 0 && (
-                <>
-                    <div className='wolf-store-archive__grid'>
-                        { themes.map( theme => (
-                            <ThemeCard key={ theme.id } theme={ theme } />
-                        ) ) }
-                    </div>
+            <div className='wolf-store-archive__grid'>
+                { loading
+                    ? Array.from( { length: skeletonCount } ).map( ( _, i ) => (
+                        <SkeletonCard key={ i } />
+                    ) )
+                    : themes.map( theme => (
+                        <ThemeCard key={ theme.id } theme={ theme } />
+                    ) )
+                }
+            </div>
 
-                    <Pagination
-                        page={ page }
-                        totalPages={ totalPages }
-                        onChange={ handlePageChange }
-                        type={ pagination }
-                    />
-                </>
+            { ! loading && (
+                <Pagination
+                    page={ page }
+                    totalPages={ totalPages }
+                    onChange={ handlePageChange }
+                    type={ pagination }
+                />
             ) }
 
         </div>
