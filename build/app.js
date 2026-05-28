@@ -399,18 +399,20 @@ __webpack_require__.r(__webpack_exports__);
  * @param {string}  layout    'row' (default) | 'column'
  */
 function ThemeCTAs({
+  theme,
   demoUrl,
   buyUrl,
   layout = 'row'
 }) {
   if (!demoUrl && !buyUrl) return null;
+  const title = theme.title?.rendered;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `wolf-theme-ctas wolf-theme-ctas--${layout}`
   }, buyUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buyUrl,
     className: "theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy",
     rel: "noopener noreferrer"
-  }, "Purchase"), demoUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, "Get ", title), demoUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
     className: "theme-button-secondary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--demo",
     target: "_blank",
@@ -533,8 +535,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ThemeChangelog({
-  changelog
+  theme
 }) {
+  const changelog = theme?.theme_changelog;
   const [open, setOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   if (!changelog) return null;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -566,6 +569,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
 /* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+/* harmony import */ var _ThemeTestimonials__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeTestimonials */ "./src/scripts/components/ThemeTestimonials.jsx");
+
 
 
 
@@ -577,8 +582,6 @@ function ThemeFooter({
   const demoUrl = theme.theme_demo_url;
   const buyUrl = theme.theme_purchase_url;
   const features = (_theme$theme_features = theme.theme_features) !== null && _theme$theme_features !== void 0 ? _theme$theme_features : [];
-  const changelog = theme.theme_changelog;
-  const [changelogOpen, setChangelogOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-footer"
   }, features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -589,8 +592,10 @@ function ThemeFooter({
     className: "wolf-theme-hero__features-list"
   }, features.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: i
-  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    changelog: changelog
+  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeTestimonials__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    theme: theme
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    theme: theme
   }));
 }
 
@@ -628,7 +633,13 @@ function ThemeHero({
   const buyUrl = theme.theme_purchase_url;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero"
-  }, thumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero__content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+    className: "wolf-theme-hero__title"
+  }, title), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-hero__tagline"
+  }, description)), thumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__thumbnail"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
@@ -637,24 +648,14 @@ function ThemeHero({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: thumbnail,
     alt: title
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
-    className: "wolf-theme-hero__title"
-  }, title), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "wolf-theme-hero__tagline"
-  }, description), excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__excerpt",
     dangerouslySetInnerHTML: {
       __html: excerpt
     }
   }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__description"
-  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    demoUrl: demoUrl,
-    buyUrl: buyUrl,
-    layout: "row"
-  })));
+  }, longDescription));
 }
 
 /***/ },
@@ -892,6 +893,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ThemePriceBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemePriceBox */ "./src/scripts/components/ThemePriceBox.jsx");
+/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+
 
 
 function ThemeSidebar({
@@ -917,18 +920,12 @@ function ThemeSidebar({
     className: "wolf-theme-sidebar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePriceBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
     theme: theme
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    theme: theme,
+    demoUrl: demoUrl,
+    buyUrl: buyUrl,
+    layout: "column"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-sidebar__ctas"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: buyUrl,
-    className: "theme-button-primary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy",
-    rel: "noopener noreferrer"
-  }, "Purchase"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: demoUrl,
-    className: "theme-button-secondary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo",
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, "Live Demo")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-sidebar__benefits"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "wolf-theme-sidebar__section-title"
@@ -1008,6 +1005,49 @@ function ThemeSidebar({
   }, "Last Update"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-sidebar__value"
   }, updated))));
+}
+
+/***/ },
+
+/***/ "./src/scripts/components/ThemeTestimonials.jsx"
+/*!******************************************************!*\
+  !*** ./src/scripts/components/ThemeTestimonials.jsx ***!
+  \******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeTestimonials)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ThemeTestimonials({
+  theme
+}) {
+  var _theme$theme_testimon;
+  const title = theme.title?.rendered;
+  const testimonials = (_theme$theme_testimon = theme.theme_testimonials) !== null && _theme$theme_testimon !== void 0 ? _theme$theme_testimon : [];
+  if (!testimonials?.length) return null;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-testimonials"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-testimonials__title"
+  }, "What customers say about ", title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-testimonials__grid"
+  }, testimonials.map((t, i) => {
+    var _t$rating;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: i,
+      className: "wolf-theme-testimonials__item"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "wolf-theme-testimonials__stars"
+    }, '★'.repeat((_t$rating = t.rating) !== null && _t$rating !== void 0 ? _t$rating : 5)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "wolf-theme-testimonials__text"
+    }, t.text), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "wolf-theme-testimonials__author"
+    }, "\u2014 ", t.author));
+  })));
 }
 
 /***/ },

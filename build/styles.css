@@ -325,9 +325,17 @@
   margin-bottom: 32px;
 }
 .wolf-theme-ctas__btn--buy {
-  background: var(--accent-hover-color);
+  background: var(--accent-hover-color) !important;
 }
-.wolf-theme-ctas__btn--demo { /* secondary CTA */ }
+.wolf-theme-ctas__btn--buy.theme-button-primary:hover {
+  background: var(--accent-color) !important;
+}
+.wolf-theme-ctas__btn--demo.theme-button-secondary {
+  color: white !important;
+}
+.wolf-theme-ctas__btn--demo {
+  background: var(--accent-color) !important;
+}
 
 .wolf-theme-price-box {
   padding: 20px;
@@ -455,12 +463,6 @@
   margin-left: 8px;
 }
 
-.wolf-theme-sidebar__ctas {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
-}
 .wolf-theme-sidebar__meta {
   border-top: 1px solid #eee;
   margin-bottom: 32px;
@@ -715,6 +717,48 @@
 }
 .wolf-theme-pricing__row--win .wolf-theme-pricing__cell--wolf {
   color: var(--checkmark-color);
+}
+
+.wolf-theme-testimonials {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--theme-border-color);
+}
+.wolf-theme-testimonials__title {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+.wolf-theme-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.wolf-theme-testimonials__item {
+  padding: 20px;
+  border: 1px solid var(--theme-border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wolf-theme-testimonials__stars {
+  color: #f5a623;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+.wolf-theme-testimonials__text {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+  color: var(--strong-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wolf-theme-testimonials__author {
+  font-size: 0.78rem;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=styles.css.map*/

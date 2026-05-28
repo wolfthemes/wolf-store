@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-export default function ThemeChangelog( { changelog } ) {
+export default function ThemeChangelog( { theme  } ) {
+    const changelog = theme?.theme_changelog;
     const [ open, setOpen ] = useState( false );
 
     if ( ! changelog ) return null;
-
     return (
         <div className='wolf-theme-changelog'>
             <button

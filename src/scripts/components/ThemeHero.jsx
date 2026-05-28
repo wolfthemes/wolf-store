@@ -15,14 +15,6 @@ export default function ThemeHero( { theme } ) {
     return (
         <div className='wolf-theme-hero'>
 
-            { thumbnail && (
-                <div className='wolf-theme-hero__thumbnail'>
-                    <a href={ demoUrl } target='_blank' rel='noopener noreferrer'>
-                        <img src={ thumbnail } alt={ title } />
-                    </a>
-                </div>
-            ) }
-
             <div className='wolf-theme-hero__content'>
 
                 <h1 className='wolf-theme-hero__title'>{ title }</h1>
@@ -31,22 +23,31 @@ export default function ThemeHero( { theme } ) {
                     <p className='wolf-theme-hero__tagline'>{ description }</p>
                 ) }
 
-                { excerpt && (
-                    <div
-                        className='wolf-theme-hero__excerpt'
-                        dangerouslySetInnerHTML={{ __html: excerpt }}
-                    />
-                ) }
+                {/* <ThemeCTAs demoUrl={ demoUrl } buyUrl={ buyUrl } layout='row' /> */}
 
-                { longDescription && (
-                    <div className='wolf-theme-hero__description'>
-                        { longDescription }
-                    </div>
-                ) }
-
-                { /* Top CTAs — row layout */ }
-                <ThemeCTAs demoUrl={ demoUrl } buyUrl={ buyUrl } layout='row' />
             </div>
+
+            { thumbnail && (
+                <div className='wolf-theme-hero__thumbnail'>
+                    <a href={ demoUrl } target='_blank' rel='noopener noreferrer'>
+                        <img src={ thumbnail } alt={ title } />
+                    </a>
+                </div>
+            ) }
+
+            { excerpt && (
+                <div
+                    className='wolf-theme-hero__excerpt'
+                    dangerouslySetInnerHTML={{ __html: excerpt }}
+                />
+            ) }
+
+            { longDescription && (
+                <div className='wolf-theme-hero__description'>
+                    { longDescription }
+                </div>
+            ) }
+
         </div>
     );
 }

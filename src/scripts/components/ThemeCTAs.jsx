@@ -8,8 +8,9 @@
  * @param {string}  buyUrl    Purchase URL
  * @param {string}  layout    'row' (default) | 'column'
  */
-export default function ThemeCTAs( { demoUrl, buyUrl, layout = 'row' } ) {
+export default function ThemeCTAs( { theme, demoUrl, buyUrl, layout = 'row' } ) {
     if ( ! demoUrl && ! buyUrl ) return null;
+	const title        = theme.title?.rendered;
 
     return (
         <div className={ `wolf-theme-ctas wolf-theme-ctas--${ layout }` }>
@@ -19,7 +20,7 @@ export default function ThemeCTAs( { demoUrl, buyUrl, layout = 'row' } ) {
                     className='theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy'
                     rel='noopener noreferrer'
                 >
-                    Purchase
+                    Get { title }
                 </a>
             ) }
             { demoUrl && (

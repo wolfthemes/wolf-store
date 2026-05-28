@@ -1,0 +1,50 @@
+.wolf-theme-testimonials {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--theme-border-color);
+
+    &__title {
+        font-size: 1.1rem;
+        margin-bottom: 24px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat( auto-fill, minmax( 280px, 1fr ) );
+        gap: 20px;
+    }
+
+    &__item {
+        padding: 20px;
+        border: 1px solid var(--theme-border-color);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__stars {
+        color: #f5a623;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    &__text {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        // opacity: 0.8;
+        margin: 0;
+        flex: 1;
+		color:var(--strong-color);
+        // Clamp long reviews to 4 lines
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__author {
+        font-size: 0.78rem;
+        // opacity: 0.5;
+        font-style: italic;
+    }
+}

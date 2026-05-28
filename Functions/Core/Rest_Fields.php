@@ -154,6 +154,12 @@ class Rest_Fields {
 			return $data['design_features'] ?? array();
 		} );
 
+		$this->register( 'theme_testimonials', function ( $post ) {
+			$slug = Meta::get_theme_slug( $post['id'] );
+			$data = Meta::get_theme_meta( $slug );
+			return $data['testimonials'] ?? [];
+		} );
+
 		$this->register( 'theme_pricing', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_config( $slug );

@@ -1,6 +1,5 @@
 // ── ThemeCTAs ────────────────────────────────────────────────────────────────
 // Shared CTA block used in both the hero and the sidebar.
-
 .wolf-theme-ctas {
     display: flex;
     gap: 12px;
@@ -24,9 +23,20 @@
         // Add layout-only overrides below if needed.
 
         &--buy  {
-			background:var(--accent-hover-color);
+			background:var(--accent-hover-color)!important;
+			&.theme-button-primary{
+				&:hover {
+					background: var(--accent-color) !important;
+				}
+			}
+
 		}
-        &--demo { /* secondary CTA */ }
+        &--demo {
+			&.theme-button-secondary{
+				color:white!important;
+			}
+			background: var(--accent-color) !important;
+		}
     }
 }
 

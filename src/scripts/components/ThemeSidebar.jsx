@@ -1,5 +1,5 @@
-
 import ThemePriceBox from './ThemePriceBox';
+import ThemeCTAs         from './ThemeCTAs';
 
 export default function ThemeSidebar( { theme } ) {
     const version   = theme.theme_latest_version;
@@ -25,23 +25,8 @@ export default function ThemeSidebar( { theme } ) {
             <ThemePriceBox theme={ theme } />
 
             { /* CTAs */ }
-            <div className='wolf-theme-sidebar__ctas'>
+			<ThemeCTAs theme={ theme } demoUrl={ demoUrl } buyUrl={ buyUrl } layout='column' />
 
-                <a    href={ buyUrl }
-                    className='theme-button-primary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--buy'
-                    rel='noopener noreferrer'
-                >
-                    Purchase
-                </a>
-
-                <a   href={ demoUrl }
-                    className='theme-button-secondary wolf-core-button-size-md wolf-theme-sidebar__btn wolf-theme-sidebar__btn--demo'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                >
-                    Live Demo
-                </a>
-            </div>
 
 			{ /* Subscription benefits */ }
 			<div className='wolf-theme-sidebar__benefits'>
