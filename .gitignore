@@ -3,8 +3,7 @@ dev
 pack
 bak
 node_modules
-vendor/*
-!vendor/autoload.php
+vendor
 
 # Windows image file caches
 Thumbs.db
