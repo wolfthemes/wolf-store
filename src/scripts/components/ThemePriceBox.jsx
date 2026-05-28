@@ -45,7 +45,7 @@ export default function ThemePriceBox( { theme } ) {
                         <div className='wolf-theme-price-box__secondary'>
                             <span className='wolf-theme-price-box__secondary-price'>
                                 ${ price_annual_3sites }/yr
-                            </span>
+                            </span>&nbsp;
                             <span className='wolf-theme-price-box__secondary-label'>for 3 sites</span>
                         </div>
                     ) }

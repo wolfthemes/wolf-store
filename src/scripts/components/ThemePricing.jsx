@@ -78,7 +78,7 @@ export default function ThemePricing( { theme } ) {
                         { /* 1 site */ }
                         <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--hero'>
                             <div className='wolf-theme-pricing__plan-meta'>
-                                <span className='wolf-theme-pricing__plan-label'>1 site</span>
+                                <span className='wolf-theme-pricing__plan-label'>1 site</span>&nbsp;
                                 { tfSaving > 0 && (
                                     <span className='wolf-theme-pricing__plan-saving'>
                                         ${ tfSaving } less than ThemeForest
@@ -128,12 +128,12 @@ export default function ThemePricing( { theme } ) {
                         <div className='wolf-theme-pricing__plan'>
                             <span className='wolf-theme-pricing__plan-label'>Regular license</span>
                             <span className='wolf-theme-pricing__plan-price'>
-                                { fmt( tf_price ) }<small> one-time</small>
+                                { fmt( tf_price ) }{/*<small> one-time</small>*/}
                             </span>
                         </div>
                         <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
                             <span className='wolf-theme-pricing__plan-label'>Support included</span>
-                            <span className='wolf-theme-pricing__plan-price'>6 months only</span>
+                            <span className='wolf-theme-pricing__plan-price'>Limited time</span>
                         </div>
                         <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
                             <span className='wolf-theme-pricing__plan-label'>Multi-site</span>

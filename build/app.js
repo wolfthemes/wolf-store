@@ -838,7 +838,7 @@ function ThemePriceBox({
     className: "wolf-theme-price-box__secondary"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-price-box__secondary-price"
-  }, "$", price_annual_3sites, "/yr"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "$", price_annual_3sites, "/yr"), "\xA0", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-price-box__secondary-label"
   }, "for 3 sites"))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__coming-soon"
@@ -939,7 +939,7 @@ function ThemePricing({
     className: "wolf-theme-pricing__plan-meta"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-label"
-  }, "1 site"), tfSaving > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "1 site"), "\xA0", tfSaving > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-saving"
   }, "$", tfSaving, " less than ThemeForest")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
@@ -971,13 +971,13 @@ function ThemePricing({
     className: "wolf-theme-pricing__plan-label"
   }, "Regular license"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
-  }, fmt(tf_price), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, " one-time"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, fmt(tf_price))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--muted"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-label"
   }, "Support included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-price"
-  }, "6 months only")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Limited time")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing__plan wolf-theme-pricing__plan--muted"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-theme-pricing__plan-label"
