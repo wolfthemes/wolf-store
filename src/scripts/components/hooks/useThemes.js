@@ -14,10 +14,10 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
         setError( null );
 
         const params = new URLSearchParams( {
-            _embed:   1,
-            per_page: perPage,
-            page,
-        } );
+           _embed:   1,
+			per_page: featuredOnly ? 100 : perPage, // ← fetch all when filtering featured
+			page,
+		} );
 
         if ( taxonomy && termId ) {
             params.set( taxonomy, termId );

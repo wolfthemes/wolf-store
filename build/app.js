@@ -1005,7 +1005,8 @@ function useThemes({
     setError(null);
     const params = new URLSearchParams({
       _embed: 1,
-      per_page: perPage,
+      per_page: featuredOnly ? 100 : perPage,
+      // ← fetch all when filtering featured
       page
     });
     if (taxonomy && termId) {
