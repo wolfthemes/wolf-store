@@ -96,10 +96,10 @@ module.exports = () => {
 				],
 				filename: './app.js'
 			},
-			// admin: {
-			// 	import: path.resolve( __dirname, './src/admin/elementor-admin.js' ),
-			// 	filename: './elementor-admin.js'
-			// },
+			admin: {
+				import: path.resolve( __dirname, './src/admin/columns.js' ),
+				filename: './admin.js'
+			},
 			styles : {
 				import: [
 					path.resolve( __dirname, './src/styles/main.scss' )
