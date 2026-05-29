@@ -1358,10 +1358,12 @@ function useThemes({
     setError(null);
     const params = new URLSearchParams({
       _embed: 1,
-      per_page: featuredOnly ? 100 : perPage,
-      // ← fetch all when filtering featured
+      per_page: perPage,
       page
     });
+    if (featuredOnly) {
+      params.set('featured', 'true');
+    }
     if (taxonomy && termId) {
       params.set(taxonomy, termId);
     }
@@ -1372,13 +1374,10 @@ function useThemes({
     }).then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const total = parseInt(res.headers.get('X-Wp-Total')) || 0;
-      const pages = featuredOnly ? 1 : total ? Math.ceil(total / perPage) : 1;
-      setTotalPages(pages);
+      setTotalPages(total ? Math.ceil(total / perPage) : 1);
       return res.json();
     }).then(data => {
-      const filtered = featuredOnly ? data.filter(t => t.theme_featured) : data;
-      const sorted = [...filtered.filter(t => t.theme_featured), ...filtered.filter(t => !t.theme_featured)];
-      setThemes(sorted);
+      setThemes(data);
       setLoading(false);
     }).catch(err => {
       setError(err.message);

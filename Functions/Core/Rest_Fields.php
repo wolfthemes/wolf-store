@@ -20,6 +20,38 @@ class Rest_Fields {
 	 */
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_fields' ) );
+		add_filter( 'rest_wolf_theme_collection_params', array( $this, 'register_collection_params' ) );
+		add_filter( 'rest_wolf_theme_query', array( $this, 'handle_featured_query' ), 10, 2 );
+	}
+
+	/**
+	 * Allow ?featured=1 as a collection param (boolean type, no enum)
+	 */
+	public function register_collection_params( array $params ): array {
+		$params['featured'] = array(
+			'description'       => __( 'Limit results to featured themes.', 'wolf-store' ),
+			'type'              => 'boolean',
+			'default'           => false,
+			'sanitize_callback' => 'rest_sanitize_boolean',
+			'validate_callback' => 'rest_validate_request_arg',
+		);
+		return $params;
+	}
+
+	/**
+	 * Translate ?featured=true into a meta_query
+	 */
+	public function handle_featured_query( array $args, \WP_REST_Request $request ): array {
+		$featured = $request->get_param( 'featured' );
+		if ( true === $featured || '1' === $featured || 1 === $featured ) {
+			$args['meta_query'] = array(
+				array(
+					'key'   => '_wolf_theme_featured',
+					'value' => '1',
+				),
+			);
+		}
+		return $args;
 	}
 
 	/**
@@ -72,11 +104,11 @@ class Rest_Fields {
 		} );
 
 		$this->register( 'theme_mockup', function ( $post ) {
-			return Meta::get_theme_mockup_url($post['id']);
+			return Meta::get_theme_mockup_url( $post['id'] );
 		} );
 
 		$this->register( 'theme_hero', function ( $post ) {
-			return Meta::get_theme_hero_url('full', $post['id']);
+			return Meta::get_theme_hero_url( 'full', $post['id'] );
 		} );
 
 		// --- From changelog.xml ---
@@ -174,7 +206,7 @@ class Rest_Fields {
 		$this->register( 'theme_testimonials', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_theme_meta( $slug );
-			return $data['testimonials'] ?? [];
+			return $data['testimonials'] ?? array();
 		} );
 
 		$this->register( 'theme_pricing', function ( $post ) {
