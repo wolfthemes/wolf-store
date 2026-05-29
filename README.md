@@ -106,6 +106,8 @@ npm run build
 
 Deployment is automated via GitHub Actions. Any push to the `master` branch triggers a workflow that SSHs into my server and runs `git pull` + `composer install` on the staging environment.
 
+_Note that once the project is shipped, the "master/main" branch will be reserved to production and we will deploy on staging environment via a "dev" or "stage" branch_
+
 ```
 .github/workflows/deploy.yml
 ```
