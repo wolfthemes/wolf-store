@@ -402,8 +402,9 @@
   width: 100%;
   height: 100%;
 }
-.wolf-theme-hero__thumbnail img {
-  width: 100%;
+.wolf-theme-hero__thumbnail img,
+.wolf-theme-hero__thumbnail video {
+  width: 100% !important;
   height: 100%;
   display: block;
   -o-object-fit: cover;
@@ -435,10 +436,12 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: space-between;
 }
 .wolf-theme-description__description {
   font-size: 1.1em;
   max-width: 500px;
+  margin-bottom: 20px;
 }
 .wolf-theme-description__mockup {
   max-width: 800px;

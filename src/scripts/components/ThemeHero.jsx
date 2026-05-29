@@ -4,6 +4,7 @@ import ThemePriceBox from './ThemePriceBox';
 
 export default function ThemeHero( { theme } ) {
     const thumbnail       = theme.theme_thumbnail;
+    const video           = theme.theme_video;
     const title           = theme.title?.rendered;
     const description     = theme.theme_short_description;
     const demoUrl         = theme.theme_demo_url;
@@ -12,13 +13,16 @@ export default function ThemeHero( { theme } ) {
     return (
         <div className='wolf-theme-hero'>
 
-            { thumbnail && (
-                <div className='wolf-theme-hero__thumbnail'>
-                    <a href={ demoUrl } target='_blank' rel='noopener noreferrer'>
-                        <img src={ thumbnail } alt={ title } />
-                    </a>
-                </div>
-            ) }
+            { (video || thumbnail) && (
+				<div className='wolf-theme-hero__thumbnail'>
+					{/* <a href={ demoUrl } target='_blank' rel='noopener noreferrer'> */}
+						{ video
+							? <video src={ video } autoPlay muted loop playsInline />
+							: <img src={ thumbnail } alt={ title } />
+						}
+					{/* </a> */}
+				</div>
+			) }
 
             <div className='wolf-theme-hero__content'>
 

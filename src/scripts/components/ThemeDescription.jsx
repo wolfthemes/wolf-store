@@ -1,3 +1,6 @@
+
+import ThemeCTAs from './ThemeCTAs';
+
 export default function ThemeDescription({ theme }) {
     const title           = theme.title?.rendered;
     const excerpt         = theme.excerpt?.rendered;
@@ -9,18 +12,21 @@ export default function ThemeDescription({ theme }) {
         <div className='wolf-theme-description wolf-theme-single__section'>
 			<div className='wolf-theme-single__wrapper'>
 				<div className='wolf-theme-single-description__column'>
-				{ excerpt && (
-					<div
-						className='wolf-theme-description__excerpt'
-						dangerouslySetInnerHTML={{ __html: excerpt }}
-					/>
-				) }
+					{ excerpt && (
+						<div
+							className='wolf-theme-description__excerpt'
+							dangerouslySetInnerHTML={{ __html: excerpt }}
+						/>
+					) }
 
-				{ longDescription && (
-					<div className='wolf-theme-description__description'>
-						{ longDescription }
-					</div>
-				) }
+					{ longDescription && (
+						<div className='wolf-theme-description__description'>
+							{ longDescription }
+						</div>
+					) }
+
+					{ /* CTAs */ }
+					<ThemeCTAs theme={ theme } layout='row' />
 
 				</div>
 				<div className='wolf-theme-single-description__column'>

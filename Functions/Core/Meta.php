@@ -95,6 +95,38 @@ class Meta {
 
 		return apply_filters( 'wolf_store_purchase_url', esc_url( $url ), $slug, $post_id );
 	}
+
+	/**
+	 * Get the video URL
+	 * Meta override → convention URL → app.config.json videourl
+	 *
+	 * @param int|null $post_id
+	 * @return string
+	 */
+	public static function get_video_url( ?int $post_id = null ): string {
+		$post_id = $post_id ?? get_the_ID();
+
+		// Meta override
+		$meta_url = get_post_meta( $post_id, '_wolf_theme_video_url', true );
+		if ( $meta_url ) {
+			return esc_url( $meta_url );
+		}
+
+		return '';
+
+		// Convention URL
+		$slug       = self::get_theme_slug( $post_id );
+		$convention = self::ASSETS_BASE_URL . '/' . $slug . '/hero.mp4';
+
+		/**
+		 * Filter the video URL convention
+		 *
+		 * @param string $convention
+		 * @param string $slug
+		 * @param int    $post_id
+		 */
+		/* return apply_filters( 'wolf_store_video_url', $convention, $slug, $post_id ); */
+	}
 	/**
 	 * Get the thumbnail URL
 	 * WP featured image → convention screenshot from preview server

@@ -654,6 +654,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+
 
 function ThemeDescription({
   theme
@@ -677,7 +679,10 @@ function ThemeDescription({
     }
   }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-description__description"
-  }, longDescription)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    theme: theme,
+    layout: "row"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-single-description__column"
   }, mockup && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-description__mockup"
@@ -792,22 +797,25 @@ function ThemeHero({
   theme
 }) {
   const thumbnail = theme.theme_thumbnail;
+  const video = theme.theme_video;
   const title = theme.title?.rendered;
   const description = theme.theme_short_description;
   const demoUrl = theme.theme_demo_url;
   const buyUrl = theme.theme_purchase_url;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero"
-  }, thumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (video || thumbnail) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__thumbnail"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: demoUrl,
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  }, video ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+    src: video,
+    autoPlay: true,
+    muted: true,
+    loop: true,
+    playsInline: true
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: thumbnail,
     alt: title
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "wolf-theme-hero__title"

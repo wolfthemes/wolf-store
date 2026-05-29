@@ -1,15 +1,16 @@
 .wolf-theme-description{
 
 	.wolf-theme-single__wrapper{
-
 		display:flex;
 		gap:20px;
 		align-items:center;
+		justify-content: space-between;
 	}
 
 	&__description{
 		font-size:1.1em;
 		max-width:500px;
+		margin-bottom:20px;
 	}
 
 	&__mockup{

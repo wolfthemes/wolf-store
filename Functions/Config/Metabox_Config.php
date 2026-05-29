@@ -55,6 +55,11 @@ class Metabox_Config {
 				'type'  => 'text',
 			),
 			array(
+				'label' => esc_html__( 'Video Background URL', 'wolf-store' ),
+				'id'    => '_wolf_theme_video_url',
+				'type'  => 'url',
+			),
+			array(
 				'label' => esc_html__( 'Demo URL', 'wolf-store' ),
 				'id'    => '_wolf_theme_demo_url',
 				'type'  => 'url',
