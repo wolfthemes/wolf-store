@@ -1354,7 +1354,8 @@ function useThemes({
     const params = new URLSearchParams({
       _embed: 1,
       per_page: perPage,
-      page
+      page,
+      orderby: 'featured' // featured posts always first, then by date
     });
     if (featuredOnly) {
       params.set('featured', 'true');

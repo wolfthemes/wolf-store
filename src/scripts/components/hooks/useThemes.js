@@ -17,6 +17,7 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
             _embed:   1,
             per_page: perPage,
             page,
+            orderby:  'featured', // featured posts always first, then by date
         } );
 
         if ( featuredOnly ) {

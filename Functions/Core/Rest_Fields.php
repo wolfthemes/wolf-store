@@ -21,13 +21,15 @@ class Rest_Fields {
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_fields' ) );
 		add_filter( 'rest_wolf_theme_collection_params', array( $this, 'register_collection_params' ) );
-		add_filter( 'rest_wolf_theme_query', array( $this, 'handle_featured_query' ), 10, 2 );
+		add_filter( 'rest_wolf_theme_query', array( $this, 'handle_query_params' ), 10, 2 );
 	}
 
 	/**
-	 * Allow ?featured=1 as a collection param (boolean type, no enum)
+	 * Register custom collection params
 	 */
 	public function register_collection_params( array $params ): array {
+
+		// Allow ?featured=true to filter featured-only
 		$params['featured'] = array(
 			'description'       => __( 'Limit results to featured themes.', 'wolf-store' ),
 			'type'              => 'boolean',
@@ -35,13 +37,21 @@ class Rest_Fields {
 			'sanitize_callback' => 'rest_sanitize_boolean',
 			'validate_callback' => 'rest_validate_request_arg',
 		);
+
+		// Allow orderby=featured
+		if ( isset( $params['orderby']['enum'] ) ) {
+			$params['orderby']['enum'][] = 'featured';
+		}
+
 		return $params;
 	}
 
 	/**
-	 * Translate ?featured=true into a meta_query
+	 * Translate custom query params into WP_Query args
 	 */
-	public function handle_featured_query( array $args, \WP_REST_Request $request ): array {
+	public function handle_query_params( array $args, \WP_REST_Request $request ): array {
+
+		// Featured-only filter
 		$featured = $request->get_param( 'featured' );
 		if ( true === $featured || '1' === $featured || 1 === $featured ) {
 			$args['meta_query'] = array(
@@ -51,6 +61,31 @@ class Rest_Fields {
 				),
 			);
 		}
+
+		// Featured-first ordering
+		if ( 'featured' === $request->get_param( 'orderby' ) ) {
+			$args['orderby']  = array(
+				'meta_value' => 'DESC', // featured first (1 before empty)
+				'date'       => 'DESC', // then by date
+			);
+			$args['meta_key'] = '_wolf_theme_featured';
+			$args['meta_compare'] = 'EXISTS';
+
+			// Also include posts without the meta key (non-featured)
+			$args['meta_query'] = array(
+				'relation' => 'OR',
+				array(
+					'key'     => '_wolf_theme_featured',
+					'value'   => '1',
+					'compare' => '=',
+				),
+				array(
+					'key'     => '_wolf_theme_featured',
+					'compare' => 'NOT EXISTS',
+				),
+			);
+		}
+
 		return $args;
 	}
 
@@ -224,9 +259,6 @@ class Rest_Fields {
 
 	/**
 	 * Helper — register a single read-only REST field on wolf_theme
-	 *
-	 * @param string   $field_name
-	 * @param callable $get_callback
 	 */
 	private function register( string $field_name, callable $get_callback ): void {
 		register_rest_field(
