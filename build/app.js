@@ -947,17 +947,17 @@ function ThemePricing({
   const tfSaving = price_annual && tf_price ? Math.round(tf_price - price_annual) : null;
   const rows = [{
     feature: 'Price',
-    wolf: price_annual ? `$${price_annual}/yr — updates & support forever` : '—',
+    wolf: price_annual ? `$${price_annual}/yr — updates & continuous support` : '—',
     tf: tf_price ? `$${tf_price} one-time + support renewal` : '—',
     wolfWins: true
   }, {
     feature: 'Updates',
-    wolf: 'Always included',
+    wolf: 'Always included - Frequent',
     tf: 'Included (major updates only)',
     wolfWins: true
   }, {
     feature: 'Support',
-    wolf: 'Always included — reply within 24h',
+    wolf: 'Priority Support - Always included — reply within 24h',
     tf: '6 months only — reply within 48h',
     wolfWins: true
   }, {

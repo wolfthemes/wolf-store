@@ -785,7 +785,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 24px;
-  border: 1px solid var(--theme-border-color);
+  border: 1px solid var(--card-border-color);
 }
 .wolf-theme-pricing__card--wolf {
   border-color: currentColor;
@@ -869,18 +869,17 @@
 .wolf-theme-pricing__table th {
   text-align: left;
   padding: 10px 12px;
-  border-bottom: 2px solid var(--theme-border-color);
+  border-bottom: 2px solid var(--card-border-color);
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  opacity: 0.6;
 }
 .wolf-theme-pricing__table th:not(:first-child) {
   text-align: center;
 }
 .wolf-theme-pricing__table td {
   padding: 12px;
-  border-bottom: 1px solid var(--theme-border-color);
+  border-bottom: 1px solid var(--card-border-color);
   vertical-align: middle;
 }
 .wolf-theme-pricing__feature {
