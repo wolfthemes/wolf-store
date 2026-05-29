@@ -48,6 +48,17 @@ class Theme_Index_Params {
 				'group'      => 'Query',
 			),
 			array(
+				'label'      => esc_html__( 'Pagination', 'wolf-store' ),
+				'param_name' => 'pagination',
+				'type'       => 'select',
+				'options'    => array(
+					'none'    => esc_html__( 'None', 'wolf-store' ),
+					'numbers' => esc_html__( 'Numbered', 'wolf-store' ),
+				),
+				'default'    => 'numbers',
+				'admin_label' => true,
+			),
+			array(
 				'label'      => esc_html__( 'Category', 'wolf-store' ),
 				'param_name' => 'theme_cat',
 				'type'       => 'select',

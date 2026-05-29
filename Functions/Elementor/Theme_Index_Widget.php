@@ -83,6 +83,7 @@ class Theme_Index_Widget extends \Elementor\Widget_Base {
 			data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
 			data-term-id="<?php echo absint( $term_id ); ?>"
 			data-per-page="<?php echo absint( $settings['posts_per_page'] ?? 12 ); ?>"
+			data-pagination="<?php echo esc_attr( $settings['pagination'] ?? 'numbers' ); ?>"
 			data-orderby="<?php echo esc_attr( $settings['orderby'] ?? 'date' ); ?>"
 			data-order="<?php echo esc_attr( $settings['order'] ?? 'DESC' ); ?>"
 			data-offset="<?php echo absint( $settings['offset'] ?? 0 ); ?>"
