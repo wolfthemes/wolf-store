@@ -1,13 +1,13 @@
 .wolf-theme-single {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 60px;
-    margin: 40px auto;
-	max-width:1400px;
 
-    @media ( max-width: 768px ) {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+	&__section{
+		padding:80px 0;
+
+	}
+
+	&__wrapper{
+		max-width:var(--single-theme-wrapper-width);
+		margin:0 auto;
+	}
 }
 

@@ -14,7 +14,6 @@ export default function ThemePriceBox( { theme } ) {
 
     return (
         <div className='wolf-theme-price-box'>
-
             { /* Reference — TF struck through */ }
             { tf_price && (
                 <div className='wolf-theme-price-box__reference'>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ThemeChangelog from './ThemeChangelog';
 import ThemeCTAs         from './ThemeCTAs';
-import ElementorContent  from './ElementorContent';
+import ThemePriceBox from './ThemePriceBox';
 
 export default function ThemeHero( { theme } ) {
     const thumbnail       = theme.theme_thumbnail;
@@ -47,6 +47,12 @@ export default function ThemeHero( { theme } ) {
                     { longDescription }
                 </div>
             ) }
+
+			{ /* Hero CTA box — top of sidebar */ }
+            <ThemePriceBox theme={ theme } />
+
+            { /* CTAs */ }
+			<ThemeCTAs theme={ theme } demoUrl={ demoUrl } buyUrl={ buyUrl } layout='column' />
 
         </div>
     );

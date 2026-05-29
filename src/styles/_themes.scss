@@ -1,0 +1,20 @@
+.wp-theme-seijaku{
+
+	&.store-page,
+	&.store-category-page {
+		.content-wrapper{
+			max-width:1950px;
+		}
+	}
+
+	&.single-wolf_theme{
+		.content-wrapper{
+			max-width:none!important;
+			width:100%!important;
+			margin:0!important;
+			padding-top:0!important;
+			padding-left:0!important;
+			padding-right:0!important;
+		}
+	}
+}

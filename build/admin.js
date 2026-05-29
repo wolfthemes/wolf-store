@@ -1,1 +1,27 @@
-jQuery(function(t){t(document).on("click",".wolf-store-featured-toggle",function(e){e.preventDefault();const a=t(this),o=a.data("id"),d=a.data("featured");a.addClass("is-loading"),t.post(wolfStoreAdmin.ajaxUrl,{action:"wolf_store_toggle_featured",nonce:wolfStoreAdmin.nonce,post_id:o,featured:d},function(t){if(t.success){const e=t.data.featured;a.data("featured",e).text(e?"★":"☆").attr("data-featured",e).removeClass("is-loading")}})})});
+/******/ (() => { // webpackBootstrap
+/*!******************************!*\
+  !*** ./src/admin/columns.js ***!
+  \******************************/
+jQuery(function ($) {
+  $(document).on('click', '.wolf-store-featured-toggle', function (e) {
+    e.preventDefault();
+    const $btn = $(this);
+    const postId = $btn.data('id');
+    const featured = $btn.data('featured');
+    $btn.addClass('is-loading');
+    $.post(wolfStoreAdmin.ajaxUrl, {
+      action: 'wolf_store_toggle_featured',
+      nonce: wolfStoreAdmin.nonce,
+      post_id: postId,
+      featured: featured
+    }, function (response) {
+      if (response.success) {
+        const isFeatured = response.data.featured;
+        $btn.data('featured', isFeatured).text(isFeatured ? '★' : '☆').attr('data-featured', isFeatured).removeClass('is-loading');
+      }
+    });
+  });
+});
+/******/ })()
+;
+//# sourceMappingURL=admin.js.map

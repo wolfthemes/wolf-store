@@ -1,0 +1,33 @@
+.wolf-theme-features{
+    // Features dans le hero — à déplacer plus tard
+    &__features {
+        margin-bottom: 40px;
+
+        h3 {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+			list-style-type:none;
+            // padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            // font-size: 0.9rem;
+            // border-bottom: 1px solid #f0f0f0;
+
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: #000;
+                font-weight: 700;
+            }
+		}
+    }
+}

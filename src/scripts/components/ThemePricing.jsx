@@ -55,124 +55,126 @@ export default function ThemePricing( { theme } ) {
     ];
 
     return (
-        <div className='wolf-theme-pricing'>
+        <div className='wolf-theme-pricing wolf-theme-single__section'>
+			<div className='wolf-theme-single__wrapper'>
 
-            <h2 className='wolf-theme-pricing__title'>Where to buy</h2>
-            <p className='wolf-theme-pricing__intro'>
-                Buy directly from us and get more for less — support never expires.
-            </p>
+				<h2 className='wolf-theme-pricing__title'>Where to buy</h2>
+				<p className='wolf-theme-pricing__intro'>
+					Buy directly from us and get more for less — support never expires.
+				</p>
 
-            { /* Price cards */ }
-            <div className='wolf-theme-pricing__cards'>
+				{ /* Price cards */ }
+				<div className='wolf-theme-pricing__cards'>
 
-                { /* WolfThemes card */ }
-                <div className='wolf-theme-pricing__card wolf-theme-pricing__card--wolf'>
-                    <div className='wolf-theme-pricing__card-header'>
-                        <span className='wolf-theme-pricing__card-badge'>Best value</span>
-                        <h3 className='wolf-theme-pricing__card-title'>WolfThemes.com</h3>
-                        <p className='wolf-theme-pricing__card-sub'>Direct from the author</p>
-                    </div>
+					{ /* WolfThemes card */ }
+					<div className='wolf-theme-pricing__card wolf-theme-pricing__card--wolf'>
+						<div className='wolf-theme-pricing__card-header'>
+							<span className='wolf-theme-pricing__card-badge'>Best value</span>
+							<h3 className='wolf-theme-pricing__card-title'>WolfThemes.com</h3>
+							<p className='wolf-theme-pricing__card-sub'>Direct from the author</p>
+						</div>
 
-                    <div className='wolf-theme-pricing__card-prices'>
+						<div className='wolf-theme-pricing__card-prices'>
 
-                        { /* 1 site */ }
-                        <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--hero'>
-                            <div className='wolf-theme-pricing__plan-meta'>
-                                <span className='wolf-theme-pricing__plan-label'>1 site</span>&nbsp;
-                                { tfSaving > 0 && (
-                                    <span className='wolf-theme-pricing__plan-saving'>
-                                        ${ tfSaving } less than ThemeForest
-                                    </span>
-                                ) }
-                            </div>
-                            <span className='wolf-theme-pricing__plan-price'>
-                                { fmt( price_annual ) }<small>/yr</small>
-                            </span>
-                        </div>
+							{ /* 1 site */ }
+							<div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--hero'>
+								<div className='wolf-theme-pricing__plan-meta'>
+									<span className='wolf-theme-pricing__plan-label'>1 site</span>&nbsp;
+									{ tfSaving > 0 && (
+										<span className='wolf-theme-pricing__plan-saving'>
+											${ tfSaving } less than ThemeForest
+										</span>
+									) }
+								</div>
+								<span className='wolf-theme-pricing__plan-price'>
+									{ fmt( price_annual ) }<small>/yr</small>
+								</span>
+							</div>
 
-                        { /* 3 sites */ }
-                        { price_annual_3sites && (
-                            <div className='wolf-theme-pricing__plan'>
-                                <span className='wolf-theme-pricing__plan-label'>3 sites</span>
-                                <span className='wolf-theme-pricing__plan-price'>
-                                    { fmt( price_annual_3sites ) }<small>/yr</small>
-                                </span>
-                            </div>
-                        ) }
+							{ /* 3 sites */ }
+							{ price_annual_3sites && (
+								<div className='wolf-theme-pricing__plan'>
+									<span className='wolf-theme-pricing__plan-label'>3 sites</span>
+									<span className='wolf-theme-pricing__plan-price'>
+										{ fmt( price_annual_3sites ) }<small>/yr</small>
+									</span>
+								</div>
+							) }
 
-                        <p className='wolf-theme-pricing__card-note'>
-                            Updates &amp; support included — always.
-                        </p>
+							<p className='wolf-theme-pricing__card-note'>
+								Updates &amp; support included — always.
+							</p>
 
-                    </div>
+						</div>
 
-                    { buyUrl && (
-                        <a
-                            href={ buyUrl }
-                            className='wolf-theme-pricing__card-cta--wolf theme-button-primary wolf-core-button-size-md'
-                            rel='noopener noreferrer'
-                        >
-                            Get { title }
-                        </a>
-                    ) }
-                </div>
+						{ buyUrl && (
+							<a
+								href={ buyUrl }
+								className='wolf-theme-pricing__card-cta--wolf theme-button-primary wolf-core-button-size-md'
+								rel='noopener noreferrer'
+							>
+								Get { title }
+							</a>
+						) }
+					</div>
 
-                { /* ThemeForest card */ }
-                <div className='wolf-theme-pricing__card wolf-theme-pricing__card--tf'>
-                    <div className='wolf-theme-pricing__card-header'>
-                        <h3 className='wolf-theme-pricing__card-title'>ThemeForest</h3>
-                        <p className='wolf-theme-pricing__card-sub'>Available on the marketplace</p>
-                    </div>
+					{ /* ThemeForest card */ }
+					<div className='wolf-theme-pricing__card wolf-theme-pricing__card--tf'>
+						<div className='wolf-theme-pricing__card-header'>
+							<h3 className='wolf-theme-pricing__card-title'>ThemeForest</h3>
+							<p className='wolf-theme-pricing__card-sub'>Available on the marketplace</p>
+						</div>
 
-                    <div className='wolf-theme-pricing__card-prices'>
-                        <div className='wolf-theme-pricing__plan'>
-                            <span className='wolf-theme-pricing__plan-label'>Regular license</span>
-                            <span className='wolf-theme-pricing__plan-price'>
-                                { fmt( tf_price ) }{/*<small> one-time</small>*/}
-                            </span>
-                        </div>
-                        <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
-                            <span className='wolf-theme-pricing__plan-label'>Support included</span>
-                            <span className='wolf-theme-pricing__plan-price'>Limited time</span>
-                        </div>
-                        <div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
-                            <span className='wolf-theme-pricing__plan-label'>Multi-site</span>
-                            <span className='wolf-theme-pricing__plan-price'>Not available</span>
-                        </div>
-                    </div>
+						<div className='wolf-theme-pricing__card-prices'>
+							<div className='wolf-theme-pricing__plan'>
+								<span className='wolf-theme-pricing__plan-label'>Regular license</span>
+								<span className='wolf-theme-pricing__plan-price'>
+									{ fmt( tf_price ) }{/*<small> one-time</small>*/}
+								</span>
+							</div>
+							<div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
+								<span className='wolf-theme-pricing__plan-label'>Support included</span>
+								<span className='wolf-theme-pricing__plan-price'>Limited time</span>
+							</div>
+							<div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--muted'>
+								<span className='wolf-theme-pricing__plan-label'>Multi-site</span>
+								<span className='wolf-theme-pricing__plan-price'>Not available</span>
+							</div>
+						</div>
 
-                    <a
-                        href='https://wlfthm.es/tf'
-                        className='wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        View on ThemeForest
-                    </a>
-                </div>
+						<a
+							href='https://wlfthm.es/tf'
+							className='wolf-theme-pricing__card-cta theme-button-secondary wolf-core-button-size-md'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							View on ThemeForest
+						</a>
+					</div>
 
-            </div>
+				</div>
 
-            { /* Comparison table */ }
-            <table className='wolf-theme-pricing__table'>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>🐺 WolfThemes</th>
-                        <th>ThemeForest</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { rows.map( ( row, i ) => (
-                        <tr key={ i } className={ row.wolfWins ? 'wolf-theme-pricing__row--win' : '' }>
-                            <td className='wolf-theme-pricing__feature'>{ row.feature }</td>
-                            <td className='wolf-theme-pricing__cell wolf-theme-pricing__cell--wolf'>{ row.wolf }</td>
-                            <td className='wolf-theme-pricing__cell wolf-theme-pricing__cell--tf'>{ row.tf }</td>
-                        </tr>
-                    ) ) }
-                </tbody>
-            </table>
+				{ /* Comparison table */ }
+				<table className='wolf-theme-pricing__table'>
+					<thead>
+						<tr>
+							<th></th>
+							<th>🐺 WolfThemes</th>
+							<th>ThemeForest</th>
+						</tr>
+					</thead>
+					<tbody>
+						{ rows.map( ( row, i ) => (
+							<tr key={ i } className={ row.wolfWins ? 'wolf-theme-pricing__row--win' : '' }>
+								<td className='wolf-theme-pricing__feature'>{ row.feature }</td>
+								<td className='wolf-theme-pricing__cell wolf-theme-pricing__cell--wolf'>{ row.wolf }</td>
+								<td className='wolf-theme-pricing__cell wolf-theme-pricing__cell--tf'>{ row.tf }</td>
+							</tr>
+						) ) }
+					</tbody>
+				</table>
 
+			</div>
         </div>
     );
 }
