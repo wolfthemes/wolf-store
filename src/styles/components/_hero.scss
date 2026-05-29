@@ -20,24 +20,26 @@
 	&__content{
 		position: absolute;
 		bottom: 0;
-		background: white;
+		// background: white;
 		padding: 50px;
+		text-shadow:var(--text-shadow);
 	}
 
 	&__title{
-		font-size:32px;
+		font-size:80px;
 		margin-bottom:0;
 	}
 
 
     &__tagline {
+		font-size:18px;
         margin: 8px 0 16px;
 		font-weight:700;
 		color:var(--strong-color);
     }
 
     &__description {
-        margin-bottom: 24px;
+        margin-bottom: 48px;
 		max-width:650px;
         line-height: 1.8;
     }

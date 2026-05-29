@@ -1,11 +1,10 @@
 export default function ThemeBrandStory() {
 	const { siteUrl } = window.wolfStoreData;
     return (
-		<div className='wolf-theme-single__section'>
-			<div className='wolf-theme-single__wrapper'>
-				<div className='wolf-theme-brand-story'>
+		<div className='wolf-theme-brand-story wolf-theme-single__section'>
+			<div className='wolf-theme-single__wrapper wolf-theme-single__wrapper--small'>
+				<div className='wolf-theme-brand-story__container'>
 					<div className='wolf-theme-brand-story__inner'>
-
 						<div className='wolf-theme-brand-story__avatar'>
 							<img
 								src={ `${ siteUrl }/wp-content/plugins/wolf-store/assets/images/avatar.jpg` }

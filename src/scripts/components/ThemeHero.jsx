@@ -24,7 +24,7 @@ export default function ThemeHero( { theme } ) {
 				</div>
 			) }
 
-            <div className='wolf-theme-hero__content'>
+            <div className='wolf-theme-hero__content wolf-core-font-light'>
 
                 <h1 className='wolf-theme-hero__title'>{ title }</h1>
 

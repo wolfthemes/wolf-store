@@ -414,11 +414,11 @@ function ThemeBrandStory() {
     siteUrl
   } = window.wolfStoreData;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single__section"
+    className: "wolf-theme-brand-story wolf-theme-single__section"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single__wrapper"
+    className: "wolf-theme-single__wrapper wolf-theme-single__wrapper--small"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-brand-story"
+    className: "wolf-theme-brand-story__container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-brand-story__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -802,7 +802,7 @@ function ThemeHero({
     src: thumbnail,
     alt: title
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__content"
+    className: "wolf-theme-hero__content wolf-core-font-light"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "wolf-theme-hero__title"
   }, title), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
@@ -1180,7 +1180,7 @@ function ThemeTestimonials({
   const testimonials = (_theme$theme_testimon = theme.theme_testimonials) !== null && _theme$theme_testimon !== void 0 ? _theme$theme_testimon : [];
   if (!testimonials?.length) return null;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-testimonials wolf-theme-single__section"
+    className: "wolf-theme-testimonials wolf-theme-single__section wolf-core-font-light"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-single__wrapper"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {

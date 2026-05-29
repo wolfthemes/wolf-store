@@ -1,8 +1,11 @@
 .wolf-theme-brand-story {
-    margin-top: 60px;
-    padding: 40px;
-    border: 1px solid var(--card-border-color);
-    background: var(--theme-subtle-bg, #f9f9f9);
+	background:black;
+
+	&__container{
+		padding: 40px;
+		border: 1px solid var(--card-border-color);
+		background: var(--theme-subtle-bg, #f9f9f9);
+	}
 
     &__inner {
         display: flex;
