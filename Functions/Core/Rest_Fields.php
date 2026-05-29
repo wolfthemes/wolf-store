@@ -59,11 +59,16 @@ class Rest_Fields {
 
 		// --- Thumbnail ---
 		$this->register( 'theme_thumbnail', function ( $post ) {
-			return Meta::get_thumbnail_url( 'large', $post['id'] );
+			return Meta::get_thumbnail_url( 'full', $post['id'] );
 		} );
 
 		$this->register( 'theme_video', function ( $post ) {
 			return Meta::get_video_url( $post['id'] );
+		} );
+
+		$this->register( 'theme_gallery', function ( $post ) {
+			$slug = Meta::get_theme_slug( $post['id'] );
+			return Meta::get_gallery( $slug );
 		} );
 
 		$this->register( 'theme_mockup', function ( $post ) {

@@ -446,6 +446,33 @@
 .wolf-theme-description__mockup {
   max-width: 800px;
 }
+.wolf-theme-gallery {
+  background: black;
+}
+.wolf-theme-gallery__grid {
+  -moz-columns: 3;
+       columns: 3;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.wolf-theme-gallery__item {
+  display: block;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.wolf-theme-gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+.wolf-theme-gallery__item:hover img {
+  transform: scale(1.03);
+  opacity: 0.85;
+}
+
 .wolf-theme-ctas {
   display: flex;
   gap: 12px;
@@ -516,6 +543,7 @@
   text-transform: uppercase;
   padding: 3px 8px;
   background: var(--checkmark-color);
+  background: black;
   color: #fff;
 }
 .wolf-theme-price-box__hero-amount {

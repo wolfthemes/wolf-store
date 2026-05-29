@@ -1,7 +1,8 @@
 import { useTheme } from './hooks/useTheme';
 import ThemeHero    from './ThemeHero';
 import ThemeDescription from './ThemeDescription';
-import ThemeFooter    from './ThemeFooter';
+import ThemeGallery from './ThemeGallery';
+// import ThemeFooter    from './ThemeFooter';
 import ThemeTechnicals from './ThemeTechnicals';
 import ThemePricing from './ThemePricing';
 import ThemeTestimonials from './ThemeTestimonials';
@@ -25,6 +26,7 @@ export default function Single( { postId } ) {
             <div className='wolf-theme-single__main'>
                 <ThemeHero theme={ theme } />
                 <ThemeDescription theme={ theme } />
+                <ThemeGallery theme={ theme } />
 				<ThemePricing theme={ theme } />
                 <ThemeTestimonials theme={ theme } />
                 <ThemeFeatures theme={ theme } />

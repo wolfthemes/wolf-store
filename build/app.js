@@ -237,7 +237,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks_useTheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useTheme */ "./src/scripts/components/hooks/useTheme.js");
 /* harmony import */ var _ThemeHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeHero */ "./src/scripts/components/ThemeHero.jsx");
 /* harmony import */ var _ThemeDescription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeDescription */ "./src/scripts/components/ThemeDescription.jsx");
-/* harmony import */ var _ThemeFooter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeFooter */ "./src/scripts/components/ThemeFooter.jsx");
+/* harmony import */ var _ThemeGallery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeGallery */ "./src/scripts/components/ThemeGallery.jsx");
 /* harmony import */ var _ThemeTechnicals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeTechnicals */ "./src/scripts/components/ThemeTechnicals.jsx");
 /* harmony import */ var _ThemePricing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemePricing */ "./src/scripts/components/ThemePricing.jsx");
 /* harmony import */ var _ThemeTestimonials__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeTestimonials */ "./src/scripts/components/ThemeTestimonials.jsx");
@@ -250,6 +250,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import ThemeFooter    from './ThemeFooter';
 
 
 
@@ -282,6 +283,8 @@ function Single({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: theme
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeDescription__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    theme: theme
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeGallery__WEBPACK_IMPORTED_MODULE_4__["default"], {
     theme: theme
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePricing__WEBPACK_IMPORTED_MODULE_6__["default"], {
     theme: theme
@@ -733,44 +736,41 @@ function ThemeFeatures({
 
 /***/ },
 
-/***/ "./src/scripts/components/ThemeFooter.jsx"
-/*!************************************************!*\
-  !*** ./src/scripts/components/ThemeFooter.jsx ***!
-  \************************************************/
+/***/ "./src/scripts/components/ThemeGallery.jsx"
+/*!*************************************************!*\
+  !*** ./src/scripts/components/ThemeGallery.jsx ***!
+  \*************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ThemeFooter)
+/* harmony export */   "default": () => (/* binding */ ThemeGallery)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
-/* harmony import */ var _ThemeTestimonials__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeTestimonials */ "./src/scripts/components/ThemeTestimonials.jsx");
 
-
-
-
-function ThemeFooter({
+function ThemeGallery({
   theme
 }) {
-  var _theme$theme_features;
-  const demoUrl = theme.theme_demo_url;
-  const buyUrl = theme.theme_purchase_url;
-  const features = (_theme$theme_features = theme.theme_features) !== null && _theme$theme_features !== void 0 ? _theme$theme_features : [];
+  var _theme$theme_gallery;
+  const images = (_theme$theme_gallery = theme.theme_gallery) !== null && _theme$theme_gallery !== void 0 ? _theme$theme_gallery : [];
+  if (!images.length) return null;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-footer"
-  }, features.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__features"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "wolf-theme-hero__section-title"
-  }, "Features"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "wolf-theme-hero__features-list"
-  }, features.map((feature, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: i
-  }, feature)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeTestimonials__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    theme: theme
-  }));
+    className: "wolf-theme-gallery wolf-theme-single__section"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single__wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-gallery__grid"
+  }, images.map((src, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    key: i,
+    href: src,
+    "data-fancybox": "theme-gallery",
+    className: "wolf-theme-gallery__item"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: src,
+    alt: `Screenshot ${i + 1}`,
+    loading: "lazy"
+  }))))));
 }
 
 /***/ },

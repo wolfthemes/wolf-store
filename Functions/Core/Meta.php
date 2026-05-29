@@ -18,7 +18,8 @@ class Meta {
 	const REMOTE_BASE_URL  = 'https://changelog.wolfthemes.cloud';
 	const PREVIEW_BASE_URL = 'https://preview.wolfthemes.store';
 	const ASSETS_BASE_URL  = 'https://assets.wolfthemes.cloud/theme';
-	const CACHE_EXPIRATION = HOUR_IN_SECONDS;
+	/* const CACHE_EXPIRATION = HOUR_IN_SECONDS; */
+	const CACHE_EXPIRATION = 10;
 
 	/**
 	 * Get the theme slug for a post
@@ -135,7 +136,7 @@ class Meta {
 	 * @param int|null $post_id
 	 * @return string
 	 */
-	public static function get_thumbnail_url( string $size = 'large', ?int $post_id = null ): string {
+	public static function get_thumbnail_url( string $size = 'full', ?int $post_id = null ): string {
 		$post_id = $post_id ?? get_the_ID();
 
 		// WP featured image first
@@ -155,6 +156,60 @@ class Meta {
 		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/thumb.jpg';
 
 		return apply_filters( 'wolf_store_mockup_url', esc_url( $url ), $slug );
+	}
+
+	/**
+	 * Get gallery image URLs for a slug
+	 * Fetches gallery.json from the CDN and returns full URLs
+	 *
+	 * @param string|null $slug
+	 * @param int|null    $post_id
+	 * @return array
+	 */
+	public static function get_gallery( ?string $slug = null, ?int $post_id = null ): array {
+		$slug = $slug ?? self::get_theme_slug( $post_id );
+
+		if ( ! $slug ) {
+			return array();
+		}
+
+		// delete_transient( 'wolf_store_gallery_aurenza' );
+
+		$cache_key = 'wolf_store_gallery_' . sanitize_key( $slug );
+		$cached    = get_transient( $cache_key );
+
+		if ( false !== $cached ) {
+			return $cached;
+		}
+
+		$url      = sprintf( '%s/%s/gallery.json', self::ASSETS_BASE_URL, $slug );
+		$response = wp_remote_get( $url, array( 'timeout' => 5 ) );
+
+		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
+			set_transient( $cache_key, array(), 60 ); // short TTL on failure
+			return array();
+		}
+
+		$filenames = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		if ( ! is_array( $filenames ) ) {
+			set_transient( $cache_key, array(), 60 );
+			return array();
+		}
+
+		$base = sprintf( '%s/%s/gallery/', self::ASSETS_BASE_URL, $slug );
+		$urls = array_map( fn( $f ) => esc_url( $base . $f ), $filenames );
+
+		set_transient( $cache_key, $urls, self::CACHE_EXPIRATION );
+
+		return $urls;
+	}
+
+	/**
+	 * Flush gallery cache for a slug
+	 */
+	public static function flush_gallery_cache( string $slug ): void {
+		delete_transient( 'wolf_store_gallery_' . sanitize_key( $slug ) );
 	}
 
 	public static function get_meta( ?int $post_id = null ): array {
@@ -356,5 +411,6 @@ class Meta {
 		delete_transient( 'wolf_store_' . sanitize_key( $slug ) . '_app.config.json' );
 		delete_transient( 'wolf_store_' . sanitize_key( $slug ) . '_theme_meta.json' );
 		self::flush_changelog_cache( $slug );
+		self::flush_gallery_cache( $slug );
 	}
 }
