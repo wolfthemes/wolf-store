@@ -151,11 +151,18 @@ class Meta {
 		return apply_filters( 'wolf_store_thumbnail_url', esc_url( $url ), $slug, $post_id );
 	}
 
-	public static function get_theme_mockup_url() {
+	public static function get_theme_mockup_url( ?int $post_id = null ): string  {
 		$slug = self::get_theme_slug( $post_id );
 		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/thumb.jpg';
 
 		return apply_filters( 'wolf_store_mockup_url', esc_url( $url ), $slug );
+	}
+
+	public static function get_theme_hero_url( ?int $post_id = null ): string  {
+		$slug = self::get_theme_slug( $post_id );
+		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/screenshot.jpg';
+
+		return apply_filters( 'wolf_store_hero_url', esc_url( $url ), $slug );
 	}
 
 	/**

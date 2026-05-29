@@ -3,7 +3,8 @@ import ThemeCTAs         from './ThemeCTAs';
 import ThemePriceBox from './ThemePriceBox';
 
 export default function ThemeHero( { theme } ) {
-    const thumbnail       = theme.theme_thumbnail;
+
+    const thumbnail       = theme.theme_hero;
     const video           = theme.theme_video;
     const title           = theme.title?.rendered;
     const description     = theme.theme_short_description;

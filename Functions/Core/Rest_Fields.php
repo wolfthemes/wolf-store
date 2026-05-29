@@ -72,7 +72,11 @@ class Rest_Fields {
 		} );
 
 		$this->register( 'theme_mockup', function ( $post ) {
-			return Meta::get_theme_mockup_url();
+			return Meta::get_theme_mockup_url($post['id']);
+		} );
+
+		$this->register( 'theme_hero', function ( $post ) {
+			return Meta::get_theme_hero_url($post['id']);
 		} );
 
 		// --- From changelog.xml ---
