@@ -662,18 +662,33 @@ function ThemeDescription({
   const excerpt = theme.excerpt?.rendered;
   const description = theme.theme_short_description;
   const longDescription = theme.theme_long_description;
+  const demoUrl = theme.theme_demo_url;
+  const mockup = theme.theme_mockup;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-description wolf-theme-single__section"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-single__wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single-description__column"
   }, excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__excerpt",
+    className: "wolf-theme-description__excerpt",
     dangerouslySetInnerHTML: {
       __html: excerpt
     }
   }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__description"
-  }, longDescription)));
+    className: "wolf-theme-description__description"
+  }, longDescription)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single-description__column"
+  }, mockup && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-description__mockup"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: demoUrl,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: mockup,
+    alt: title
+  }))))));
 }
 
 /***/ },
@@ -778,9 +793,7 @@ function ThemeHero({
 }) {
   const thumbnail = theme.theme_thumbnail;
   const title = theme.title?.rendered;
-  const excerpt = theme.excerpt?.rendered;
   const description = theme.theme_short_description;
-  const longDescription = theme.theme_long_description;
   const demoUrl = theme.theme_demo_url;
   const buyUrl = theme.theme_purchase_url;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {

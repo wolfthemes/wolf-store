@@ -1,0 +1,22 @@
+.wolf-theme-description{
+
+	.wolf-theme-single__wrapper{
+
+		display:flex;
+		gap:20px;
+		align-items:center;
+	}
+
+	&__description{
+		font-size:1.1em;
+		max-width:500px;
+	}
+
+	&__mockup{
+		max-width:800px;
+	}
+
+	&__column{
+
+	}
+}

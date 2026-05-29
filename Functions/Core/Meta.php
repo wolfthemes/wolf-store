@@ -118,6 +118,13 @@ class Meta {
 		return apply_filters( 'wolf_store_thumbnail_url', esc_url( $url ), $slug, $post_id );
 	}
 
+	public static function get_theme_mockup_url() {
+		$slug = self::get_theme_slug( $post_id );
+		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/thumb.jpg';
+
+		return apply_filters( 'wolf_store_mockup_url', esc_url( $url ), $slug );
+	}
+
 	public static function get_meta( ?int $post_id = null ): array {
 		$post_id = $post_id ?? get_the_ID();
 

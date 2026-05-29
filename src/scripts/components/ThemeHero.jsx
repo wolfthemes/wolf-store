@@ -5,9 +5,7 @@ import ThemePriceBox from './ThemePriceBox';
 export default function ThemeHero( { theme } ) {
     const thumbnail       = theme.theme_thumbnail;
     const title           = theme.title?.rendered;
-    const excerpt         = theme.excerpt?.rendered;
     const description     = theme.theme_short_description;
-    const longDescription = theme.theme_long_description;
     const demoUrl         = theme.theme_demo_url;
     const buyUrl          = theme.theme_purchase_url;
 

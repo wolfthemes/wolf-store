@@ -62,6 +62,10 @@ class Rest_Fields {
 			return Meta::get_thumbnail_url( 'large', $post['id'] );
 		} );
 
+		$this->register( 'theme_mockup', function ( $post ) {
+			return Meta::get_theme_mockup_url();
+		} );
+
 		// --- From changelog.xml ---
 		$this->register( 'theme_latest_version', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );

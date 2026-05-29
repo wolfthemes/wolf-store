@@ -431,6 +431,18 @@
   line-height: 1.8;
 }
 
+.wolf-theme-description .wolf-theme-single__wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.wolf-theme-description__description {
+  font-size: 1.1em;
+  max-width: 500px;
+}
+.wolf-theme-description__mockup {
+  max-width: 800px;
+}
 .wolf-theme-ctas {
   display: flex;
   gap: 12px;
@@ -466,6 +478,7 @@
   position: absolute;
   background: white;
   right: 30px;
+  top: 30px;
   padding: 50px;
 }
 .wolf-theme-price-box__reference {
