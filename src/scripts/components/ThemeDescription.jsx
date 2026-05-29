@@ -1,5 +1,6 @@
 
 import ThemeCTAs from './ThemeCTAs';
+import ThemeBenefits from './ThemeBenefits';
 
 export default function ThemeDescription({ theme }) {
     const title           = theme.title?.rendered;
@@ -25,8 +26,13 @@ export default function ThemeDescription({ theme }) {
 						</div>
 					) }
 
+					{ /* Benefits */ }
+					<ThemeBenefits />
+
 					{ /* CTAs */ }
 					<ThemeCTAs theme={ theme } layout='row' />
+
+
 
 				</div>
 				<div className='wolf-theme-single-description__column'>

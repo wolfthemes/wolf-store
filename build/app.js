@@ -396,6 +396,34 @@ function SkeletonSingle() {
 
 /***/ },
 
+/***/ "./src/scripts/components/ThemeBenefits.jsx"
+/*!**************************************************!*\
+  !*** ./src/scripts/components/ThemeBenefits.jsx ***!
+  \**************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeBenefits)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ThemeBenefits() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-benefits"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-theme-benefits__title"
+  }, "What's Included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-theme-benefits__list"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Lifetime theme access"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Ongoing updates included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Direct support from the creator ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-theme-benefits__info",
+    title: "Support provided via our forum"
+  }, "\u24D8")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "7-day money-back guarantee")));
+}
+
+/***/ },
+
 /***/ "./src/scripts/components/ThemeBrandStory.jsx"
 /*!****************************************************!*\
   !*** ./src/scripts/components/ThemeBrandStory.jsx ***!
@@ -644,6 +672,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+/* harmony import */ var _ThemeBenefits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeBenefits */ "./src/scripts/components/ThemeBenefits.jsx");
+
 
 
 function ThemeDescription({
@@ -668,7 +698,7 @@ function ThemeDescription({
     }
   }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-description__description"
-  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeBenefits__WEBPACK_IMPORTED_MODULE_2__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__["default"], {
     theme: theme,
     layout: "row"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -802,6 +832,10 @@ function ThemeHero({
     src: thumbnail,
     alt: title
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "faded-edges-overlay"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "noise-overlay"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__content wolf-core-font-light"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "wolf-theme-hero__title"

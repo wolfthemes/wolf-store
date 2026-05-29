@@ -1,0 +1,36 @@
+.wolf-theme-benefits{
+	margin-bottom: 24px;
+	padding: 16px;
+	border: 1px solid var(--theme-border-color);
+	opacity: 0.8;
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		color:var(--strong-color);
+		font-weight:600;
+
+		li {
+			list-style-type:none;
+			// padding: 5px 0;
+			padding-left: 20px;
+            position: relative;
+			// font-size: 0.85rem;
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: var(--checkmark-color);
+                font-weight: 700;
+            }
+		}
+	}
+
+	&__info {
+		cursor: help;
+		opacity: 0.5;
+		font-size: 0.75rem;
+		margin-left: 4px;
+	}
+}
