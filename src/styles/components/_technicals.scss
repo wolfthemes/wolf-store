@@ -1,6 +1,15 @@
 // Sidebar
 .wolf-theme-technicals {
 
+	.wolf-theme-single__wrapper {
+		display:flex;
+		gap:20px;
+		align-items:center;
+		justify-content: space-between;
+
+
+	}
+
 	&__meta {
         border-top: 1px solid #eee;
         margin-bottom: 32px;
