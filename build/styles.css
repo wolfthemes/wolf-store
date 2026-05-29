@@ -484,11 +484,9 @@
 .wolf-theme-ctas--row {
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 40px;
 }
 .wolf-theme-ctas--column {
   flex-direction: column;
-  margin-bottom: 32px;
 }
 .wolf-theme-ctas__btn--buy {
   background: var(--accent-hover-color) !important;
@@ -514,6 +512,7 @@
   right: 30px;
   top: 30px;
   padding: 50px;
+  box-shadow: 5px 5px 25px rgba(2, 2, 2, 0.3294117647);
 }
 .wolf-theme-price-box__reference {
   display: flex;

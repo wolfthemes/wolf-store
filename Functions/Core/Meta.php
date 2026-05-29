@@ -18,8 +18,8 @@ class Meta {
 	const REMOTE_BASE_URL  = 'https://changelog.wolfthemes.cloud';
 	const PREVIEW_BASE_URL = 'https://preview.wolfthemes.store';
 	const ASSETS_BASE_URL  = 'https://assets.wolfthemes.cloud/theme';
-	/* const CACHE_EXPIRATION = HOUR_IN_SECONDS; */
-	const CACHE_EXPIRATION = 10;
+	const CACHE_EXPIRATION = HOUR_IN_SECONDS;
+	/* const CACHE_EXPIRATION = 10; */
 
 	/**
 	 * Get the theme slug for a post
