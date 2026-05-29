@@ -1,15 +1,27 @@
 // Hero
 .wolf-theme-hero {
+	min-height: 80vh;
+    position: relative;
 
     &__thumbnail {
-        margin-bottom: 32px;
-
+        position: absolute;
+		width: 100%;
+		height: 100%;
         img {
             width: 100%;
-            height: auto;
-            display: block;
-        }
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			position: absolute;
+		}
     }
+
+	&__content{
+		position: absolute;
+		bottom: 0;
+		background: white;
+		padding: 50px;
+	}
 
 	&__title{
 		font-size:32px;

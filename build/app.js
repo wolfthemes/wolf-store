@@ -236,14 +236,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hooks_useTheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useTheme */ "./src/scripts/components/hooks/useTheme.js");
 /* harmony import */ var _ThemeHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeHero */ "./src/scripts/components/ThemeHero.jsx");
-/* harmony import */ var _ThemeFooter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeFooter */ "./src/scripts/components/ThemeFooter.jsx");
-/* harmony import */ var _ThemeTechnicals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeTechnicals */ "./src/scripts/components/ThemeTechnicals.jsx");
-/* harmony import */ var _ThemePricing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemePricing */ "./src/scripts/components/ThemePricing.jsx");
-/* harmony import */ var _ThemeTestimonials__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemeTestimonials */ "./src/scripts/components/ThemeTestimonials.jsx");
-/* harmony import */ var _ThemeFeatures__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeFeatures */ "./src/scripts/components/ThemeFeatures.jsx");
-/* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
-/* harmony import */ var _ThemeBrandStory__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ThemeBrandStory */ "./src/scripts/components/ThemeBrandStory.jsx");
-/* harmony import */ var _SkeletonSingle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SkeletonSingle */ "./src/scripts/components/SkeletonSingle.jsx");
+/* harmony import */ var _ThemeDescription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeDescription */ "./src/scripts/components/ThemeDescription.jsx");
+/* harmony import */ var _ThemeFooter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeFooter */ "./src/scripts/components/ThemeFooter.jsx");
+/* harmony import */ var _ThemeTechnicals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeTechnicals */ "./src/scripts/components/ThemeTechnicals.jsx");
+/* harmony import */ var _ThemePricing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemePricing */ "./src/scripts/components/ThemePricing.jsx");
+/* harmony import */ var _ThemeTestimonials__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeTestimonials */ "./src/scripts/components/ThemeTestimonials.jsx");
+/* harmony import */ var _ThemeFeatures__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ThemeFeatures */ "./src/scripts/components/ThemeFeatures.jsx");
+/* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
+/* harmony import */ var _ThemeBrandStory__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ThemeBrandStory */ "./src/scripts/components/ThemeBrandStory.jsx");
+/* harmony import */ var _SkeletonSingle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SkeletonSingle */ "./src/scripts/components/SkeletonSingle.jsx");
+
 
 
 
@@ -279,15 +281,17 @@ function Single({
     className: "wolf-theme-single__main"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePricing__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeDescription__WEBPACK_IMPORTED_MODULE_3__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeTestimonials__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePricing__WEBPACK_IMPORTED_MODULE_6__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeFeatures__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeTestimonials__WEBPACK_IMPORTED_MODULE_7__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeBrandStory__WEBPACK_IMPORTED_MODULE_9__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeTechnicals__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeFeatures__WEBPACK_IMPORTED_MODULE_8__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeBrandStory__WEBPACK_IMPORTED_MODULE_10__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeTechnicals__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    theme: theme
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeChangelog__WEBPACK_IMPORTED_MODULE_9__["default"], {
     theme: theme
   })));
 }
@@ -479,22 +483,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-/**
- * ThemeCTAs
- *
- * Reusable CTA buttons — demo + purchase.
- * Renders in both the hero and the sidebar.
- *
- * @param {string}  demoUrl   Live-demo URL
- * @param {string}  buyUrl    Purchase URL
- * @param {string}  layout    'row' (default) | 'column'
- */
 function ThemeCTAs({
   theme,
-  demoUrl,
-  buyUrl,
   layout = 'row'
 }) {
+  const demoUrl = theme.theme_demo_url;
+  const buyUrl = theme.theme_purchase_url;
   if (!demoUrl && !buyUrl) return null;
   const title = theme.title?.rendered;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -648,6 +642,42 @@ function ThemeChangelog({
 
 /***/ },
 
+/***/ "./src/scripts/components/ThemeDescription.jsx"
+/*!*****************************************************!*\
+  !*** ./src/scripts/components/ThemeDescription.jsx ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeDescription)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ThemeDescription({
+  theme
+}) {
+  const title = theme.title?.rendered;
+  const excerpt = theme.excerpt?.rendered;
+  const description = theme.theme_short_description;
+  const longDescription = theme.theme_long_description;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-description wolf-theme-single__section"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single__wrapper"
+  }, excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero__excerpt",
+    dangerouslySetInnerHTML: {
+      __html: excerpt
+    }
+  }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero__description"
+  }, longDescription)));
+}
+
+/***/ },
+
 /***/ "./src/scripts/components/ThemeFeatures.jsx"
 /*!**************************************************!*\
   !*** ./src/scripts/components/ThemeFeatures.jsx ***!
@@ -737,10 +767,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
-/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
-/* harmony import */ var _ThemePriceBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemePriceBox */ "./src/scripts/components/ThemePriceBox.jsx");
-
+/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+/* harmony import */ var _ThemePriceBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemePriceBox */ "./src/scripts/components/ThemePriceBox.jsx");
 
 
 
@@ -757,13 +785,7 @@ function ThemeHero({
   const buyUrl = theme.theme_purchase_url;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
-    className: "wolf-theme-hero__title"
-  }, title), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "wolf-theme-hero__tagline"
-  }, description)), thumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, thumbnail && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-hero__thumbnail"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: demoUrl,
@@ -772,20 +794,14 @@ function ThemeHero({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: thumbnail,
     alt: title
-  }))), excerpt && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__excerpt",
-    dangerouslySetInnerHTML: {
-      __html: excerpt
-    }
-  }), longDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-hero__description"
-  }, longDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePriceBox__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero__content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+    className: "wolf-theme-hero__title"
+  }, title), description && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "wolf-theme-hero__tagline"
+  }, description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemePriceBox__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: theme
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    theme: theme,
-    demoUrl: demoUrl,
-    buyUrl: buyUrl,
-    layout: "column"
   }));
 }
 
@@ -803,14 +819,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
 
-/**
- * ThemePriceBox
- *
- * Price display only — no CTAs.
- * Annual single-site is the hero. 3-site tier shown below.
- * TF price struck at top sets the reference anchor.
- */
+
 function ThemePriceBox({
   theme
 }) {
@@ -850,7 +861,10 @@ function ThemePriceBox({
     className: "wolf-theme-price-box__secondary-label"
   }, "for 3 sites"))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-price-box__coming-soon"
-  }, "New pricing coming soon"));
+  }, "New pricing coming soon"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeCTAs__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    theme: theme,
+    layout: "column"
+  }));
 }
 
 /***/ },

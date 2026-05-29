@@ -1,14 +1,7 @@
-/**
- * ThemeCTAs
- *
- * Reusable CTA buttons — demo + purchase.
- * Renders in both the hero and the sidebar.
- *
- * @param {string}  demoUrl   Live-demo URL
- * @param {string}  buyUrl    Purchase URL
- * @param {string}  layout    'row' (default) | 'column'
- */
-export default function ThemeCTAs( { theme, demoUrl, buyUrl, layout = 'row' } ) {
+
+export default function ThemeCTAs( { theme, layout = 'row' } ) {
+    const demoUrl         = theme.theme_demo_url;
+    const buyUrl          = theme.theme_purchase_url;
     if ( ! demoUrl && ! buyUrl ) return null;
 	const title        = theme.title?.rendered;
 

@@ -1,13 +1,15 @@
 // ── ThemePriceBox ─────────────────────────────────────────────────────────────
 
 .wolf-theme-price-box {
-    padding: 20px;
     border: 1px solid var(--theme-border-color);
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-
+    position: absolute;
+    background: white;
+    right: 30px;
+    padding: 50px;
     // ── Reference (TF struck) ─────────────────────────────────────────────────
 
     &__reference {

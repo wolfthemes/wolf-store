@@ -1,10 +1,6 @@
-/**
- * ThemePriceBox
- *
- * Price display only — no CTAs.
- * Annual single-site is the hero. 3-site tier shown below.
- * TF price struck at top sets the reference anchor.
- */
+
+import ThemeCTAs from './ThemeCTAs';
+
 export default function ThemePriceBox( { theme } ) {
     const { tf_price, price_annual, price_annual_3sites } = theme.theme_pricing ?? {};
 
@@ -55,6 +51,9 @@ export default function ThemePriceBox( { theme } ) {
                     New pricing coming soon
                 </div>
             ) }
+
+            { /* CTAs */ }
+			<ThemeCTAs theme={ theme } layout='column' />
 
         </div>
     );
