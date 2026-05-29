@@ -4,6 +4,8 @@ A modern WordPress theme store plugin built with a clean OOP PHP architecture an
 
 > ⚠️ This project is currently in active development and serves as both a functional plugin and a portfolio piece demonstrating modern WordPress + React development practices.
 
+[Staging Website](https://staging20.wolfthemes.com/store/)
+
 ---
 
 ## Tech Stack

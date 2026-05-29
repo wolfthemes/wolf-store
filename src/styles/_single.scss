@@ -8,6 +8,10 @@
 	&__wrapper{
 		max-width:var(--single-theme-wrapper-width);
 		margin:0 auto;
+
+		&--small{
+			max-width:var(--single-theme-wrapper-width-small);
+		}
 	}
 }
 

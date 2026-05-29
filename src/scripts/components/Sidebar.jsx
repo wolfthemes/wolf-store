@@ -48,28 +48,28 @@ export default function Sidebar( { activeTaxonomy, activeTermId, onChange } ) {
             ) }
 
             { /* Tags */ }
-            { tags.length > 0 && (
-                <div className='wolf-store-sidebar__group'>
-                    <h3 className='wolf-store-sidebar__title'>Tags</h3>
-                    <ul className='wolf-store-sidebar__list'>
-                        { tags.map( term => (
-                            <li key={ term.id }>
-
-                                    <a href='#'
-                                    className={ `wolf-store-sidebar__term${
-                                        activeTaxonomy === 'theme_tag' && activeTermId === term.id
-                                            ? ' is-active' : ''
-                                    }` }
-                                    onClick={ e => handleClick( e, 'theme_tag', term.id ) }
-                                >
-                                    { term.name }
-                                    <span className='wolf-store-sidebar__count'>{ term.count }</span>
-                                </a>
-                            </li>
-                        ) ) }
-                    </ul>
-                </div>
-            ) }
+            {/* { tags.length > 0 && ( */}
+            {/*     <div className='wolf-store-sidebar__group'> */}
+            {/*         <h3 className='wolf-store-sidebar__title'>Tags</h3> */}
+            {/*         <ul className='wolf-store-sidebar__list'> */}
+            {/*             { tags.map( term => ( */}
+            {/*                 <li key={ term.id }> */}
+            {/**/}
+            {/*                         <a href='#' */}
+            {/*                         className={ `wolf-store-sidebar__term${ */}
+            {/*                             activeTaxonomy === 'theme_tag' && activeTermId === term.id */}
+            {/*                                 ? ' is-active' : '' */}
+            {/*                         }` } */}
+            {/*                         onClick={ e => handleClick( e, 'theme_tag', term.id ) } */}
+            {/*                     > */}
+            {/*                         { term.name } */}
+            {/*                         <span className='wolf-store-sidebar__count'>{ term.count }</span> */}
+            {/*                     </a> */}
+            {/*                 </li> */}
+            {/*             ) ) } */}
+            {/*         </ul> */}
+            {/*     </div> */}
+            {/* ) } */}
 
         </aside>
     );

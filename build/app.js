@@ -203,20 +203,6 @@ function Sidebar({
     onClick: e => handleClick(e, 'theme_cat', term.id)
   }, term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wolf-store-sidebar__count"
-  }, term.count)))))), tags.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-store-sidebar__group"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "wolf-store-sidebar__title"
-  }, "Tags"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "wolf-store-sidebar__list"
-  }, tags.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: term.id
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: `wolf-store-sidebar__term${activeTaxonomy === 'theme_tag' && activeTermId === term.id ? ' is-active' : ''}`,
-    onClick: e => handleClick(e, 'theme_tag', term.id)
-  }, term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-store-sidebar__count"
   }, term.count)))))));
 }
 
@@ -959,7 +945,7 @@ function ThemePricing({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-pricing wolf-theme-single__section"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single__wrapper"
+    className: "wolf-theme-single__wrapper wolf-theme-single__wrapper--small"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "wolf-theme-pricing__title"
   }, "Where to buy"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {

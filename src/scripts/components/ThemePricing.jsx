@@ -56,7 +56,7 @@ export default function ThemePricing( { theme } ) {
 
     return (
         <div className='wolf-theme-pricing wolf-theme-single__section'>
-			<div className='wolf-theme-single__wrapper'>
+			<div className='wolf-theme-single__wrapper wolf-theme-single__wrapper--small'>
 
 				<h2 className='wolf-theme-pricing__title'>Where to buy</h2>
 				<p className='wolf-theme-pricing__intro'>
