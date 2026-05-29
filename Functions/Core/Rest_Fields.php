@@ -59,7 +59,7 @@ class Rest_Fields {
 
 		// --- Thumbnail ---
 		$this->register( 'theme_thumbnail', function ( $post ) {
-			return Meta::get_thumbnail_url( 'full', $post['id'] );
+			return Meta::get_thumbnail_url( $post['id'] );
 		} );
 
 		$this->register( 'theme_video', function ( $post ) {
@@ -76,7 +76,7 @@ class Rest_Fields {
 		} );
 
 		$this->register( 'theme_hero', function ( $post ) {
-			return Meta::get_theme_hero_url($post['id']);
+			return Meta::get_theme_hero_url('full', $post['id']);
 		} );
 
 		// --- From changelog.xml ---

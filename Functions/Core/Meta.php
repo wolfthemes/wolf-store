@@ -136,7 +136,7 @@ class Meta {
 	 * @param int|null $post_id
 	 * @return string
 	 */
-	public static function get_thumbnail_url( string $size = 'full', ?int $post_id = null ): string {
+	public static function get_theme_hero_url( string $size = 'full', ?int $post_id = null ): string {
 		$post_id = $post_id ?? get_the_ID();
 
 		// WP featured image first
@@ -158,11 +158,11 @@ class Meta {
 		return apply_filters( 'wolf_store_mockup_url', esc_url( $url ), $slug );
 	}
 
-	public static function get_theme_hero_url( ?int $post_id = null ): string  {
+	public static function get_thumbnail_url( ?int $post_id = null ): string  {
 		$slug = self::get_theme_slug( $post_id );
 		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/screenshot.jpg';
 
-		return apply_filters( 'wolf_store_hero_url', esc_url( $url ), $slug );
+		return apply_filters( 'wolf_store_thumbnail_url', esc_url( $url ), $slug );
 	}
 
 	/**
@@ -247,9 +247,9 @@ class Meta {
 				'demo_url'     => self::get_demo_url( $post_id ),
 				'purchase_url' => self::get_purchase_url( $post_id ),
 				'thumbnail'    => array(
-					'medium' => self::get_thumbnail_url( 'medium', $post_id ),
-					'large'  => self::get_thumbnail_url( 'large', $post_id ),
-					'full'   => self::get_thumbnail_url( 'full', $post_id ),
+					'medium' => self::get_theme_hero_url( 'medium', $post_id ),
+					'large'  => self::get_theme_hero_url( 'large', $post_id ),
+					'full'   => self::get_theme_hero_url( 'full', $post_id ),
 				),
 			)
 		);
