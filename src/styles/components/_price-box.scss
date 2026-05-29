@@ -1,7 +1,7 @@
 // ── ThemePriceBox ─────────────────────────────────────────────────────────────
 
 .wolf-theme-price-box {
-    border: 1px solid var(--theme-border-color);
+    // border: 1px solid var(--theme-border-color);
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     right: 30px;
 	top: 30px;
     padding: 50px;
-	box-shadow: 5px 5px 25px #02020254;
+	box-shadow: var(--box-shadow);
     // ── Reference (TF struck) ─────────────────────────────────────────────────
 
     &__reference {

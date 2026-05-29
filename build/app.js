@@ -1083,6 +1083,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ThemePriceBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThemePriceBox */ "./src/scripts/components/ThemePriceBox.jsx");
 /* harmony import */ var _ThemeCTAs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeCTAs */ "./src/scripts/components/ThemeCTAs.jsx");
+/* harmony import */ var _ThemeBenefits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThemeBenefits */ "./src/scripts/components/ThemeBenefits.jsx");
+
 
 
 
@@ -1109,16 +1111,7 @@ function ThemeTechnicals({
     className: "wolf-theme-technicals wolf-theme-single__section"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-single__wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-technicals__benefits"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "wolf-theme-technicals__section-title"
-  }, "What's Included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "wolf-theme-technicals__benefits-list"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Lifetime theme access"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Ongoing updates included"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Direct support from the creator ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-theme-technicals__info",
-    title: "Support provided via our forum"
-  }, "\u24D8")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "7-day money-back guarantee"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ThemeBenefits__WEBPACK_IMPORTED_MODULE_3__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-technicals__support"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "wolf-theme-technicals__section-title"
@@ -1136,7 +1129,9 @@ function ThemeTechnicals({
     href: forumUrl,
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "\uD83D\uDCAC Support Forum")))), categories.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "\uD83D\uDCAC Support Forum")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-technicals__terms-container"
+  }, categories.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-technicals__terms"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "wolf-theme-technicals__section-title"
@@ -1156,7 +1151,7 @@ function ThemeTechnicals({
     key: term.id,
     href: term.link,
     className: "wolf-theme-technicals__tag"
-  }, term.name)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, term.name))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-technicals__meta"
   }, version && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-technicals__row"

@@ -1,5 +1,6 @@
 import ThemePriceBox from './ThemePriceBox';
 import ThemeCTAs         from './ThemeCTAs';
+import ThemeBenefits         from './ThemeBenefits';
 
 export default function ThemeTechnicals( { theme } ) {
     const version   = theme.theme_latest_version;
@@ -22,16 +23,8 @@ export default function ThemeTechnicals( { theme } ) {
         <div className='wolf-theme-technicals wolf-theme-single__section'>
 			<div className='wolf-theme-single__wrapper'>
 
-				{ /* Subscription benefits */ }
-				<div className='wolf-theme-technicals__benefits'>
-					<h3 className='wolf-theme-technicals__section-title'>What's Included</h3>
-					<ul className='wolf-theme-technicals__benefits-list'>
-						<li>Lifetime theme access</li>
-						<li>Ongoing updates included</li>
-						<li>Direct support from the creator <span className='wolf-theme-technicals__info' title='Support provided via our forum'>ⓘ</span></li>
-						<li>7-day money-back guarantee</li>
-					</ul>
-				</div>
+				{ /* Benefits */ }
+				<ThemeBenefits />
 
 				{ /* Support links */ }
 				<div className='wolf-theme-technicals__support'>
@@ -64,41 +57,43 @@ export default function ThemeTechnicals( { theme } ) {
 					</ul>
 				</div>
 
-				{ /* Categories */ }
-				{ categories.length > 0 && (
-					<div className='wolf-theme-technicals__terms'>
-						<h3 className='wolf-theme-technicals__section-title'>Categories</h3>
-						<div className='wolf-theme-technicals__categories'>
-							{ categories.map( term => (
+				<div className="wolf-theme-technicals__terms-container">
+					{ /* Categories */ }
+					{ categories.length > 0 && (
+						<div className='wolf-theme-technicals__terms'>
+							<h3 className='wolf-theme-technicals__section-title'>Categories</h3>
+							<div className='wolf-theme-technicals__categories'>
+								{ categories.map( term => (
 
-								<a    key={ term.id }
-									href={ term.link }
-									className='wolf-theme-technicals__category'
-								>
-									{ term.name }
-								</a>
-							) ) }
+									<a    key={ term.id }
+										href={ term.link }
+										className='wolf-theme-technicals__category'
+									>
+										{ term.name }
+									</a>
+								) ) }
+							</div>
 						</div>
-					</div>
-				) }
+					) }
 
-				{ /* Tags */ }
-				{ tags.length > 0 && (
-					<div className='wolf-theme-technicals__terms'>
-						<h3 className='wolf-theme-technicals__section-title'>Tags</h3>
-						<div className='wolf-theme-technicals__tags tagcloud'>
-							{ tags.map( term => (
+					{ /* Tags */ }
+					{ tags.length > 0 && (
+						<div className='wolf-theme-technicals__terms'>
+							<h3 className='wolf-theme-technicals__section-title'>Tags</h3>
+							<div className='wolf-theme-technicals__tags tagcloud'>
+								{ tags.map( term => (
 
-								<a    key={ term.id }
-									href={ term.link }
-									className='wolf-theme-technicals__tag'
-								>
-									{ term.name }
-								</a>
-							) ) }
+									<a    key={ term.id }
+										href={ term.link }
+										className='wolf-theme-technicals__tag'
+									>
+										{ term.name }
+									</a>
+								) ) }
+							</div>
 						</div>
-					</div>
-				) }
+					) }
+				</div>
 
 			{ /* Meta */ }
 				<div className='wolf-theme-technicals__meta'>
