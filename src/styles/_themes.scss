@@ -18,3 +18,15 @@
 		}
 	}
 }
+
+@media screen and (max-width:1950px) {
+
+	.wp-theme-seijaku{
+		&.single-wolf_theme{
+			.wolf-theme-single__wrapper{
+				padding-left: var(--wrapper-padding);
+				padding-right: var(--wrapper-padding);
+			}
+		}
+	}
+}
