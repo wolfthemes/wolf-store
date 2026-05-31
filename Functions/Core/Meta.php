@@ -129,7 +129,7 @@ class Meta {
 		/* return apply_filters( 'wolf_store_video_url', $convention, $slug, $post_id ); */
 	}
 	/**
-	 * Get the thumbnail URL
+	 * Get the hero URL
 	 * WP featured image → convention screenshot from preview server
 	 *
 	 * @param string   $size

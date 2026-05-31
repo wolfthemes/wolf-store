@@ -1199,13 +1199,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
+const DEFAULT_TESTIMONIALS = [{
+  rating: 5,
+  text: "Great theme can do a lot with, got plenty of features and is easy to configure. Support is great i had some problems as a wordpress newbie but support solved everything.",
+  author: "kontakt952"
+}, {
+  rating: 5,
+  text: "The overall look and usability of this theme is great, but the documentation and customer support is what sets it apart. Really helpful resources and great support!",
+  author: "joergrappl"
+}, {
+  rating: 5,
+  text: "A solid theme for my media company website – I had a small issue and support was quick to fix it. It makes the addition of events simple and looks great out of the box, on all mobile devices and my PC.",
+  author: "themuskrat33"
+}, {
+  rating: 5,
+  text: "After 10 years of using the Speaker theme, now I had to migrate to the latest version. The support was really excellent and made it work again, response within 24hrs. Recommended!",
+  author: "chrissa007"
+}];
+const MAX = 4;
 function ThemeTestimonials({
   theme
 }) {
   var _theme$theme_testimon;
   const title = theme.title?.rendered;
-  const testimonials = (_theme$theme_testimon = theme.theme_testimonials) !== null && _theme$theme_testimon !== void 0 ? _theme$theme_testimon : [];
-  if (!testimonials?.length) return null;
+  const own = (_theme$theme_testimon = theme.theme_testimonials) !== null && _theme$theme_testimon !== void 0 ? _theme$theme_testimon : [];
+
+  // Fill up to MAX with defaults that aren't already represented
+  const merged = [...own, ...DEFAULT_TESTIMONIALS.filter(d => own.length < MAX && !own.some(o => o.author === d.author))].slice(0, MAX);
+  if (!merged.length) return null;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-testimonials wolf-theme-single__section wolf-core-font-light"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1214,7 +1235,7 @@ function ThemeTestimonials({
     className: "wolf-theme-testimonials__title"
   }, "What customers say about ", title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-theme-testimonials__grid"
-  }, testimonials.map((t, i) => {
+  }, merged.map((t, i) => {
     var _t$rating;
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: i,
