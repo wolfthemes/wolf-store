@@ -28,63 +28,75 @@ class Rest_Fields {
 	 * Register custom collection params
 	 */
 	public function register_collection_params( array $params ): array {
-
-		// Allow ?featured=true to filter featured-only
-		$params['featured'] = array(
-			'description'       => __( 'Limit results to featured themes.', 'wolf-store' ),
-			'type'              => 'boolean',
-			'default'           => false,
-			'sanitize_callback' => 'rest_sanitize_boolean',
-			'validate_callback' => 'rest_validate_request_arg',
-		);
-
-		// Allow orderby=featured
 		if ( isset( $params['orderby']['enum'] ) ) {
 			$params['orderby']['enum'][] = 'featured';
 		}
-
 		return $params;
 	}
 
 	/**
 	 * Translate custom query params into WP_Query args
 	 */
+	public function handle_query_params_bak( array $args, \WP_REST_Request $request ): array {
+		if ( 'featured' !== $request->get_param( 'orderby' ) ) {
+			return $args;
+		}
+
+		// Named clause — WP can reference it in orderby without filtering posts.
+		// CHAR ordering: '1' sorts before '' (DESC), so featured comes first.
+		$args['meta_query'] = array(
+			'relation'         => 'OR',
+			'featured_clause'  => array(
+				'key'     => '_wolf_theme_featured',
+				'compare' => 'EXISTS',
+			),
+			array(
+				'key'     => '_wolf_theme_featured',
+				'compare' => 'NOT EXISTS',
+			),
+		);
+
+		$args['orderby'] = array(
+			'featured_clause' => 'DESC',
+			'date'            => 'DESC',
+		);
+
+		return $args;
+	}
+
+	/**
+	 * Translate custom query params into WP_Query args
+	 */
 	public function handle_query_params( array $args, \WP_REST_Request $request ): array {
-
-		// Featured-only filter
-		$featured = $request->get_param( 'featured' );
-		if ( true === $featured || '1' === $featured || 1 === $featured ) {
-			$args['meta_query'] = array(
-				array(
-					'key'   => '_wolf_theme_featured',
-					'value' => '1',
-				),
-			);
+		if ( 'featured' !== $request->get_param( 'orderby' ) ) {
+			return $args;
 		}
 
-		// Featured-first ordering
-		if ( 'featured' === $request->get_param( 'orderby' ) ) {
-			$args['orderby']  = array(
-				'meta_value' => 'DESC', // featured first (1 before empty)
-				'date'       => 'DESC', // then by date
-			);
-			$args['meta_key'] = '_wolf_theme_featured';
-			$args['meta_compare'] = 'EXISTS';
+		// Use posts_clauses for a single request to inject a proper LEFT JOIN.
+		// WP_Query's meta ordering always uses INNER JOIN, which drops posts
+		// without the meta key entirely (WP core bug #29447).
+		// We do the join manually so all posts are included, NULLs sort last.
+		add_filter( 'posts_clauses', function( array $clauses, \WP_Query $q ) use ( &$args ): array {
+			global $wpdb;
 
-			// Also include posts without the meta key (non-featured)
-			$args['meta_query'] = array(
-				'relation' => 'OR',
-				array(
-					'key'     => '_wolf_theme_featured',
-					'value'   => '1',
-					'compare' => '=',
-				),
-				array(
-					'key'     => '_wolf_theme_featured',
-					'compare' => 'NOT EXISTS',
-				),
-			);
-		}
+			// Only run once for this specific query
+			remove_filter( 'posts_clauses', __FUNCTION__ );
+
+			$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS wolf_featured_meta"
+				. " ON ({$wpdb->posts}.ID = wolf_featured_meta.post_id"
+				. " AND wolf_featured_meta.meta_key = '_wolf_theme_featured')";
+
+			// ISNULL puts NULLs (non-featured) last; DESC puts '1' before ''
+			$clauses['orderby'] = "ISNULL(wolf_featured_meta.meta_value) ASC,"
+				. " wolf_featured_meta.meta_value DESC,"
+				. " {$wpdb->posts}.post_date DESC";
+
+			return $clauses;
+		}, 10, 2 );
+
+		// Still need to tell WP this is ordered so it doesn't override orderby
+		$args['orderby'] = 'post__in';
+		$args['order']   = 'DESC';
 
 		return $args;
 	}
