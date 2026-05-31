@@ -32,7 +32,6 @@ function Archive({
   termName,
   perPage,
   pagination: paginationProp,
-  featuredOnly,
   showSidebar = true
 }) {
   const [page, setPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
@@ -53,8 +52,7 @@ function Archive({
     taxonomy: activeTaxonomy,
     termId: activeTermId,
     page,
-    perPage: parseInt(perPage) || undefined,
-    featuredOnly: featuredOnly === '1'
+    perPage: parseInt(perPage) || undefined
   });
   const handlePageChange = n => {
     setPage(n);
@@ -1335,8 +1333,7 @@ function useThemes({
   taxonomy = '',
   termId = 0,
   page = 1,
-  perPage: perPageProp = undefined,
-  featuredOnly = false
+  perPage: perPageProp = undefined
 } = {}) {
   const [themes, setThemes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [totalPages, setTotalPages] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
@@ -1355,11 +1352,8 @@ function useThemes({
       _embed: 1,
       per_page: perPage,
       page,
-      orderby: 'featured' // featured posts always first, then by date
+      orderby: 'featured' // featured posts bubble to top, all posts included
     });
-    if (featuredOnly) {
-      params.set('featured', 'true');
-    }
     if (taxonomy && termId) {
       params.set(taxonomy, termId);
     }
@@ -1379,7 +1373,7 @@ function useThemes({
       setError(err.message);
       setLoading(false);
     });
-  }, [taxonomy, termId, page, perPage, featuredOnly]);
+  }, [taxonomy, termId, page, perPage]);
   return {
     themes,
     totalPages,
@@ -1588,7 +1582,6 @@ class WolfStore {
           termName: termName,
           perPage: perPage,
           pagination: pagination,
-          featuredOnly: root.dataset.featuredOnly,
           showSidebar: root.dataset.showSidebar !== 'false'
         }));
       }

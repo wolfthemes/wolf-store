@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPageProp = undefined, featuredOnly = false } = {} ) {
+export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPageProp = undefined  } = {} ) {
     const [ themes,     setThemes     ] = useState( [] );
     const [ totalPages, setTotalPages ] = useState( 1 );
     const [ loading,    setLoading    ] = useState( true );
@@ -17,12 +17,8 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
             _embed:   1,
             per_page: perPage,
             page,
-            orderby:  'featured', // featured posts always first, then by date
+            orderby:  'featured', // featured posts bubble to top, all posts included
         } );
-
-        if ( featuredOnly ) {
-            params.set( 'featured', 'true' );
-        }
 
         if ( taxonomy && termId ) {
             params.set( taxonomy, termId );
@@ -45,7 +41,7 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
                 setError( err.message );
                 setLoading( false );
             } );
-    }, [ taxonomy, termId, page, perPage, featuredOnly ] );
+    }, [ taxonomy, termId, page, perPage ] );
 
     return { themes, totalPages, loading, error };
 }
