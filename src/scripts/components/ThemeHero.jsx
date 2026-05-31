@@ -26,7 +26,7 @@ export default function ThemeHero( { theme } ) {
 			) }
 
 			<div className="faded-edges-overlay"></div>
-			<div className="noise-overlay"></div>
+			{/* <div className="noise-overlay"></div> */}
 
             <div className='wolf-theme-hero__content wolf-core-font-light'>
 
