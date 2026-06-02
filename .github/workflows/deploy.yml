@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - master
+      - dev
 
 jobs:
-  deploy:
+  deploy-master:
     runs-on: ubuntu-latest
-
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -20,3 +21,18 @@ jobs:
           script: |
             cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
             git pull origin master
+
+  deploy-dev:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
+            git pull origin dev
