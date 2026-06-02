@@ -16,6 +16,7 @@
     <config name="minimum_supported_wp_version" value="6.0"/>
 
     <rule ref="WordPress"/>
+    <rule ref="WordPressVIPMinimum"/>
 
     <rule ref="WordPress.Files.FileName">
         <properties>

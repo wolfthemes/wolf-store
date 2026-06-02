@@ -45,7 +45,7 @@ class Hooks {
 	 */
 	public function theme_microdata() {
 
-		$category = strip_tags( get_the_term_list( get_the_ID(), 'theme_cat', '', ', ', '' ) );
+		$category = wp_strip_all_tags( get_the_term_list( get_the_ID(), 'theme_cat', '', ', ', '' ) );
 		$meta     = Meta::get_meta();
 		?>
 		<meta itemprop="name" content="<?php the_title_attribute(); ?>">
@@ -98,13 +98,13 @@ class Hooks {
 			$classes[] = 'store-page';
 		}
 
-		if ( is_term( 'theme_cat' ) || is_term( 'theme_tag' ) ) {
+		if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
 			$classes[] = 'store-category-page';
 		}
 
 		if (
 			! is_singular( 'wolf_theme' )
-			&& ( 'wolf_theme' == get_post_type() || is_page( Core::get_store_page_id() ) )
+			&& ( 'wolf_theme' === get_post_type() || is_page( Core::get_store_page_id() ) )
 		) {
 			$classes[] = 'wolf-store';
 		}

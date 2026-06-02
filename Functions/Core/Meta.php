@@ -151,14 +151,14 @@ class Meta {
 		return apply_filters( 'wolf_store_thumbnail_url', esc_url( $url ), $slug, $post_id );
 	}
 
-	public static function get_theme_mockup_url( ?int $post_id = null ): string  {
+	public static function get_theme_mockup_url( ?int $post_id = null ): string {
 		$slug = self::get_theme_slug( $post_id );
 		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/thumb.jpg';
 
 		return apply_filters( 'wolf_store_mockup_url', esc_url( $url ), $slug );
 	}
 
-	public static function get_thumbnail_url( ?int $post_id = null ): string  {
+	public static function get_thumbnail_url( ?int $post_id = null ): string {
 		$slug = self::get_theme_slug( $post_id );
 		$url  = self::ASSETS_BASE_URL . '/' . $slug . '/screenshot.jpg';
 
@@ -190,7 +190,7 @@ class Meta {
 		}
 
 		$url      = sprintf( '%s/%s/gallery.json', self::ASSETS_BASE_URL, $slug );
-		$response = wp_remote_get( $url, array( 'timeout' => 5 ) );
+		$response = wp_remote_get( $url, array( 'timeout' => 3 ) ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.wp_remote_get_wp_remote_get
 
 		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
 			set_transient( $cache_key, array(), 60 ); // short TTL on failure
@@ -294,7 +294,7 @@ class Meta {
 		}
 
 		$url      = sprintf( '%s/%s/%s', self::REMOTE_BASE_URL, $slug, $file );
-		$response = wp_remote_get( $url, array( 'timeout' => 5 ) );
+		$response = wp_remote_get( $url, array( 'timeout' => 3 ) ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.wp_remote_get_wp_remote_get
 
 		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
 			set_transient( $cache_key, array(), 60 );
@@ -342,11 +342,14 @@ class Meta {
 		// Return cached XML
 		$cached = get_transient( $cache_key );
 		if ( false !== $cached ) {
-			return @simplexml_load_string( $cached );
+			libxml_use_internal_errors( true );
+			$result = simplexml_load_string( $cached );
+			libxml_clear_errors();
+			return $result;
 		}
 
 		// Fetch remote
-		$response = wp_remote_get( $url, array( 'timeout' => 10 ) );
+		$response = wp_remote_get( $url, array( 'timeout' => 3 ) ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.wp_remote_get_wp_remote_get
 
 		if (
 			! is_wp_error( $response ) &&
@@ -355,7 +358,10 @@ class Meta {
 			$xml = wp_remote_retrieve_body( $response );
 			set_transient( $cache_key, $xml, 6 * HOUR_IN_SECONDS );
 			delete_transient( $fail_key ); // Reset failures on success
-			return @simplexml_load_string( $xml );
+			libxml_use_internal_errors( true );
+			$result = simplexml_load_string( $xml );
+			libxml_clear_errors();
+			return $result;
 		}
 
 		// Increment failure count

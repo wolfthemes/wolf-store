@@ -128,7 +128,7 @@ class Plugin {
 
 	public function flush_rewrite_rules(): void {
 		if ( get_option( '_wolf_store_flush_rewrite_rules_flag' ) ) {
-			flush_rewrite_rules();
+			flush_rewrite_rules(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rewrite_rules_flush_rewrite_rules
 			delete_option( '_wolf_phy_flush_rewrite_rules_flag' );
 		}
 	}
