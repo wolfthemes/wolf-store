@@ -76,7 +76,7 @@ class Rest_Fields {
 		// WP_Query's meta ordering always uses INNER JOIN, which drops posts
 		// without the meta key entirely (WP core bug #29447).
 		// We do the join manually so all posts are included, NULLs sort last.
-		add_filter( 'posts_clauses', function( array $clauses, \WP_Query $q ) use ( &$args ): array {
+		add_filter( 'posts_clauses', function ( array $clauses, \WP_Query $q ) use ( &$args ): array {
 			global $wpdb;
 
 			// Only run once for this specific query
@@ -87,8 +87,8 @@ class Rest_Fields {
 				. " AND wolf_featured_meta.meta_key = '_wolf_theme_featured')";
 
 			// ISNULL puts NULLs (non-featured) last; DESC puts '1' before ''
-			$clauses['orderby'] = "ISNULL(wolf_featured_meta.meta_value) ASC,"
-				. " wolf_featured_meta.meta_value DESC,"
+			$clauses['orderby'] = 'ISNULL(wolf_featured_meta.meta_value) ASC,'
+				. ' wolf_featured_meta.meta_value DESC,'
 				. " {$wpdb->posts}.post_date DESC";
 
 			return $clauses;

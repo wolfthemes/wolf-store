@@ -31,7 +31,6 @@ class Admin_Columns {
 		add_action( 'manage_wolf_theme_posts_custom_column', array( $this, 'admin_columns_content_wolf_theme_thumb' ), 10, 2 );
 		add_action( 'wp_ajax_wolf_store_toggle_featured', array( $this, 'ajax_toggle_featured' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_column_assets' ) );
-
 	}
 
 	/**
@@ -146,8 +145,12 @@ class Admin_Columns {
 	}
 
 	public function enqueue_column_assets( $hook ) {
-		if ( 'edit.php' !== $hook ) return;
-		if ( ( $_GET['post_type'] ?? '' ) !== 'wolf_theme' ) return;
+		if ( 'edit.php' !== $hook ) {
+			return;
+		}
+		if ( ( $_GET['post_type'] ?? '' ) !== 'wolf_theme' ) {
+			return;
+		}
 
 		wp_enqueue_style(
 			'wolf-store-admin-columns',

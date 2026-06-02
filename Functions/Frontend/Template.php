@@ -75,9 +75,9 @@ class Template {
 		}
 
 		if ( $once ) {
-			require_once $path;
+			require_once $path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 		} else {
-			require $path;
+			require $path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 		}
 
 		do_action( 'wolf_store_after_template_load', $template_name, $data );

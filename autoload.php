@@ -1,17 +1,17 @@
 <?php
 // Autoloader for Wolf_Envato_License_Manager
-spl_autoload_register( function( $class ) {
-    $prefix   = 'Wolf_Store\\';
-    $base_dir = __DIR__ . '/Functions/';
+spl_autoload_register( function ( $class ) {
+	$prefix   = 'Wolf_Store\\';
+	$base_dir = __DIR__ . '/Functions/';
 
-    if ( strncmp( $prefix, $class, strlen( $prefix ) ) !== 0 ) {
-        return;
-    }
+	if ( strncmp( $prefix, $class, strlen( $prefix ) ) !== 0 ) {
+		return;
+	}
 
-    $relative = substr( $class, strlen( $prefix ) );
-    $file     = $base_dir . str_replace( '\\', '/', $relative ) . '.php';
+	$relative = substr( $class, strlen( $prefix ) );
+	$file     = $base_dir . str_replace( '\\', '/', $relative ) . '.php';
 
-    if ( file_exists( $file ) ) {
-        require $file;
-    }
+	if ( file_exists( $file ) ) {
+		require $file; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
+	}
 } );
