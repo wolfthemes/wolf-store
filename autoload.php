@@ -1,5 +1,5 @@
 <?php
-// Autoloader for Wolf_Envato_License_Manager
+// Autoloader for Wolf_Store
 spl_autoload_register( function ( $class ) {
 	$prefix   = 'Wolf_Store\\';
 	$base_dir = __DIR__ . '/Functions/';
