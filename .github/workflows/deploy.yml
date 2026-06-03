@@ -21,7 +21,21 @@ jobs:
       - name: Build assets
         run: npm ci && npm run build
 
-      - name: Deploy PHP via SSH
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Rsync build to staging dir
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+            build/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/wolf-store-build/
+
+      - name: Deploy PHP and swap build assets
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -31,17 +45,8 @@ jobs:
           script: |
             cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
             git pull origin master
-
-      - name: Sync build assets
-        run: |
-          mkdir -p ~/.ssh
-          printf '%s' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
-            build/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store/build/
+            rsync -a --delete /tmp/wolf-store-build/ build/
+            rm -rf /tmp/wolf-store-build
 
   deploy-dev:
     runs-on: ubuntu-latest
@@ -57,7 +62,21 @@ jobs:
       - name: Build assets
         run: npm ci && npm run build
 
-      - name: Deploy PHP via SSH
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Rsync build to staging dir
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+            build/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/wolf-store-build/
+
+      - name: Deploy PHP and swap build assets
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -67,14 +86,5 @@ jobs:
           script: |
             cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
             git pull origin dev
-
-      - name: Sync build assets
-        run: |
-          mkdir -p ~/.ssh
-          printf '%s' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
-            build/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store/build/
+            rsync -a --delete /tmp/wolf-store-build/ build/
+            rm -rf /tmp/wolf-store-build
