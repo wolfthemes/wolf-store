@@ -360,6 +360,15 @@
   font-weight: 600;
   border-bottom-color: currentColor;
 }
+.wolf-store-sidebar__swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  margin-right: 8px;
+}
 .wolf-store-sidebar__count {
   font-size: 0.75rem;
   opacity: 0.8;
