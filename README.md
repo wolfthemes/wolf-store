@@ -151,7 +151,8 @@ window.wolfStoreData = {
 | Template loader | ✅ Done |
 | PHP archive template | ✅ Done |
 | PHP single template | ✅ Done |
-| React archive view | 🚧 In progress |
+| React archive view |  ✅ Done |
+| Sidebar taxonomy filter |  🚧 In progress |
 | React single view | 🚧 In progress |
 | REST API field exposure | 🚧 In progress |
 | SCSS styling | 🚧 In progress |
