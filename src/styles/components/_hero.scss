@@ -23,13 +23,12 @@
 	&__content{
 		position: absolute;
 		bottom: 0;
-		// background: white;
 		padding: 50px;
 		text-shadow:var(--text-shadow);
 	}
 
 	&__title{
-		font-size:80px;
+		font-size: clamp(2rem, 7vw, 80px);
 		margin-bottom:0;
 	}
 
@@ -46,5 +45,28 @@
 		max-width:650px;
         line-height: 1.8;
     }
+}
+
+@media (max-width: 768px) {
+	.wolf-theme-hero {
+		min-height: 100svh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		&__content {
+			position: relative;
+			padding: 24px 20px 12px;
+		}
+
+		.wolf-theme-price-box {
+			position: relative;
+			top: auto;
+			right: auto;
+			padding: 24px 20px;
+			box-shadow: none;
+			margin: 0 0 40px;
+		}
+	}
 }
 
