@@ -109,7 +109,7 @@ class Schema {
 
 		$posts = get_posts( array( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts
 			'post_type'      => 'wolf_theme',
-			'posts_per_page' => 100,
+			'posts_per_page' => 50,
 			'post_status'    => 'publish',
 			'no_found_rows'  => true,
 		) );
