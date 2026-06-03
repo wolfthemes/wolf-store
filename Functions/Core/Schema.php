@@ -121,34 +121,11 @@ class Schema {
 		$items = array();
 
 		foreach ( $posts as $i => $post ) {
-			$post_id = $post->ID;
-			$slug    = Meta::get_theme_slug( $post_id );
-			$config  = Meta::get_config( $slug );
-			$price   = isset( $config['price_annual'] ) ? (float) $config['price_annual'] : null;
-			$buy_url = Meta::get_purchase_url( $post_id );
-
-			$item = array(
-				'@type'               => 'SoftwareApplication',
-				'name'                => get_the_title( $post_id ),
-				'url'                 => (string) get_permalink( $post_id ),
-				'image'               => Meta::get_thumbnail_url( $post_id ),
-				'applicationCategory' => 'WebApplication',
-				'operatingSystem'     => 'WordPress',
-			);
-
-			$excerpt = get_the_excerpt( $post_id );
-			if ( $excerpt ) {
-				$item['description'] = wp_strip_all_tags( $excerpt );
-			}
-
-			if ( $price ) {
-				$item['offers'] = self::make_offer( '1 site', $price, $buy_url );
-			}
-
 			$items[] = array(
 				'@type'    => 'ListItem',
 				'position' => $i + 1,
-				'item'     => $item,
+				'name'     => get_the_title( $post->ID ),
+				'url'      => (string) get_permalink( $post->ID ),
 			);
 		}
 
