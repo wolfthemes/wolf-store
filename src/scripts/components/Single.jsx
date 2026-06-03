@@ -9,13 +9,17 @@ import ThemeTestimonials from './ThemeTestimonials';
 import ThemeFeatures from './ThemeFeatures';
 import ThemeChangelog from './ThemeChangelog';
 import ThemeBrandStory from './ThemeBrandStory';
-import SkeletonSingle from './SkeletonSingle';
 
 export default function Single( { postId } ) {
     const { theme, loading, error } = useTheme( postId );
 
-    // if ( loading ) return <SkeletonSingle />;
-	if ( loading ) return <div className='wolf-store-loading'>Loading...</div>;
+    if ( loading ) return (
+		<div className='wolf-theme-single'>
+			<div className='wolf-theme-single__main'>
+				<div className='wolf-theme-hero wolf-theme-hero--skeleton' />
+			</div>
+		</div>
+	);
     if ( error )   return <div className='wolf-store-error'>{ error }</div>;
     if ( ! theme ) return null;
 

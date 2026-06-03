@@ -1,4 +1,12 @@
+[data-type="single"] {
+	min-height: 100vh;
+}
+
 .wolf-theme-single {
+
+	&__main {
+		min-height: 100vh;
+	}
 
 	&__section{
 		padding:80px 0;

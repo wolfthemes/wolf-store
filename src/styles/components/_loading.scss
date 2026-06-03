@@ -68,103 +68,20 @@
     }
 }
 
-// ── Single page skeleton ──────────────────────────────────────────────────────
+// ── Single page loading ───────────────────────────────────────────────────────
 
-.wolf-theme-skeleton-single {
-
-    &__hero {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        margin-bottom: 32px;
-    }
-
-    &__pricebox {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        padding: 20px;
-        border: 1px solid var(--card-border-color);
-        margin-bottom: 12px;
-    }
-
-    &__ctas {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 32px;
-    }
-
-    &__meta {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border-top: 1px solid var(--card-border-color);
-        padding-top: 16px;
-    }
+@keyframes wolf-shimmer-dark {
+    0%   { background-position: -100vw 0; }
+    100% { background-position:  100vw 0; }
 }
 
-.wolf-skeleton {
-
-    // Single — title
-    &--single-title {
-        height: 32px;
-        width: 40%;
-    }
-
-    // Single — tagline
-    &--single-tagline {
-        height: 16px;
-        width: 60%;
-    }
-
-    // Single — thumbnail
-    &--single-thumbnail {
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        margin: 8px 0;
-    }
-
-    // Single — text lines
-    &--single-line {
-        height: 13px;
-        width: 95%;
-
-        &-short { width: 70%; }
-    }
-
-    // Single — price box
-    &--single-price-ref {
-        height: 13px;
-        width: 80%;
-    }
-
-    &--single-price-badge {
-        height: 22px;
-        width: 100%;
-    }
-
-    &--single-price-main {
-        height: 48px;
-        width: 55%;
-    }
-
-    &--single-price-sub {
-        height: 13px;
-        width: 65%;
-    }
-
-    // Single — CTA buttons
-    &--single-btn {
-        height: 42px;
-        width: 100%;
-
-        &-secondary { opacity: 0.5; }
-    }
-
-    // Single — meta rows
-    &--single-meta-row {
-        height: 13px;
-        width: 100%;
-    }
+.wolf-theme-hero--skeleton {
+    background: linear-gradient(
+        90deg,
+        #0d0d0d 25%,
+        #1c1c1c 50%,
+        #0d0d0d 75%
+    );
+    background-size: 100vw 100%;
+    animation: wolf-shimmer-dark 1.8s ease-in-out infinite;
 }
