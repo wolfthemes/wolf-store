@@ -2,6 +2,48 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/images/up-right-arrow.svg"
+/*!******************************************!*\
+  !*** ./assets/images/up-right-arrow.svg ***!
+  \******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgUpRightArrow = function SvgUpRightArrow(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 86 86",
+    fill: "none"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M14 5H5C4.44772 5 4 5.44772 4 6V81C4 81.5523 4.44772 82 5 82H80C80.5523 82 81 81.5523 81 81V72",
+    stroke: "currentColor",
+    strokeWidth: 7,
+    strokeLinecap: "round"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M44 4H82V42",
+    stroke: "currentColor",
+    strokeWidth: 7,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M82 4L42 44",
+    stroke: "currentColor",
+    strokeWidth: 7,
+    strokeLinecap: "round"
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgUpRightArrow);
+
+/***/ },
+
 /***/ "./src/scripts/components/Archive.jsx"
 /*!********************************************!*\
   !*** ./src/scripts/components/Archive.jsx ***!
@@ -435,6 +477,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_images_up_right_arrow_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../assets/images/up-right-arrow.svg */ "./assets/images/up-right-arrow.svg");
+
 
 function ThemeCTAs({
   theme,
@@ -455,7 +499,10 @@ function ThemeCTAs({
     className: "theme-button-secondary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--demo",
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Live Demo"));
+  }, "Live Demo ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_assets_images_up_right_arrow_svg__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "wolf-theme-ctas__arrow",
+    "aria-hidden": "true"
+  })));
 }
 
 /***/ },

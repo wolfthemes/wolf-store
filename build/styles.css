@@ -484,6 +484,17 @@
 .wolf-theme-ctas--column {
   flex-direction: column;
 }
+.wolf-theme-ctas__arrow {
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: middle;
+  margin-left: 5px;
+  position: relative;
+}
+.wolf-theme-ctas__arrow path {
+  stroke-width: 20;
+}
+
 .wolf-theme-price-box {
   margin-bottom: 12px;
   display: flex;
