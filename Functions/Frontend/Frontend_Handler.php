@@ -72,7 +72,7 @@ class Frontend_Handler {
 			return 'archive-wolf_theme.php';
 		}
 
-		if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
+		if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
 			return 'archive-wolf_theme.php';
 		}
 
