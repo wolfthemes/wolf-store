@@ -161,7 +161,7 @@ class Taxonomy_Config {
 				'not_found'                  => esc_html__( 'No ' . strtolower( $plural ) . ' found', 'wolf-store' ),
 				'menu_name'                  => esc_html__( $plural, 'wolf-store' ),
 			),
-			'hierarchical' => false,
+			'hierarchical' => true,
 			'public'       => true,
 			'show_ui'      => true,
 			'show_in_rest' => true,
