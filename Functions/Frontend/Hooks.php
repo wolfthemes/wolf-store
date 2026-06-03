@@ -49,8 +49,7 @@ class Hooks {
 		} elseif (
 			is_page( Core::get_store_page_id() ) ||
 			is_post_type_archive( 'wolf_theme' ) ||
-			is_tax( 'theme_cat' ) ||
-			is_tax( 'theme_tag' )
+			is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
 		) {
 			Schema::output_archive();
 		}
@@ -84,7 +83,7 @@ class Hooks {
 			$classes[] = 'store-page';
 		}
 
-		if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
+		if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
 			$classes[] = 'store-category-page';
 		}
 

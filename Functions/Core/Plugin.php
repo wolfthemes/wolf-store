@@ -14,6 +14,7 @@ use Wolf_Store\Frontend\Frontend_Handler;
 use Wolf_Store\Post_Types\Post_Type;
 use Wolf_Store\Taxonomies\Taxonomies;
 use Wolf_Store\Core\Rest_Fields;
+use Wolf_Store\Config\Taxonomy_Config;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -127,9 +128,13 @@ class Plugin {
 	}
 
 	public function flush_rewrite_rules(): void {
-		if ( get_option( '_wolf_store_flush_rewrite_rules_flag' ) ) {
+		$current_hash = md5( implode( ',', Taxonomy_Config::get_taxonomy_slugs() ) );
+		$stored_hash  = get_option( '_wolf_store_taxonomy_hash', '' );
+
+		if ( $current_hash !== $stored_hash || get_option( '_wolf_store_flush_rewrite_rules_flag' ) ) {
 			flush_rewrite_rules(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rewrite_rules_flush_rewrite_rules
-			delete_option( '_wolf_phy_flush_rewrite_rules_flag' );
+			update_option( '_wolf_store_taxonomy_hash', $current_hash );
+			delete_option( '_wolf_store_flush_rewrite_rules_flag' );
 		}
 	}
 

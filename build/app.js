@@ -206,21 +206,107 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useTerms */ "./src/scripts/components/hooks/useTerms.js");
 
 
-function Sidebar({
+
+const FILTER_GROUPS = [{
+  slug: 'theme_cat',
+  label: 'Categories'
+}, {
+  slug: 'theme_tag',
+  label: 'Tags',
+  orderby: 'count',
+  order: 'desc'
+}, {
+  slug: 'theme_color',
+  label: 'Color'
+}, {
+  slug: 'theme_price',
+  label: 'Price Range'
+}, {
+  slug: 'theme_style',
+  label: 'Style'
+}, {
+  slug: 'theme_page_builder',
+  label: 'Page Builder'
+}];
+const VISIBLE_LIMIT = 6;
+function TermItem({
+  term,
+  slug,
+  activeTaxonomy,
+  activeTermId,
+  onChange
+}) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    className: `wolf-store-sidebar__term${activeTaxonomy === slug && activeTermId === term.id ? ' is-active' : ''}`,
+    onClick: e => {
+      e.preventDefault();
+      onChange(slug, term.id);
+    }
+  }, term.term_color && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-store-sidebar__swatch",
+    style: {
+      background: term.term_color
+    }
+  }), term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-store-sidebar__count"
+  }, term.count)));
+}
+function FilterGroup({
+  slug,
+  label,
+  orderby,
+  order,
   activeTaxonomy,
   activeTermId,
   onChange
 }) {
   const {
-    terms: cats
-  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)('theme_cat');
-  const {
-    terms: tags
-  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)('theme_tag');
-  const handleClick = (e, taxonomy, termId) => {
-    e.preventDefault();
-    onChange(taxonomy, termId);
+    terms
+  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)(slug, {
+    orderby,
+    order
+  });
+  const [expanded, setExpanded] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  if (!terms.length) return null;
+  const hasMore = terms.length > VISIBLE_LIMIT;
+  const visible = terms.slice(0, VISIBLE_LIMIT);
+  const hidden = hasMore ? terms.slice(VISIBLE_LIMIT) : [];
+  const hiddenCount = hidden.length;
+  const termProps = {
+    slug,
+    activeTaxonomy,
+    activeTermId,
+    onChange
   };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-sidebar__group"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-store-sidebar__title"
+  }, label), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-store-sidebar__list"
+  }, visible.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TermItem, {
+    key: term.id,
+    term: term,
+    ...termProps
+  }))), hasMore && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `wolf-store-sidebar__extra${expanded ? ' is-open' : ''}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-store-sidebar__list"
+  }, hidden.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TermItem, {
+    key: term.id,
+    term: term,
+    ...termProps
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "wolf-store-sidebar__toggle",
+    onClick: () => setExpanded(!expanded)
+  }, expanded ? 'Show Less' : `Show More (${hiddenCount})`)));
+}
+function Sidebar({
+  activeTaxonomy,
+  activeTermId,
+  onChange
+}) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
     className: "wolf-store-sidebar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -228,22 +314,17 @@ function Sidebar({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: "#",
     className: `wolf-store-sidebar__all${!activeTermId ? ' is-active' : ''}`,
-    onClick: e => handleClick(e, '', 0)
-  }, "All Themes")), cats.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-store-sidebar__group"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "wolf-store-sidebar__title"
-  }, "Categories"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "wolf-store-sidebar__list"
-  }, cats.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: term.id
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: `wolf-store-sidebar__term${activeTaxonomy === 'theme_cat' && activeTermId === term.id ? ' is-active' : ''}`,
-    onClick: e => handleClick(e, 'theme_cat', term.id)
-  }, term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-store-sidebar__count"
-  }, term.count)))))));
+    onClick: e => {
+      e.preventDefault();
+      onChange('', 0);
+    }
+  }, "All Themes")), FILTER_GROUPS.map(group => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(FilterGroup, {
+    key: group.slug,
+    ...group,
+    activeTaxonomy: activeTaxonomy,
+    activeTermId: activeTermId,
+    onChange: onChange
+  })));
 }
 
 /***/ },
@@ -1248,7 +1329,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-function useTerms(taxonomy) {
+function useTerms(taxonomy, {
+  orderby = 'name',
+  order = 'asc'
+} = {}) {
   const [terms, setTerms] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -1256,7 +1340,7 @@ function useTerms(taxonomy) {
     const {
       restNonce
     } = window.wolfStoreData;
-    fetch(`/wp-json/wp/v2/${taxonomy}?per_page=100&hide_empty=1`, {
+    fetch(`/wp-json/wp/v2/${taxonomy}?per_page=100&hide_empty=1&orderby=${orderby}&order=${order}`, {
       headers: {
         'X-WP-Nonce': restNonce
       }
