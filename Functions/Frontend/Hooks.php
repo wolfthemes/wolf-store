@@ -46,6 +46,13 @@ class Hooks {
 	public function output_schema(): void {
 		if ( is_singular( 'wolf_theme' ) ) {
 			Schema::output_single( get_the_ID() );
+		} elseif (
+			is_page( Core::get_store_page_id() ) ||
+			is_post_type_archive( 'wolf_theme' ) ||
+			is_tax( 'theme_cat' ) ||
+			is_tax( 'theme_tag' )
+		) {
+			Schema::output_archive();
 		}
 	}
 

@@ -90,6 +90,81 @@ class Schema {
 	}
 
 	/**
+	 * Output JSON-LD ItemList for the store archive / taxonomy pages.
+	 */
+	public static function output_archive(): void {
+		if ( is_tax() ) {
+			$obj      = get_queried_object();
+			$name     = $obj->name ?? '';
+			$term_url = get_term_link( $obj );
+			$url      = ! is_wp_error( $term_url ) ? $term_url : '';
+		} elseif ( is_post_type_archive( 'wolf_theme' ) ) {
+			$name = post_type_archive_title( '', false ) ?: 'WordPress Themes';
+			$url  = (string) get_post_type_archive_link( 'wolf_theme' );
+		} else {
+			$page_id = Core::get_store_page_id();
+			$name    = get_the_title( $page_id );
+			$url     = (string) get_permalink( $page_id );
+		}
+
+		$posts = get_posts( array( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts
+			'post_type'      => 'wolf_theme',
+			'posts_per_page' => 100,
+			'post_status'    => 'publish',
+			'no_found_rows'  => true,
+		) );
+
+		if ( empty( $posts ) ) {
+			return;
+		}
+
+		$items = array();
+
+		foreach ( $posts as $i => $post ) {
+			$post_id = $post->ID;
+			$slug    = Meta::get_theme_slug( $post_id );
+			$config  = Meta::get_config( $slug );
+			$price   = isset( $config['price_annual'] ) ? (float) $config['price_annual'] : null;
+			$buy_url = Meta::get_purchase_url( $post_id );
+
+			$item = array(
+				'@type'               => 'SoftwareApplication',
+				'name'                => get_the_title( $post_id ),
+				'url'                 => (string) get_permalink( $post_id ),
+				'image'               => Meta::get_thumbnail_url( $post_id ),
+				'applicationCategory' => 'WebApplication',
+				'operatingSystem'     => 'WordPress',
+			);
+
+			$excerpt = get_the_excerpt( $post_id );
+			if ( $excerpt ) {
+				$item['description'] = wp_strip_all_tags( $excerpt );
+			}
+
+			if ( $price ) {
+				$item['offers'] = self::make_offer( '1 site', $price, $buy_url );
+			}
+
+			$items[] = array(
+				'@type'    => 'ListItem',
+				'position' => $i + 1,
+				'item'     => $item,
+			);
+		}
+
+		$schema = array(
+			'@context'        => 'https://schema.org',
+			'@type'           => 'ItemList',
+			'name'            => $name,
+			'url'             => $url,
+			'itemListElement' => $items,
+		);
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+	}
+
+	/**
 	 * Build an Offer node.
 	 *
 	 * @param string $name
