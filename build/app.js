@@ -2,6 +2,48 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/images/up-right-arrow.svg"
+/*!******************************************!*\
+  !*** ./assets/images/up-right-arrow.svg ***!
+  \******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgUpRightArrow = function SvgUpRightArrow(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 86 86",
+    fill: "none"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M14 5H5C4.44772 5 4 5.44772 4 6V81C4 81.5523 4.44772 82 5 82H80C80.5523 82 81 81.5523 81 81V72",
+    stroke: "currentColor",
+    strokeWidth: 7,
+    strokeLinecap: "round"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M44 4H82V42",
+    stroke: "currentColor",
+    strokeWidth: 7,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M82 4L42 44",
+    stroke: "currentColor",
+    strokeWidth: 7,
+    strokeLinecap: "round"
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgUpRightArrow);
+
+/***/ },
+
 /***/ "./src/scripts/components/Archive.jsx"
 /*!********************************************!*\
   !*** ./src/scripts/components/Archive.jsx ***!
@@ -164,21 +206,107 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hooks/useTerms */ "./src/scripts/components/hooks/useTerms.js");
 
 
-function Sidebar({
+
+const FILTER_GROUPS = [{
+  slug: 'theme_cat',
+  label: 'Categories'
+}, {
+  slug: 'theme_tag',
+  label: 'Tags',
+  orderby: 'count',
+  order: 'desc'
+}, {
+  slug: 'theme_color',
+  label: 'Color'
+}, {
+  slug: 'theme_price',
+  label: 'Price Range'
+}, {
+  slug: 'theme_style',
+  label: 'Style'
+}, {
+  slug: 'theme_page_builder',
+  label: 'Page Builder'
+}];
+const VISIBLE_LIMIT = 6;
+function TermItem({
+  term,
+  slug,
+  activeTaxonomy,
+  activeTermId,
+  onChange
+}) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    className: `wolf-store-sidebar__term${activeTaxonomy === slug && activeTermId === term.id ? ' is-active' : ''}`,
+    onClick: e => {
+      e.preventDefault();
+      onChange(slug, term.id);
+    }
+  }, term.term_color && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-store-sidebar__swatch",
+    style: {
+      background: term.term_color
+    }
+  }), term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wolf-store-sidebar__count"
+  }, term.count)));
+}
+function FilterGroup({
+  slug,
+  label,
+  orderby,
+  order,
   activeTaxonomy,
   activeTermId,
   onChange
 }) {
   const {
-    terms: cats
-  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)('theme_cat');
-  const {
-    terms: tags
-  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)('theme_tag');
-  const handleClick = (e, taxonomy, termId) => {
-    e.preventDefault();
-    onChange(taxonomy, termId);
+    terms
+  } = (0,_hooks_useTerms__WEBPACK_IMPORTED_MODULE_1__.useTerms)(slug, {
+    orderby,
+    order
+  });
+  const [expanded, setExpanded] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  if (!terms.length) return null;
+  const hasMore = terms.length > VISIBLE_LIMIT;
+  const visible = terms.slice(0, VISIBLE_LIMIT);
+  const hidden = hasMore ? terms.slice(VISIBLE_LIMIT) : [];
+  const hiddenCount = hidden.length;
+  const termProps = {
+    slug,
+    activeTaxonomy,
+    activeTermId,
+    onChange
   };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-store-sidebar__group"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "wolf-store-sidebar__title"
+  }, label), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-store-sidebar__list"
+  }, visible.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TermItem, {
+    key: term.id,
+    term: term,
+    ...termProps
+  }))), hasMore && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `wolf-store-sidebar__extra${expanded ? ' is-open' : ''}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "wolf-store-sidebar__list"
+  }, hidden.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TermItem, {
+    key: term.id,
+    term: term,
+    ...termProps
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "wolf-store-sidebar__toggle",
+    onClick: () => setExpanded(!expanded)
+  }, expanded ? 'Show Less' : `Show More (${hiddenCount})`)));
+}
+function Sidebar({
+  activeTaxonomy,
+  activeTermId,
+  onChange
+}) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
     className: "wolf-store-sidebar"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -186,22 +314,17 @@ function Sidebar({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: "#",
     className: `wolf-store-sidebar__all${!activeTermId ? ' is-active' : ''}`,
-    onClick: e => handleClick(e, '', 0)
-  }, "All Themes")), cats.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-store-sidebar__group"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "wolf-store-sidebar__title"
-  }, "Categories"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "wolf-store-sidebar__list"
-  }, cats.map(term => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: term.id
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: `wolf-store-sidebar__term${activeTaxonomy === 'theme_cat' && activeTermId === term.id ? ' is-active' : ''}`,
-    onClick: e => handleClick(e, 'theme_cat', term.id)
-  }, term.name, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "wolf-store-sidebar__count"
-  }, term.count)))))));
+    onClick: e => {
+      e.preventDefault();
+      onChange('', 0);
+    }
+  }, "All Themes")), FILTER_GROUPS.map(group => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(FilterGroup, {
+    key: group.slug,
+    ...group,
+    activeTaxonomy: activeTaxonomy,
+    activeTermId: activeTermId,
+    onChange: onChange
+  })));
 }
 
 /***/ },
@@ -228,14 +351,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ThemeFeatures__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ThemeFeatures */ "./src/scripts/components/ThemeFeatures.jsx");
 /* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
 /* harmony import */ var _ThemeBrandStory__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ThemeBrandStory */ "./src/scripts/components/ThemeBrandStory.jsx");
-/* harmony import */ var _SkeletonSingle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SkeletonSingle */ "./src/scripts/components/SkeletonSingle.jsx");
 
 
 
 
 
 // import ThemeFooter    from './ThemeFooter';
-
 
 
 
@@ -250,11 +371,13 @@ function Single({
     loading,
     error
   } = (0,_hooks_useTheme__WEBPACK_IMPORTED_MODULE_1__.useTheme)(postId);
-
-  // if ( loading ) return <SkeletonSingle />;
   if (loading) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-store-loading"
-  }, "Loading...");
+    className: "wolf-theme-single"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single__main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero wolf-theme-hero--skeleton"
+  })));
   if (error) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-error"
   }, error);
@@ -328,68 +451,6 @@ function SkeletonCard() {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-skeleton wolf-skeleton--btn"
   }))));
-}
-
-/***/ },
-
-/***/ "./src/scripts/components/SkeletonSingle.jsx"
-/*!***************************************************!*\
-  !*** ./src/scripts/components/SkeletonSingle.jsx ***!
-  \***************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ SkeletonSingle)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function SkeletonSingle() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single__main"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__hero"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-title"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-tagline"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-thumbnail"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-line"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-line wolf-skeleton--single-line-short"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-line"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
-    className: "wolf-theme-single__sidebar"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__pricebox"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-ref"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-badge"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-main"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-sub"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__ctas"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-btn"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-btn wolf-skeleton--single-btn-secondary"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__meta"
-  }, Array.from({
-    length: 5
-  }).map((_, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: i,
-    className: "wolf-skeleton wolf-skeleton--single-meta-row"
-  })))));
 }
 
 /***/ },
@@ -497,6 +558,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_images_up_right_arrow_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../assets/images/up-right-arrow.svg */ "./assets/images/up-right-arrow.svg");
+
 
 function ThemeCTAs({
   theme,
@@ -517,7 +580,10 @@ function ThemeCTAs({
     className: "theme-button-secondary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--demo",
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Live Demo"));
+  }, "Live Demo ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_assets_images_up_right_arrow_svg__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "wolf-theme-ctas__arrow",
+    "aria-hidden": "true"
+  })));
 }
 
 /***/ },
@@ -1263,7 +1329,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-function useTerms(taxonomy) {
+function useTerms(taxonomy, {
+  orderby = 'name',
+  order = 'asc'
+} = {}) {
   const [terms, setTerms] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -1271,7 +1340,7 @@ function useTerms(taxonomy) {
     const {
       restNonce
     } = window.wolfStoreData;
-    fetch(`/wp-json/wp/v2/${taxonomy}?per_page=100&hide_empty=1`, {
+    fetch(`/wp-json/wp/v2/${taxonomy}?per_page=100&hide_empty=1&orderby=${orderby}&order=${order}`, {
       headers: {
         'X-WP-Nonce': restNonce
       }

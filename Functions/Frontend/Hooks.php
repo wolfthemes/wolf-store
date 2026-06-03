@@ -12,6 +12,7 @@ namespace Wolf_Store\Frontend;
 use Wolf_Store\Core\Core;
 use Wolf_Store\Core\Utilities;
 use Wolf_Store\Core\Meta;
+use Wolf_Store\Core\Schema;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -28,6 +29,7 @@ class Hooks {
 		 * @see  wd_body_class()
 		 */
 		add_filter( 'body_class', array( $this, 'body_class' ) );
+		add_action( 'wp_head', array( $this, 'output_schema' ) );
 
 		/**
 		 * WP Header
@@ -39,36 +41,19 @@ class Hooks {
 	}
 
 	/**
-	 * Output product microdata
-	 *
-	 * @since 1.0.0
+	 * Output JSON-LD structured data in <head>.
 	 */
-	public function theme_microdata() {
-
-		$category = wp_strip_all_tags( get_the_term_list( get_the_ID(), 'theme_cat', '', ', ', '' ) );
-		$meta     = Meta::get_meta();
-		?>
-		<meta itemprop="name" content="<?php the_title_attribute(); ?>">
-		<link itemprop="url" content="<?php the_permalink(); ?>">
-		<meta itemprop="image" content="<?php echo esc_url( Utilities::get_post_thumbnail_url( 'large' ) ); ?>">
-		<meta itemprop="description" content="<?php echo esc_attr( get_the_excerpt() ); ?>">
-
-		<?php if ( $category ) : ?>
-			<meta itemprop="category" content="<?php echo esc_attr( $category ); ?>">
-		<?php endif; ?>
-
-		<div itemprop="brand" itemscope itemtype="https://schema.org/Brand">
-			<meta itemprop="name" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-		</div>
-
-		<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-			<meta itemprop="url" content="<?php the_permalink(); ?>">
-			<meta itemprop="priceCurrency" content="USD">
-			<meta itemprop="availability" content="https://schema.org/InStock">
-		</div>
-		<?php
+	public function output_schema(): void {
+		if ( is_singular( 'wolf_theme' ) ) {
+			Schema::output_single( get_the_ID() );
+		} elseif (
+			is_page( Core::get_store_page_id() ) ||
+			is_post_type_archive( 'wolf_theme' ) ||
+			is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
+		) {
+			Schema::output_archive();
+		}
 	}
-
 
 	/*
 	 * Output generator tag to aid debugging.
@@ -98,7 +83,7 @@ class Hooks {
 			$classes[] = 'store-page';
 		}
 
-		if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
+		if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
 			$classes[] = 'store-category-page';
 		}
 

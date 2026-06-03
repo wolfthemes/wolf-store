@@ -4,8 +4,6 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
 
 module.exports = () => {
-	// npm run build-plugin --plugin=clix
-	// const plugin = process.env.npm_config_PLUGIN || process.env.PLUGIN;
 	const plugin = "wolf-store"
 
     if (!plugin) {
@@ -15,19 +13,35 @@ module.exports = () => {
 
     console.log(`Building plugin: ${plugin}`);
 
+	// Filter out the default SVG rule from @wordpress/scripts
+	const defaultRulesWithoutSvg = defaultConfig.module.rules.filter(
+		rule => ! ( rule.test && rule.test.toString().includes( 'svg' ) )
+	);
+
 	return {
 	    ...defaultConfig,
-		// Add webpack dev server and watch options for WSL
 		watchOptions: {
-			poll: 1000, // Check for changes every second
-			aggregateTimeout: 300, // Delay before rebuilding
+			poll: 1000,
+			aggregateTimeout: 300,
 			ignored: /node_modules/,
 		},
 		module: {
 			...defaultConfig.module,
 			rules: [
-				...defaultConfig.module.rules,
-				// Add TypeScript support
+				...defaultRulesWithoutSvg,
+				// SVG as React components via SVGR
+				{
+					test: /\.svg$/,
+					use: [
+						{
+							loader: '@svgr/webpack',
+							options: {
+								svgo: false, // avoids svgo/convertPathData crash
+							},
+						},
+					],
+				},
+				// TypeScript support
 				{
 					test: /\.tsx?$/,
 					use: [
@@ -35,15 +49,14 @@ module.exports = () => {
 							loader: 'ts-loader',
 							options: {
 								configFile: path.resolve(__dirname, 'tsconfig.json'),
-								// Allow .js files to import .ts files
 								allowTsInNodeModules: true,
-								transpileOnly: true, // Faster builds, type checking handled separately
+								transpileOnly: true,
 							},
 						},
 					],
 					exclude: /node_modules/,
 				},
-				// Add shader file support (like vite-plugin-glsl)
+				// Shader files
 				{
 					test: /\.(glsl|vs|fs|vert|frag)$/,
 					use: 'raw-loader'
@@ -57,11 +70,11 @@ module.exports = () => {
 				files: [
 					'**/*.php',
 					'**/*.js',
-					'**/*.ts', // Add TypeScript files to watch
-					'**/*.tsx', // Add TypeScript React files to watch
+					'**/*.ts',
+					'**/*.tsx',
 					'**/*.scss',
 					'**/*.css',
-					`./build/**/*` // Watch build directory
+					`./build/**/*`
 				],
 				host: 'localhost',
 				port: 3000,
@@ -69,7 +82,7 @@ module.exports = () => {
 				watchOptions: {
 					poll: 1000,
 					ignoreInitial: true,
-					usePolling: true, // Force polling
+					usePolling: true,
 					interval: 1000,
 					binaryInterval: 1000
 				},
@@ -85,13 +98,12 @@ module.exports = () => {
 			},
 			{
 				reload: true,
-				injectChanges: false // Force full reload instead of injecting changes
+				injectChanges: false
 			}),
 		],
 		entry: {
 			app : {
 				import: [
-					// Change this to .ts when you rename theme.js to theme.ts
 					path.resolve( __dirname, './src/scripts/plugin.js' )
 				],
 				filename: './app.js'
@@ -124,7 +136,7 @@ module.exports = () => {
 			},
 			modules: ['node_modules'],
 			mainFiles: ['index', 'main', 'theme'],
-			extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'], // You already have this, perfect!
+			extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
 		}
 	}
 };

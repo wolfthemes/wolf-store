@@ -17,6 +17,19 @@
 			padding-right:0!important;
 		}
 	}
+
+	.theme-button-primary{
+		border-color:var(--accent-color);
+	}
+
+	.theme-button-secondary{
+		color:var(--accent-hover-color)!important;
+		border-color:var(--accent-hover-color)!important;
+
+		&:hover{
+			background-color:var(--accent-hover-color)!important;
+		}
+	}
 }
 
 @media screen and (max-width:1950px) {

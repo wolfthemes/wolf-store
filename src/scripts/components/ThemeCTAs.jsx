@@ -1,3 +1,4 @@
+import UpRightArrow from '../../../assets/images/up-right-arrow.svg';
 
 export default function ThemeCTAs( { theme, layout = 'row' } ) {
     const demoUrl         = theme.theme_demo_url;
@@ -23,7 +24,7 @@ export default function ThemeCTAs( { theme, layout = 'row' } ) {
                     target='_blank'
                     rel='noopener noreferrer'
                 >
-                    Live Demo
+                    Live Demo <UpRightArrow className='wolf-theme-ctas__arrow' aria-hidden='true' />
                 </a>
             ) }
         </div>

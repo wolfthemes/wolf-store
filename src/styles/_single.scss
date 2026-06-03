@@ -1,8 +1,19 @@
+[data-type="single"] {
+	min-height: 100vh;
+}
+
 .wolf-theme-single {
+
+	&__main {
+		min-height: 100vh;
+	}
 
 	&__section{
 		padding:80px 0;
 
+		@media (max-width: 768px) {
+			padding: 48px 0;
+		}
 	}
 
 	&__wrapper{
