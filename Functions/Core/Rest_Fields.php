@@ -236,12 +236,6 @@ class Rest_Fields {
 			return $data['selling_points'] ?? array();
 		} );
 
-		$this->register( 'theme_style', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['theme_style'] ?? array();
-		} );
-
 		$this->register( 'theme_target_audience', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_theme_meta( $slug );
