@@ -23,6 +23,16 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+.wp-theme-seijaku .theme-button-primary {
+  border-color: var(--accent-color);
+}
+.wp-theme-seijaku .theme-button-secondary {
+  color: var(--accent-hover-color) !important;
+  border-color: var(--accent-hover-color) !important;
+}
+.wp-theme-seijaku .theme-button-secondary:hover {
+  background-color: var(--accent-hover-color) !important;
+}
 
 @media screen and (max-width: 1950px) {
   .wp-theme-seijaku.single-wolf_theme .wolf-theme-single__wrapper {
@@ -474,19 +484,6 @@
 .wolf-theme-ctas--column {
   flex-direction: column;
 }
-.wolf-theme-ctas__btn--buy {
-  background: var(--accent-hover-color) !important;
-}
-.wolf-theme-ctas__btn--buy.theme-button-primary:hover {
-  background: var(--accent-color) !important;
-}
-.wolf-theme-ctas__btn--demo.theme-button-secondary {
-  color: white !important;
-}
-.wolf-theme-ctas__btn--demo {
-  background: var(--accent-color) !important;
-}
-
 .wolf-theme-price-box {
   margin-bottom: 12px;
   display: flex;
@@ -817,12 +814,6 @@
   text-align: center;
   text-decoration: none;
   margin-top: auto;
-}
-.wolf-theme-pricing__card-cta--wolf {
-  background: var(--accent-hover-color) !important;
-}
-.wolf-theme-pricing__card-cta--wolf.theme-button-primary:hover {
-  background: var(--accent-color) !important;
 }
 .wolf-theme-pricing__plan {
   display: flex;
