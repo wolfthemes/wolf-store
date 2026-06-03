@@ -5,14 +5,14 @@ const FILTER_GROUPS = [
     { slug: 'theme_cat',          label: 'Categories' },
     { slug: 'theme_tag',          label: 'Tags', orderby: 'count', order: 'desc' },
     { slug: 'theme_color',        label: 'Color' },
-    { slug: 'theme_price',        label: 'Price Range' },
+    { slug: 'theme_price',        label: 'Price Range', prefix: '$' },
     { slug: 'theme_style',        label: 'Style' },
     { slug: 'theme_page_builder', label: 'Page Builder' },
 ];
 
 const VISIBLE_LIMIT = 6;
 
-function TermItem( { term, slug, activeTaxonomy, activeTermId, onChange } ) {
+function TermItem( { term, slug, prefix, activeTaxonomy, activeTermId, onChange } ) {
     return (
         <li>
             <a
@@ -22,20 +22,23 @@ function TermItem( { term, slug, activeTaxonomy, activeTermId, onChange } ) {
                 }` }
                 onClick={ e => { e.preventDefault(); onChange( slug, term.id ); } }
             >
-                { term.term_color && (
-                    <span
-                        className='wolf-store-sidebar__swatch'
-                        style={ { background: term.term_color } }
-                    />
-                ) }
-                { term.name }
+                <span className='wolf-store-sidebar__label'>
+                    { term.term_color && (
+                        <span
+                            className='wolf-store-sidebar__swatch'
+                            style={ { background: term.term_color } }
+                        />
+                    ) }
+                    { prefix && <span className='wolf-store-sidebar__prefix'>{ prefix }</span> }
+                    { term.name }
+                </span>
                 <span className='wolf-store-sidebar__count'>{ term.count }</span>
             </a>
         </li>
     );
 }
 
-function FilterGroup( { slug, label, orderby, order, activeTaxonomy, activeTermId, onChange } ) {
+function FilterGroup( { slug, label, prefix, orderby, order, activeTaxonomy, activeTermId, onChange } ) {
     const { terms } = useTerms( slug, { orderby, order } );
     const [ expanded, setExpanded ] = useState( false );
 
@@ -45,7 +48,7 @@ function FilterGroup( { slug, label, orderby, order, activeTaxonomy, activeTermI
     const visible     = terms.slice( 0, VISIBLE_LIMIT );
     const hidden      = hasMore ? terms.slice( VISIBLE_LIMIT ) : [];
     const hiddenCount = hidden.length;
-    const termProps   = { slug, activeTaxonomy, activeTermId, onChange };
+    const termProps   = { slug, prefix, activeTaxonomy, activeTermId, onChange };
 
     return (
         <div className='wolf-store-sidebar__group'>

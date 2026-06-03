@@ -82,6 +82,17 @@
         margin-right: 8px;
     }
 
+    &__label {
+        display: flex;
+        align-items: center;
+    }
+
+    &__prefix {
+        margin-right: 2px;
+        opacity: 0.6;
+        font-size: 0.85em;
+    }
+
     &__count {
         font-size: 0.75rem;
         opacity: 0.8;
