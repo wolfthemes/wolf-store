@@ -3,7 +3,7 @@ import { useTerms } from './hooks/useTerms';
 
 const FILTER_GROUPS = [
     { slug: 'theme_cat',          label: 'Categories' },
-    { slug: 'theme_tag',          label: 'Tags' },
+    { slug: 'theme_tag',          label: 'Tags', orderby: 'count', order: 'desc' },
     { slug: 'theme_color',        label: 'Color' },
     { slug: 'theme_price',        label: 'Price Range' },
     { slug: 'theme_style',        label: 'Style' },
@@ -35,8 +35,8 @@ function TermItem( { term, slug, activeTaxonomy, activeTermId, onChange } ) {
     );
 }
 
-function FilterGroup( { slug, label, activeTaxonomy, activeTermId, onChange } ) {
-    const { terms } = useTerms( slug );
+function FilterGroup( { slug, label, orderby, order, activeTaxonomy, activeTermId, onChange } ) {
+    const { terms } = useTerms( slug, { orderby, order } );
     const [ expanded, setExpanded ] = useState( false );
 
     if ( ! terms.length ) return null;
