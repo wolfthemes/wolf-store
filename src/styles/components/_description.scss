@@ -5,6 +5,10 @@
 		gap:20px;
 		align-items:center;
 		justify-content: space-between;
+
+		@media (max-width: 900px) {
+			flex-direction: column;
+		}
 	}
 
 	&__description{

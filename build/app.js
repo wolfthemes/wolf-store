@@ -228,14 +228,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ThemeFeatures__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ThemeFeatures */ "./src/scripts/components/ThemeFeatures.jsx");
 /* harmony import */ var _ThemeChangelog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ThemeChangelog */ "./src/scripts/components/ThemeChangelog.jsx");
 /* harmony import */ var _ThemeBrandStory__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ThemeBrandStory */ "./src/scripts/components/ThemeBrandStory.jsx");
-/* harmony import */ var _SkeletonSingle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SkeletonSingle */ "./src/scripts/components/SkeletonSingle.jsx");
 
 
 
 
 
 // import ThemeFooter    from './ThemeFooter';
-
 
 
 
@@ -250,11 +248,13 @@ function Single({
     loading,
     error
   } = (0,_hooks_useTheme__WEBPACK_IMPORTED_MODULE_1__.useTheme)(postId);
-
-  // if ( loading ) return <SkeletonSingle />;
   if (loading) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-store-loading"
-  }, "Loading...");
+    className: "wolf-theme-single"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-single__main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wolf-theme-hero wolf-theme-hero--skeleton"
+  })));
   if (error) return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-store-error"
   }, error);
@@ -328,68 +328,6 @@ function SkeletonCard() {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wolf-skeleton wolf-skeleton--btn"
   }))));
-}
-
-/***/ },
-
-/***/ "./src/scripts/components/SkeletonSingle.jsx"
-/*!***************************************************!*\
-  !*** ./src/scripts/components/SkeletonSingle.jsx ***!
-  \***************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ SkeletonSingle)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function SkeletonSingle() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-single__main"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__hero"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-title"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-tagline"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-thumbnail"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-line"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-line wolf-skeleton--single-line-short"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-line"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
-    className: "wolf-theme-single__sidebar"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__pricebox"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-ref"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-badge"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-main"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-price-sub"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__ctas"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-btn"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-skeleton wolf-skeleton--single-btn wolf-skeleton--single-btn-secondary"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wolf-theme-skeleton-single__meta"
-  }, Array.from({
-    length: 5
-  }).map((_, i) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: i,
-    className: "wolf-skeleton wolf-skeleton--single-meta-row"
-  })))));
 }
 
 /***/ },
