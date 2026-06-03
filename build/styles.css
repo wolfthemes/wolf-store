@@ -490,13 +490,9 @@
   vertical-align: middle;
   margin-left: 5px;
   position: relative;
-  top: -1px;
-}
-.wolf-theme-ctas__arrow rect {
-  display: none;
 }
 .wolf-theme-ctas__arrow path {
-  fill: currentColor;
+  stroke-width: 20;
 }
 
 .wolf-theme-price-box {
