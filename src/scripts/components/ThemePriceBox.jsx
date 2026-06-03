@@ -1,6 +1,13 @@
 
 import ThemeCTAs from './ThemeCTAs';
 
+const LAUNCH_OFFER = { discount: 0.20, label: '-20% launch offer' };
+// const LAUNCH_OFFER = null; // ← set to null to disable
+
+function discounted( price ) {
+    return Math.round( price * ( 1 - LAUNCH_OFFER.discount ) );
+}
+
 export default function ThemePriceBox( { theme } ) {
     const { tf_price, price_annual, price_annual_3sites } = theme.theme_pricing ?? {};
 
@@ -23,15 +30,23 @@ export default function ThemePriceBox( { theme } ) {
 
                     { /* Hero — single site annual */ }
                     <div className='wolf-theme-price-box__hero'>
-                        { saving > 0 && (
+                        { LAUNCH_OFFER ? (
+                            <span className='wolf-theme-price-box__badge'>{ LAUNCH_OFFER.label }</span>
+                        ) : saving > 0 && (
                             <span className='wolf-theme-price-box__badge'>
                                 Save ${ saving } — support always included
                             </span>
                         ) }
-                        <div className='wolf-theme-price-box__hero-amount'>
+                        <div className={ `wolf-theme-price-box__hero-amount${ LAUNCH_OFFER ? ' is-struck' : '' }` }>
                             <sup>$</sup>{ price_annual }
                             <span className='wolf-theme-price-box__hero-period'>/year</span>
                         </div>
+                        { LAUNCH_OFFER && (
+                            <div className='wolf-theme-price-box__hero-amount'>
+                                <sup>$</sup>{ discounted( price_annual ) }
+                                <span className='wolf-theme-price-box__hero-period'>/year</span>
+                            </div>
+                        ) }
                         <div className='wolf-theme-price-box__hero-label'>1 site</div>
                     </div>
 

@@ -81,6 +81,13 @@
         }
     }
 
+    &__hero-amount.is-struck {
+        font-size: 1.4rem;
+        font-weight: 400;
+        opacity: 0.4;
+        text-decoration: line-through;
+    }
+
     &__hero-period {
         font-size: 1rem;
         font-weight: 400;
