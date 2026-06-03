@@ -111,6 +111,31 @@ class Taxonomy_Config {
 	}
 
 	/**
+	 * Hardcoded color map: term slug → hex value.
+	 *
+	 * @return array<string, string>
+	 */
+	public static function get_color_map(): array {
+		return array(
+			'black'  => '#1a1a1a',
+			'white'  => '#ffffff',
+			'beige'  => '#f5f0e8',
+			'yellow' => '#f5c842',
+			'grey'   => '#888888',
+		);
+	}
+
+	/**
+	 * Return the hex color for a given theme_color term slug, or empty string if unknown.
+	 *
+	 * @param string $slug
+	 * @return string
+	 */
+	public static function get_term_color( string $slug ): string {
+		return self::get_color_map()[ $slug ] ?? '';
+	}
+
+	/**
 	 * Get a generic flat (non-hierarchical) taxonomy configuration.
 	 *
 	 * @param string $singular

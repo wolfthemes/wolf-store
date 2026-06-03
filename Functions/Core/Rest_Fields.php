@@ -106,6 +106,22 @@ class Rest_Fields {
 	 */
 	public function register_fields(): void {
 
+		// Expose hex color on theme_color taxonomy terms
+		register_rest_field(
+			'theme_color',
+			'term_color',
+			array(
+				'get_callback' => function ( $term ) {
+					return \Wolf_Store\Config\Taxonomy_Config::get_term_color( $term['slug'] );
+				},
+				'schema'          => array(
+					'type'        => 'string',
+					'description' => 'Hex color value for this term.',
+				),
+				'update_callback' => null,
+			)
+		);
+
 		$this->register( 'theme_featured', function ( $post ) {
 			return (bool) get_post_meta( $post['id'], '_wolf_theme_featured', true );
 		} );
