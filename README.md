@@ -183,13 +183,12 @@ window.wolfStoreData = {
 
 ## Roadmap
 
-- **Count-up animation refinement** — easing options, start-from threshold configuration
-- **Elementor widget** — expose theme index as a configurable Elementor block
-- **Changelog improvements** — diff view, version comparison
-- **Multi-currency pricing** — locale-aware price display
-- **A/B offer testing** — rotate offers per session via `offers.js`
-- **PHP unit test coverage** — expand beyond bootstrap tests to cover Meta resolution chain
-- **Archive performance** — stale-while-revalidate caching layer on REST responses
+- **Multi-select taxonomy filter** — allow visitors to filter by multiple categories/tags simultaneously in the archive sidebar
+- **Search bar** — keyword search across theme name, taxonomy, and metadata directly in the archive
+- **Related themes** — display similar themes by category at the bottom of single theme pages
+- **Entrance animations** — scroll-triggered reveal animations on key sections and UI elements
+- **Performance** — REST response caching, lazy loading optimisations, bundle size audit
+- **PHP unit test coverage** — expand test suite to cover the Meta resolution chain and REST field registration
 
 ---
 
