@@ -13,19 +13,17 @@ export default function ThemeBrandStory() {
 						</div>
 						<div className='wolf-theme-brand-story__content'>
 
-							<h3 className='wolf-theme-brand-story__title'>Built by WolfThemes</h3>
+							<h3 className='wolf-theme-brand-story__title'>Created & Supported by the Author</h3>
 
 							<p className='wolf-theme-brand-story__text'>
-								I'm Constantin, founder of WolfThemes. For over 14 years, I've been creating
-								WordPress themes for musicians, artists, photographers, and creative professionals
-								worldwide. My goal has always been simple — themes that feel genuinely premium,
-								stay maintainable long-term, and come with real support when you need it.
-							</p>
+								Hi, I'm Constantin, founder of WolfThemes.
+</p>
 
 							<p className='wolf-theme-brand-story__text'>
-								When you buy from WolfThemes, you're buying directly from the person who built it.
-								No marketplace middleman. Just direct support from the creator.
-							</p>
+For over 14 years, I've been creating WordPress themes trusted by more than 35,000 customers worldwide.							</p>
+
+							<p className='wolf-theme-brand-story__text'>
+								When you buy from WolfThemes, you're buying directly from the creator: no marketplace middleman, no outsourced support. Just premium themes, continuous updates, and direct help when you need it.							</p>
 
 							<div className='wolf-theme-brand-story__stats'>
 								<div className='wolf-theme-brand-story__stat'>
