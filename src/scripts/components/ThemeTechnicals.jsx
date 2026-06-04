@@ -23,8 +23,47 @@ export default function ThemeTechnicals( { theme } ) {
         <div className='wolf-theme-technicals wolf-theme-single__section'>
 			<div className='wolf-theme-single__wrapper'>
 
+
+				<div className="wolf-theme-technicals__terms-container">
+					{ /* Categories */ }
+					{ categories.length > 0 && (
+						<div className='wolf-theme-technicals__terms'>
+							<h3 className='wolf-theme-technicals__section-title'>Categories</h3>
+							<div className='wolf-theme-technicals__categories'>
+								{ categories.map( term => (
+
+									<a    key={ term.id }
+										href={ term.link }
+										className='wolf-theme-technicals__category'
+									>
+										{ term.name }
+									</a>
+								) ) }
+							</div>
+						</div>
+					) }
+
+					{ /* Tags */ }
+					{ tags.length > 0 && (
+						<div className='wolf-theme-technicals__terms'>
+							<h3 className='wolf-theme-technicals__section-title'>Tags</h3>
+							<div className='wolf-theme-technicals__tags'>
+								{ tags.map( term => (
+
+									<a    key={ term.id }
+										href={ term.link }
+										className='wolf-theme-technicals__tag'
+									>
+										{ term.name }
+									</a>
+								) ) }
+							</div>
+						</div>
+					) }
+				</div>
+
 				{ /* Benefits */ }
-				<ThemeBenefits />
+				{/* <ThemeBenefits /> */}
 
 				{ /* Support links */ }
 				<div className='wolf-theme-technicals__support'>
@@ -57,46 +96,11 @@ export default function ThemeTechnicals( { theme } ) {
 					</ul>
 				</div>
 
-				<div className="wolf-theme-technicals__terms-container">
-					{ /* Categories */ }
-					{ categories.length > 0 && (
-						<div className='wolf-theme-technicals__terms'>
-							<h3 className='wolf-theme-technicals__section-title'>Categories</h3>
-							<div className='wolf-theme-technicals__categories'>
-								{ categories.map( term => (
-
-									<a    key={ term.id }
-										href={ term.link }
-										className='wolf-theme-technicals__category'
-									>
-										{ term.name }
-									</a>
-								) ) }
-							</div>
-						</div>
-					) }
-
-					{ /* Tags */ }
-					{ tags.length > 0 && (
-						<div className='wolf-theme-technicals__terms'>
-							<h3 className='wolf-theme-technicals__section-title'>Tags</h3>
-							<div className='wolf-theme-technicals__tags tagcloud'>
-								{ tags.map( term => (
-
-									<a    key={ term.id }
-										href={ term.link }
-										className='wolf-theme-technicals__tag'
-									>
-										{ term.name }
-									</a>
-								) ) }
-							</div>
-						</div>
-					) }
-				</div>
 
 			{ /* Meta */ }
 				<div className='wolf-theme-technicals__meta'>
+
+					<h3 className='wolf-theme-technicals__section-title'>Technical Details</h3>
 					{ version && (
 						<div className='wolf-theme-technicals__row'>
 							<span className='wolf-theme-technicals__label'>Version</span>
