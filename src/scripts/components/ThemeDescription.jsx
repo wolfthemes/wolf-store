@@ -1,6 +1,6 @@
 
 import ThemeCTAs from './ThemeCTAs';
-import ThemeBenefits from './ThemeBenefits';
+import ThemeStats from './ThemeStats';
 
 export default function ThemeDescription({ theme }) {
     const title           = theme.title?.rendered;
@@ -26,8 +26,8 @@ export default function ThemeDescription({ theme }) {
 						</div>
 					) }
 
-					{ /* Benefits */ }
-					<ThemeBenefits />
+					{ /* Stats */ }
+					<ThemeStats />
 
 					{ /* CTAs */ }
 					<ThemeCTAs theme={ theme } layout='row' />

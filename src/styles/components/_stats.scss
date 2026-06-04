@@ -1,0 +1,28 @@
+// ── ThemeStats ────────────────────────────────────────────────────────────────
+
+.wolf-theme-stats {
+    display: flex;
+    gap: 32px;
+
+	margin-bottom:30px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__value {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--strong-color);
+    }
+
+    &__label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.55;
+    }
+}

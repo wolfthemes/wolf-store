@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ThemeCTAs         from './ThemeCTAs';
+import ThemeCTAs     from './ThemeCTAs';
 import ThemePriceBox from './ThemePriceBox';
 
 export default function ThemeHero( { theme } ) {
@@ -16,12 +16,10 @@ export default function ThemeHero( { theme } ) {
 
             { (video || thumbnail) && (
 				<div className='wolf-theme-hero__thumbnail'>
-					{/* <a href={ demoUrl } target='_blank' rel='noopener noreferrer'> */}
-						{ video
-							? <video src={ video } autoPlay muted loop playsInline />
-							: <img src={ thumbnail } alt={ title } />
-						}
-					{/* </a> */}
+					{ video
+						? <video src={ video } autoPlay muted loop playsInline />
+						: <img src={ thumbnail } alt={ title } />
+					}
 				</div>
 			) }
 
@@ -37,8 +35,6 @@ export default function ThemeHero( { theme } ) {
                 ) }
 
             </div>
-
-
 
 			{ /* Hero CTA box — top of sidebar */ }
             <ThemePriceBox theme={ theme } />
