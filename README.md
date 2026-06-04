@@ -14,9 +14,9 @@ A modern WordPress theme store plugin built with a clean OOP PHP architecture an
 |---|---|
 | Backend | PHP 8.1+, WordPress OOP, WP REST API |
 | Frontend | React 18, JSX |
-| Build | Webpack via `@wordpress/scripts` |
-| Styles | SCSS |
-| Standards | PSR-4 autoloading via Composer, PSR-12 coding style |
+| Build | Webpack via `@wordpress/scripts` + BrowserSync |
+| Styles | SCSS (BEM) |
+| Standards | PSR-4 autoloading via Composer, WordPress + VIP coding standards |
 
 ---
 
@@ -29,23 +29,36 @@ wolf-store/
 ├── Functions/
 │   ├── Admin/           # Admin UI: metaboxes, settings panel, columns
 │   ├── Config/          # Pure configuration classes (metaboxes, options, taxonomies)
-│   ├── Core/            # Plugin bootstrap, constants, utilities
+│   ├── Core/            # Plugin bootstrap, REST fields, meta resolution, utilities
 │   ├── Frontend/        # Template loading, asset enqueuing, hooks
 │   ├── Post_Types/      # Custom post type registration
 │   └── Taxonomies/      # Custom taxonomy registration
 ├── src/
 │   ├── scripts/
 │   │   ├── plugin.js            # JS entry point
-│   │   └── wolf-store/          # React app
-│   │       ├── index.jsx        # React root — mounts on #wolf-store-root
-│   │       ├── components/      # Archive, Single, ThemeCard, Pagination
-│   │       └── hooks/           # useThemes, useTheme (WP REST API)
-│   └── styles/          # SCSS
+│   │   ├── config/
+│   │   │   └── offers.js        # Centralized coupon/offer config
+│   │   └── components/          # React components
+│   │       ├── Archive.jsx      # Theme grid with filtering
+│   │       ├── Single.jsx       # Single theme page (composes all sections)
+│   │       ├── ThemeHero.jsx
+│   │       ├── ThemeDescription.jsx
+│   │       ├── ThemeStats.jsx         # Animated count-up stats
+│   │       ├── ThemeFeatures.jsx      # Key benefits / target audience columns
+│   │       ├── ThemeComparisonTable.jsx  # WolfThemes vs ThemeForest pricing
+│   │       ├── ThemePriceBox.jsx
+│   │       ├── ThemeGallery.jsx
+│   │       ├── ThemeChangelog.jsx
+│   │       ├── ThemeTechnicals.jsx
+│   │       ├── ThemeTestimonials.jsx
+│   │       └── hooks/           # useThemes, useTheme, useTerms
+│   └── styles/
+│       ├── main.scss            # SCSS entry — imports all component partials
+│       └── components/          # Per-component SCSS partials (BEM)
 ├── templates/           # PHP templates (theme-overridable)
 │   ├── archive-wolf_theme.php
-│   ├── single-wolf_theme.php
-│   └── partials/
-├── build/               # Compiled assets (git-ignored)
+│   └── single-wolf_theme.php
+├── build/               # Compiled assets — gitignored, built by CI
 └── wolf-store.php       # Plugin entry point
 ```
 
@@ -53,11 +66,13 @@ wolf-store/
 
 **Singleton + global helper** — `wolf_store()` returns the main plugin instance, following WooCommerce's `WC()` pattern.
 
-**Config/Handler separation** — configuration is isolated in `Config/` classes (plain arrays, no side effects). Handlers read from config and wire up WordPress hooks. This makes configuration easy to read and test independently.
+**Config/Handler separation** — configuration is isolated in `Config/` classes (plain arrays, no side effects). Handlers read from config and wire up WordPress hooks.
+
+**Meta resolution chain** (`Functions/Core/Meta.php`) — theme metadata is resolved in priority order: post meta override → derived slug → remote JSON (`changelog.wolfthemes.cloud` / `assets.wolfthemes.cloud`), cached 1 hour via WordPress transients.
 
 **Template hierarchy** — templates follow WordPress's override convention. A theme can override any template by placing a file in `wp-content/themes/your-theme/wolf-store/`.
 
-**React island** — PHP templates render a single `<div id="wolf-store-root">` mount point. React takes over from there, fetching data via the WP REST API (`/wp-json/wp/v2/wolf_theme`). The WordPress theme (header, footer, navigation) remains in PHP — no full headless setup required.
+**React island** — PHP templates render a single `<div id="wolf-store-root">` mount point. React takes over from there, fetching data via the WP REST API. The WordPress theme (header, footer, navigation) remains in PHP.
 
 ---
 
@@ -67,9 +82,12 @@ wolf-store/
 - Admin metabox manager with configurable field types (text, URL, select, repeatable, datepicker)
 - Settings page with tabbed UI and field dependency support
 - Template loader with theme override support
-- React archive and single product views consuming the WP REST API
+- React archive with sidebar filtering and pagination
+- React single theme view with hero, gallery, stats, features, comparison table, changelog, and testimonials sections
+- Animated count-up stats on scroll (`IntersectionObserver` + `requestAnimationFrame`)
+- Centralized offer/coupon system — one file to enable, disable, or swap promotions (`src/scripts/config/offers.js`)
+- REST API fields sourced from remote `theme_meta.json`: features, key benefits, selling points, target audience, use cases, included plugins, design features, testimonials, pricing
 - Schema.org `Product` microdata
-- Body class and generator tag hooks
 
 ---
 
@@ -78,55 +96,59 @@ wolf-store/
 ### Requirements
 
 - PHP 8.1+
-- Node.js 18+
+- Node.js 20+
 - Composer
-- A local WordPress install (tested with LocalWP)
+- A local WordPress install (tested with LocalWP / Docker)
 
 ### Install
 
 ```bash
-# PHP dependencies
 composer install
-
-# JS dependencies
 npm install
 ```
 
 ### Build
 
 ```bash
-# Development with watch + BrowserSync
+# Development — watch + BrowserSync (proxies http://localhost:8080/)
 npm run start
 
 # Production build
 npm run build
 ```
 
-### Deployment
+### Linting
 
-Deployment is automated via GitHub Actions. Any push to the `master` branch triggers a workflow that SSHs into my server and runs `git pull` + `composer install` on the staging environment.
-
-_Note that once the project is shipped, the "master/main" branch will be reserved to production and we will deploy on staging environment via a "dev" or "stage" branch_
-
+```bash
+npm run lint:php    # WordPress + VIP standards
+npm run format:php  # Auto-fix PHP
+npm run lint:js
+npm run lint:css
+npm run type-check  # TypeScript (no emit)
 ```
-.github/workflows/deploy.yml
-```
 
-Secrets required in the GitHub repository:
-- `SSH_HOST`
-- `SSH_USER`
-- `SSH_PRIVATE_KEY`
-- `SSH_PORT`
+---
 
-### REST API
+## Deployment
 
-The React frontend consumes the standard WP REST API endpoint:
+Automated via GitHub Actions (`.github/workflows/deploy.yml`):
+
+- Push to `master` → deploys to **production**
+- Push to `dev` → deploys to **staging**
+
+The workflow runs `npm ci && npm run build`, rsyncs the `build/` output to the server, then SSHs in to run `git pull` + `composer install`. The `build/` directory is gitignored — the server never needs Node.
+
+Secrets required: `SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY`, `SSH_PORT`.
+
+---
+
+## REST API
 
 ```
 GET /wp-json/wp/v2/wolf_theme?per_page=12&page=1&_embed
 ```
 
-Data passed from PHP to React via `wp_localize_script`:
+Data passed from PHP to React via `wp_localize_script` as `window.wolfStoreData`:
 
 ```js
 window.wolfStoreData = {
@@ -149,13 +171,25 @@ window.wolfStoreData = {
 | Admin metaboxes | ✅ Done |
 | Settings page | ✅ Done |
 | Template loader | ✅ Done |
-| PHP archive template | ✅ Done |
-| PHP single template | ✅ Done |
-| React archive view |  ✅ Done |
-| Sidebar taxonomy filter |  🚧 In progress |
-| React single view | 🚧 In progress |
-| REST API field exposure | 🚧 In progress |
+| React archive view | ✅ Done |
+| Sidebar taxonomy filter | ✅ Done |
+| React single view | ✅ Done |
+| REST API field exposure | ✅ Done |
+| Offer / coupon system | ✅ Done |
 | SCSS styling | 🚧 In progress |
+| Elementor widget | 🚧 In progress |
+
+---
+
+## Roadmap
+
+- **Count-up animation refinement** — easing options, start-from threshold configuration
+- **Elementor widget** — expose theme index as a configurable Elementor block
+- **Changelog improvements** — diff view, version comparison
+- **Multi-currency pricing** — locale-aware price display
+- **A/B offer testing** — rotate offers per session via `offers.js`
+- **PHP unit test coverage** — expand beyond bootstrap tests to cover Meta resolution chain
+- **Archive performance** — stale-while-revalidate caching layer on REST responses
 
 ---
 
