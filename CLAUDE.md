@@ -66,7 +66,7 @@ BrowserSync polls for file changes (WSL requirement) — no `.env` is needed for
 
 ### REST API
 
-All custom fields are registered in `Rest_Fields::register_fields()` as read-only. The `orderby=featured` parameter uses a raw `posts_clauses` LEFT JOIN (not `meta_query`) to avoid WP core bug #29447 where `INNER JOIN` drops posts that lack the meta key.
+All custom fields are registered in `Rest_Fields::register_fields()` as read-only. Fields sourced from `theme_meta.json` include `theme_features`, `theme_key_benefits`, `theme_selling_points`, `theme_target_audience`, `theme_use_cases`, `theme_included_plugins`, `theme_design_features`, and `theme_testimonials`. The `orderby=featured` parameter uses a raw `posts_clauses` LEFT JOIN (not `meta_query`) to avoid WP core bug #29447 where `INNER JOIN` drops posts that lack the meta key.
 
 Data is passed from PHP to React via `wp_localize_script` as `window.wolfStoreData` (see `Frontend\Enqueues`).
 
@@ -77,7 +77,7 @@ Entry: `src/scripts/plugin.js` → compiled to `build/app.js`.
 The React app mounts on `#wolf-store-root` injected by PHP templates. It is a "React island" — WordPress handles header/footer/navigation in PHP.
 
 - `src/scripts/components/Archive.jsx` — theme grid with filtering
-- `src/scripts/components/Single.jsx` — theme detail page, composed from `ThemeHero`, `ThemeGallery`, `ThemePricing`, `ThemeChangelog`, `ThemeFeatures`, etc.
+- `src/scripts/components/Single.jsx` — theme detail page, composed from `ThemeHero`, `ThemeGallery`, `ThemeDescription`, `ThemeFeatures`, `ThemeComparisonTable`, `ThemeChangelog`, `ThemeTechnicals`, etc.
 - `src/scripts/components/hooks/useThemes.js` — paginated archive fetch
 - `src/scripts/components/hooks/useTheme.js` — single theme fetch
 - `src/scripts/components/hooks/useTerms.js` — taxonomy term fetch for filters
@@ -101,6 +101,10 @@ Webpack (`@wordpress/scripts` base config + BrowserSync + ts-loader) produces fo
 
 PHP must pass `WordPress` + `WordPressVIPMinimum` rulesets. All globals and functions must be prefixed `wolf_store_` or `Wolf_Store`. Custom escape functions (`wolf_store_kses`, `wolf_store_sanitize_html_classes`, `wolf_store_esc_style_attr`) are registered as auto-escaped in `phpcs.xml.dist`.
 
+### Offer / coupon management
+
+`src/scripts/config/offers.js` is the single source of truth for active promotions. Set `ACTIVE_OFFER = null` to disable. The `withCoupon(url)` helper appends `?coupon=CODE` to any purchase URL; all buy-button components import it from there. `discounted(price)` applies the discount factor for display.
+
 ### Deployment
 
-GitHub Actions (`.github/workflows/deploy.yml`) SSHes into the server and runs `git pull` + `composer install`. Push to `master` deploys to production; push to `dev` targets staging. The `build/` directory is committed (not gitignored) so the server never needs Node.
+GitHub Actions (`.github/workflows/deploy.yml`) SSHes into the server and runs `git pull` + `composer install`. Push to `master` deploys to production; push to `dev` targets staging. The `build/` directory is **gitignored** — CI runs `npm ci && npm run build` and rsyncs the output to the server via rsync before swapping it into place, so the server never needs Node.
