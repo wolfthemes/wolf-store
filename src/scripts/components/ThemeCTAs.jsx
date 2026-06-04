@@ -1,8 +1,9 @@
 import UpRightArrow from '../../../assets/images/up-right-arrow.svg';
+import { withCoupon } from '../config/offers';
 
 export default function ThemeCTAs( { theme, layout = 'row' } ) {
     const demoUrl         = theme.theme_demo_url;
-    const buyUrl          = theme.theme_purchase_url;
+    const buyUrl          = withCoupon( theme.theme_purchase_url );
     if ( ! demoUrl && ! buyUrl ) return null;
 	const title        = theme.title?.rendered;
 

@@ -6,13 +6,15 @@
  *
  * @param {object} theme  Full theme REST object
  */
+import { withCoupon } from '../config/offers';
+
 export default function ThemeCard( { theme } ) {
     const title      = theme.title?.rendered;
     const permalink  = theme.link;
     const thumbnail  = theme.theme_thumbnail;
     const tagline    = theme.theme_short_description;
     const demoUrl    = theme.theme_demo_url;
-    const buyUrl     = theme.theme_purchase_url;
+    const buyUrl     = withCoupon( theme.theme_purchase_url );
     const categories = theme._embedded?.[ 'wp:term' ]?.[ 0 ] ?? [];
     const version    = theme.theme_latest_version;
 

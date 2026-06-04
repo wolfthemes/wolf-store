@@ -7,8 +7,10 @@
  *
  * @param {object} theme  Full theme REST object
  */
+import { withCoupon } from '../config/offers';
+
 export default function ThemePricing( { theme } ) {
-    const buyUrl              = theme.theme_purchase_url;
+    const buyUrl              = withCoupon( theme.theme_purchase_url );
     const title           = theme.title?.rendered;
     const { tf_price, price_annual, price_annual_3sites } = theme.theme_pricing ?? {};
 
