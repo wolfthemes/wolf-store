@@ -82,11 +82,11 @@ export default function ThemePricing( { theme } ) {
 							<div className='wolf-theme-pricing__plan wolf-theme-pricing__plan--hero'>
 								<div className='wolf-theme-pricing__plan-meta'>
 									<span className='wolf-theme-pricing__plan-label'>1 site</span>&nbsp;
-									{ tfSaving > 0 && (
-										<span className='wolf-theme-pricing__plan-saving'>
-											${ tfSaving } less than ThemeForest
-										</span>
-									) }
+									{/* { tfSaving > 0 && ( */}
+									{/* 	<span className='wolf-theme-pricing__plan-saving'> */}
+									{/* 		${ tfSaving } less than ThemeForest */}
+									{/* 	</span> */}
+									{/* ) } */}
 								</div>
 								<span className='wolf-theme-pricing__plan-price'>
 									{ fmt( price_annual ) }<small>/yr</small>
@@ -104,7 +104,9 @@ export default function ThemePricing( { theme } ) {
 							) }
 
 							<p className='wolf-theme-pricing__card-note'>
-								Updates &amp; support included — always.
+								✓ Continuous updates
+✓ Support included
+✓ 7-day money-back guarantee
 							</p>
 
 						</div>
