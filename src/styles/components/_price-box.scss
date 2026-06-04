@@ -2,6 +2,8 @@
 
 @mixin strike-line($thickness: 2px) {
     overflow: visible;
+	position:relative;
+	width: fit-content;
 
     &::after {
         content: '';
@@ -87,9 +89,10 @@
     }
 
     &__hero-amounts {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
+		display: flex;
+		flex-direction:column;
+		// align-items: baseline;
+		gap: 12px;
     }
 
     &__hero-amount {
@@ -114,7 +117,7 @@
         position: relative;
         font-size: 1.4rem;
         font-weight: 400;
-        // opacity: 0.4;
+        opacity: 0.6;
 		color:grey;
         @include strike-line(2px);
     }

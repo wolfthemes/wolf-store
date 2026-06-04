@@ -1,8 +1,8 @@
 
 import ThemeCTAs from './ThemeCTAs';
 
-const LAUNCH_OFFER = { discount: 0.20, label: 'Save 20% with coupon LAUNCH20' };
-// const LAUNCH_OFFER = null; // ← set to null to disable
+const LAUNCH_OFFER = { discount: 0.20, label: 'Save 20% at checkout • CODE LAUNCH20' };
+// const LAUNCH_OFFER = null;
 
 function discounted( price ) {
     return Math.round( price * ( 1 - LAUNCH_OFFER.discount ) );
@@ -18,12 +18,12 @@ export default function ThemePriceBox( { theme } ) {
     return (
         <div className='wolf-theme-price-box'>
             { /* Reference — TF struck through */ }
-            {/* { tf_price && ( */}
-            {/*     <div className='wolf-theme-price-box__reference'> */}
-            {/*         <span className='wolf-theme-price-box__reference-label'>On ThemeForest</span> */}
-            {/*         <span className='wolf-theme-price-box__reference-price'>${ tf_price }</span> */}
-            {/*     </div> */}
-            {/* ) } */}
+            { ( tf_price && ! LAUNCH_OFFER ) && (
+                <div className='wolf-theme-price-box__reference'>
+                    <span className='wolf-theme-price-box__reference-label'>On ThemeForest</span>
+                    <span className='wolf-theme-price-box__reference-price'>${ tf_price }</span>
+                </div>
+            ) }
 
             { price_annual ? (
                 <div className='wolf-theme-price-box__wolf'>
@@ -49,18 +49,18 @@ export default function ThemePriceBox( { theme } ) {
                                 </div>
                             ) }
                         </div>
-                        <div className='wolf-theme-price-box__hero-label'>1 site</div>
+                        <div className='wolf-theme-price-box__hero-label'>1 site license</div>
                     </div>
 
                     { /* Secondary — 3 sites */ }
-                    { price_annual_3sites && (
-                        <div className='wolf-theme-price-box__secondary'>
-                            <span className='wolf-theme-price-box__secondary-price'>
-                                ${ price_annual_3sites }/yr
-                            </span>&nbsp;
-                            <span className='wolf-theme-price-box__secondary-label'>for 3 sites</span>
-                        </div>
-                    ) }
+                    {/* { price_annual_3sites && ( */}
+                    {/*     <div className='wolf-theme-price-box__secondary'> */}
+                    {/*         <span className='wolf-theme-price-box__secondary-price'> */}
+                    {/*             ${ price_annual_3sites }/yr */}
+                    {/*         </span>&nbsp; */}
+                    {/*         <span className='wolf-theme-price-box__secondary-label'>for 3 sites</span> */}
+                    {/*     </div> */}
+                    {/* ) } */}
 
                 </div>
             ) : (
