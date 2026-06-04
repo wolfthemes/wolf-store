@@ -236,6 +236,12 @@ class Rest_Fields {
 			return $data['selling_points'] ?? array();
 		} );
 
+		$this->register( 'theme_key_benefits', function ( $post ) {
+			$slug = Meta::get_theme_slug( $post['id'] );
+			$data = Meta::get_theme_meta( $slug );
+			return $data['key_benefits'] ?? array();
+		} );
+
 		$this->register( 'theme_target_audience', function ( $post ) {
 			$slug = Meta::get_theme_slug( $post['id'] );
 			$data = Meta::get_theme_meta( $slug );
