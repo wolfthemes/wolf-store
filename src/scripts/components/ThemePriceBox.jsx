@@ -18,12 +18,12 @@ export default function ThemePriceBox( { theme } ) {
     return (
         <div className='wolf-theme-price-box'>
             { /* Reference — TF struck through */ }
-            { tf_price && (
-                <div className='wolf-theme-price-box__reference'>
-                    <span className='wolf-theme-price-box__reference-label'>On ThemeForest</span>
-                    <span className='wolf-theme-price-box__reference-price'>${ tf_price }</span>
-                </div>
-            ) }
+            {/* { tf_price && ( */}
+            {/*     <div className='wolf-theme-price-box__reference'> */}
+            {/*         <span className='wolf-theme-price-box__reference-label'>On ThemeForest</span> */}
+            {/*         <span className='wolf-theme-price-box__reference-price'>${ tf_price }</span> */}
+            {/*     </div> */}
+            {/* ) } */}
 
             { price_annual ? (
                 <div className='wolf-theme-price-box__wolf'>
