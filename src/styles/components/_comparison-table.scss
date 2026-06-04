@@ -1,6 +1,6 @@
-// ── ThemePricing ─────────────────────────────────────────────────────────────
+// ── ThemeComparisonTable ──────────────────────────────────────────────────────
 
-.wolf-theme-pricing {
+.wolf-theme-comparison-table {
 
 
     &__title {
@@ -82,6 +82,24 @@
         flex: 1;
     }
 
+    &__card-note {
+        list-style: none;
+        margin: 8px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.8rem;
+
+        li {
+            list-style-type: none;
+
+            &::before {
+                content: '✓ ';
+            }
+        }
+    }
+
     &__card-cta {
         display: block;
         text-align: center;
@@ -132,6 +150,14 @@
         }
     }
 
+    &__trust {
+        margin: 0 0 24px;
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        color: var(--strong-color);
+    }
+
     // ── Comparison table ─────────────────────────────────────────────────────
 
     &__table {
@@ -172,8 +198,12 @@
     }
 
     &__row--win {
-        .wolf-theme-pricing__cell--wolf {
-            color: var(--checkmark-color);
+        .wolf-theme-comparison-table__cell--wolf {
+			color:var(--strong-color);
+            &::before {
+                content: '✓ ';
+                color: var(--checkmark-color);
+            }
         }
     }
 }

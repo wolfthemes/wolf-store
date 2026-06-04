@@ -4,7 +4,7 @@ import ThemeDescription from './ThemeDescription';
 import ThemeGallery from './ThemeGallery';
 // import ThemeFooter    from './ThemeFooter';
 import ThemeTechnicals from './ThemeTechnicals';
-import ThemePricing from './ThemePricing';
+import ThemeComparisonTable from './ThemeComparisonTable';
 import ThemeTestimonials from './ThemeTestimonials';
 import ThemeFeatures from './ThemeFeatures';
 import ThemeChangelog from './ThemeChangelog';
@@ -31,7 +31,7 @@ export default function Single( { postId } ) {
                 <ThemeHero theme={ theme } />
                 <ThemeDescription theme={ theme } />
                 <ThemeGallery theme={ theme } />
-				<ThemePricing theme={ theme } />
+				<ThemeComparisonTable theme={ theme } />
                 <ThemeTestimonials theme={ theme } />
                 <ThemeFeatures theme={ theme } />
 				<ThemeBrandStory />
