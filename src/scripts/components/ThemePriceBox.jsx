@@ -1,7 +1,7 @@
 
 import ThemeCTAs from './ThemeCTAs';
 
-const LAUNCH_OFFER = { discount: 0.20, label: '-20% launch offer' };
+const LAUNCH_OFFER = { discount: 0.20, label: 'Save 20% with coupon LAUNCH20' };
 // const LAUNCH_OFFER = null; // ← set to null to disable
 
 function discounted( price ) {
@@ -37,16 +37,18 @@ export default function ThemePriceBox( { theme } ) {
                                 Save ${ saving } — support always included
                             </span>
                         ) }
-                        <div className={ `wolf-theme-price-box__hero-amount${ LAUNCH_OFFER ? ' is-struck' : '' }` }>
-                            <sup>$</sup>{ price_annual }
-                            <span className='wolf-theme-price-box__hero-period'>/year</span>
-                        </div>
-                        { LAUNCH_OFFER && (
-                            <div className='wolf-theme-price-box__hero-amount'>
-                                <sup>$</sup>{ discounted( price_annual ) }
-                                <span className='wolf-theme-price-box__hero-period'>/year</span>
+                        <div className='wolf-theme-price-box__hero-amounts'>
+                            <div className={ `wolf-theme-price-box__hero-amount${ LAUNCH_OFFER ? ' is-struck' : '' }` }>
+                                <sup>$</sup>{ price_annual }
+                                {/* <span className='wolf-theme-price-box__hero-period'>/year</span> */}
                             </div>
-                        ) }
+                            { LAUNCH_OFFER && (
+                                <div className='wolf-theme-price-box__hero-amount'>
+                                    <sup>$</sup>{ discounted( price_annual ) }
+                                    <span className='wolf-theme-price-box__hero-period'>/year</span>
+                                </div>
+                            ) }
+                        </div>
                         <div className='wolf-theme-price-box__hero-label'>1 site</div>
                     </div>
 
