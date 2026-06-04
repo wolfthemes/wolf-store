@@ -7,7 +7,9 @@ export default function ThemeTechnicals( { theme } ) {
     const builder   = theme.theme_builder;
     const requires  = theme.theme_requires;
     const tested    = theme.theme_tested;
-    const updated   = theme.modified?.split( 'T' )[ 0 ];
+    const updated   = theme.modified
+        ? new Date( theme.modified ).toLocaleDateString( 'en-US', { month: 'long', year: 'numeric' } )
+        : null;
     const shortlink = theme.theme_shortlink;
     const demoUrl   = theme.theme_demo_url;
     const buyUrl    = theme.theme_purchase_url;
