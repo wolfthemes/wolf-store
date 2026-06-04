@@ -36,7 +36,7 @@ For over 14 years, I've been creating WordPress themes trusted by more than 36,0
 								</div>
 								<div className='wolf-theme-brand-story__stat'>
 									<span className='wolf-theme-brand-story__stat-value'>4.5/5</span>
-									<span className='wolf-theme-brand-story__stat-label'>avg rating · 1,500+ reviews</span>
+									<span className='wolf-theme-brand-story__stat-label'>avg rating · 1,600+ reviews</span>
 								</div>
 							</div>
 

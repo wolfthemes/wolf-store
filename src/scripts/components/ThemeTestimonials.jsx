@@ -40,7 +40,7 @@ export default function ThemeTestimonials( { theme } ) {
         <div className='wolf-theme-testimonials wolf-theme-single__section wolf-core-font-light'>
 			<div className='wolf-theme-single__wrapper'>
 				<h3 className='wolf-theme-testimonials__title'>What customers say about { title } & WolfThemes</h3>
-				<p>1,500+ reviews · 4.5/5 average rating</p>
+				<p>1,600+ reviews · 4.5/5 average rating</p>
 				<div className='wolf-theme-testimonials__grid'>
 					{ merged.map( ( t, i ) => (
 						<div key={ i } className='wolf-theme-testimonials__item'>
