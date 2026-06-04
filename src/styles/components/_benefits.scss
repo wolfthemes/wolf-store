@@ -1,8 +1,9 @@
 .wolf-theme-benefits{
-	margin-bottom: 24px;
-	padding: 16px;
-	border: 1px solid var(--theme-border-color);
+	// margin-bottom: 24px;
+	padding: 30px;
+	border: 1px solid var(--card-border-color);
 	opacity: 0.8;
+	max-width:320px;
 
 	&__list {
 		list-style: none;
