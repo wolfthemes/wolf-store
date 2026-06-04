@@ -8,7 +8,7 @@ export default function ThemeBenefits() {
 				<li>Continuous updates included</li>
 				<li>Direct support from the creator <span className='wolf-theme-benefits__info' title='Support provided via our forum'>ⓘ</span></li>
 				<li>7-day money-back guarantee</li>
-				<li>Trusted by 35,000+ customers</li>
+				<li>Trusted by 36,000+ customers</li>
 			</ul>
 		</div>
     );

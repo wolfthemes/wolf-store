@@ -159,7 +159,7 @@ export default function ThemeComparisonTable( { theme } ) {
 				</div>
 
 				<h6 className='wolf-theme-comparison-table__trust'>
-					Trusted by 35,000+ customers since 2011
+					Trusted by 36,000+ customers since 2011
 				</h6>
 
 				{ /* Comparison table */ }

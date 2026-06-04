@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 
 const STATS = [
-    { to: 35,  decimals: 0, suffix: 'K+', label: 'Customers'  },
+    { to: 36,  decimals: 0, suffix: 'K+', label: 'Customers'  },
     { to: 14,  decimals: 0, suffix: 'y',  label: 'Experience' },
     { to: 4.5, decimals: 1, suffix: '/5', label: 'Rating'     },
 ];

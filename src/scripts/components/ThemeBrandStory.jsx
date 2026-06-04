@@ -20,14 +20,14 @@ export default function ThemeBrandStory() {
 </p>
 
 							<p className='wolf-theme-brand-story__text'>
-For over 14 years, I've been creating WordPress themes trusted by more than 35,000 customers worldwide.							</p>
+For over 14 years, I've been creating WordPress themes trusted by more than 36,000 customers worldwide.							</p>
 
 							<p className='wolf-theme-brand-story__text'>
 								When you buy from WolfThemes, you're buying directly from the creator: no marketplace middleman, no outsourced support. Just premium themes, continuous updates, and direct help when you need it.							</p>
 
 							<div className='wolf-theme-brand-story__stats'>
 								<div className='wolf-theme-brand-story__stat'>
-									<span className='wolf-theme-brand-story__stat-value'>35,000+</span>
+									<span className='wolf-theme-brand-story__stat-value'>36,000+</span>
 									<span className='wolf-theme-brand-story__stat-label'>customers</span>
 								</div>
 								<div className='wolf-theme-brand-story__stat'>
