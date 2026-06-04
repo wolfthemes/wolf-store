@@ -1,7 +1,7 @@
 
 import ThemeCTAs from './ThemeCTAs';
 
-const LAUNCH_OFFER = { discount: 0.20, label: 'Save 20% at checkout • CODE LAUNCH20' };
+const LAUNCH_OFFER = { discount: 0.20, label: 'Save 20% • CODE LAUNCH20' };
 // const LAUNCH_OFFER = null;
 
 function discounted( price ) {
