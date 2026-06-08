@@ -141,7 +141,10 @@ class Meta {
 
 		// WP featured image first
 		if ( has_post_thumbnail( $post_id ) ) {
-			return Utilities::get_post_thumbnail_url( $size, $post_id );
+			$thumbnail_url = Utilities::get_post_thumbnail_url( $size, $post_id );
+			if ( $thumbnail_url ) {
+				return $thumbnail_url;
+			}
 		}
 
 		// Convention CDN
