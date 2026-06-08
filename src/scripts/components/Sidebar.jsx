@@ -75,9 +75,9 @@ function FilterGroup( { slug, label, prefix, orderby, order, activeTaxonomy, act
     );
 }
 
-export default function Sidebar( { activeTaxonomy, activeTermId, onChange } ) {
+export default function Sidebar( { activeTaxonomy, activeTermId, onChange, isOpen } ) {
     return (
-        <aside className='wolf-store-sidebar'>
+        <aside className={ `wolf-store-sidebar${ isOpen ? ' is-open' : '' }` }>
 
             <div className='wolf-store-sidebar__group'>
                 <a

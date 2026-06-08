@@ -3,6 +3,7 @@
 .wolf-store-sidebar {
     width: 220px;
     flex-shrink: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
 
     &__group {
         margin-bottom: 32px;
@@ -104,5 +105,40 @@
 		// &:after{
 		// 	content:')';
 		// }
+    }
+
+    // ── Mobile ────────────────────────────────────────────────────────────────
+    @media ( max-width: 768px ) {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        margin-bottom: 0;
+
+        &.is-open {
+            max-height: 4000px;
+            opacity: 1;
+            pointer-events: auto;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var( --card-border-color );
+        }
+
+        &__group {
+            margin-bottom: 20px;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat( 2, 1fr );
+            gap: 0 16px;
+        }
+    }
+
+    @media ( max-width: 480px ) {
+        &__list {
+            grid-template-columns: 1fr;
+        }
     }
 }

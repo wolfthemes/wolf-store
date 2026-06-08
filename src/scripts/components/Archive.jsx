@@ -9,6 +9,7 @@ export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, t
     const [ page,           setPage           ] = useState( 1 );
     const [ activeTaxonomy, setActiveTaxonomy ] = useState( taxonomyProp || '' );
     const [ activeTermId,   setActiveTermId   ] = useState( parseInt( termIdProp ) || 0 );
+    const [ filterOpen,     setFilterOpen     ] = useState( false );
 
     const { pagination: paginationGlobal, perPage: perPageGlobal } = window.wolfStoreData;
     const pagination    = paginationProp || paginationGlobal;
@@ -30,6 +31,7 @@ export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, t
         setActiveTaxonomy( taxonomy );
         setActiveTermId( termId );
         setPage( 1 ); // reset to page 1 on filter change
+        setFilterOpen( false );
     };
 
     return (
@@ -41,6 +43,20 @@ export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, t
                 </header>
             ) }
 
+            { showSidebar && (
+                <button
+                    className={ `wolf-store-archive__filter-toggle${ activeTermId ? ' has-active' : '' }` }
+                    onClick={ () => setFilterOpen( ! filterOpen ) }
+                    aria-expanded={ filterOpen }
+                >
+                    <svg width='16' height='16' viewBox='0 0 16 16' fill='none' aria-hidden='true'>
+                        <path d='M2 4h12M4 8h8M6 12h4' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round'/>
+                    </svg>
+                    { filterOpen ? 'Close Filters' : 'Filters' }
+                    { activeTermId ? <span className='wolf-store-archive__filter-badge'>1</span> : null }
+                </button>
+            ) }
+
             <div className='wolf-store-archive__layout'>
 
                 { showSidebar && (
@@ -48,6 +64,7 @@ export default function Archive( { taxonomy: taxonomyProp, termId: termIdProp, t
 						activeTaxonomy={ activeTaxonomy }
 						activeTermId={ activeTermId }
 						onChange={ handleFilterChange }
+						isOpen={ filterOpen }
 					/>
 				) }
 
