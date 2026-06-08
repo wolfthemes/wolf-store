@@ -1,13 +1,31 @@
+import { useEffect, useRef } from 'react';
 
 export default function ThemeFeatures( { theme } ) {
-    const title         = theme.title?.rendered;
+    const title          = theme.title?.rendered;
     const keyBenefits    = theme.theme_key_benefits   ?? [];
     const targetAudience = theme.theme_target_audience ?? [];
+    const sectionRef     = useRef( null );
+
+    useEffect( () => {
+        const el = sectionRef.current;
+        if ( ! el ) return;
+        const observer = new IntersectionObserver(
+            ( [ entry ] ) => {
+                if ( entry.isIntersecting ) {
+                    el.classList.add( 'is-visible' );
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe( el );
+        return () => observer.disconnect();
+    }, [] );
 
     if ( ! keyBenefits.length && ! targetAudience.length ) return null;
 
     return (
-        <div className='wolf-theme-features wolf-theme-single__section'>
+        <div className='wolf-theme-features wolf-theme-single__section' ref={ sectionRef }>
             <div className='wolf-theme-single__wrapper'>
                 <div className='wolf-theme-features__intro'>
                     <h2 className='wolf-theme-features__heading'>Built for Professionals</h2>
