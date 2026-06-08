@@ -13,6 +13,7 @@ use Wolf_Store\Core\Core;
 use Wolf_Store\Core\Utilities;
 use Wolf_Store\Core\Meta;
 use Wolf_Store\Core\Schema;
+use Wolf_Store\Core\Seo;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -29,6 +30,10 @@ class Hooks {
 		 * @see  wd_body_class()
 		 */
 		add_filter( 'body_class', array( $this, 'body_class' ) );
+
+		// Initialise SEO from template_redirect so meta filters are
+		// registered before wp_head fires (required for Yoast compatibility).
+		add_action( 'template_redirect', array( $this, 'init_seo' ) );
 		add_action( 'wp_head', array( $this, 'output_schema' ) );
 
 		/**
@@ -38,6 +43,22 @@ class Hooks {
 		 */
 		add_action( 'get_the_generator_html', array( $this, 'generator_tag' ), 10, 2 );
 		add_action( 'get_the_generator_xhtml', array( $this, 'generator_tag' ), 10, 2 );
+	}
+
+	/**
+	 * Initialise SEO meta for wolf_theme pages.
+	 * Runs on template_redirect — before wp_head.
+	 */
+	public function init_seo(): void {
+		if ( is_singular( 'wolf_theme' ) ) {
+			Seo::init_single( get_the_ID() );
+		} elseif (
+			is_page( Core::get_store_page_id() ) ||
+			is_post_type_archive( 'wolf_theme' ) ||
+			is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
+		) {
+			Seo::init_archive();
+		}
 	}
 
 	/**

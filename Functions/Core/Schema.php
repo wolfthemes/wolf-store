@@ -24,7 +24,7 @@ class Schema {
 		$meta    = Meta::get_meta( $post_id );
 		$slug    = $meta['slug'] ?? Meta::get_theme_slug( $post_id );
 		$gallery = Meta::get_gallery( $slug );
-		$thumbnail = Meta::get_thumbnail_url();
+		$thumbnail = Meta::get_thumbnail_url( $post_id );
 
 		$schema = array(
 			'@context'            => 'https://schema.org',
@@ -42,8 +42,12 @@ class Schema {
 			),
 		);
 
-		if ( ! empty( $meta['description'] ) ) {
-			$schema['description'] = wp_strip_all_tags( $meta['description'] );
+		$long_desc = ! empty( $meta['long_description'] )
+			? wp_strip_all_tags( $meta['long_description'] )
+			: ( ! empty( $meta['description'] ) ? wp_strip_all_tags( $meta['description'] ) : '' );
+
+		if ( $long_desc ) {
+			$schema['description'] = $long_desc;
 		}
 
 		if ( ! empty( $thumbnail ) ) {
