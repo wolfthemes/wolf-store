@@ -9,6 +9,7 @@ import ThemeTestimonials from './ThemeTestimonials';
 import ThemeFeatures from './ThemeFeatures';
 import ThemeChangelog from './ThemeChangelog';
 import ThemeBrandStory from './ThemeBrandStory';
+import RelatedThemes from './RelatedThemes';
 
 export default function Single( { postId } ) {
     const { theme, loading, error } = useTheme( postId );
@@ -41,6 +42,7 @@ export default function Single( { postId } ) {
             {/* <aside className='wolf-theme-single__sidebar'> */}
             {/*     <ThemeSidebar theme={ theme } /> */}
             {/* </aside> */}
+            <RelatedThemes theme={ theme } />
         </div>
     );
 }

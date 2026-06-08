@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 
-export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPageProp = undefined  } = {} ) {
+export function useThemes( { filters = {}, page = 1, perPage: perPageProp = undefined, exclude = [] } = {} ) {
     const [ themes,     setThemes     ] = useState( [] );
     const [ totalPages, setTotalPages ] = useState( 1 );
     const [ loading,    setLoading    ] = useState( true );
     const [ error,      setError      ] = useState( null );
 
     const { restUrl, restNonce, perPage: perPageGlobal } = window.wolfStoreData;
-    const perPage = parseInt( perPageProp ) || parseInt( perPageGlobal ) || 12;
+    const perPage   = parseInt( perPageProp ) || parseInt( perPageGlobal ) || 12;
+    const filtersKey = JSON.stringify( filters );
+    const excludeKey = JSON.stringify( exclude );
 
     useEffect( () => {
         setLoading( true );
@@ -17,11 +19,17 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
             _embed:   1,
             per_page: perPage,
             page,
-            orderby:  'featured', // featured posts bubble to top, all posts included
+            orderby:  'featured',
         } );
 
-        if ( taxonomy && termId ) {
-            params.set( taxonomy, termId );
+        Object.entries( filters ).forEach( ( [ taxonomy, termIds ] ) => {
+            if ( termIds && termIds.length > 0 ) {
+                termIds.forEach( id => params.append( `${ taxonomy }[]`, id ) );
+            }
+        } );
+
+        if ( exclude.length > 0 ) {
+            exclude.forEach( id => params.append( 'exclude[]', id ) );
         }
 
         fetch( `${ restUrl }?${ params }`, {
@@ -41,7 +49,7 @@ export function useThemes( { taxonomy = '', termId = 0, page = 1, perPage: perPa
                 setError( err.message );
                 setLoading( false );
             } );
-    }, [ taxonomy, termId, page, perPage ] );
+    }, [ filtersKey, excludeKey, page, perPage ] );
 
     return { themes, totalPages, loading, error };
 }
