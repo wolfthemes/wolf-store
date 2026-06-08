@@ -1,151 +1,152 @@
 // ── ThemePriceBox ─────────────────────────────────────────────────────────────
 
 @mixin strike-line($thickness: 2px) {
-    overflow: visible;
-	position:relative;
+	overflow: visible;
+	position: relative;
 	width: fit-content;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 90%;
-        height: $thickness;
-        background: var(--black-color);
-        transform: translate(-50%, -50%) rotate(-20deg);
-        transform-origin: center;
-        pointer-events: none;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		height: $thickness;
+		background: var(--black-color);
+		transform: translate(-50%, -50%) rotate(-20deg);
+		transform-origin: center;
+		pointer-events: none;
 		margin-left: 5px;
-    }
+	}
 }
 
 .wolf-theme-price-box {
-    // border: 1px solid var(--theme-border-color);
-    margin-bottom: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    position: absolute;
-    background: white;
-    right: 30px;
+	// border: 1px solid var(--theme-border-color);
+	margin-bottom: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	position: absolute;
+	background: #fff;
+	right: 30px;
 	top: 30px;
-    padding: 50px;
+	padding: 50px;
 	box-shadow: var(--box-shadow);
-    // ── Reference (TF struck) ─────────────────────────────────────────────────
+	// ── Reference (TF struck) ─────────────────────────────────────────────────
 
-    &__reference {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--theme-border-color);
-    }
+	&__reference {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 12px;
+		border-bottom: 1px solid var(--theme-border-color);
+	}
 
-    &__reference-label {
-        // font-size: 0.75rem;
-        // opacity: 0.7;
-    }
+	&__reference-label {
+		// font-size: 0.75rem;
+		// opacity: 0.7;
+	}
 
-    &__reference-price {
-        position: relative;
-        // font-size: 0.85rem;
-        font-weight: 600;
-        // opacity: 0.7;
-        @include strike-line(1px);
+	&__reference-price {
+		position: relative;
+		// font-size: 0.85rem;
+		font-weight: 600;
+		// opacity: 0.7;
+		@include strike-line(1px);
 
-		&:after{
+		&::after {
 			margin-left: 3px;
 		}
-    }
+	}
 
-    // ── Wolf pricing ──────────────────────────────────────────────────────────
+	// ── Wolf pricing ──────────────────────────────────────────────────────────
 
-    &__wolf {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    // ── Hero (annual) ─────────────────────────────────────────────────────────
-
-    &__hero {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    &__badge {
-        display: inline-block;
-        align-self: flex-start;
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 3px 8px;
-        background: var(--checkmark-color);
-        background: black;
-        color: #fff;
-    }
-
-    &__hero-amounts {
+	&__wolf {
 		display: flex;
-		flex-direction:column;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	// ── Hero (annual) ─────────────────────────────────────────────────────────
+
+	&__hero {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__badge {
+		display: inline-block;
+		align-self: flex-start;
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		padding: 3px 8px;
+		background: var(--checkmark-color);
+		background: #000;
+		color: #fff;
+	}
+
+	&__hero-amounts {
+		display: flex;
+		flex-direction: column;
 		// align-items: baseline;
 		gap: 12px;
-    }
+	}
 
-    &__hero-amount {
-        display: flex;
-        align-items: baseline;
-        gap: 2px;
-        line-height: 1;
-        color: var(--strong-color);
+	&__hero-amount {
+		display: flex;
+		align-items: baseline;
+		gap: 2px;
+		line-height: 1;
+		color: var(--strong-color);
 
-        font-size: 3rem;
-        font-weight: 700;
+		font-size: 3rem;
+		font-weight: 700;
 
-        sup {
-            font-size: 1.1rem;
-            font-weight: 400;
-            align-self: flex-start;
-            margin-top: 8px;
-        }
-    }
+		sup {
+			font-size: 1.1rem;
+			font-weight: 400;
+			align-self: flex-start;
+			margin-top: 8px;
+		}
+	}
 
-    &__hero-amount.is-struck {
-        position: relative;
-        font-size: 1.4rem;
-        font-weight: 400;
-        opacity: 0.6;
-		color:grey;
-        @include strike-line(2px);
-    }
+	&__hero-amount.is-struck {
+		position: relative;
+		font-size: 1.4rem;
+		font-weight: 400;
+		opacity: 0.6;
+		color: #888;
 
-    &__hero-period {
-        font-size: 1rem;
-        font-weight: 400;
-        opacity: 0.55;
-        margin-left: 2px;
-    }
+		@include strike-line(2px);
+	}
 
-    // ── Secondary (monthly anchor) ────────────────────────────────────────────
+	&__hero-period {
+		font-size: 1rem;
+		font-weight: 400;
+		opacity: 0.55;
+		margin-left: 2px;
+	}
 
-    &__secondary {
-        font-size: 0.8rem;
-        opacity: 0.8;
+	// ── Secondary (monthly anchor) ────────────────────────────────────────────
 
-        strong {
-            font-weight: 600;
-            opacity: 1;
-        }
-    }
+	&__secondary {
+		font-size: 0.8rem;
+		opacity: 0.8;
 
-    // ── Coming soon ───────────────────────────────────────────────────────────
+		strong {
+			font-weight: 600;
+			opacity: 1;
+		}
+	}
 
-    &__coming-soon {
-        font-size: 0.85rem;
-        opacity: 0.45;
-        font-style: italic;
-    }
+	// ── Coming soon ───────────────────────────────────────────────────────────
+
+	&__coming-soon {
+		font-size: 0.85rem;
+		opacity: 0.45;
+		font-style: italic;
+	}
 }

@@ -1,87 +1,94 @@
 // ── Skeleton shimmer ──────────────────────────────────────────────────────────
 
 @keyframes wolf-shimmer {
-    0%   { background-position: -600px 0; }
-    100% { background-position:  600px 0; }
+
+	0% {
+		background-position: -600px 0;
+	}
+
+	100% {
+		background-position: 600px 0;
+	}
 }
 
 %skeleton-base {
-    background: linear-gradient(
-        90deg,
-        var(--card-border-color, #e8e8e8) 25%,
-        color-mix(in srgb, var(--card-border-color, #e8e8e8) 40%, transparent) 50%,
-        var(--card-border-color, #e8e8e8) 75%
-    );
-    background-size: 600px 100%;
-    animation: wolf-shimmer 1.4s ease-in-out infinite;
-    border-radius: 2px;
-	opacity:0.3;
+	background:
+ linear-gradient(90deg, var(--card-border-color, #e8e8e8) 25%, color-mix(in srgb, var(--card-border-color, #e8e8e8) 40%, transparent) 50%, var(--card-border-color, #e8e8e8) 75%);
+	background-size: 600px 100%;
+	animation: wolf-shimmer 1.4s ease-in-out infinite;
+	border-radius: 2px;
+	opacity: 0.3;
 }
 
 .wolf-skeleton {
-    @extend %skeleton-base;
 
-    // Thumbnail — fills the card thumbnail exactly
-    &.wolf-theme-card__thumbnail {
-        width: 100%;
-    }
+	@extend %skeleton-base;
 
-    // Title line
-    &--title {
-        height: 16px;
-        width: 55%;
-    }
+	// Thumbnail — fills the card thumbnail exactly
+	&.wolf-theme-card__thumbnail {
+		width: 100%;
+	}
 
-    // Tagline lines
-    &--tagline {
-        height: 13px;
-        width: 90%;
+	// Title line
+	&--title {
+		height: 16px;
+		width: 55%;
+	}
 
-        &-short { width: 65%; }
-    }
+	// Tagline lines
+	&--tagline {
+		height: 13px;
+		width: 90%;
 
-    // Category pill
-    &--cat {
-        height: 22px;
-        width: 72px;
-    }
+		&-short {
+			width: 65%;
+		}
+	}
 
-    // Price block
-    &--price {
-        height: 20px;
-        width: 80px;
-    }
+	// Category pill
+	&--cat {
+		height: 22px;
+		width: 72px;
+	}
 
-    // CTA buttons
-    &--btn {
-        height: 32px;
-        width: 56px;
-    }
+	// Price block
+	&--price {
+		height: 20px;
+		width: 80px;
+	}
+
+	// CTA buttons
+	&--btn {
+		height: 32px;
+		width: 56px;
+	}
 }
 
 // Skeleton card — disable hover border flicker
 .wolf-theme-card--skeleton {
-    pointer-events: none;
+	pointer-events: none;
 
-    .wolf-theme-card__body {
-        gap: 10px;
-    }
+	.wolf-theme-card__body {
+		gap: 10px;
+	}
 }
 
 // ── Single page loading ───────────────────────────────────────────────────────
 
 @keyframes wolf-shimmer-dark {
-    0%   { background-position: -100vw 0; }
-    100% { background-position:  100vw 0; }
+
+	0% {
+		background-position: -100vw 0;
+	}
+
+	100% {
+		background-position: 100vw 0;
+	}
 }
 
 .wolf-theme-hero--skeleton {
-    background: linear-gradient(
-        90deg,
-        #0d0d0d 25%,
-        #1c1c1c 50%,
-        #0d0d0d 75%
-    );
-    background-size: 100vw 100%;
-    animation: wolf-shimmer-dark 1.8s ease-in-out infinite;
+	background:
+ linear-gradient(90deg, #0d0d0d 25%, #1c1c1c 50%, #0d0d0d 75%);
+	background-size: 100vw 100%;
+	animation: wolf-shimmer-dark 1.8s ease-in-out infinite;
 }

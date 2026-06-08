@@ -1,16 +1,16 @@
 // ── ThemeCard ─────────────────────────────────────────────────────────────────
 
 .wolf-theme-card {
-	position:relative;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--card-border-color);
-    overflow: hidden;
-    transition: border-color 0.15s ease;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--card-border-color);
+	overflow: hidden;
+	transition: border-color 0.15s ease;
 
 	&__featured-badge {
 		position: absolute;
-		z-index:999;
+		z-index: 999;
 		top: 12px;
 		left: 12px;
 		font-size: 0.65rem;
@@ -22,145 +22,145 @@
 		color: var(--theme-bg-color, #fff);
 	}
 
-    &:hover {
-        border-color: currentColor;
-    }
+	&:hover {
+		border-color: currentColor;
+	}
 
-    // ── Thumbnail ─────────────────────────────────────────────────────────────
+	// ── Thumbnail ─────────────────────────────────────────────────────────────
 
-    &__thumbnail-link {
-        display: block;
-        overflow: hidden;
-    }
+	&__thumbnail-link {
+		display: block;
+		overflow: hidden;
+	}
 
-    &__thumbnail {
-        aspect-ratio: 16 / 9;
-        background: var(--theme-subtle-bg, #f5f5f5);
-        overflow: hidden;
+	&__thumbnail {
+		aspect-ratio: 16 / 9;
+		background: var(--theme-subtle-bg, #f5f5f5);
+		overflow: hidden;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-    }
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			transition: transform 0.3s ease;
+		}
+	}
 
-    &__thumbnail-placeholder {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
+	&__thumbnail-placeholder {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
 
-    &:hover &__thumbnail img {
-        transform: scale(1.03);
-    }
+	&:hover &__thumbnail img {
+		transform: scale(1.03);
+	}
 
-    // ── Body ──────────────────────────────────────────────────────────────────
+	// ── Body ──────────────────────────────────────────────────────────────────
 
-    &__body {
-        padding: 16px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
+	&__body {
+		padding: 16px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
 
-    &__title {
-        font-size: 1rem;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1.3;
+	&__title {
+		font-size: 1rem;
+		font-weight: 700;
+		margin: 0;
+		line-height: 1.3;
 
-        a {
-            text-decoration: none;
-            color: inherit;
+		a {
+			text-decoration: none;
+			color: inherit;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 
-    &__tagline {
-        font-size: 0.85rem;
-        opacity: 0.65;
-        line-height: 1.5;
-        margin: 0;
-        // Two-line clamp — keeps the grid uniform
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+	&__tagline {
+		font-size: 0.85rem;
+		opacity: 0.65;
+		line-height: 1.5;
+		margin: 0;
+		// Two-line clamp — keeps the grid uniform
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
 
-    &__cats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        margin-top: auto;
-        padding-top: 4px;
-    }
+	&__cats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		margin-top: auto;
+		padding-top: 4px;
+	}
 
-    &__cat {
-        font-size: 0.75rem;
-        padding: 2px 8px;
-        border: 1px solid var(--card-border-color);
-        text-decoration: none;
-        color: inherit;
-        opacity: 0.7;
-        transition: opacity 0.15s;
+	&__cat {
+		font-size: 0.75rem;
+		padding: 2px 8px;
+		border: 1px solid var(--card-border-color);
+		text-decoration: none;
+		color: inherit;
+		opacity: 0.7;
+		transition: opacity 0.15s;
 
-        &:hover {
-            opacity: 1;
-        }
-    }
+		&:hover {
+			opacity: 1;
+		}
+	}
 
-    // ── Footer ────────────────────────────────────────────────────────────────
+	// ── Footer ────────────────────────────────────────────────────────────────
 
-    &__footer {
-        padding: 12px 16px;
-        border-top: 1px solid var(--card-border-color);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-    }
+	&__footer {
+		padding: 12px 16px;
+		border-top: 1px solid var(--card-border-color);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+	}
 
-    &__price {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        line-height: 1.2;
-    }
+	&__price {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		line-height: 1.2;
+	}
 
-    &__price-main {
-        font-size: 1rem;
-        font-weight: 700;
-    }
+	&__price-main {
+		font-size: 1rem;
+		font-weight: 700;
+	}
 
-    &__price-period {
-        font-size: 0.75rem;
-        font-weight: 400;
-        opacity: 0.55;
-        margin-left: 1px;
-    }
+	&__price-period {
+		font-size: 0.75rem;
+		font-weight: 400;
+		opacity: 0.55;
+		margin-left: 1px;
+	}
 
-    &__price-tf {
-        font-size: 0.75rem;
-        opacity: 0.4;
-        text-decoration: line-through;
-    }
+	&__price-tf {
+		font-size: 0.75rem;
+		opacity: 0.4;
+		text-decoration: line-through;
+	}
 
-    &__ctas {
-        display: flex;
-        gap: 6px;
-        flex-shrink: 0;
-    }
+	&__ctas {
+		display: flex;
+		gap: 6px;
+		flex-shrink: 0;
+	}
 
-    &__btn {
-        font-size: 0.8rem;
-        // Size + color delegated to theme-button-primary / theme-button-secondary
-    }
+	&__btn {
+		font-size: 0.8rem;
+		// Size + color delegated to theme-button-primary / theme-button-secondary
+	}
 }

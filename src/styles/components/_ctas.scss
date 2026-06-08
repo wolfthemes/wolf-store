@@ -1,28 +1,28 @@
 // ── ThemeCTAs ────────────────────────────────────────────────────────────────
 // Shared CTA block used in both the hero and the sidebar.
 .wolf-theme-ctas {
-    display: flex;
-    gap: 12px;
+	display: flex;
+	gap: 12px;
 
-    // Hero / inline usage — buttons side by side
-    &--row {
-        flex-direction: row;
-        flex-wrap: wrap;
-        // margin-bottom: 40px;
-    }
+	// Hero / inline usage — buttons side by side
+	&--row {
+		flex-direction: row;
+		flex-wrap: wrap;
+		// margin-bottom: 40px;
+	}
 
-    // Sidebar usage — buttons stacked
-    &--column {
-        flex-direction: column;
-        // margin-bottom: 32px;
-    }
+	// Sidebar usage — buttons stacked
+	&--column {
+		flex-direction: column;
+		// margin-bottom: 32px;
+	}
 
-    &__btn {
-        // Base styles intentionally left to the theme via
-        // theme-button-primary / theme-button-secondary classes.
-        // Add layout-only overrides below if needed.
+	&__btn {
+		// Base styles intentionally left to the theme via
+		// theme-button-primary / theme-button-secondary classes.
+		// Add layout-only overrides below if needed.
 
-        &--buy  {
+		&--buy {
 			// background:var(--accent-hover-color)!important;
 			// &.theme-button-primary{
 			// 	&:hover {
@@ -31,30 +31,30 @@
 			// }
 
 		}
-        &--demo {
+
+		&--demo {
 			// &.theme-button-secondary{
 			// 	color:white!important;
 			// }
 			// background: var(--accent-color) !important;
 		}
-    }
+	}
 
-    &__arrow {
-        width: 0.9em;
-        height: 0.9em;
-        vertical-align: middle;
-        margin-left: 5px;
-        position: relative;
-        // top: -1px;
+	&__arrow {
+		width: 0.9em;
+		height: 0.9em;
+		vertical-align: middle;
+		margin-left: 5px;
+		position: relative;
+		// top: -1px;
 
-        // rect { display: none; }
-        // path { fill: currentColor; }
+		// rect { display: none; }
+		// path { fill: currentColor; }
 
-		path{
-			stroke-width:20;
+		path {
+			stroke-width: 20;
 			// stroke-linejoin:round;
 		}
-    }
+	}
 }
-
 

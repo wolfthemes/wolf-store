@@ -72,15 +72,15 @@ class Seo {
 	 */
 	public static function init_archive(): void {
 		if ( is_tax() ) {
-			$term      = get_queried_object();
-			$title     = $term->name ?? '';
-			$term_url  = get_term_link( $term );
-			$permalink = ! is_wp_error( $term_url ) ? (string) $term_url : '';
+			$term        = get_queried_object();
+			$title       = $term->name ?? '';
+			$term_url    = get_term_link( $term );
+			$permalink   = ! is_wp_error( $term_url ) ? (string) $term_url : '';
 			$description = ! empty( $term->description ) ? wp_strip_all_tags( $term->description ) : '';
 		} else {
-			$page_id   = Core::get_store_page_id();
-			$title     = get_the_title( $page_id );
-			$permalink = (string) get_permalink( $page_id );
+			$page_id     = Core::get_store_page_id();
+			$title       = get_the_title( $page_id );
+			$permalink   = (string) get_permalink( $page_id );
 			$description = '';
 		}
 

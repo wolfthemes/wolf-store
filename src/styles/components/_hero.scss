@@ -1,53 +1,55 @@
 // Hero
 .wolf-theme-hero {
 	min-height: 80vh;
-    position: relative;
+	position: relative;
 
-	--background-color:black;
+	--background-color: #000;
 
 
-    &__thumbnail {
-        position: absolute;
+	&__thumbnail {
+		position: absolute;
 		width: 100%;
 		height: 100%;
-        img,
-		video{
-            width: 100%!important;
+
+		img,
+		video {
+			width: 100% !important;
 			height: 100%;
 			display: block;
 			object-fit: cover;
 			position: absolute;
 		}
-    }
+	}
 
-	&__content{
+	&__content {
 		position: absolute;
 		bottom: 0;
 		padding: 50px;
-		text-shadow:var(--text-shadow);
+		text-shadow: var(--text-shadow);
 	}
 
-	&__title{
+	&__title {
 		font-size: clamp(2rem, 7vw, 80px);
-		margin-bottom:0;
+		margin-bottom: 0;
 	}
 
 
-    &__tagline {
-		font-size:18px;
-        margin: 8px 0 16px;
-		font-weight:700;
-		color:var(--strong-color);
-    }
+	&__tagline {
+		font-size: 18px;
+		margin: 8px 0 16px;
+		font-weight: 700;
+		color: var(--strong-color);
+	}
 
-    &__description {
-        margin-bottom: 48px;
-		max-width:650px;
-        line-height: 1.8;
-    }
+	&__description {
+		margin-bottom: 48px;
+		max-width: 650px;
+		line-height: 1.8;
+	}
 }
 
 @media (max-width: 768px) {
+
 	.wolf-theme-hero {
 		min-height: 100svh;
 		display: flex;

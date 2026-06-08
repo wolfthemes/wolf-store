@@ -7,17 +7,17 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$taxonomy  = '';
-$term      = '';
-$term_id   = 0;
-$term_name = '';
+$wolf_store_taxonomy  = '';
+$wolf_store_term      = '';
+$wolf_store_term_id   = 0;
+$wolf_store_term_name = '';
 
 if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
-	$queried   = get_queried_object();
-	$taxonomy  = $queried->taxonomy ?? '';
-	$term      = $queried->slug     ?? '';
-	$term_name = $queried->name     ?? '';
-	$term_id   = $queried->term_id  ?? 0;
+	$wolf_store_queried   = get_queried_object();
+	$wolf_store_taxonomy  = $wolf_store_queried->taxonomy ?? '';
+	$wolf_store_term      = $wolf_store_queried->slug     ?? '';
+	$wolf_store_term_name = $wolf_store_queried->name     ?? '';
+	$wolf_store_term_id   = $wolf_store_queried->term_id  ?? 0;
 }
 
 get_header();
@@ -25,10 +25,10 @@ get_header();
 
 <div id="wolf-store-root"
 	data-type="archive"
-	data-taxonomy="<?php echo esc_attr( $taxonomy ); ?>"
-	data-term="<?php echo esc_attr( $term ); ?>"
-	data-term-id="<?php echo absint( $term_id ); ?>"
-	data-term-name="<?php echo esc_attr( $term_name ); ?>"
+	data-taxonomy="<?php echo esc_attr( $wolf_store_taxonomy ); ?>"
+	data-term="<?php echo esc_attr( $wolf_store_term ); ?>"
+	data-term-id="<?php echo absint( $wolf_store_term_id ); ?>"
+	data-term-name="<?php echo esc_attr( $wolf_store_term_name ); ?>"
 	data-pagination="<?php echo esc_attr( \Wolf_Store\Admin\Options::get_option( 'pagination', 'numbers' ) ); ?>">
 </div>
 

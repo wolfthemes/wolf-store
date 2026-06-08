@@ -21,9 +21,9 @@ class Schema {
 	 * @param int $post_id
 	 */
 	public static function output_single( int $post_id ): void {
-		$meta    = Meta::get_meta( $post_id );
-		$slug    = $meta['slug'] ?? Meta::get_theme_slug( $post_id );
-		$gallery = Meta::get_gallery( $slug );
+		$meta      = Meta::get_meta( $post_id );
+		$slug      = $meta['slug'] ?? Meta::get_theme_slug( $post_id );
+		$gallery   = Meta::get_gallery( $slug );
 		$thumbnail = Meta::get_thumbnail_url( $post_id );
 
 		$schema = array(
@@ -103,7 +103,8 @@ class Schema {
 			$term_url = get_term_link( $obj );
 			$url      = ! is_wp_error( $term_url ) ? $term_url : '';
 		} elseif ( is_post_type_archive( 'wolf_theme' ) ) {
-			$name = post_type_archive_title( '', false ) ?: 'WordPress Themes';
+			$name_raw = post_type_archive_title( '', false );
+			$name     = $name_raw ? $name_raw : 'WordPress Themes';
 			$url  = (string) get_post_type_archive_link( 'wolf_theme' );
 		} else {
 			$page_id = Core::get_store_page_id();

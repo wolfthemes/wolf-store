@@ -1,62 +1,76 @@
 import { useEffect, useRef } from 'react';
 
-export default function ThemeFeatures( { theme } ) {
-    const title          = theme.title?.rendered;
-    const keyBenefits    = theme.theme_key_benefits   ?? [];
-    const targetAudience = theme.theme_target_audience ?? [];
-    const sectionRef     = useRef( null );
+export default function ThemeFeatures({ theme }) {
+	const title = theme.title?.rendered;
+	const keyBenefits = theme.theme_key_benefits ?? [];
+	const targetAudience = theme.theme_target_audience ?? [];
+	const sectionRef = useRef(null);
 
-    useEffect( () => {
-        const el = sectionRef.current;
-        if ( ! el ) return;
-        const observer = new IntersectionObserver(
-            ( [ entry ] ) => {
-                if ( entry.isIntersecting ) {
-                    el.classList.add( 'is-visible' );
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.1 }
-        );
-        observer.observe( el );
-        return () => observer.disconnect();
-    }, [] );
+	useEffect(() => {
+		const el = sectionRef.current;
+		if (!el) {
+			return;
+		}
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					el.classList.add('is-visible');
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.1 }
+		);
+		observer.observe(el);
+		return () => observer.disconnect();
+	}, []);
 
-    if ( ! keyBenefits.length && ! targetAudience.length ) return null;
+	if (!keyBenefits.length && !targetAudience.length) {
+		return null;
+	}
 
-    return (
-        <div className='wolf-theme-features wolf-theme-single__section' ref={ sectionRef }>
-            <div className='wolf-theme-single__wrapper'>
-                <div className='wolf-theme-features__intro'>
-                    <h2 className='wolf-theme-features__heading'>Built for Professionals</h2>
-                    <p className='wolf-theme-features__subheading'>Everything you need to showcase your work, attract clients, and grow your online presence.</p>
-                </div>
-                <div className='wolf-theme-features__columns'>
+	return (
+		<div
+			className='wolf-theme-features wolf-theme-single__section'
+			ref={sectionRef}
+		>
+			<div className='wolf-theme-single__wrapper'>
+				<div className='wolf-theme-features__intro'>
+					<h2 className='wolf-theme-features__heading'>
+						Built for Professionals
+					</h2>
+					<p className='wolf-theme-features__subheading'>
+						Everything you need to showcase your work, attract
+						clients, and grow your online presence.
+					</p>
+				</div>
+				<div className='wolf-theme-features__columns'>
+					{keyBenefits.length > 0 && (
+						<div className='wolf-theme-features__column'>
+							<h3 className='wolf-theme-features__title'>
+								Why Choose {title}?
+							</h3>
+							<ul className='wolf-theme-features__list'>
+								{keyBenefits.map((item, i) => (
+									<li key={i}>{item}</li>
+								))}
+							</ul>
+						</div>
+					)}
 
-                    { keyBenefits.length > 0 && (
-                        <div className='wolf-theme-features__column'>
-                            <h3 className='wolf-theme-features__title'>Why Choose { title }?</h3>
-                            <ul className='wolf-theme-features__list'>
-                                { keyBenefits.map( ( item, i ) => (
-                                    <li key={ i }>{ item }</li>
-                                ) ) }
-                            </ul>
-                        </div>
-                    ) }
-
-                    { targetAudience.length > 0 && (
-                        <div className='wolf-theme-features__column'>
-                            <h3 className='wolf-theme-features__title'>Perfect for</h3>
-                            <ul className='wolf-theme-features__list'>
-                                { targetAudience.map( ( item, i ) => (
-                                    <li key={ i }>{ item }</li>
-                                ) ) }
-                            </ul>
-                        </div>
-                    ) }
-
-                </div>
-            </div>
-        </div>
-    );
+					{targetAudience.length > 0 && (
+						<div className='wolf-theme-features__column'>
+							<h3 className='wolf-theme-features__title'>
+								Perfect for
+							</h3>
+							<ul className='wolf-theme-features__list'>
+								{targetAudience.map((item, i) => (
+									<li key={i}>{item}</li>
+								))}
+							</ul>
+						</div>
+					)}
+				</div>
+			</div>
+		</div>
+	);
 }

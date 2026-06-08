@@ -102,7 +102,7 @@ class Admin_Columns {
 			$featured = get_post_meta( $post_id, '_wolf_theme_featured', true );
 			printf(
 				'<a href="#" class="wolf-store-featured-toggle" data-id="%d" data-featured="%d" title="%s">%s</a>',
-				$post_id,
+				absint( $post_id ),
 				$featured ? 1 : 0,
 				esc_attr__( 'Toggle featured', 'wolf-store' ),
 				$featured ? '★' : '☆'
@@ -118,7 +118,7 @@ class Admin_Columns {
 		if ( $thumbnail ) {
 			/* translators: %s: post title */
 			$title = esc_attr( sprintf( __( 'Edit "%s"', 'wolf-store' ), get_the_title( $post_id ) ) );
-			echo '<a href="' . esc_url( get_edit_post_link( $post_id ) ) . '" title="' . $title . '">';
+			echo '<a href="' . esc_url( get_edit_post_link( $post_id ) ) . '" title="' . esc_attr( $title ) . '">';
 			echo wp_kses_post( get_the_post_thumbnail( $post_id, array( 60, 60 ), array( 'style' => 'max-width:60px;height:auto;' ) ) );
 			echo '</a>';
 		}
@@ -131,8 +131,8 @@ class Admin_Columns {
 			wp_send_json_error();
 		}
 
-		$post_id  = absint( $_POST['post_id'] );
-		$featured = absint( $_POST['featured'] );
+		$post_id  = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
+		$featured = isset( $_POST['featured'] ) ? absint( $_POST['featured'] ) : 0;
 		$new      = $featured ? 0 : 1;
 
 		if ( $new ) {
@@ -148,7 +148,7 @@ class Admin_Columns {
 		if ( 'edit.php' !== $hook ) {
 			return;
 		}
-		if ( ( $_GET['post_type'] ?? '' ) !== 'wolf_theme' ) {
+		if ( sanitize_key( $_GET['post_type'] ?? '' ) !== 'wolf_theme' ) {
 			return;
 		}
 

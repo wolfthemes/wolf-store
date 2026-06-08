@@ -51,7 +51,7 @@ class Admin_Handler {
 	}
 
 	/**
-	 * add settings link in plugin page
+	 * Add settings link in plugin page.
 	 */
 	public function settings_action_links( $links ) {
 		$setting_link = array(

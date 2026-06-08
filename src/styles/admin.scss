@@ -1,21 +1,21 @@
 .wolf-store-featured-toggle {
-    font-size: 1.2rem;
-    text-decoration: none;
-    opacity: 1;
-    transition: opacity 0.15s, transform 0.15s;
-    display: inline-block;
+	font-size: 1.2rem;
+	text-decoration: none;
+	opacity: 1;
+	transition: opacity 0.15s, transform 0.15s;
+	display: inline-block;
 
-    &:hover {
-        opacity: 1;
-        transform: scale(1.2);
-    }
+	&:hover {
+		opacity: 1;
+		transform: scale(1.2);
+	}
 
-    &[data-featured="1"] {
-        opacity: 1;
-    }
+	&[data-featured="1"] {
+		opacity: 1;
+	}
 
-    &.is-loading {
-        opacity: 0.3;
-        pointer-events: none;
-    }
+	&.is-loading {
+		opacity: 0.3;
+		pointer-events: none;
+	}
 }

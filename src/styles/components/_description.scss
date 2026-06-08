@@ -1,9 +1,9 @@
-.wolf-theme-description{
+.wolf-theme-description {
 
-	.wolf-theme-single__wrapper{
-		display:flex;
-		gap:20px;
-		align-items:center;
+	.wolf-theme-single__wrapper {
+		display: flex;
+		gap: 20px;
+		align-items: center;
 		justify-content: space-between;
 
 		@media (max-width: 900px) {
@@ -11,25 +11,25 @@
 		}
 	}
 
-	&__description{
-		font-size:1.1em;
-		max-width:500px;
-		margin-bottom:20px;
+	&__description {
+		font-size: 1.1em;
+		max-width: 500px;
+		margin-bottom: 20px;
 	}
 
-	&__mockup{
-		max-width:800px;
+	&__mockup {
+		max-width: 800px;
 		opacity: 0;
-		transform: translateX( 60px );
+		transform: translateX(60px);
 		transition: opacity 0.7s ease, transform 0.7s ease;
 
 		&.is-visible {
 			opacity: 1;
-			transform: translateX( 0 );
+			transform: translateX(0);
 		}
 	}
 
-	&__column{
-
+	&__column {
+		// placeholder
 	}
 }

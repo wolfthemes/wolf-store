@@ -195,7 +195,7 @@ class Metabox_Manager {
 			foreach ( $values as $i => $item_value ) {
 				echo '<li>';
 				echo '<span class="sort hndle">|||</span>';
-				echo '<input type="text" name="' . esc_attr( $field_id ) . '[' . $i . ']" value="' . esc_attr( $item_value ) . '" class="regular-text" />';
+				echo '<input type="text" name="' . esc_attr( $field_id ) . '[' . absint( $i ) . ']" value="' . esc_attr( $item_value ) . '" class="regular-text" />';
 				echo '<a class="wolf-store-repeatable-remove button" href="#">-</a>';
 				echo '</li>';
 			}
@@ -254,6 +254,7 @@ class Metabox_Manager {
 	private function save_field( int $post_id, array $field ): void {
 		$field_id = $field['id'];
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified in save_metaboxes()
 		if ( ! isset( $_POST[ $field_id ] ) ) {
 			return;
 		}
@@ -263,6 +264,7 @@ class Metabox_Manager {
 
 		// Checkboxes send nothing when unchecked — delete meta if not present
 		if ( 'checkbox' === $field['type'] ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified in save_metaboxes()
 			if ( isset( $_POST[ $field_id ] ) ) {
 				update_post_meta( $post_id, $field_id, 1 );
 			} else {

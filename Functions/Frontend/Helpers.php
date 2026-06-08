@@ -125,10 +125,12 @@ class Helpers {
 	}
 
 	/**
-	 * sanitize_html_class works just fine for a single class
+	 * Sanitize a space-separated string of HTML classes.
+	 *
+	 * Sanitize_html_class works just fine for a single class.
 	 * Some times le wild <span class="blue hedgehog"> appears, which is when you need this function,
 	 * to validate both blue and hedgehog,
-	 * Because sanitize_html_class doesn't allow spaces.
+	 * because sanitize_html_class doesn't allow spaces.
 	 *
 	 * @uses sanitize_html_class
 	 * @param (mixed: string/array) $class   "blue hedgehog goes shopping" or array("blue", "hedgehog", "goes", "shopping")
@@ -390,9 +392,8 @@ class Helpers {
 		// If this is hex color, validate and return it
 		if ( 1 === preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
 			return $color;
-		}
-		// If this is rgb, validate and return it
-		elseif ( 'rgb(' === substr( $color, 0, 4 ) ) {
+		} elseif ( 'rgb(' === substr( $color, 0, 4 ) ) {
+			// If this is rgb, validate and return it
 			sscanf( $color, 'rgb(%d,%d,%d)', $red, $green, $blue );
 			if ( ( $red >= 0 && $red <= 255 ) &&
 				( $green >= 0 && $green <= 255 ) &&
@@ -400,9 +401,8 @@ class Helpers {
 				) {
 				return "rgb({$red},{$green},{$blue})";
 			}
-		}
-		// If this is rgba, validate and return it
-		elseif ( 'rgba(' === substr( $color, 0, 5 ) ) {
+		} elseif ( 'rgba(' === substr( $color, 0, 5 ) ) {
+			// If this is rgba, validate and return it
 			sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 			if ( ( $red >= 0 && $red <= 255 ) &&
 				( $green >= 0 && $green <= 255 ) &&
@@ -647,6 +647,7 @@ class Helpers {
 		);
 
 		if ( $echo && $thumbnail ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses strips dangerous HTML
 			echo self::kses( $thumbnail['thumbnail'] );
 		}
 

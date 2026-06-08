@@ -5,33 +5,34 @@
 // ── Related themes ────────────────────────────────────────────────────────────
 
 .wolf-store-related {
-    padding: 80px 0;
-    border-top: 1px solid var( --card-border-color );
+	padding: 80px 0;
+	border-top: 1px solid var(--card-border-color);
 
-    &__title {
-        font-size: 1.75rem;
-        margin: 0 0 32px;
-    }
+	&__title {
+		font-size: 1.75rem;
+		margin: 0 0 32px;
+	}
 
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat( 4, 1fr );
-        gap: 24px;
-    }
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 24px;
+	}
 
-    @media ( max-width: 1024px ) {
-        &__grid {
-            grid-template-columns: repeat( 2, 1fr );
-        }
-    }
+	@media ( max-width: 1024px ) {
 
-    @media ( max-width: 600px ) {
-        padding: 48px 0;
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 
-        &__grid {
-            grid-template-columns: 1fr;
-        }
-    }
+	@media ( max-width: 600px ) {
+		padding: 48px 0;
+
+		&__grid {
+			grid-template-columns: 1fr;
+		}
+	}
 }
 
 .wolf-theme-single {
@@ -40,20 +41,20 @@
 		min-height: 100vh;
 	}
 
-	&__section{
-		padding:80px 0;
+	&__section {
+		padding: 80px 0;
 
 		@media (max-width: 768px) {
 			padding: 48px 0;
 		}
 	}
 
-	&__wrapper{
-		max-width:var(--single-theme-wrapper-width);
-		margin:0 auto;
+	&__wrapper {
+		max-width: var(--single-theme-wrapper-width);
+		margin: 0 auto;
 
-		&--small{
-			max-width:var(--single-theme-wrapper-width-small);
+		&--small {
+			max-width: var(--single-theme-wrapper-width-small);
 		}
 	}
 }

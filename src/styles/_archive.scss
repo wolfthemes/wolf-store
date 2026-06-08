@@ -1,8 +1,8 @@
 // ── Archive grid ──────────────────────────────────────────────────────────────
 
 .wolf-store-archive {
-    margin: 0 auto 40px;
-    // max-width: 1400px;
+	margin: 0 auto 40px;
+	// max-width: 1400px;
 
 	&__filter-bar {
 		display: none;
@@ -27,139 +27,145 @@
 		min-width: 0; // prevents grid overflow
 	}
 
-    &__header {
-        margin-bottom: 32px;
-    }
+	&__header {
+		margin-bottom: 32px;
+	}
 
-    &__title {
-        font-size: 2rem;
-        margin: 0;
-    }
+	&__title {
+		font-size: 2rem;
+		margin: 0;
+	}
 
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat( auto-fill, minmax( 400px, 1fr ) );
-        gap: 24px;
-    }
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		gap: 24px;
+	}
 
-    &__empty {
-        opacity: 0.5;
-    }
+	&__empty {
+		opacity: 0.5;
+	}
 
-    // ── Tablet ────────────────────────────────────────────────────────────────
-    @media ( max-width: 1024px ) {
-        &__grid {
-            grid-template-columns: repeat( auto-fill, minmax( 300px, 1fr ) );
-        }
-    }
+	// ── Tablet ────────────────────────────────────────────────────────────────
+	@media ( max-width: 1024px ) {
 
-    // ── Mobile ────────────────────────────────────────────────────────────────
-    @media ( max-width: 768px ) {
+		&__grid {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+	}
 
-        &__filter-bar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
+	// ── Mobile ────────────────────────────────────────────────────────────────
+	@media ( max-width: 768px ) {
 
-        &__filter-toggle {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border: 1px solid currentColor;
-            background: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: inherit;
-            transition: opacity 0.15s;
+		&__filter-bar {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-bottom: 16px;
+		}
 
-            &:hover { opacity: 0.7; }
+		&__filter-toggle {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 8px 16px;
+			border: 1px solid currentColor;
+			background: none;
+			cursor: pointer;
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: inherit;
+			transition: opacity 0.15s;
 
-            &.has-active {
-                border-color: currentColor;
-            }
-        }
+			&:hover {
+				opacity: 0.7;
+			}
 
-        &__filter-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: currentColor;
-            color: var( --background-color, #fff );
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
+			&.has-active {
+				border-color: currentColor;
+			}
+		}
 
-        &__filter-clear {
-            display: inline-flex;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 0.85rem;
-            color: inherit;
-            opacity: 0.6;
-            padding: 0;
-            text-decoration: underline;
+		&__filter-badge {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background: currentColor;
+			color: var(--background-color, #fff);
+			font-size: 0.7rem;
+			font-weight: 700;
+		}
 
-            &:hover { opacity: 1; }
-        }
+		&__filter-clear {
+			display: inline-flex;
+			background: none;
+			border: none;
+			cursor: pointer;
+			font-size: 0.85rem;
+			color: inherit;
+			opacity: 0.6;
+			padding: 0;
+			text-decoration: underline;
 
-        &__layout {
-            flex-direction: column;
-            gap: 0;
-        }
+			&:hover {
+				opacity: 1;
+			}
+		}
 
-        &__grid {
-            grid-template-columns: repeat( auto-fill, minmax( 280px, 1fr ) );
-        }
-    }
+		&__layout {
+			flex-direction: column;
+			gap: 0;
+		}
 
-    @media ( max-width: 480px ) {
-        &__grid {
-            grid-template-columns: 1fr;
-        }
-    }
+		&__grid {
+			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		}
+	}
+
+	@media ( max-width: 480px ) {
+
+		&__grid {
+			grid-template-columns: 1fr;
+		}
+	}
 }
 
 // ── Pagination ────────────────────────────────────────────────────────────────
 
 .wolf-store-pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    margin-top: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	margin-top: 48px;
 
-    &__btn {
-        min-width: 36px;
-        height: 36px;
-        padding: 0 10px;
-        border: 1px solid var(--theme-border-color);
-        background: none;
-        cursor: pointer;
-        font-size: 0.9rem;
-        color: inherit;
-        transition: border-color 0.15s;
+	&__btn {
+		min-width: 36px;
+		height: 36px;
+		padding: 0 10px;
+		border: 1px solid var(--theme-border-color);
+		background: none;
+		cursor: pointer;
+		font-size: 0.9rem;
+		color: inherit;
+		transition: border-color 0.15s;
 
-        &:hover {
-            border-color: currentColor;
-        }
+		&:hover {
+			border-color: currentColor;
+		}
 
-        &--active {
-            border-color: currentColor;
-            font-weight: 700;
-        }
+		&--active {
+			border-color: currentColor;
+			font-weight: 700;
+		}
 
-        &--prev,
-        &--next {
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-    }
+		&--prev,
+		&--next {
+			font-size: 1.2rem;
+			line-height: 1;
+		}
+	}
 }
