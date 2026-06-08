@@ -15,18 +15,12 @@ defined( 'ABSPATH' ) || exit;
 
 class Rest_Fields {
 
-	/**
-	 * Constructor
-	 */
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_fields' ) );
 		add_filter( 'rest_wolf_theme_collection_params', array( $this, 'register_collection_params' ) );
 		add_filter( 'rest_wolf_theme_query', array( $this, 'handle_query_params' ), 10, 2 );
 	}
 
-	/**
-	 * Register custom collection params
-	 */
 	public function register_collection_params( array $params ): array {
 		if ( isset( $params['orderby']['enum'] ) ) {
 			$params['orderby']['enum'][] = 'featured';
@@ -35,78 +29,44 @@ class Rest_Fields {
 	}
 
 	/**
-	 * Translate custom query params into WP_Query args
-	 */
-	public function handle_query_params_bak( array $args, \WP_REST_Request $request ): array {
-		if ( 'featured' !== $request->get_param( 'orderby' ) ) {
-			return $args;
-		}
-
-		// Named clause — WP can reference it in orderby without filtering posts.
-		// CHAR ordering: '1' sorts before '' (DESC), so featured comes first.
-		$args['meta_query'] = array(
-			'relation'         => 'OR',
-			'featured_clause'  => array(
-				'key'     => '_wolf_theme_featured',
-				'compare' => 'EXISTS',
-			),
-			array(
-				'key'     => '_wolf_theme_featured',
-				'compare' => 'NOT EXISTS',
-			),
-		);
-
-		$args['orderby'] = array(
-			'featured_clause' => 'DESC',
-			'date'            => 'DESC',
-		);
-
-		return $args;
-	}
-
-	/**
-	 * Translate custom query params into WP_Query args
+	 * Translate custom query params into WP_Query args.
+	 *
+	 * Uses posts_clauses for a single LEFT JOIN rather than meta_query's INNER
+	 * JOIN, which drops posts without the meta key (WP core bug #29447).
 	 */
 	public function handle_query_params( array $args, \WP_REST_Request $request ): array {
 		if ( 'featured' !== $request->get_param( 'orderby' ) ) {
 			return $args;
 		}
 
-		// Use posts_clauses for a single request to inject a proper LEFT JOIN.
-		// WP_Query's meta ordering always uses INNER JOIN, which drops posts
-		// without the meta key entirely (WP core bug #29447).
-		// We do the join manually so all posts are included, NULLs sort last.
-		add_filter( 'posts_clauses', function ( array $clauses, \WP_Query $q ) use ( &$args ): array {
+		$filter = null;
+		$filter = function ( array $clauses ) use ( &$filter ): array {
 			global $wpdb;
 
-			// Only run once for this specific query
-			remove_filter( 'posts_clauses', __FUNCTION__ );
+			remove_filter( 'posts_clauses', $filter, 10 );
 
 			$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS wolf_featured_meta"
 				. " ON ({$wpdb->posts}.ID = wolf_featured_meta.post_id"
 				. " AND wolf_featured_meta.meta_key = '_wolf_theme_featured')";
 
-			// ISNULL puts NULLs (non-featured) last; DESC puts '1' before ''
+			// ISNULL puts NULLs (non-featured) last; DESC puts '1' before ''.
 			$clauses['orderby'] = 'ISNULL(wolf_featured_meta.meta_value) ASC,'
 				. ' wolf_featured_meta.meta_value DESC,'
 				. " {$wpdb->posts}.post_date DESC";
 
 			return $clauses;
-		}, 10, 2 );
+		};
 
-		// Still need to tell WP this is ordered so it doesn't override orderby
+		add_filter( 'posts_clauses', $filter, 10, 2 );
+
+		// Prevent WP from overriding the orderby clause.
 		$args['orderby'] = 'post__in';
 		$args['order']   = 'DESC';
 
 		return $args;
 	}
 
-	/**
-	 * Register all custom REST fields
-	 */
 	public function register_fields(): void {
-
-		// Expose hex color on theme_color taxonomy terms
 		register_rest_field(
 			'theme_color',
 			'term_color',
@@ -114,7 +74,7 @@ class Rest_Fields {
 				'get_callback' => function ( $term ) {
 					return \Wolf_Store\Config\Taxonomy_Config::get_term_color( $term['slug'] );
 				},
-				'schema'          => array(
+				'schema'       => array(
 					'type'        => 'string',
 					'description' => 'Hex color value for this term.',
 				),
@@ -152,7 +112,7 @@ class Rest_Fields {
 			return Meta::get_purchase_url( $post['id'] );
 		} );
 
-		// --- Thumbnail ---
+		// --- Media ---
 		$this->register( 'theme_thumbnail', function ( $post ) {
 			return Meta::get_thumbnail_url( $post['id'] );
 		} );
@@ -162,8 +122,7 @@ class Rest_Fields {
 		} );
 
 		$this->register( 'theme_gallery', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			return Meta::get_gallery( $slug );
+			return Meta::get_gallery( Meta::get_theme_slug( $post['id'] ) );
 		} );
 
 		$this->register( 'theme_mockup', function ( $post ) {
@@ -175,106 +134,28 @@ class Rest_Fields {
 		} );
 
 		// --- From changelog.xml ---
-		$this->register( 'theme_latest_version', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['latest_version'] ?? '';
-		} );
-
-		$this->register( 'theme_requires', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['requires'] ?? '';
-		} );
-
-		$this->register( 'theme_tested', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['tested'] ?? '';
-		} );
-
-		$this->register( 'theme_short_description', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['description'] ?? '';
-		} );
-
-		$this->register( 'theme_long_description', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['long_description'] ?? '';
-		} );
-
-		$this->register( 'theme_changelog', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['changelog'] ?? '';
-		} );
-
-		$this->register( 'theme_warning', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['warning'] ?? '';
-		} );
-
-		$this->register( 'theme_info', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_changelog_data( $slug );
-			return $data['info'] ?? '';
-		} );
+		$this->register_changelog_field( 'theme_latest_version', 'latest_version', '' );
+		$this->register_changelog_field( 'theme_requires', 'requires', '' );
+		$this->register_changelog_field( 'theme_tested', 'tested', '' );
+		$this->register_changelog_field( 'theme_short_description', 'description', '' );
+		$this->register_changelog_field( 'theme_long_description', 'long_description', '' );
+		$this->register_changelog_field( 'theme_changelog', 'changelog', '' );
+		$this->register_changelog_field( 'theme_warning', 'warning', '' );
+		$this->register_changelog_field( 'theme_info', 'info', '' );
 
 		// --- From theme_meta.json ---
-		$this->register( 'theme_features', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['features'] ?? array();
-		} );
+		$this->register_meta_field( 'theme_features', 'features' );
+		$this->register_meta_field( 'theme_selling_points', 'selling_points' );
+		$this->register_meta_field( 'theme_key_benefits', 'key_benefits' );
+		$this->register_meta_field( 'theme_target_audience', 'target_audience' );
+		$this->register_meta_field( 'theme_use_cases', 'use_cases' );
+		$this->register_meta_field( 'theme_included_plugins', 'included_plugins' );
+		$this->register_meta_field( 'theme_design_features', 'design_features' );
+		$this->register_meta_field( 'theme_testimonials', 'testimonials' );
 
-		$this->register( 'theme_selling_points', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['selling_points'] ?? array();
-		} );
-
-		$this->register( 'theme_key_benefits', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['key_benefits'] ?? array();
-		} );
-
-		$this->register( 'theme_target_audience', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['target_audience'] ?? array();
-		} );
-
-		$this->register( 'theme_use_cases', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['use_cases'] ?? array();
-		} );
-
-		$this->register( 'theme_included_plugins', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['included_plugins'] ?? array();
-		} );
-
-		$this->register( 'theme_design_features', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['design_features'] ?? array();
-		} );
-
-		$this->register( 'theme_testimonials', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_theme_meta( $slug );
-			return $data['testimonials'] ?? array();
-		} );
-
+		// --- Pricing ---
 		$this->register( 'theme_pricing', function ( $post ) {
-			$slug = Meta::get_theme_slug( $post['id'] );
-			$data = Meta::get_config( $slug );
+			$data = Meta::get_config( Meta::get_theme_slug( $post['id'] ) );
 			return array(
 				'tf_price'            => isset( $data['tf_price'] )            ? (float) $data['tf_price']            : null,
 				'price_annual'        => isset( $data['price_annual'] )        ? (float) $data['price_annual']        : null,
@@ -286,7 +167,29 @@ class Rest_Fields {
 	}
 
 	/**
-	 * Helper — register a single read-only REST field on wolf_theme
+	 * Register a single read-only REST field on wolf_theme sourced from changelog data.
+	 *
+	 * @param mixed $default
+	 */
+	private function register_changelog_field( string $field_name, string $key, $default = '' ): void {
+		$this->register( $field_name, function ( $post ) use ( $key, $default ) {
+			$data = Meta::get_changelog_data( Meta::get_theme_slug( $post['id'] ) );
+			return $data[ $key ] ?? $default;
+		} );
+	}
+
+	/**
+	 * Register a single read-only REST field on wolf_theme sourced from theme_meta.json.
+	 */
+	private function register_meta_field( string $field_name, string $key ): void {
+		$this->register( $field_name, function ( $post ) use ( $key ) {
+			$data = Meta::get_theme_meta( Meta::get_theme_slug( $post['id'] ) );
+			return $data[ $key ] ?? array();
+		} );
+	}
+
+	/**
+	 * Register a single read-only REST field on wolf_theme.
 	 */
 	private function register( string $field_name, callable $get_callback ): void {
 		register_rest_field(
