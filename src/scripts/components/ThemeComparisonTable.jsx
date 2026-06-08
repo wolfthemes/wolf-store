@@ -7,9 +7,28 @@
  *
  * @param {object} theme  Full theme REST object
  */
+import { useEffect, useRef } from 'react';
 import { withCoupon } from '../config/offers';
 
 export default function ThemeComparisonTable( { theme } ) {
+	const sectionRef = useRef( null );
+
+    useEffect( () => {
+        const el = sectionRef.current;
+        if ( ! el ) return;
+        const observer = new IntersectionObserver(
+            ( [ entry ] ) => {
+                if ( entry.isIntersecting ) {
+                    el.classList.add( 'is-visible' );
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe( el );
+        return () => observer.disconnect();
+    }, [] );
+
 	const slug = theme.theme_slug;
     const buyUrl              = withCoupon( theme.theme_purchase_url );
     const title           = theme.title?.rendered;
@@ -58,7 +77,7 @@ export default function ThemeComparisonTable( { theme } ) {
     ];
 
     return (
-        <div className='wolf-theme-comparison-table wolf-theme-single__section'>
+        <div className='wolf-theme-comparison-table wolf-theme-single__section' ref={ sectionRef }>
 			<div className='wolf-theme-single__wrapper wolf-theme-single__wrapper--small'>
 
 				<h2 className='wolf-theme-comparison-table__title'>Why Buy Direct?</h2>

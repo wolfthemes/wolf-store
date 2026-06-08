@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 const DEFAULT_TESTIMONIALS = [
     {
         rating: 5,
@@ -24,8 +26,27 @@ const DEFAULT_TESTIMONIALS = [
 const MAX = 4;
 
 export default function ThemeTestimonials( { theme } ) {
-	const title = theme.title?.rendered;
-    const own   = theme.theme_testimonials ?? [];
+	const title    = theme.title?.rendered;
+    const own      = theme.theme_testimonials ?? [];
+    const itemRefs = useRef( [] );
+
+    useEffect( () => {
+        const els = itemRefs.current.filter( Boolean );
+        if ( ! els.length ) return;
+        const observer = new IntersectionObserver(
+            ( entries ) => {
+                entries.forEach( entry => {
+                    if ( entry.isIntersecting ) {
+                        entry.target.classList.add( 'is-visible' );
+                        observer.unobserve( entry.target );
+                    }
+                } );
+            },
+            { threshold: 0.15 }
+        );
+        els.forEach( el => observer.observe( el ) );
+        return () => observer.disconnect();
+    }, [] );
 
     // Fill up to MAX with defaults that aren't already represented
     const merged = [
@@ -43,7 +64,12 @@ export default function ThemeTestimonials( { theme } ) {
 				<p>1,600+ reviews · 4.5/5 average rating</p>
 				<div className='wolf-theme-testimonials__grid'>
 					{ merged.map( ( t, i ) => (
-						<div key={ i } className='wolf-theme-testimonials__item'>
+						<div
+							key={ i }
+							ref={ el => { itemRefs.current[ i ] = el; } }
+							className='wolf-theme-testimonials__item'
+							style={ { transitionDelay: `${ i * 100 }ms` } }
+						>
 							<div className='wolf-theme-testimonials__stars'>
 								{ '★'.repeat( t.rating ?? 5 ) }
 							</div>
