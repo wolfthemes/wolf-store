@@ -1,9 +1,29 @@
+import { useEffect, useRef } from 'react';
+
 export default function ThemeBrandStory() {
-	const { siteUrl } = window.wolfStoreData;
+	const { siteUrl }    = window.wolfStoreData;
+    const containerRef   = useRef( null );
+
+    useEffect( () => {
+        const el = containerRef.current;
+        if ( ! el ) return;
+        const observer = new IntersectionObserver(
+            ( [ entry ] ) => {
+                if ( entry.isIntersecting ) {
+                    el.classList.add( 'is-visible' );
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.15 }
+        );
+        observer.observe( el );
+        return () => observer.disconnect();
+    }, [] );
+
     return (
 		<div className='wolf-theme-brand-story wolf-theme-single__section'>
 			<div className='wolf-theme-single__wrapper wolf-theme-single__wrapper--small'>
-				<div className='wolf-theme-brand-story__container'>
+				<div className='wolf-theme-brand-story__container' ref={ containerRef }>
 					<div className='wolf-theme-brand-story__inner'>
 						<div className='wolf-theme-brand-story__avatar'>
 							<img

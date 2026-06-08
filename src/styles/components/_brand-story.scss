@@ -5,6 +5,12 @@
 		padding: 40px;
 		border: 1px solid var(--card-border-color);
 		background: var(--theme-subtle-bg, #f9f9f9);
+		opacity: 0;
+		transition: opacity 0.8s ease;
+
+		&.is-visible {
+			opacity: 1;
+		}
 	}
 
     &__inner {
