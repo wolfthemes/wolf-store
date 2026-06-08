@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from 'react';
 import ThemeCTAs from './ThemeCTAs';
 import ThemeStats from './ThemeStats';
 
@@ -9,6 +9,23 @@ export default function ThemeDescription({ theme }) {
     const longDescription = theme.theme_long_description;
     const demoUrl         = theme.theme_demo_url;
     const mockup          = theme.theme_mockup;
+    const mockupRef       = useRef( null );
+
+    useEffect( () => {
+        const el = mockupRef.current;
+        if ( ! el ) return;
+        const observer = new IntersectionObserver(
+            ( [ entry ] ) => {
+                if ( entry.isIntersecting ) {
+                    el.classList.add( 'is-visible' );
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.15 }
+        );
+        observer.observe( el );
+        return () => observer.disconnect();
+    }, [] );
 	return (
         <div className='wolf-theme-description wolf-theme-single__section'>
 			<div className='wolf-theme-single__wrapper'>
@@ -37,11 +54,10 @@ export default function ThemeDescription({ theme }) {
 				</div>
 				<div className='wolf-theme-single-description__column'>
 					{ mockup && (
-						<div className='wolf-theme-description__mockup'>
+						<div className='wolf-theme-description__mockup' ref={ mockupRef }>
 							<a href={ demoUrl } target='_blank' rel='noopener noreferrer'>
 								<img src={ mockup } alt={ title } />
 							</a>
-
 						</div>
 					) }
 				</div>
