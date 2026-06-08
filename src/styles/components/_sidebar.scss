@@ -26,6 +26,14 @@
 		}
     }
 
+    &__checkbox {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
     &__all,
     &__term {
         display: flex;
@@ -38,6 +46,7 @@
         opacity: 0.8;
         transition: opacity 0.15s;
         border-bottom: 1px solid transparent;
+        cursor: pointer;
 
         &:hover {
             opacity: 1;

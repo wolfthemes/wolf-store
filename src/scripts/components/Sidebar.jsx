@@ -12,16 +12,17 @@ const FILTER_GROUPS = [
 
 const VISIBLE_LIMIT = 6;
 
-function TermItem( { term, slug, prefix, activeTaxonomy, activeTermId, onChange } ) {
+function TermItem( { term, slug, prefix, activeFilters, onChange } ) {
+    const isActive = ( activeFilters[ slug ] || [] ).includes( term.id );
     return (
         <li>
-            <a
-                href='#'
-                className={ `wolf-store-sidebar__term${
-                    activeTaxonomy === slug && activeTermId === term.id ? ' is-active' : ''
-                }` }
-                onClick={ e => { e.preventDefault(); onChange( slug, term.id ); } }
-            >
+            <label className={ `wolf-store-sidebar__term${ isActive ? ' is-active' : '' }` }>
+                <input
+                    type='checkbox'
+                    className='wolf-store-sidebar__checkbox'
+                    checked={ isActive }
+                    onChange={ () => onChange( slug, term.id ) }
+                />
                 <span className='wolf-store-sidebar__label'>
                     { term.term_color && (
                         <span
@@ -33,12 +34,12 @@ function TermItem( { term, slug, prefix, activeTaxonomy, activeTermId, onChange 
                     { term.name }
                 </span>
                 <span className='wolf-store-sidebar__count'>{ term.count }</span>
-            </a>
+            </label>
         </li>
     );
 }
 
-function FilterGroup( { slug, label, prefix, orderby, order, activeTaxonomy, activeTermId, onChange } ) {
+function FilterGroup( { slug, label, prefix, orderby, order, activeFilters, onChange } ) {
     const { terms } = useTerms( slug, { orderby, order } );
     const [ expanded, setExpanded ] = useState( false );
 
@@ -48,7 +49,7 @@ function FilterGroup( { slug, label, prefix, orderby, order, activeTaxonomy, act
     const visible     = terms.slice( 0, VISIBLE_LIMIT );
     const hidden      = hasMore ? terms.slice( VISIBLE_LIMIT ) : [];
     const hiddenCount = hidden.length;
-    const termProps   = { slug, prefix, activeTaxonomy, activeTermId, onChange };
+    const termProps   = { slug, prefix, activeFilters, onChange };
 
     return (
         <div className='wolf-store-sidebar__group'>
@@ -75,15 +76,17 @@ function FilterGroup( { slug, label, prefix, orderby, order, activeTaxonomy, act
     );
 }
 
-export default function Sidebar( { activeTaxonomy, activeTermId, onChange, isOpen } ) {
+export default function Sidebar( { activeFilters, onChange, onClear, isOpen } ) {
+    const hasFilters = Object.values( activeFilters ).some( ids => ids.length > 0 );
+
     return (
         <aside className={ `wolf-store-sidebar${ isOpen ? ' is-open' : '' }` }>
 
             <div className='wolf-store-sidebar__group'>
                 <a
                     href='#'
-                    className={ `wolf-store-sidebar__all${ ! activeTermId ? ' is-active' : '' }` }
-                    onClick={ e => { e.preventDefault(); onChange( '', 0 ); } }
+                    className={ `wolf-store-sidebar__all${ ! hasFilters ? ' is-active' : '' }` }
+                    onClick={ e => { e.preventDefault(); onClear(); } }
                 >
                     All Themes
                 </a>
@@ -93,8 +96,7 @@ export default function Sidebar( { activeTaxonomy, activeTermId, onChange, isOpe
                 <FilterGroup
                     key={ group.slug }
                     { ...group }
-                    activeTaxonomy={ activeTaxonomy }
-                    activeTermId={ activeTermId }
+                    activeFilters={ activeFilters }
                     onChange={ onChange }
                 />
             ) ) }

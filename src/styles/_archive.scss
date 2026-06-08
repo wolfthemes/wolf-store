@@ -4,7 +4,15 @@
     margin: 0 auto 40px;
     // max-width: 1400px;
 
+	&__filter-bar {
+		display: none;
+	}
+
 	&__filter-toggle {
+		display: none;
+	}
+
+	&__filter-clear {
 		display: none;
 	}
 
@@ -48,11 +56,17 @@
     // ── Mobile ────────────────────────────────────────────────────────────────
     @media ( max-width: 768px ) {
 
+        &__filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
         &__filter-toggle {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 16px;
             padding: 8px 16px;
             border: 1px solid currentColor;
             background: none;
@@ -65,10 +79,7 @@
             &:hover { opacity: 0.7; }
 
             &.has-active {
-                background: currentColor;
-
-                // invert text colour so it's readable on filled background
-                span, svg { color: var( --background-color, #fff ); filter: invert(1); }
+                border-color: currentColor;
             }
         }
 
@@ -83,7 +94,20 @@
             color: var( --background-color, #fff );
             font-size: 0.7rem;
             font-weight: 700;
-            filter: invert(1);
+        }
+
+        &__filter-clear {
+            display: inline-flex;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: inherit;
+            opacity: 0.6;
+            padding: 0;
+            text-decoration: underline;
+
+            &:hover { opacity: 1; }
         }
 
         &__layout {
