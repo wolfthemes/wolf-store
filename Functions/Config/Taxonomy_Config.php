@@ -122,6 +122,10 @@ class Taxonomy_Config {
 			'beige'  => '#f5f0e8',
 			'yellow' => '#f5c842',
 			'grey'   => '#888888',
+			'blue'   => '#1e90ff',
+			'green'  => '#00cc44',
+			'brown'  => '#a0522d',
+			'red'    => '#ff2233',
 		);
 	}
 
