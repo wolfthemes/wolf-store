@@ -13,6 +13,14 @@
         break-inside: avoid;
         margin-bottom: 12px;
         overflow: hidden;
+        opacity: 0;
+        transform: translateY( 24px );
+        transition: opacity 0.55s ease, transform 0.55s ease;
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY( 0 );
+        }
 
         img {
             width: 100%;
