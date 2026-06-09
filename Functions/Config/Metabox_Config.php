@@ -79,7 +79,9 @@ class Metabox_Config {
 	 */
 	public static function get_url_fields(): array {
 		return array(
-			'_wolf_theme_title',
+			'_wolf_theme_video_url',
+			'_wolf_theme_demo_url',
+			'_wolf_theme_url',
 		);
 	}
 

@@ -113,20 +113,11 @@ class Meta {
 			return esc_url( $meta_url );
 		}
 
-		return '';
-
 		// Convention URL
 		$slug       = self::get_theme_slug( $post_id );
 		$convention = self::ASSETS_BASE_URL . '/' . $slug . '/hero.mp4';
 
-		/**
-		 * Filter the video URL convention
-		 *
-		 * @param string $convention
-		 * @param string $slug
-		 * @param int    $post_id
-		 */
-		/* return apply_filters( 'wolf_store_video_url', $convention, $slug, $post_id ); */
+		return apply_filters( 'wolf_store_video_url', $convention, $slug, $post_id );
 	}
 	/**
 	 * Get the hero URL
@@ -235,13 +226,20 @@ class Meta {
 			return array();
 		}
 
+		$cache_key = 'wolf_store_meta_' . sanitize_key( $slug );
+		$cached    = get_transient( $cache_key );
+
+		if ( false !== $cached ) {
+			return $cached;
+		}
+
 		// Three sources — XML has lowest priority, meta overrides win
-		$changelog_data = self::get_changelog_data( $slug ); // ← nouveau
+		$changelog_data = self::get_changelog_data( $slug );
 		$config         = self::get_config( $slug );
 		$theme_meta     = self::get_theme_meta( $slug );
 
-		return array_merge(
-			$changelog_data,  // base — données XML
+		$merged = array_merge(
+			$changelog_data,  // base — XML
 			$config,          // override — app.config.json
 			$theme_meta,      // override — theme_meta.json
 			array(
@@ -256,6 +254,10 @@ class Meta {
 				),
 			)
 		);
+
+		set_transient( $cache_key, $merged, self::CACHE_EXPIRATION );
+
+		return $merged;
 	}
 
 	/**
@@ -426,6 +428,7 @@ class Meta {
 	public static function flush_cache( string $slug ): void {
 		delete_transient( 'wolf_store_' . sanitize_key( $slug ) . '_app.config.json' );
 		delete_transient( 'wolf_store_' . sanitize_key( $slug ) . '_theme_meta.json' );
+		delete_transient( 'wolf_store_meta_' . sanitize_key( $slug ) );
 		self::flush_changelog_cache( $slug );
 		self::flush_gallery_cache( $slug );
 	}

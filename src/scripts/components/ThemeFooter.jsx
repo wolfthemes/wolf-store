@@ -9,8 +9,8 @@ export default function ThemeFooter({ theme }) {
 				<div className='wolf-theme-hero__features'>
 					<h3 className='wolf-theme-hero__section-title'>Features</h3>
 					<ul className='wolf-theme-hero__features-list'>
-						{features.map((feature, i) => (
-							<li key={i}>{feature}</li>
+						{features.map(feature => (
+							<li key={feature}>{feature}</li>
 						))}
 					</ul>
 				</div>

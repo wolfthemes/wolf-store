@@ -445,7 +445,7 @@ class Options_Panel {
 				// Initialize first tab and dependencies on page load
 				document.addEventListener( 'DOMContentLoaded', function() {
 					// Show first tab
-					var firstTab = document.querySelector( '.wd-tabs .nav-tab' );
+					var firstTab = document.querySelector( '.wolf-store-tabs .nav-tab' );
 					if ( firstTab ) {
 						var firstTabId = firstTab.getAttribute('data-tab');
 						handleTabSwitch(firstTabId);

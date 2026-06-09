@@ -223,9 +223,9 @@ export default function ThemeComparisonTable({ theme }) {
 						</tr>
 					</thead>
 					<tbody>
-						{rows.map((row, i) => (
+						{rows.map(row => (
 							<tr
-								key={i}
+								key={row.feature}
 								className={
 									row.wolfWins
 										? 'wolf-theme-comparison-table__row--win'

@@ -10,10 +10,12 @@ export function useTheme(postId) {
 			return;
 		}
 
-		const { restUrl, restNonce } = window.wolfStoreData;
+		const controller = new AbortController();
+		const { restUrl, restNonce } = window.wolfStoreData ?? {};
 
 		fetch(`${restUrl}/${postId}?_embed`, {
 			headers: { 'X-WP-Nonce': restNonce },
+			signal: controller.signal,
 		})
 			.then(res => {
 				if (!res.ok) {
@@ -26,9 +28,13 @@ export function useTheme(postId) {
 				setLoading(false);
 			})
 			.catch(err => {
-				setError(err.message);
-				setLoading(false);
+				if (err.name !== 'AbortError') {
+					setError(err.message);
+					setLoading(false);
+				}
 			});
+
+		return () => controller.abort();
 	}, [postId]);
 
 	return { theme, loading, error };

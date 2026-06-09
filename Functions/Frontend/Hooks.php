@@ -2,7 +2,7 @@
 /**
  * Hooks
  *
- * @package WolStoref
+ * @package WolfStore
  * @subpackage Frontend
  * @since 1.0.0
  */

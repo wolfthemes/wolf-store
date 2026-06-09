@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 export default function ThemeBrandStory() {
-	const { siteUrl } = window.wolfStoreData;
+	const { siteUrl } = window.wolfStoreData ?? {};
 	const containerRef = useRef(null);
 
 	useEffect(() => {

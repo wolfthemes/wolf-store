@@ -22,7 +22,7 @@ export default function Archive({
 	});
 	const [filterOpen, setFilterOpen] = useState(false);
 	const { pagination: paginationGlobal, perPage: perPageGlobal } =
-		window.wolfStoreData;
+		window.wolfStoreData ?? {};
 	const pagination = paginationProp || paginationGlobal;
 	const skeletonCount = parseInt(perPage) || parseInt(perPageGlobal) || 12;
 

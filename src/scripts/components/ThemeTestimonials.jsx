@@ -71,7 +71,7 @@ export default function ThemeTestimonials({ theme }) {
 				<div className='wolf-theme-testimonials__grid'>
 					{merged.map((t, i) => (
 						<div
-							key={i}
+							key={t.author}
 							ref={el => {
 								itemRefs.current[i] = el;
 							}}

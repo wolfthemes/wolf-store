@@ -36,7 +36,7 @@ export default function ThemeGallery({ theme }) {
 				<div className='wolf-theme-gallery__grid'>
 					{images.map((src, i) => (
 						<a
-							key={i}
+							key={src}
 							ref={el => {
 								itemRefs.current[i] = el;
 							}}

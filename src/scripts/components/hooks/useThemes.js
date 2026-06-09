@@ -11,12 +11,18 @@ export function useThemes({
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	const { restUrl, restNonce, perPage: perPageGlobal } = window.wolfStoreData;
+	const {
+		restUrl,
+		restNonce,
+		perPage: perPageGlobal,
+	} = window.wolfStoreData ?? {};
 	const perPage = parseInt(perPageProp) || parseInt(perPageGlobal) || 12;
 	const filtersKey = JSON.stringify(filters);
 	const excludeKey = JSON.stringify(exclude);
 
 	useEffect(() => {
+		const controller = new AbortController();
+
 		setLoading(true);
 		setError(null);
 
@@ -39,6 +45,7 @@ export function useThemes({
 
 		fetch(`${restUrl}?${params}`, {
 			headers: { 'X-WP-Nonce': restNonce },
+			signal: controller.signal,
 		})
 			.then(res => {
 				if (!res.ok) {
@@ -53,9 +60,13 @@ export function useThemes({
 				setLoading(false);
 			})
 			.catch(err => {
-				setError(err.message);
-				setLoading(false);
+				if (err.name !== 'AbortError') {
+					setError(err.message);
+					setLoading(false);
+				}
 			});
+
+		return () => controller.abort();
 		// filtersKey/excludeKey are JSON-stable stand-ins for filters/exclude — intentional
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [filtersKey, excludeKey, page, perPage, restUrl, restNonce]);

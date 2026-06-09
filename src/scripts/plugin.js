@@ -4,6 +4,7 @@ import AutoBind from 'auto-bind';
 
 import Single from './components/Single';
 import Archive from './components/Archive';
+import ErrorBoundary from './components/ErrorBoundary';
 
 class WolfStore {
 	constructor() {
@@ -27,19 +28,27 @@ class WolfStore {
 				const app = createRoot(root);
 
 				if ('single' === type) {
-					app.render(<Single postId={postId} />);
+					app.render(
+						<ErrorBoundary>
+							<Single postId={postId} />
+						</ErrorBoundary>
+					);
 				}
 
 				if ('archive' === type) {
 					app.render(
-						<Archive
-							taxonomy={taxonomy}
-							termId={termId}
-							termName={termName}
-							perPage={perPage}
-							pagination={pagination}
-							showSidebar={root.dataset.showSidebar !== 'false'}
-						/>
+						<ErrorBoundary>
+							<Archive
+								taxonomy={taxonomy}
+								termId={termId}
+								termName={termName}
+								perPage={perPage}
+								pagination={pagination}
+								showSidebar={
+									root.dataset.showSidebar !== 'false'
+								}
+							/>
+						</ErrorBoundary>
 					);
 				}
 			});
