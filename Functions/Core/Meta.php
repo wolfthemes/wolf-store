@@ -113,11 +113,7 @@ class Meta {
 			return esc_url( $meta_url );
 		}
 
-		// Convention URL
-		$slug       = self::get_theme_slug( $post_id );
-		$convention = self::ASSETS_BASE_URL . '/' . $slug . '/hero.mp4';
-
-		return apply_filters( 'wolf_store_video_url', $convention, $slug, $post_id );
+		return '';
 	}
 	/**
 	 * Get the hero URL
