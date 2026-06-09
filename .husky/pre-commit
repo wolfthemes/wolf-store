@@ -1,1 +1,1 @@
-npm run lint:js && npm run lint:css && ./vendor/bin/phpcs --standard=phpcs.xml.dist --runtime-set ignore_warnings_on_exit 1
+# Placeholder — linting runs on pre-push and in CI instead.
