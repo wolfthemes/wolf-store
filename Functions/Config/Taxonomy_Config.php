@@ -126,6 +126,7 @@ class Taxonomy_Config {
 			'green'  => '#00cc44',
 			'brown'  => '#a0522d',
 			'red'    => '#ff2233',
+			'orange' => '#ff7a00',
 		);
 	}
 
