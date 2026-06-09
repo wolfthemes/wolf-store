@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/7.0" created="2026-06-08 13:27" -->
+	<!-- generator="WordPress/7.0" created="2026-06-09 14:56" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>WolfThemes</title>
 	<link>https://staging20.wolfthemes.com</link>
 	<description>Premium Wordpress Themes</description>
-	<pubDate>Mon, 08 Jun 2026 13:27:34 +0000</pubDate>
+	<pubDate>Tue, 09 Jun 2026 14:56:11 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://staging20.wolfthemes.com</wp:base_site_url>
@@ -868,8 +868,8 @@
 		<wp:post_id>3118</wp:post_id>
 		<wp:post_date><![CDATA[2018-07-01 09:26:48]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-07-01 14:26:48]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-03 09:03:11]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-03 14:03:11]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 03:40:27]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 08:40:27]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[prequelle]]></wp:post_name>
@@ -897,6 +897,10 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31659/plan/51934/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
@@ -1095,6 +1099,10 @@
 		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31596/plan/51831/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[3359]]></wp:meta_value>
 		</wp:postmeta>
@@ -1221,8 +1229,8 @@
 		<wp:post_id>3123</wp:post_id>
 		<wp:post_date><![CDATA[2019-01-15 09:26:55]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-01-15 14:26:55]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-05-29 08:10:22]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-05-29 13:10:22]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:37:52]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:37:52]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[reinar]]></wp:post_name>
@@ -1258,6 +1266,30 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31675/plan/51969/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1356,8 +1388,8 @@
 		<wp:post_id>3125</wp:post_id>
 		<wp:post_date><![CDATA[2019-04-28 09:26:58]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-04-28 14:26:58]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-05-23 15:04:55]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-05-23 20:04:55]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 06:28:03]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 11:28:03]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[alceste]]></wp:post_name>
@@ -1367,7 +1399,13 @@
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1378,6 +1416,46 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31665/plan/51945/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3373]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
+		<wp:meta_value><![CDATA[203]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
+		<wp:meta_value><![CDATA[223]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
+		<wp:meta_value><![CDATA[232]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
@@ -1393,8 +1471,8 @@
 		<wp:post_id>3126</wp:post_id>
 		<wp:post_date><![CDATA[2019-07-23 09:26:59]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-07-23 14:26:59]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-05-23 15:04:48]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-05-23 20:04:48]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 02:58:45]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 07:58:45]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[milu]]></wp:post_name>
@@ -1413,6 +1491,38 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31651/plan/51923/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
+		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1719,8 +1829,8 @@
 		<wp:post_id>3131</wp:post_id>
 		<wp:post_date><![CDATA[2021-06-08 09:27:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-06-08 14:27:06]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:48:58]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:48:58]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 06:12:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 11:12:39]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[swingster]]></wp:post_name>
@@ -1749,8 +1859,12 @@
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31663/plan/51943/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[3365]]></wp:meta_value>
+		<wp:meta_value><![CDATA[3362]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
@@ -1797,8 +1911,8 @@
 		<wp:post_id>3133</wp:post_id>
 		<wp:post_date><![CDATA[2021-08-01 09:27:09]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-08-01 14:27:09]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:33:11]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:33:11]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 03:28:58]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 08:28:58]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[nu]]></wp:post_name>
@@ -1833,6 +1947,10 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31658/plan/51931/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
@@ -2050,8 +2168,8 @@
 		<wp:post_id>3136</wp:post_id>
 		<wp:post_date><![CDATA[2022-04-20 09:27:13]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2022-04-20 14:27:13]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:27:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:27:15]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 02:40:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 07:40:10]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[omnity]]></wp:post_name>
@@ -2075,6 +2193,10 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31649/plan/51920/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -2293,8 +2415,8 @@
 		<wp:post_id>3139</wp:post_id>
 		<wp:post_date><![CDATA[2023-07-07 09:27:17]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-07-07 14:27:17]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:12:31]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:12:31]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:55:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:55:53]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[morvan]]></wp:post_name>
@@ -2344,6 +2466,10 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[3317]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31678/plan/51973/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -2554,8 +2680,8 @@
 		<wp:post_id>3142</wp:post_id>
 		<wp:post_date><![CDATA[2024-01-07 09:27:21]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-01-07 14:27:21]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:08:52]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:08:52]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:46:31]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:46:31]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[unimate]]></wp:post_name>
@@ -2584,6 +2710,10 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2025-05-18]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31677/plan/51972/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
@@ -2822,8 +2952,8 @@
 		<wp:post_id>3145</wp:post_id>
 		<wp:post_date><![CDATA[2024-07-26 09:27:25]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-07-26 14:27:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 03:59:38]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 08:59:38]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 03:10:04]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 08:10:04]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[yor]]></wp:post_name>
@@ -2856,6 +2986,10 @@
 		<wp:meta_value><![CDATA[2025-05-18]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31656/plan/51928/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
 		<wp:meta_value><![CDATA[50]]></wp:meta_value>
 		</wp:postmeta>
@@ -2881,7 +3015,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
@@ -3080,8 +3214,8 @@
 		<wp:post_id>3102</wp:post_id>
 		<wp:post_date><![CDATA[2026-04-08 09:12:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2026-04-08 14:12:06]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-03 08:41:14]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-03 13:41:14]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:08:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:08:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[sable]]></wp:post_name>
@@ -3122,7 +3256,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[3295]]></wp:meta_value>
+		<wp:meta_value><![CDATA[3375]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
@@ -3439,8 +3573,8 @@
 		<wp:post_id>3150</wp:post_id>
 		<wp:post_date><![CDATA[2025-10-24 09:27:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-10-24 14:27:32]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:44:00]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:44:00]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:24:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:24:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[covenant]]></wp:post_name>
@@ -3450,12 +3584,18 @@
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_tag" nicename="catholic"><![CDATA[catholic]]></category>
+										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
+		<category domain="theme_color" nicename="beige"><![CDATA[Beige]]></category>
+		<category domain="theme_tag" nicename="catholic"><![CDATA[catholic]]></category>
 		<category domain="theme_tag" nicename="chapel"><![CDATA[chapel]]></category>
 		<category domain="theme_tag" nicename="christian"><![CDATA[christian]]></category>
 		<category domain="theme_tag" nicename="church"><![CDATA[church]]></category>
+		<category domain="theme_style" nicename="elegant"><![CDATA[Elegant]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
-		<category domain="theme_cat" nicename="one-page"><![CDATA[One Page]]></category>
+		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
+		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3465,20 +3605,28 @@
 		<wp:meta_value><![CDATA[2026-10-24]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3377]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31674/plan/51968/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[121]]></wp:meta_value>
+		<wp:meta_value><![CDATA[107]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[227]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[230]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[235]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
@@ -3490,7 +3638,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
@@ -3589,8 +3737,8 @@
 		<wp:post_id>3152</wp:post_id>
 		<wp:post_date><![CDATA[2026-02-17 09:27:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2026-02-17 14:27:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:43:54]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:43:54]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:25:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:25:53]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[nordkapp]]></wp:post_name>
@@ -3603,7 +3751,11 @@
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="adventure"><![CDATA[adventure]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_color" nicename="orange"><![CDATA[Orange]]></category>
 		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
+		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3613,12 +3765,20 @@
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3372]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
 		<wp:meta_value><![CDATA[107]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[223]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
@@ -3626,7 +3786,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[234]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
@@ -3638,7 +3798,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -4284,39 +4444,6 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Vinyl records and turntable vinyl player]]></title>
-		<link>https://staging20.wolfthemes.com/theme/omnity/vinyl-records-and-turntable-vinyl-player/</link>
-		<pubDate>Sat, 06 Jun 2026 09:25:50 +0000</pubDate>
-		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2022/04/286555619.jpg</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[Stack of black vinyl records, turntable vinyl player and headphones. Classic stereo set. Candid people, real moments, authentic situations]]></excerpt:encoded>
-		<wp:post_id>3347</wp:post_id>
-		<wp:post_date><![CDATA[2026-06-06 04:25:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2026-06-06 09:25:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:25:50]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:25:50]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[vinyl-records-and-turntable-vinyl-player]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>3136</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2022/04/286555619.jpg]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2022/04/286555619.jpg]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:975;s:6:"height";i:650;s:4:"file";s:21:"2022/04/286555619.jpg";s:8:"filesize";i:143710;s:5:"sizes";a:10:{s:6:"medium";a:5:{s:4:"file";s:21:"286555619-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:16226;}s:9:"thumbnail";a:5:{s:4:"file";s:21:"286555619-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6223;}s:12:"medium_large";a:5:{s:4:"file";s:21:"286555619-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:72944;}s:13:"seijaku-photo";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:13:"seijaku-metro";a:5:{s:4:"file";s:21:"286555619-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:43683;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:21:"286555619-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26246;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:21:"286555619-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:18195;}}s:10:"image_meta";a:13:{s:8:"aperture";s:3:"6.3";s:6:"credit";s:30:"Przemek Klos - stock.adobe.com";s:6:"camera";s:12:"Canon EOS 6D";s:7:"caption";s:138:"Stack of black vinyl records, turntable vinyl player and headphones. Classic stereo set. Candid people, real moments, authentic situations";s:17:"created_timestamp";s:10:"1559295349";s:9:"copyright";s:15:"© Przemek Klos";s:12:"focal_length";s:2:"85";s:3:"iso";s:3:"100";s:13:"shutter_speed";s:18:"0.0055555555555556";s:5:"title";s:40:"Vinyl records and turntable vinyl player";s:11:"orientation";s:1:"1";s:8:"keywords";a:45:{i:0;s:5:"music";i:1;s:5:"vinyl";i:2;s:6:"record";i:3;s:5:"black";i:4;s:5:"album";i:5;s:5:"audio";i:6;s:7:"classic";i:7;s:10:"collection";i:8;s:6:"device";i:9;s:7:"digital";i:10;s:4:"disc";i:11;s:10:"electronic";i:12;s:13:"entertainment";i:13;s:9:"equipment";i:14;s:10:"gramophone";i:15;s:4:"home";i:16;s:9:"lifestyle";i:17;s:9:"listening";i:18;s:3:"old";i:19;s:10:"phonograph";i:20;s:4:"play";i:21;s:6:"player";i:22;s:5:"radio";i:23;s:3:"set";i:24;s:5:"sound";i:25;s:6:"stereo";i:26;s:5:"style";i:27;s:10:"technology";i:28;s:9:"turntable";i:29;s:7:"vintage";i:30;s:10:"copy space";i:31;s:6:"listen";i:32;s:5:"retro";i:33;s:10:"soundtrack";i:34;s:5:"track";i:35;s:6:"analog";i:36;s:7:"playing";i:37;s:5:"plate";i:38;s:10:"headphones";i:39;s:5:"stack";i:40;s:4:"many";i:41;s:4:"real";i:42;s:9:"authentic";i:43;s:4:"pile";i:44;s:4:"heap";}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
 		<title><![CDATA[studio_session1]]></title>
 		<link>https://staging20.wolfthemes.com/theme/effigy/studio_session1/</link>
 		<pubDate>Sat, 06 Jun 2026 09:29:42 +0000</pubDate>
@@ -4713,36 +4840,36 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[preview]]></title>
-		<link>https://staging20.wolfthemes.com/theme/aurenza/preview-4/</link>
-		<pubDate>Thu, 28 May 2026 19:57:50 +0000</pubDate>
+		<title><![CDATA[adriana-weng-1414236-unsplash_bg]]></title>
+		<link>https://staging20.wolfthemes.com/theme/alceste/adriana-weng-1414236-unsplash_bg/</link>
+		<pubDate>Mon, 08 Jun 2026 19:09:15 +0000</pubDate>
 		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/10/preview.jpg</guid>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2019/04/adriana-weng-1414236-unsplash_bg.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3283</wp:post_id>
-		<wp:post_date><![CDATA[2026-05-28 14:57:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2026-05-28 19:57:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-05-28 14:57:50]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-05-28 19:57:50]]></wp:post_modified_gmt>
+		<wp:post_id>3373</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-08 14:09:15]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-08 19:09:15]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-08 14:09:15]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-08 19:09:15]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[preview-4]]></wp:post_name>
+		<wp:post_name><![CDATA[adriana-weng-1414236-unsplash_bg]]></wp:post_name>
 		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>3104</wp:post_parent>
+		<wp:post_parent>3125</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/10/preview.jpg]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2019/04/adriana-weng-1414236-unsplash_bg.jpg]]></wp:attachment_url>
 											<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/10/preview.jpg]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2019/04/adriana-weng-1414236-unsplash_bg.jpg]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1200;s:6:"height";i:771;s:4:"file";s:19:"2025/10/preview.jpg";s:8:"filesize";i:381049;s:5:"sizes";a:12:{s:6:"medium";a:5:{s:4:"file";s:19:"preview-300x193.jpg";s:5:"width";i:300;s:6:"height";i:193;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:10275;}s:5:"large";a:5:{s:4:"file";s:20:"preview-1024x658.jpg";s:5:"width";i:1024;s:6:"height";i:658;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:68715;}s:9:"thumbnail";a:5:{s:4:"file";s:19:"preview-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5286;}s:12:"medium_large";a:5:{s:4:"file";s:19:"preview-768x493.jpg";s:5:"width";i:768;s:6:"height";i:493;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:44037;}s:13:"seijaku-photo";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:13:"seijaku-metro";a:5:{s:4:"file";s:19:"preview-550x353.jpg";s:5:"width";i:550;s:6:"height";i:353;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26317;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:19:"preview-400x257.jpg";s:5:"width";i:400;s:6:"height";i:257;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15953;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:20:"preview-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:82158;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:19:"preview-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14934;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:2000;s:6:"height";i:1833;s:4:"file";s:44:"2019/04/adriana-weng-1414236-unsplash_bg.jpg";s:8:"filesize";i:1426291;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-218x200.jpg";s:5:"width";i:218;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6831;}s:5:"large";a:5:{s:4:"file";s:45:"adriana-weng-1414236-unsplash_bg-1024x938.jpg";s:5:"width";i:1024;s:6:"height";i:938;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:78820;}s:9:"thumbnail";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:4380;}s:12:"medium_large";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-768x704.jpg";s:5:"width";i:768;s:6:"height";i:704;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:48532;}s:9:"1536x1536";a:5:{s:4:"file";s:46:"adriana-weng-1414236-unsplash_bg-1536x1408.jpg";s:5:"width";i:1536;s:6:"height";i:1408;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:155309;}s:13:"seijaku-photo";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-500x458.jpg";s:5:"width";i:500;s:6:"height";i:458;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24501;}s:13:"seijaku-metro";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-550x504.jpg";s:5:"width";i:550;s:6:"height";i:504;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28180;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-500x458.jpg";s:5:"width";i:500;s:6:"height";i:458;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24501;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-400x367.jpg";s:5:"width";i:400;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:16861;}s:10:"seijaku-XL";a:5:{s:4:"file";s:46:"adriana-weng-1414236-unsplash_bg-1920x1760.jpg";s:5:"width";i:1920;s:6:"height";i:1760;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:226551;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:45:"adriana-weng-1414236-unsplash_bg-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:69089;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-500x458.jpg";s:5:"width";i:500;s:6:"height";i:458;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24501;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-500x458.jpg";s:5:"width";i:500;s:6:"height";i:458;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24501;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:44:"adriana-weng-1414236-unsplash_bg-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:11646;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -4776,39 +4903,6 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1200;s:6:"height";i:771;s:4:"file";s:19:"2026/04/preview.jpg";s:8:"filesize";i:347509;s:5:"sizes";a:12:{s:6:"medium";a:5:{s:4:"file";s:19:"preview-300x193.jpg";s:5:"width";i:300;s:6:"height";i:193;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:8551;}s:5:"large";a:5:{s:4:"file";s:20:"preview-1024x658.jpg";s:5:"width";i:1024;s:6:"height";i:658;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:49852;}s:9:"thumbnail";a:5:{s:4:"file";s:19:"preview-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:3801;}s:12:"medium_large";a:5:{s:4:"file";s:19:"preview-768x493.jpg";s:5:"width";i:768;s:6:"height";i:493;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:31787;}s:13:"seijaku-photo";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17383;}s:13:"seijaku-metro";a:5:{s:4:"file";s:19:"preview-550x353.jpg";s:5:"width";i:550;s:6:"height";i:353;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:19648;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17383;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:19:"preview-400x257.jpg";s:5:"width";i:400;s:6:"height";i:257;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:12575;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:20:"preview-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:55434;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17383;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17383;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:19:"preview-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:10107;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Elegant-Woman-in-Auditorium]]></title>
-		<link>https://staging20.wolfthemes.com/theme/aurenza/elegant-woman-in-auditorium/</link>
-		<pubDate>Fri, 29 May 2026 10:01:22 +0000</pubDate>
-		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/10/Elegant-Woman-in-Auditorium.webp</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3288</wp:post_id>
-		<wp:post_date><![CDATA[2026-05-29 05:01:22]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2026-05-29 10:01:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-05-29 05:01:22]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-05-29 10:01:22]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[elegant-woman-in-auditorium]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>3104</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/10/Elegant-Woman-in-Auditorium.webp]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/10/Elegant-Woman-in-Auditorium.webp]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1300;s:4:"file";s:40:"2025/10/Elegant-Woman-in-Auditorium.webp";s:8:"filesize";i:88876;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-300x200.webp";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7422;}s:5:"large";a:5:{s:4:"file";s:41:"Elegant-Woman-in-Auditorium-1024x683.webp";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:32560;}s:9:"thumbnail";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4086;}s:12:"medium_large";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-768x512.webp";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:22740;}s:9:"1536x1536";a:5:{s:4:"file";s:42:"Elegant-Woman-in-Auditorium-1536x1024.webp";s:5:"width";i:1536;s:6:"height";i:1024;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:57362;}s:13:"seijaku-photo";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:13:"seijaku-metro";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-550x367.webp";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14874;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-400x267.webp";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:10466;}s:10:"seijaku-XL";a:5:{s:4:"file";s:42:"Elegant-Woman-in-Auditorium-1920x1280.webp";s:5:"width";i:1920;s:6:"height";i:1280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:76730;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:41:"Elegant-Woman-in-Auditorium-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:34858;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9112;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -5076,39 +5170,6 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[962657641]]></title>
-		<link>https://staging20.wolfthemes.com/theme/soundkraft/attachment/962657641/</link>
-		<pubDate>Wed, 03 Jun 2026 14:10:39 +0000</pubDate>
-		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/07/962657641.webp</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3335</wp:post_id>
-		<wp:post_date><![CDATA[2026-06-03 09:10:39]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2026-06-03 14:10:39]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-03 09:10:39]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-03 14:10:39]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[962657641]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>3148</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/07/962657641.webp]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/07/962657641.webp]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1093;s:4:"file";s:22:"2025/07/962657641.webp";s:8:"filesize";i:126820;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:22:"962657641-300x168.webp";s:5:"width";i:300;s:6:"height";i:168;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5794;}s:5:"large";a:5:{s:4:"file";s:23:"962657641-1024x574.webp";s:5:"width";i:1024;s:6:"height";i:574;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:40754;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"962657641-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3902;}s:12:"medium_large";a:5:{s:4:"file";s:22:"962657641-768x430.webp";s:5:"width";i:768;s:6:"height";i:430;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:25542;}s:9:"1536x1536";a:5:{s:4:"file";s:23:"962657641-1536x861.webp";s:5:"width";i:1536;s:6:"height";i:861;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:73416;}s:13:"seijaku-photo";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:13:"seijaku-metro";a:5:{s:4:"file";s:22:"962657641-550x308.webp";s:5:"width";i:550;s:6:"height";i:308;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15080;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:22:"962657641-400x224.webp";s:5:"width";i:400;s:6:"height";i:224;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:8600;}s:10:"seijaku-XL";a:5:{s:4:"file";s:24:"962657641-1920x1076.webp";s:5:"width";i:1920;s:6:"height";i:1076;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:102452;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:23:"962657641-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:54978;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:22:"962657641-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:11170;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
 		<title><![CDATA[Talented Female Artist Works on Abstract Oil Painting, Using Pai]]></title>
 		<link>https://staging20.wolfthemes.com/theme/yor/talented-female-artist-works-on-abstract-oil-painting-using-pai/</link>
 		<pubDate>Sat, 06 Jun 2026 08:59:32 +0000</pubDate>
@@ -5373,6 +5434,171 @@
 		</wp:postmeta>
 							</item>
 					<item>
+		<title><![CDATA[Vinyl records and turntable vinyl player]]></title>
+		<link>https://staging20.wolfthemes.com/theme/omnity/vinyl-records-and-turntable-vinyl-player/</link>
+		<pubDate>Sat, 06 Jun 2026 09:25:50 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2022/04/286555619.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[Stack of black vinyl records, turntable vinyl player and headphones. Classic stereo set. Candid people, real moments, authentic situations]]></excerpt:encoded>
+		<wp:post_id>3347</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-06 04:25:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-06 09:25:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-06 04:25:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-06 09:25:50]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[vinyl-records-and-turntable-vinyl-player]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3136</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2022/04/286555619.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2022/04/286555619.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:975;s:6:"height";i:650;s:4:"file";s:21:"2022/04/286555619.jpg";s:8:"filesize";i:143710;s:5:"sizes";a:10:{s:6:"medium";a:5:{s:4:"file";s:21:"286555619-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:16226;}s:9:"thumbnail";a:5:{s:4:"file";s:21:"286555619-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6223;}s:12:"medium_large";a:5:{s:4:"file";s:21:"286555619-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:72944;}s:13:"seijaku-photo";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:13:"seijaku-metro";a:5:{s:4:"file";s:21:"286555619-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:43683;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:21:"286555619-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26246;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:21:"286555619-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:37709;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:21:"286555619-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:18195;}}s:10:"image_meta";a:13:{s:8:"aperture";s:3:"6.3";s:6:"credit";s:30:"Przemek Klos - stock.adobe.com";s:6:"camera";s:12:"Canon EOS 6D";s:7:"caption";s:138:"Stack of black vinyl records, turntable vinyl player and headphones. Classic stereo set. Candid people, real moments, authentic situations";s:17:"created_timestamp";s:10:"1559295349";s:9:"copyright";s:15:"© Przemek Klos";s:12:"focal_length";s:2:"85";s:3:"iso";s:3:"100";s:13:"shutter_speed";s:18:"0.0055555555555556";s:5:"title";s:40:"Vinyl records and turntable vinyl player";s:11:"orientation";s:1:"1";s:8:"keywords";a:45:{i:0;s:5:"music";i:1;s:5:"vinyl";i:2;s:6:"record";i:3;s:5:"black";i:4;s:5:"album";i:5;s:5:"audio";i:6;s:7:"classic";i:7;s:10:"collection";i:8;s:6:"device";i:9;s:7:"digital";i:10;s:4:"disc";i:11;s:10:"electronic";i:12;s:13:"entertainment";i:13;s:9:"equipment";i:14;s:10:"gramophone";i:15;s:4:"home";i:16;s:9:"lifestyle";i:17;s:9:"listening";i:18;s:3:"old";i:19;s:10:"phonograph";i:20;s:4:"play";i:21;s:6:"player";i:22;s:5:"radio";i:23;s:3:"set";i:24;s:5:"sound";i:25;s:6:"stereo";i:26;s:5:"style";i:27;s:10:"technology";i:28;s:9:"turntable";i:29;s:7:"vintage";i:30;s:10:"copy space";i:31;s:6:"listen";i:32;s:5:"retro";i:33;s:10:"soundtrack";i:34;s:5:"track";i:35;s:6:"analog";i:36;s:7:"playing";i:37;s:5:"plate";i:38;s:10:"headphones";i:39;s:5:"stack";i:40;s:4:"many";i:41;s:4:"real";i:42;s:9:"authentic";i:43;s:4:"pile";i:44;s:4:"heap";}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Desert Silhouette at Sunset]]></title>
+		<link>https://staging20.wolfthemes.com/theme/sable/desert-silhouette-at-sunset/</link>
+		<pubDate>Tue, 09 Jun 2026 14:07:47 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Desert-Silhouette-at-Sunset.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3374</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-09 09:07:47]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-09 14:07:47]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:07:47]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:07:47]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[desert-silhouette-at-sunset]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3102</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Desert-Silhouette-at-Sunset.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2026/04/Desert-Silhouette-at-Sunset.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1300;s:4:"file";s:39:"2026/04/Desert-Silhouette-at-Sunset.jpg";s:8:"filesize";i:218239;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:9176;}s:5:"large";a:5:{s:4:"file";s:40:"Desert-Silhouette-at-Sunset-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:63002;}s:9:"thumbnail";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:4297;}s:12:"medium_large";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:39533;}s:9:"1536x1536";a:5:{s:4:"file";s:41:"Desert-Silhouette-at-Sunset-1536x1024.jpg";s:5:"width";i:1536;s:6:"height";i:1024;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:122620;}s:13:"seijaku-photo";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20224;}s:13:"seijaku-metro";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:23367;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20224;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14270;}s:10:"seijaku-XL";a:5:{s:4:"file";s:41:"Desert-Silhouette-at-Sunset-1920x1280.jpg";s:5:"width";i:1920;s:6:"height";i:1280;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:178134;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:40:"Desert-Silhouette-at-Sunset-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:76148;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20224;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20224;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:39:"Desert-Silhouette-at-Sunset-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:11436;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Serene Portrait in Ethereal Light]]></title>
+		<link>https://staging20.wolfthemes.com/theme/sable/serene-portrait-in-ethereal-light/</link>
+		<pubDate>Tue, 09 Jun 2026 14:08:25 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Serene-Portrait-in-Ethereal-Light.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3375</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-09 09:08:25]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-09 14:08:25]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:08:25]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:08:25]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[serene-portrait-in-ethereal-light]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3102</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Serene-Portrait-in-Ethereal-Light.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2026/04/Serene-Portrait-in-Ethereal-Light.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1463;s:4:"file";s:45:"2026/04/Serene-Portrait-in-Ethereal-Light.jpg";s:8:"filesize";i:296697;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-267x200.jpg";s:5:"width";i:267;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:9209;}s:5:"large";a:5:{s:4:"file";s:46:"Serene-Portrait-in-Ethereal-Light-1024x768.jpg";s:5:"width";i:1024;s:6:"height";i:768;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:75785;}s:9:"thumbnail";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5126;}s:12:"medium_large";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-768x576.jpg";s:5:"width";i:768;s:6:"height";i:576;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:47339;}s:9:"1536x1536";a:5:{s:4:"file";s:47:"Serene-Portrait-in-Ethereal-Light-1536x1152.jpg";s:5:"width";i:1536;s:6:"height";i:1152;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:155403;}s:13:"seijaku-photo";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:13:"seijaku-metro";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-550x413.jpg";s:5:"width";i:550;s:6:"height";i:413;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28026;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-400x300.jpg";s:5:"width";i:400;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17043;}s:10:"seijaku-XL";a:5:{s:4:"file";s:47:"Serene-Portrait-in-Ethereal-Light-1920x1440.jpg";s:5:"width";i:1920;s:6:"height";i:1440;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:233729;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:46:"Serene-Portrait-in-Ethereal-Light-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:79289;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13974;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[preview]]></title>
+		<link>https://staging20.wolfthemes.com/theme/aurenza/preview-4/</link>
+		<pubDate>Thu, 28 May 2026 19:57:50 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/10/preview.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3283</wp:post_id>
+		<wp:post_date><![CDATA[2026-05-28 14:57:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-05-28 19:57:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-05-28 14:57:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-05-28 19:57:50]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[preview-4]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3104</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/10/preview.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2025/10/preview.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1200;s:6:"height";i:771;s:4:"file";s:19:"2025/10/preview.jpg";s:8:"filesize";i:381049;s:5:"sizes";a:12:{s:6:"medium";a:5:{s:4:"file";s:19:"preview-300x193.jpg";s:5:"width";i:300;s:6:"height";i:193;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:10275;}s:5:"large";a:5:{s:4:"file";s:20:"preview-1024x658.jpg";s:5:"width";i:1024;s:6:"height";i:658;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:68715;}s:9:"thumbnail";a:5:{s:4:"file";s:19:"preview-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5286;}s:12:"medium_large";a:5:{s:4:"file";s:19:"preview-768x493.jpg";s:5:"width";i:768;s:6:"height";i:493;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:44037;}s:13:"seijaku-photo";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:13:"seijaku-metro";a:5:{s:4:"file";s:19:"preview-550x353.jpg";s:5:"width";i:550;s:6:"height";i:353;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26317;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:19:"preview-400x257.jpg";s:5:"width";i:400;s:6:"height";i:257;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15953;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:20:"preview-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:82158;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:19:"preview-500x321.jpg";s:5:"width";i:500;s:6:"height";i:321;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22638;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:19:"preview-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14934;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Elegant-Woman-in-Auditorium]]></title>
+		<link>https://staging20.wolfthemes.com/theme/aurenza/elegant-woman-in-auditorium/</link>
+		<pubDate>Fri, 29 May 2026 10:01:22 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/10/Elegant-Woman-in-Auditorium.webp</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3288</wp:post_id>
+		<wp:post_date><![CDATA[2026-05-29 05:01:22]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-05-29 10:01:22]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-05-29 05:01:22]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-05-29 10:01:22]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[elegant-woman-in-auditorium]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3104</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/10/Elegant-Woman-in-Auditorium.webp]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2025/10/Elegant-Woman-in-Auditorium.webp]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1300;s:4:"file";s:40:"2025/10/Elegant-Woman-in-Auditorium.webp";s:8:"filesize";i:88876;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-300x200.webp";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7422;}s:5:"large";a:5:{s:4:"file";s:41:"Elegant-Woman-in-Auditorium-1024x683.webp";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:32560;}s:9:"thumbnail";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4086;}s:12:"medium_large";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-768x512.webp";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:22740;}s:9:"1536x1536";a:5:{s:4:"file";s:42:"Elegant-Woman-in-Auditorium-1536x1024.webp";s:5:"width";i:1536;s:6:"height";i:1024;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:57362;}s:13:"seijaku-photo";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:13:"seijaku-metro";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-550x367.webp";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14874;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-400x267.webp";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:10466;}s:10:"seijaku-XL";a:5:{s:4:"file";s:42:"Elegant-Woman-in-Auditorium-1920x1280.webp";s:5:"width";i:1920;s:6:"height";i:1280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:76730;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:41:"Elegant-Woman-in-Auditorium-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:34858;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-500x333.webp";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13464;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:40:"Elegant-Woman-in-Auditorium-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9112;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
 		<title><![CDATA[559717929]]></title>
 		<link>https://staging20.wolfthemes.com/theme/megahertz/attachment/559717929/</link>
 		<pubDate>Fri, 29 May 2026 13:16:24 +0000</pubDate>
@@ -5403,6 +5629,105 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1233;s:4:"file";s:21:"2025/11/559717929.jpg";s:8:"filesize";i:258101;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:21:"559717929-300x190.jpg";s:5:"width";i:300;s:6:"height";i:190;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:11910;}s:5:"large";a:5:{s:4:"file";s:22:"559717929-1024x647.jpg";s:5:"width";i:1024;s:6:"height";i:647;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:79333;}s:9:"thumbnail";a:5:{s:4:"file";s:21:"559717929-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5914;}s:12:"medium_large";a:5:{s:4:"file";s:21:"559717929-768x486.jpg";s:5:"width";i:768;s:6:"height";i:486;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:50449;}s:9:"1536x1536";a:5:{s:4:"file";s:22:"559717929-1536x971.jpg";s:5:"width";i:1536;s:6:"height";i:971;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:150794;}s:13:"seijaku-photo";a:5:{s:4:"file";s:21:"559717929-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26257;}s:13:"seijaku-metro";a:5:{s:4:"file";s:21:"559717929-550x348.jpg";s:5:"width";i:550;s:6:"height";i:348;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:30058;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:21:"559717929-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26257;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:21:"559717929-400x253.jpg";s:5:"width";i:400;s:6:"height";i:253;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:18363;}s:10:"seijaku-XL";a:5:{s:4:"file";s:23:"559717929-1920x1214.jpg";s:5:"width";i:1920;s:6:"height";i:1214;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:213004;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:22:"559717929-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:97236;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:21:"559717929-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26257;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:21:"559717929-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26257;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:21:"559717929-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15990;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[962657641]]></title>
+		<link>https://staging20.wolfthemes.com/theme/soundkraft/attachment/962657641/</link>
+		<pubDate>Wed, 03 Jun 2026 14:10:39 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/07/962657641.webp</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3335</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-03 09:10:39]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-03 14:10:39]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-03 09:10:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-03 14:10:39]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[962657641]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3148</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/07/962657641.webp]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2025/07/962657641.webp]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1093;s:4:"file";s:22:"2025/07/962657641.webp";s:8:"filesize";i:126820;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:22:"962657641-300x168.webp";s:5:"width";i:300;s:6:"height";i:168;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5794;}s:5:"large";a:5:{s:4:"file";s:23:"962657641-1024x574.webp";s:5:"width";i:1024;s:6:"height";i:574;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:40754;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"962657641-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3902;}s:12:"medium_large";a:5:{s:4:"file";s:22:"962657641-768x430.webp";s:5:"width";i:768;s:6:"height";i:430;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:25542;}s:9:"1536x1536";a:5:{s:4:"file";s:23:"962657641-1536x861.webp";s:5:"width";i:1536;s:6:"height";i:861;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:73416;}s:13:"seijaku-photo";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:13:"seijaku-metro";a:5:{s:4:"file";s:22:"962657641-550x308.webp";s:5:"width";i:550;s:6:"height";i:308;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15080;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:22:"962657641-400x224.webp";s:5:"width";i:400;s:6:"height";i:224;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:8600;}s:10:"seijaku-XL";a:5:{s:4:"file";s:24:"962657641-1920x1076.webp";s:5:"width";i:1920;s:6:"height";i:1076;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:102452;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:23:"962657641-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:54978;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:22:"962657641-500x280.webp";s:5:"width";i:500;s:6:"height";i:280;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:12706;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:22:"962657641-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:11170;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[109204081]]></title>
+		<link>https://staging20.wolfthemes.com/theme/nordkapp/attachment/109204081/</link>
+		<pubDate>Mon, 08 Jun 2026 18:36:44 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2026/02/109204081.webp</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3372</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-08 13:36:44]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-08 18:36:44]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-08 13:36:44]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-08 18:36:44]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[109204081]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3152</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2026/02/109204081.webp]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2026/02/109204081.webp]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1219;s:4:"file";s:22:"2026/02/109204081.webp";s:8:"filesize";i:376416;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:22:"109204081-300x188.webp";s:5:"width";i:300;s:6:"height";i:188;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16280;}s:5:"large";a:5:{s:4:"file";s:23:"109204081-1024x640.webp";s:5:"width";i:1024;s:6:"height";i:640;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:160956;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"109204081-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:6892;}s:12:"medium_large";a:5:{s:4:"file";s:22:"109204081-768x480.webp";s:5:"width";i:768;s:6:"height";i:480;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:95966;}s:9:"1536x1536";a:5:{s:4:"file";s:23:"109204081-1536x960.webp";s:5:"width";i:1536;s:6:"height";i:960;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:317462;}s:13:"seijaku-photo";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:13:"seijaku-metro";a:5:{s:4:"file";s:22:"109204081-550x344.webp";s:5:"width";i:550;s:6:"height";i:344;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:50850;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:22:"109204081-400x250.webp";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:28728;}s:10:"seijaku-XL";a:5:{s:4:"file";s:24:"109204081-1920x1200.webp";s:5:"width";i:1920;s:6:"height";i:1200;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:437204;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:23:"109204081-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:200166;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:22:"109204081-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23520;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[erika-giraud-7KhbREQPFD4-unsplash]]></title>
+		<link>https://staging20.wolfthemes.com/theme/covenant/erika-giraud-7khbreqpfd4-unsplash/</link>
+		<pubDate>Tue, 09 Jun 2026 14:13:13 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2025/10/erika-giraud-7KhbREQPFD4-unsplash.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3377</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-09 09:13:13]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-09 14:13:13]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:13:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:13:13]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[erika-giraud-7khbreqpfd4-unsplash]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3150</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2025/10/erika-giraud-7KhbREQPFD4-unsplash.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2025/10/erika-giraud-7KhbREQPFD4-unsplash.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1300;s:4:"file";s:45:"2025/10/erika-giraud-7KhbREQPFD4-unsplash.jpg";s:8:"filesize";i:336995;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:12139;}s:5:"large";a:5:{s:4:"file";s:46:"erika-giraud-7KhbREQPFD4-unsplash-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:78713;}s:9:"thumbnail";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5648;}s:12:"medium_large";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:48961;}s:9:"1536x1536";a:5:{s:4:"file";s:47:"erika-giraud-7KhbREQPFD4-unsplash-1536x1024.jpg";s:5:"width";i:1536;s:6:"height";i:1024;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:163906;}s:13:"seijaku-photo";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:25619;}s:13:"seijaku-metro";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:29479;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:25619;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:18416;}s:10:"seijaku-XL";a:5:{s:4:"file";s:47:"erika-giraud-7KhbREQPFD4-unsplash-1920x1280.jpg";s:5:"width";i:1920;s:6:"height";i:1280;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:253601;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:46:"erika-giraud-7KhbREQPFD4-unsplash-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:95356;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:25619;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:25619;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:45:"erika-giraud-7KhbREQPFD4-unsplash-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14773;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 				</channel>
