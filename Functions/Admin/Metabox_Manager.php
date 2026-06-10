@@ -12,6 +12,7 @@
 namespace Wolf_Store\Admin;
 
 use Wolf_Store\Config\Metabox_Config;
+use Wolf_Store\Core\Meta;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -52,8 +53,11 @@ class Metabox_Manager {
 	 */
 	private function init_hooks(): void {
 		add_action( 'add_meta_boxes', array( $this, 'add_metaboxes' ) );
+		add_action( 'add_meta_boxes', array( $this, 'add_cache_metabox' ) );
 		add_action( 'save_post', array( $this, 'save_enqueue_as' ), 10, 2 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		add_action( 'admin_post_wolf_store_flush_meta_cache', array( $this, 'handle_flush_cache' ) );
+		add_action( 'admin_notices', array( $this, 'cache_flush_notice' ) );
 	}
 
 	/**
@@ -287,6 +291,85 @@ class Metabox_Manager {
 		} else {
 			delete_post_meta( $post_id, $field_id );
 		}
+	}
+
+	/**
+	 * Register the cache-flush side metabox on wolf_theme posts.
+	 */
+	public function add_cache_metabox(): void {
+		add_meta_box(
+			'wolf_store_cache',
+			esc_html__( 'Theme Cache', 'wolf-store' ),
+			array( $this, 'render_cache_metabox' ),
+			'wolf_theme',
+			'side',
+			'low'
+		);
+	}
+
+	/**
+	 * Render the cache metabox — shows the slug and a flush button.
+	 */
+	public function render_cache_metabox( \WP_Post $post ): void {
+		$slug = Meta::get_theme_slug( $post->ID );
+		?>
+		<p style="margin:0 0 8px">
+			<strong><?php esc_html_e( 'Slug:', 'wolf-store' ); ?></strong>
+			<?php echo esc_html( $slug ? $slug : '—' ); ?>
+		</p>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+			<input type="hidden" name="action" value="wolf_store_flush_meta_cache">
+			<input type="hidden" name="post_id" value="<?php echo absint( $post->ID ); ?>">
+			<?php wp_nonce_field( 'wolf_store_flush_cache_' . $post->ID, 'wolf_store_cache_nonce' ); ?>
+			<?php submit_button( esc_html__( 'Flush cache', 'wolf-store' ), 'secondary', 'wolf_store_flush', false ); ?>
+		</form>
+		<?php
+	}
+
+	/**
+	 * Handle the flush cache form submission via admin-post.php.
+	 *
+	 * Verifies nonce + capability, calls Meta::flush_cache(), then redirects
+	 * back to the post edit screen with a success flag.
+	 */
+	public function handle_flush_cache(): void {
+		$post_id = absint( $_POST['post_id'] ?? 0 ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified below
+
+		if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {
+			wp_die( esc_html__( 'Permission denied.', 'wolf-store' ) );
+		}
+
+		if ( ! isset( $_POST['wolf_store_cache_nonce'] ) ||
+			! wp_verify_nonce(
+				sanitize_key( wp_unslash( $_POST['wolf_store_cache_nonce'] ) ),
+				'wolf_store_flush_cache_' . $post_id
+			)
+		) {
+			wp_die( esc_html__( 'Security check failed.', 'wolf-store' ) );
+		}
+
+		$slug = Meta::get_theme_slug( $post_id );
+		if ( $slug ) {
+			Meta::flush_cache( $slug );
+		}
+
+		wp_safe_redirect(
+			add_query_arg( 'wolf_cache_flushed', '1', get_edit_post_link( $post_id, 'url' ) )
+		);
+		exit;
+	}
+
+	/**
+	 * Show a success notice after a cache flush redirect.
+	 */
+	public function cache_flush_notice(): void {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display flag, no data modified
+		if ( empty( $_GET['wolf_cache_flushed'] ) ) {
+			return;
+		}
+		echo '<div class="notice notice-success is-dismissible"><p>' .
+			esc_html__( 'Theme cache flushed.', 'wolf-store' ) .
+			'</p></div>';
 	}
 
 	/**
