@@ -147,8 +147,9 @@
 		margin-left: 1px;
 	}
 
-	&__price-tf {
+	&__price-main.is-struck {
 		font-size: 0.75rem;
+		font-weight: 400;
 		opacity: 0.4;
 		text-decoration: line-through;
 	}

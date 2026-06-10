@@ -6,7 +6,7 @@
  *
  * @param {Object} theme Full theme REST object
  */
-import { withCoupon } from '../config/offers';
+import { ACTIVE_OFFER, discounted, withCoupon } from '../config/offers';
 
 export default function ThemeCard({ theme }) {
 	const title = theme.title?.rendered;
@@ -16,7 +16,7 @@ export default function ThemeCard({ theme }) {
 	const demoUrl = theme.theme_demo_url;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
 	const categories = theme._embedded?.['wp:term']?.[0] ?? [];
-	const { tf_price, price_monthly, price_annual, price_lifetime } =
+	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
 
 	const heroPrice = price_annual ?? price_lifetime ?? price_monthly ?? null;
@@ -76,22 +76,25 @@ export default function ThemeCard({ theme }) {
 				<div className='wolf-theme-card__price'>
 					{heroPrice ? (
 						<>
-							<span className='wolf-theme-card__price-main'>
+							<span
+								className={`wolf-theme-card__price-main${ACTIVE_OFFER ? ' is-struck' : ''}`}
+							>
 								${heroPrice}
-								<span className='wolf-theme-card__price-period'>
-									{heroPeriod}
-								</span>
+								{!ACTIVE_OFFER && (
+									<span className='wolf-theme-card__price-period'>
+										{heroPeriod}
+									</span>
+								)}
 							</span>
-							{tf_price && tf_price > heroPrice && (
-								<span className='wolf-theme-card__price-tf'>
-									${tf_price} on TF
+							{ACTIVE_OFFER && (
+								<span className='wolf-theme-card__price-main'>
+									${discounted(heroPrice)}
+									<span className='wolf-theme-card__price-period'>
+										{heroPeriod}
+									</span>
 								</span>
 							)}
 						</>
-					) : tf_price ? (
-						<span className='wolf-theme-card__price-main'>
-							${tf_price}
-						</span>
 					) : null}
 				</div>
 
