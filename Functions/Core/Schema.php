@@ -105,7 +105,7 @@ class Schema {
 		} elseif ( is_post_type_archive( 'wolf_theme' ) ) {
 			$name_raw = post_type_archive_title( '', false );
 			$name     = $name_raw ? $name_raw : 'WordPress Themes';
-			$url  = (string) get_post_type_archive_link( 'wolf_theme' );
+			$url      = (string) get_post_type_archive_link( 'wolf_theme' );
 		} else {
 			$page_id = Core::get_store_page_id();
 			$name    = get_the_title( $page_id );

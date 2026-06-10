@@ -25,7 +25,7 @@ class Options_Params {
 	 *
 	 * @return array Settings configuration
 	 */
-	public static function get_config( $options_instance = null ) {
+	public static function get_config( $options_instance = null ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found, Generic.CodeAnalysis.UnusedFunctionParameter.FoundInImplementedInterface, VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
 		$settings = array(
 			// General Tab
 			'store_page' => array(

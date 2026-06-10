@@ -339,7 +339,7 @@ class Helpers {
 	 * @return array
 	 */
 	public static function list_to_array( $list, $separator = ',' ) {
-		return ( $list ) ? explode( ',', trim( self::clean_spaces( self::clean_list( $list ) ) ) ) : array();
+		return ( $list ) ? explode( $separator, trim( self::clean_spaces( self::clean_list( $list ) ) ) ) : array();
 	}
 
 	/**

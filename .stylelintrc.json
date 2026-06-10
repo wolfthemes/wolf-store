@@ -11,9 +11,21 @@
 			true,
 			{
 				"ignoreAtRules": [
-					"use", "forward", "include", "mixin", "each",
-					"if", "else", "extend", "for", "while",
-					"function", "return", "content", "error", "warn"
+					"use",
+					"forward",
+					"include",
+					"mixin",
+					"each",
+					"if",
+					"else",
+					"extend",
+					"for",
+					"while",
+					"function",
+					"return",
+					"content",
+					"error",
+					"warn"
 				]
 			}
 		]

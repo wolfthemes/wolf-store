@@ -87,9 +87,7 @@ export default function ThemeTechnicals({ theme }) {
 								🗂️ Knowledge Base
 							</a>
 						</li>
-						<li>
-							✉️ Direct support via Email
-						</li>
+						<li>✉️ Direct support via Email</li>
 					</ul>
 				</div>
 

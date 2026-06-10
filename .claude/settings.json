@@ -1,5 +1,5 @@
 {
-  "env": {
-    "GIT_EOL": "lf"
-  }
+	"env": {
+		"GIT_EOL": "lf"
+	}
 }

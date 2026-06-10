@@ -218,8 +218,8 @@ class Options_Panel {
 	/**
 	 * Sanitize checkbox field
 	 */
-	protected function sanitize_checkbox_field( $value = '', $field_args = array() ) {
-		return ( 'on' === $value || 1 == $value ) ? 1 : 0;
+	protected function sanitize_checkbox_field( $value = '', $field_args = array() ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed, VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
+		return ( 'on' === $value || 1 === (int) $value ) ? 1 : 0;
 	}
 
 	/**
@@ -364,7 +364,7 @@ class Options_Panel {
 
 					var parentFieldId_<?php echo esc_js( $key ); ?> = '<?php echo esc_js( $args['depends_on']['field'] ); ?>';
 					var dependentFieldId_<?php echo esc_js( $key ); ?> = '<?php echo esc_js( $key ); ?>';
-					var expectedValue_<?php echo esc_js( $key ); ?> = <?php echo json_encode( $args['depends_on']['value'] ); ?>;
+					var expectedValue_<?php echo esc_js( $key ); ?> = <?php echo wp_json_encode( $args['depends_on']['value'] ); ?>;
 
 					if ( !dependencies[parentFieldId_<?php echo esc_js( $key ); ?>] ) {
 						dependencies[parentFieldId_<?php echo esc_js( $key ); ?>] = [];

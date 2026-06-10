@@ -30,7 +30,7 @@ class Constants {
 
 		foreach ( $constants as $name => $value ) {
 			if ( ! defined( $name ) ) {
-				define( $name, $value );
+				define( $name, $value ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.VariableConstantNameFound
 			}
 		}
 	}

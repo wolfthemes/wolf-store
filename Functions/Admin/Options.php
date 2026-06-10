@@ -86,7 +86,7 @@ class Options {
 		if ( 'store_page' === $key && ! isset( $options[ $key ] ) ) {
 			// Check old option format
 			$legacy_page_id = get_option( '_wolf_store_page_id' );
-			if ( $legacy_page_id && -1 != $legacy_page_id ) {
+			if ( $legacy_page_id && -1 !== (int) $legacy_page_id ) {
 				return $legacy_page_id; // This will populate the field
 			}
 		}

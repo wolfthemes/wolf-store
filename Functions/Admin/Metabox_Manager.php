@@ -274,9 +274,9 @@ class Metabox_Manager {
 		}
 
 		// Use MetaboxConfig to determine field type handling
-		if ( in_array( $field_id, Metabox_Config::get_url_fields() ) ) {
+		if ( in_array( $field_id, Metabox_Config::get_url_fields(), true ) ) {
 			$value = esc_url_raw( $value );
-		} elseif ( in_array( $field_id, Metabox_Config::get_repeatable_fields() ) ) {
+		} elseif ( in_array( $field_id, Metabox_Config::get_repeatable_fields(), true ) ) {
 			$value = is_array( $value ) ? array_filter( $value ) : array();
 		} else {
 			$value = sanitize_text_field( $value );
@@ -295,7 +295,7 @@ class Metabox_Manager {
 	public function enqueue_assets( string $hook ): void {
 		global $post;
 
-		if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ) ) ||
+		if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ), true ) ||
 			! $post ||
 			'wolf_theme' !== $post->post_type ) {
 			return;

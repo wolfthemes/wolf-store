@@ -48,8 +48,10 @@
         <exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
         <exclude name="PEAR.Functions.FunctionCallSignature"/>
         <exclude name="Squiz.Commenting"/>
+        <exclude name="Squiz.PHP.CommentedOutCode"/>
         <exclude name="Squiz.PHP.DisallowSizeFunctionsInLoops.Found"/>
         <exclude name="Squiz.WhiteSpace"/>
+        <exclude name="Universal.NamingConventions.NoReservedKeywordParameterNames"/>
         <exclude name="WordPress.Arrays"/>
         <exclude name="WordPress.Files.FileName"/>
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>

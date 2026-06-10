@@ -25,7 +25,7 @@ class Utilities {
 	public static function get_post_thumbnail_url( $format = 'medium', $post_id = null ) {
 		global $post;
 
-		if ( is_object( $post ) && isset( $post->ID ) && null == $post_id ) {
+		if ( is_object( $post ) && isset( $post->ID ) && null === $post_id ) {
 
 			$ID = $post->ID;
 		} else {
@@ -136,7 +136,7 @@ class Utilities {
 
 			echo '<br><pre style="border: 1px solid #ccc; padding:5px; width:98%">';
 			if ( ! is_string( $desc ) ) {
-				print_r( $desc );
+				print_r( $desc ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_print_r
 			} else {
 				echo esc_html( $desc );
 				echo ' ';

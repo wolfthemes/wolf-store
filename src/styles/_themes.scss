@@ -33,14 +33,15 @@
 		}
 	}
 
-	.tagcloud{
+	.tagcloud {
+
 		a {
 			background-color: var(--accent-hover-color) !important;
 			border-color: var(--accent-hover-color) !important;
 
-            &:hover{
-                border-color: var(--accent-hover-color) !important;
-            }
+			&:hover {
+				border-color: var(--accent-hover-color) !important;
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
 {
-    "$schema": "https://raw.githubusercontent.com/phpactor/phpactor/master/phpactor.schema.json",
-    "php_code_sniffer.enabled": false
+	"$schema": "https://raw.githubusercontent.com/phpactor/phpactor/master/phpactor.schema.json",
+	"php_code_sniffer.enabled": false
 }
