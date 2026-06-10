@@ -10,6 +10,7 @@
 namespace Wolf_Store\Core;
 
 use Wolf_Store\Admin\Admin_Handler;
+use Wolf_Store\Blocks\Theme_Index_Block;
 use Wolf_Store\Frontend\Frontend_Handler;
 use Wolf_Store\Post_Types\Post_Type;
 use Wolf_Store\Taxonomies\Taxonomies;
@@ -109,8 +110,7 @@ class Plugin {
 	}
 
 	private function register_blocks(): void {
-		require_once WOLF_STORE_DIR . '/Functions/Blocks/Theme_Index_Block.php';
-		new \Wolf_Store\Blocks\Theme_Index_Block();
+		new Theme_Index_Block();
 	}
 
 	private function register_elementor_widgets(): void {
