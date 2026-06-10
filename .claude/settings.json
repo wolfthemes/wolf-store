@@ -1,6 +1,17 @@
 {
-    "defaultMode": "bypassPermissions",
-	"env": {
-		"GIT_EOL": "lf"
-	}
+  "defaultMode": "auto",
+  "env": {
+    "GIT_EOL": "lf"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Write(**)",
+      "Read(**)"
+    ],
+    "deny": [
+      "Bash(git push*)",
+      "Bash(gh repo sync*)"
+    ]
+  }
 }
