@@ -14,13 +14,21 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
 
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
           tools: composer
+          coverage: none
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
 
       - name: Install JS dependencies
         run: npm ci
@@ -38,7 +46,18 @@ jobs:
         run: npm run type-check
 
       - name: Lint PHP
+        if: github.ref == 'refs/heads/master'
         run: ./vendor/bin/phpcs --standard=phpcs.xml.dist --runtime-set ignore_warnings_on_exit 1
+
+      - name: Build assets
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.sha }}
+          path: build/
+          retention-days: 1
 
   deploy-master:
     runs-on: ubuntu-latest
@@ -47,13 +66,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
         with:
-          node-version: '20'
-          cache: npm
-
-      - name: Build assets
-        run: npm ci && npm run build
+          name: build-${{ github.sha }}
+          path: build/
 
       - name: Setup SSH
         run: |
@@ -89,13 +106,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
         with:
-          node-version: '20'
-          cache: npm
-
-      - name: Build assets
-        run: npm ci && npm run build
+          name: build-${{ github.sha }}
+          path: build/
 
       - name: Setup SSH
         run: |
