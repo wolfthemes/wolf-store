@@ -19,7 +19,7 @@
  *  PanelBody
  *    A collapsible section inside InspectorControls (or PluginSidebar).
  *
- *  RangeControl / SelectControl / ToggleControl
+ *  RangeControl / SelectControl
  *    Ready-made form controls from @wordpress/components. They follow the
  *    WordPress design system automatically (dark mode, high-contrast, etc.).
  *
@@ -27,13 +27,49 @@
  *    The block's state. `attributes` is the current value object (read-only).
  *    `setAttributes( { key: value } )` is the ONLY way to update it — Gutenberg
  *    merges the partial update and re-renders, then persists to the DB on save.
+ *
+ *  useSelect / @wordpress/core-data
+ *    useSelect is the Gutenberg hook for reading data from WordPress stores.
+ *    The `core` store (imported from @wordpress/core-data) exposes selectors
+ *    like getEntityRecords() that query the REST API and cache results.
+ *    Components re-render automatically when the store data changes —
+ *    no manual fetch/useEffect needed.
  */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
+import { store as coreStore } from '@wordpress/core-data';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { perPage, pagination, orderby, order, offset } = attributes;
+	const { termId, perPage, pagination, orderby, order, offset } = attributes;
+
+	/*
+	 * useSelect reads data from a WordPress store.
+	 *
+	 * getEntityRecords( kind, name, query ) fetches a collection from the
+	 * REST API and caches it in the core store. On first render the terms
+	 * will be null (loading); on subsequent renders the cached value is
+	 * returned synchronously — no flickering, no waterfalls.
+	 *
+	 * per_page: -1 → fetch all terms so the dropdown is always complete.
+	 * The second argument [] means "recompute only on mount" (no dependencies).
+	 */
+	const categories = useSelect(select => {
+		return select(coreStore).getEntityRecords('taxonomy', 'theme_cat', {
+			per_page: -1,
+			hide_empty: false,
+		});
+	}, []);
+
+	// Build SelectControl options. While terms are loading, show a placeholder.
+	const categoryOptions = [
+		{ label: __('— All categories —', 'wolf-store'), value: 0 },
+		...(categories || []).map(term => ({
+			label: term.name,
+			value: term.id,
+		})),
+	];
 
 	// useBlockProps must be called unconditionally (React hooks rule).
 	// Pass extra className here if needed; Gutenberg merges it with its own.
@@ -49,6 +85,24 @@ export default function Edit({ attributes, setAttributes }) {
 			 */}
 			<InspectorControls>
 				<PanelBody title={__('Query', 'wolf-store')} initialOpen={true}>
+					{/*
+					 * SelectControl value is always a string, so we compare
+					 * against String(termId) and convert back to Number on change.
+					 * When the user picks "All categories" (value 0) we clear both
+					 * taxonomy and termId so the render callback outputs nothing.
+					 */}
+					<SelectControl
+						label={__('Category', 'wolf-store')}
+						value={String(termId)}
+						options={categoryOptions}
+						onChange={value => {
+							const id = Number(value);
+							setAttributes({
+								taxonomy: id > 0 ? 'theme_cat' : '',
+								termId: id,
+							});
+						}}
+					/>
 					<RangeControl
 						label={__('Themes per page', 'wolf-store')}
 						value={perPage}
@@ -139,6 +193,8 @@ export default function Edit({ attributes, setAttributes }) {
 					{perPage} {__('themes per page', 'wolf-store')}
 					{' · '}
 					{orderby} {order}
+					{termId > 0 &&
+						` · ${categories?.find(t => t.id === termId)?.name ?? ''}`}
 				</span>
 			</div>
 		</>
