@@ -74,16 +74,15 @@ class Theme_Index_Block {
 		// Sanitise each attribute before outputting. The types in block.json
 		// are enforced by the REST API but we sanitise here as a defence-in-depth
 		// measure (render_callback can be called from other contexts).
-		$taxonomy     = sanitize_key( $attributes['taxonomy'] ?? '' );
-		$term_id      = absint( $attributes['termId'] ?? 0 );
-		$per_page     = absint( $attributes['perPage'] ?? 12 );
-		$pagination   = sanitize_text_field( $attributes['pagination'] ?? 'numbers' );
-		$orderby      = sanitize_key( $attributes['orderby'] ?? 'date' );
-		$order        = in_array( $attributes['order'] ?? 'DESC', array( 'ASC', 'DESC' ), true )
+		$taxonomy   = sanitize_key( $attributes['taxonomy'] ?? '' );
+		$term_id    = absint( $attributes['termId'] ?? 0 );
+		$per_page   = absint( $attributes['perPage'] ?? 12 );
+		$pagination = sanitize_text_field( $attributes['pagination'] ?? 'numbers' );
+		$orderby    = sanitize_key( $attributes['orderby'] ?? 'date' );
+		$order      = in_array( $attributes['order'] ?? 'DESC', array( 'ASC', 'DESC' ), true )
 			? $attributes['order']
 			: 'DESC';
-		$offset       = absint( $attributes['offset'] ?? 0 );
-		$show_sidebar = ! empty( $attributes['showSidebar'] );
+		$offset     = absint( $attributes['offset'] ?? 0 );
 
 		// Generate a unique ID so multiple blocks on the same page don't clash.
 		// wp_unique_id() is a lightweight WordPress helper (no DB calls).
@@ -107,7 +106,7 @@ class Theme_Index_Block {
 			data-orderby="<?php echo esc_attr( $orderby ); ?>"
 			data-order="<?php echo esc_attr( $order ); ?>"
 			data-offset="<?php echo absint( $offset ); ?>"
-			data-show-sidebar="<?php echo $show_sidebar ? 'true' : 'false'; ?>">
+			data-show-sidebar="false">
 		</div>
 		<?php
 		return ob_get_clean();

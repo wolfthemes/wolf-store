@@ -36,10 +36,6 @@
 		"offset": {
 			"type": "number",
 			"default": 0
-		},
-		"showSidebar": {
-			"type": "boolean",
-			"default": true
 		}
 	},
 	"editorScript": "file:./index.js",

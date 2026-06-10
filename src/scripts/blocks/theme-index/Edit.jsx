@@ -30,16 +30,10 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import {
-	PanelBody,
-	RangeControl,
-	SelectControl,
-	ToggleControl,
-} from '@wordpress/components';
+import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { perPage, pagination, orderby, order, offset, showSidebar } =
-		attributes;
+	const { perPage, pagination, orderby, order, offset } = attributes;
 
 	// useBlockProps must be called unconditionally (React hooks rule).
 	// Pass extra className here if needed; Gutenberg merges it with its own.
@@ -125,19 +119,6 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={value => setAttributes({ offset: value })}
 						min={0}
 						max={100}
-					/>
-				</PanelBody>
-
-				<PanelBody
-					title={__('Layout', 'wolf-store')}
-					initialOpen={false}
-				>
-					<ToggleControl
-						label={__('Show sidebar', 'wolf-store')}
-						checked={showSidebar}
-						onChange={value =>
-							setAttributes({ showSidebar: value })
-						}
 					/>
 				</PanelBody>
 			</InspectorControls>
