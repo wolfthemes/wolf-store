@@ -398,11 +398,11 @@ class Metabox_Manager {
 		// );
 		//
 
-		wp_enqueue_style(
-			'wolf-store-metabox',
-			WOLF_STORE_CSS . '/admin/metabox.css',
-			array(),
-			WOLF_STORE_VERSION
-		);
+		/* wp_enqueue_style( */
+		/* 	'wolf-store-metabox', */
+		/* 	WOLF_STORE_CSS . '/admin/metabox.css', */
+		/* 	array(), */
+		/* 	WOLF_STORE_VERSION */
+		/* ); */
 	}
 }
