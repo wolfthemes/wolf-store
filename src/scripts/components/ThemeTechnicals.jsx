@@ -14,7 +14,6 @@ export default function ThemeTechnicals({ theme }) {
 	const tags = theme._embedded?.['wp:term']?.[1] ?? [];
 	const wikiUrl = `https://wiki.wolfthemes.com/`;
 	const docUrl = `https://doc.wolfthemes.com/theme/${slug}/`;
-	const forumUrl = `https://wolfthemes.com/support/`;
 
 	return (
 		<div className='wolf-theme-technicals wolf-theme-single__section'>
@@ -26,7 +25,7 @@ export default function ThemeTechnicals({ theme }) {
 							<h3 className='wolf-theme-technicals__section-title'>
 								Categories
 							</h3>
-							<div className='wolf-theme-technicals__categories'>
+							<div className='wolf-theme-technicals__categories tagcloud'>
 								{categories.map(term => (
 									<a
 										key={term.id}
@@ -46,7 +45,7 @@ export default function ThemeTechnicals({ theme }) {
 							<h3 className='wolf-theme-technicals__section-title'>
 								Tags
 							</h3>
-							<div className='wolf-theme-technicals__tags'>
+							<div className='wolf-theme-technicals__tags tagcloud'>
 								{tags.map(term => (
 									<a
 										key={term.id}
@@ -89,13 +88,7 @@ export default function ThemeTechnicals({ theme }) {
 							</a>
 						</li>
 						<li>
-							<a
-								href={forumUrl}
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								💬 Support Forum
-							</a>
+							✉️ Direct support via Email
 						</li>
 					</ul>
 				</div>

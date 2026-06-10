@@ -9,7 +9,7 @@ export default function ThemeBenefits() {
 					Direct support from the creator{' '}
 					<span
 						className='wolf-theme-benefits__info'
-						title='Support provided via our forum'
+						title='Direct support via email'
 					>
 						ⓘ
 					</span>

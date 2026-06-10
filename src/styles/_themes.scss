@@ -32,6 +32,17 @@
 			background-color: var(--accent-hover-color) !important;
 		}
 	}
+
+	.tagcloud{
+		a {
+			background-color: var(--accent-hover-color) !important;
+			border-color: var(--accent-hover-color) !important;
+
+            &:hover{
+                border-color: var(--accent-hover-color) !important;
+            }
+		}
+	}
 }
 
 @media screen and (max-width: 1950px) {
