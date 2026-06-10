@@ -308,44 +308,49 @@ class Metabox_Manager {
 	}
 
 	/**
-	 * Render the cache metabox — shows the slug and a flush button.
+	 * Render the cache metabox — shows the slug and a flush link.
+	 *
+	 * Uses a GET link rather than a nested <form> because the post edit
+	 * screen already has an outer <form>; browsers drop nested forms entirely.
+	 * wp_nonce_url() appends _wpnonce to the URL; check_admin_referer()
+	 * verifies it in the handler.
 	 */
 	public function render_cache_metabox( \WP_Post $post ): void {
 		$slug = Meta::get_theme_slug( $post->ID );
+		$url  = wp_nonce_url(
+			add_query_arg(
+				array(
+					'action'  => 'wolf_store_flush_meta_cache',
+					'post_id' => $post->ID,
+				),
+				admin_url( 'admin-post.php' )
+			),
+			'wolf_store_flush_cache_' . $post->ID
+		);
 		?>
 		<p style="margin:0 0 8px">
 			<strong><?php esc_html_e( 'Slug:', 'wolf-store' ); ?></strong>
 			<?php echo esc_html( $slug ? $slug : '—' ); ?>
 		</p>
-		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-			<input type="hidden" name="action" value="wolf_store_flush_meta_cache">
-			<input type="hidden" name="post_id" value="<?php echo absint( $post->ID ); ?>">
-			<?php wp_nonce_field( 'wolf_store_flush_cache_' . $post->ID, 'wolf_store_cache_nonce' ); ?>
-			<?php submit_button( esc_html__( 'Flush cache', 'wolf-store' ), 'secondary', 'wolf_store_flush', false ); ?>
-		</form>
+		<a href="<?php echo esc_url( $url ); ?>" class="button button-secondary">
+			<?php esc_html_e( 'Flush cache', 'wolf-store' ); ?>
+		</a>
 		<?php
 	}
 
 	/**
-	 * Handle the flush cache form submission via admin-post.php.
+	 * Handle the flush cache GET request via admin-post.php.
 	 *
-	 * Verifies nonce + capability, calls Meta::flush_cache(), then redirects
-	 * back to the post edit screen with a success flag.
+	 * Check_admin_referer() verifies the _wpnonce query param added by
+	 * wp_nonce_url() and calls wp_die() automatically on failure.
 	 */
 	public function handle_flush_cache(): void {
-		$post_id = absint( $_POST['post_id'] ?? 0 ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified below
+		$post_id = absint( $_GET['post_id'] ?? 0 ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- nonce verified on next line
+
+		check_admin_referer( 'wolf_store_flush_cache_' . $post_id );
 
 		if ( ! $post_id || ! current_user_can( 'edit_post', $post_id ) ) {
 			wp_die( esc_html__( 'Permission denied.', 'wolf-store' ) );
-		}
-
-		if ( ! isset( $_POST['wolf_store_cache_nonce'] ) ||
-			! wp_verify_nonce(
-				sanitize_key( wp_unslash( $_POST['wolf_store_cache_nonce'] ) ),
-				'wolf_store_flush_cache_' . $post_id
-			)
-		) {
-			wp_die( esc_html__( 'Security check failed.', 'wolf-store' ) );
 		}
 
 		$slug = Meta::get_theme_slug( $post_id );
@@ -399,10 +404,10 @@ class Metabox_Manager {
 		//
 
 		/* wp_enqueue_style( */
-		/* 	'wolf-store-metabox', */
-		/* 	WOLF_STORE_CSS . '/admin/metabox.css', */
-		/* 	array(), */
-		/* 	WOLF_STORE_VERSION */
+		/*  'wolf-store-metabox', */
+		/*  WOLF_STORE_CSS . '/admin/metabox.css', */
+		/*  array(), */
+		/*  WOLF_STORE_VERSION */
 		/* ); */
 	}
 }
