@@ -1,13 +1,14 @@
 // ── Active offer ──────────────────────────────────────────────────────────────
-// Set to null to disable all coupon/discount behaviour.
+// Resolved from WP admin options (wolfStoreData.offer).
+// Falls back to LAUNCH20 defaults when wolfStoreData is not available, preserving
+// existing behaviour. Set "Enable Offer" to off in WP admin to disable entirely.
 
-export const ACTIVE_OFFER = {
-	coupon: 'LAUNCH20',
-	discount: 0.2,
-	label: '20% OFF LAUNCH OFFER',
-};
+const _wpOffer = window.wolfStoreData?.offer;
 
-// export const ACTIVE_OFFER = null;
+export const ACTIVE_OFFER =
+	_wpOffer !== undefined
+		? _wpOffer
+		: { coupon: 'LAUNCH20', discount: 0.2, label: '20% OFF LAUNCH OFFER' };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 

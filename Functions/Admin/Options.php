@@ -54,7 +54,7 @@ class Options {
 			'parent_slug'     => 'edit.php?post_type=wolf_theme',
 			'tabs'            => array(
 				'general' => esc_html__( 'General', 'wolf-store' ),
-				//'display' => esc_html__( 'Display', 'wolf-store' ),
+				'offer'   => esc_html__( 'Offer', 'wolf-store' ),
 			),
 		);
 
@@ -79,6 +79,47 @@ class Options {
 	 * @param mixed  $default Default value
 	 * @return mixed Option value
 	 */
+	/**
+	 * Get the active offer as an array suitable for wp_localize_script, or null if disabled/expired.
+	 *
+	 * Falls back to LAUNCH20 defaults when no option has been saved yet, preserving
+	 * backward compatibility with the previously hardcoded constant.
+	 *
+	 * @return array|null
+	 */
+	public static function get_active_offer() {
+		$enabled = (bool) self::get_option( 'offer_enabled', 1 );
+
+		if ( ! $enabled ) {
+			return null;
+		}
+
+		$coupon  = (string) self::get_option( 'offer_coupon', 'LAUNCH20' );
+		$percent = (int) self::get_option( 'offer_discount', 20 );
+		$label   = (string) self::get_option( 'offer_label', '20% OFF LAUNCH OFFER' );
+		$expiry  = (string) self::get_option( 'offer_expiry', '' );
+
+		if ( ! $coupon ) {
+			return null;
+		}
+
+		if ( $expiry && strtotime( $expiry ) && time() > strtotime( $expiry ) ) {
+			return null;
+		}
+
+		$offer = array(
+			'coupon'   => $coupon,
+			'discount' => $percent / 100,
+			'label'    => $label,
+		);
+
+		if ( $expiry ) {
+			$offer['expiry'] = $expiry;
+		}
+
+		return $offer;
+	}
+
 	public static function get_option( $key, $default = '' ) {
 		$options = get_option( 'wolf_store_options', array() );
 

@@ -40,6 +40,7 @@ class Enqueues {
 			'perPage'    => Options::get_option( 'posts_per_page', 12 ),
 			'pagination' => Options::get_option( 'pagination', 'numbers' ),
 			'siteUrl'    => home_url(),
+			'offer'      => Options::get_active_offer(),
 		) );
 
 		// Enqueue directly on native store pages
