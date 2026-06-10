@@ -1,6 +1,7 @@
 require('dotenv').config();
 const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = () => {
@@ -68,6 +69,27 @@ module.exports = () => {
 		},
 		plugins: [
 			...defaultConfig.plugins,
+			// Copy block.json files from source to build so PHP's
+			// register_block_type() can find them alongside the compiled JS.
+			// The [name] token captures the parent directory name (theme-index).
+			// Copy block.json from each block's source dir to the matching build dir.
+			// We use a `to` function because CopyPlugin's [name] token gives the
+			// filename-without-extension ("block"), not the parent directory name.
+			new CopyPlugin({
+				patterns: [
+					{
+						from: 'src/scripts/blocks/*/block.json',
+						to({ absoluteFilename }) {
+							// absoluteFilename: …/src/scripts/blocks/theme-index/block.json
+							// We want output:    blocks/theme-index/block.json
+							const blockDir = path.basename(
+								path.dirname(absoluteFilename)
+							);
+							return `blocks/${blockDir}/block.json`;
+						},
+					},
+				],
+			}),
 			new BrowserSyncPlugin(
 				{
 					files: [
@@ -119,6 +141,16 @@ module.exports = () => {
 			},
 			editor: {
 				import: [path.resolve(__dirname, './src/styles/admin.scss')],
+			},
+			// Gutenberg block — editor script only.
+			// This compiles to build/blocks/theme-index/index.js, which is the
+			// path block.json's "editorScript": "file:./index.js" resolves to.
+			'blocks/theme-index/index': {
+				import: path.resolve(
+					__dirname,
+					'./src/scripts/blocks/theme-index/index.js'
+				),
+				filename: './blocks/theme-index/index.js',
 			},
 		},
 		output: {

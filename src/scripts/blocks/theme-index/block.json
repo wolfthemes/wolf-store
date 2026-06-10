@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wolf-store/theme-index",
+	"title": "Theme Index",
+	"description": "Displays the Wolf Store theme listing with filtering and pagination.",
+	"category": "widgets",
+	"icon": "grid-view",
+	"keywords": ["themes", "store", "wolf"],
+	"textdomain": "wolf-store",
+	"attributes": {
+		"taxonomy": {
+			"type": "string",
+			"default": ""
+		},
+		"termId": {
+			"type": "number",
+			"default": 0
+		},
+		"perPage": {
+			"type": "number",
+			"default": 12
+		},
+		"pagination": {
+			"type": "string",
+			"default": "numbers"
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "DESC"
+		},
+		"offset": {
+			"type": "number",
+			"default": 0
+		},
+		"showSidebar": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": ["wolf-store"]
+}

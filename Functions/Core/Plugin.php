@@ -78,6 +78,9 @@ class Plugin {
 		// REST fields — always registered, admin and frontend
 		new Rest_Fields();
 
+		// Gutenberg blocks — registered on init via block.json in build/
+		$this->register_blocks();
+
 		// Elementor widgets — must register in both admin and frontend
 		$this->register_elementor_widgets();
 
@@ -103,6 +106,11 @@ class Plugin {
 			default:
 				return false;
 		}
+	}
+
+	private function register_blocks(): void {
+		require_once WOLF_STORE_DIR . '/Functions/Blocks/Theme_Index_Block.php';
+		new \Wolf_Store\Blocks\Theme_Index_Block();
 	}
 
 	private function register_elementor_widgets(): void {
