@@ -1,3 +1,66 @@
+// ── Archive search ────────────────────────────────────────────────────────────
+
+.wolf-store-search {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-bottom: 24px;
+
+	&__icon {
+		position: absolute;
+		left: 14px;
+		pointer-events: none;
+		opacity: 0.5;
+		flex-shrink: 0;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 10px 40px 10px 40px;
+		border: 1px solid var(--card-border-color);
+		background: transparent;
+		color: inherit;
+		font-size: 0.95rem;
+		outline: none;
+		transition: border-color 0.15s;
+
+		// Remove default browser search field decorations.
+		appearance: none;
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			appearance: none;
+		}
+
+		&:focus {
+			border-color: currentColor;
+		}
+
+		&::placeholder {
+			opacity: 0.4;
+		}
+	}
+
+	&__clear {
+		position: absolute;
+		right: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: inherit;
+		opacity: 0.5;
+		padding: 4px;
+		transition: opacity 0.15s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
 // ── Archive grid ──────────────────────────────────────────────────────────────
 
 .wolf-store-archive {

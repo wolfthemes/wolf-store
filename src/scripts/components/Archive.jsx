@@ -1,9 +1,94 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useThemes } from './hooks/useThemes';
 import ThemeCard from './ThemeCard';
 import SkeletonCard from './SkeletonCard';
 import Pagination from './Pagination';
 import Sidebar from './Sidebar';
+
+function SearchBar({ externalValue, onSearch }) {
+	const [inputValue, setInputValue] = useState(externalValue || '');
+	const timerRef = useRef(null);
+
+	// Sync when parent clears the search (e.g. clearFilters).
+	useEffect(() => {
+		if (externalValue === '' && inputValue !== '') {
+			setInputValue('');
+		}
+		// Only react to external clears, not every externalValue change.
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [externalValue]);
+
+	const handleChange = e => {
+		const v = e.target.value;
+		setInputValue(v);
+		clearTimeout(timerRef.current);
+		timerRef.current = setTimeout(() => onSearch(v), 300);
+	};
+
+	const handleClear = () => {
+		setInputValue('');
+		clearTimeout(timerRef.current);
+		onSearch('');
+	};
+
+	return (
+		<div className='wolf-store-search'>
+			<svg
+				className='wolf-store-search__icon'
+				width='16'
+				height='16'
+				viewBox='0 0 16 16'
+				fill='none'
+				aria-hidden='true'
+			>
+				<circle
+					cx='6.5'
+					cy='6.5'
+					r='4.5'
+					stroke='currentColor'
+					strokeWidth='1.5'
+				/>
+				<path
+					d='M10 10l3.5 3.5'
+					stroke='currentColor'
+					strokeWidth='1.5'
+					strokeLinecap='round'
+				/>
+			</svg>
+			<input
+				type='search'
+				className='wolf-store-search__input'
+				placeholder='Search themes…'
+				value={inputValue}
+				onChange={handleChange}
+				aria-label='Search themes'
+			/>
+			{inputValue && (
+				<button
+					className='wolf-store-search__clear'
+					onClick={handleClear}
+					aria-label='Clear search'
+					type='button'
+				>
+					<svg
+						width='12'
+						height='12'
+						viewBox='0 0 12 12'
+						fill='none'
+						aria-hidden='true'
+					>
+						<path
+							d='M1 1l10 10M11 1L1 11'
+							stroke='currentColor'
+							strokeWidth='1.5'
+							strokeLinecap='round'
+						/>
+					</svg>
+				</button>
+			)}
+		</div>
+	);
+}
 
 export default function Archive({
 	taxonomy: taxonomyProp,
@@ -21,21 +106,44 @@ export default function Archive({
 		return {};
 	});
 	const [filterOpen, setFilterOpen] = useState(false);
+	const [searchQuery, setSearchQuery] = useState(() => {
+		const params = new URLSearchParams(window.location.search);
+		return params.get('search') || '';
+	});
+
 	const { pagination: paginationGlobal, perPage: perPageGlobal } =
 		window.wolfStoreData ?? {};
 	const pagination = paginationProp || paginationGlobal;
 	const skeletonCount = parseInt(perPage) || parseInt(perPageGlobal) || 12;
 
+	// Sync search query to URL params.
+	useEffect(() => {
+		const params = new URLSearchParams(window.location.search);
+		if (searchQuery) {
+			params.set('search', searchQuery);
+		} else {
+			params.delete('search');
+		}
+		const qs = params.toString();
+		history.replaceState(
+			null,
+			'',
+			qs ? `${window.location.pathname}?${qs}` : window.location.pathname
+		);
+	}, [searchQuery]);
+
 	const { themes, totalPages, loading, error } = useThemes({
 		filters: activeFilters,
 		page,
 		perPage: parseInt(perPage) || undefined,
+		search: searchQuery,
 	});
 
 	const activeFilterCount = Object.values(activeFilters).reduce(
 		(sum, ids) => sum + ids.length,
 		0
 	);
+	const hasActiveSearch = searchQuery.length > 0;
 
 	const handlePageChange = n => {
 		setPage(n);
@@ -55,8 +163,14 @@ export default function Archive({
 
 	const handleClearFilters = () => {
 		setActiveFilters({});
+		setSearchQuery('');
 		setPage(1);
 		setFilterOpen(false);
+	};
+
+	const handleSearch = q => {
+		setSearchQuery(q);
+		setPage(1);
 	};
 
 	return (
@@ -66,6 +180,8 @@ export default function Archive({
 					<h1 className='wolf-store-archive__title'>{termName}</h1>
 				</header>
 			)}
+
+			<SearchBar externalValue={searchQuery} onSearch={handleSearch} />
 
 			{showSidebar && (
 				<div className='wolf-store-archive__filter-bar'>
@@ -95,7 +211,7 @@ export default function Archive({
 							</span>
 						) : null}
 					</button>
-					{activeFilterCount > 0 && (
+					{(activeFilterCount > 0 || hasActiveSearch) && (
 						<button
 							className='wolf-store-archive__filter-clear'
 							onClick={handleClearFilters}
@@ -121,7 +237,8 @@ export default function Archive({
 
 					{!loading && !error && themes.length === 0 && (
 						<p className='wolf-store-archive__empty'>
-							No themes found.
+							No themes found
+							{hasActiveSearch ? ` for "${searchQuery}"` : ''}.
 						</p>
 					)}
 

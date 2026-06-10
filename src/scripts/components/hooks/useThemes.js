@@ -5,6 +5,7 @@ export function useThemes({
 	page = 1,
 	perPage: perPageProp = undefined,
 	exclude = [],
+	search = '',
 } = {}) {
 	const [themes, setThemes] = useState([]);
 	const [totalPages, setTotalPages] = useState(1);
@@ -30,8 +31,14 @@ export function useThemes({
 			_embed: 1,
 			per_page: perPage,
 			page,
-			orderby: 'featured',
 		});
+
+		// When searching, skip featured ordering — server applies relevance ordering.
+		if (search) {
+			params.set('search', search);
+		} else {
+			params.set('orderby', 'featured');
+		}
 
 		Object.entries(filters).forEach(([taxonomy, termIds]) => {
 			if (termIds && termIds.length > 0) {
@@ -69,7 +76,7 @@ export function useThemes({
 		return () => controller.abort();
 		// filtersKey/excludeKey are JSON-stable stand-ins for filters/exclude — intentional
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [filtersKey, excludeKey, page, perPage, restUrl, restNonce]);
+	}, [filtersKey, excludeKey, page, perPage, restUrl, restNonce, search]);
 
 	return { themes, totalPages, loading, error };
 }

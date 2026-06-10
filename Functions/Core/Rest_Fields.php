@@ -35,35 +35,113 @@ class Rest_Fields {
 	 * JOIN, which drops posts without the meta key (WP core bug #29447).
 	 */
 	public function handle_query_params( array $args, \WP_REST_Request $request ): array {
-		if ( 'featured' !== $request->get_param( 'orderby' ) ) {
-			return $args;
+		if ( 'featured' === $request->get_param( 'orderby' ) ) {
+			$filter = null;
+			$filter = function ( array $clauses ) use ( &$filter ): array {
+				global $wpdb;
+
+				remove_filter( 'posts_clauses', $filter, 10 );
+
+				$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS wolf_featured_meta"
+					. " ON ({$wpdb->posts}.ID = wolf_featured_meta.post_id"
+					. " AND wolf_featured_meta.meta_key = '_wolf_theme_featured')";
+
+				// ISNULL puts NULLs (non-featured) last; DESC puts '1' before ''.
+				$clauses['orderby'] = 'ISNULL(wolf_featured_meta.meta_value) ASC,'
+					. ' wolf_featured_meta.meta_value DESC,'
+					. " {$wpdb->posts}.post_date DESC";
+
+				return $clauses;
+			};
+
+			add_filter( 'posts_clauses', $filter, 10, 2 );
+
+			// Prevent WP from overriding the orderby clause.
+			$args['orderby'] = 'post__in';
+			$args['order']   = 'DESC';
 		}
 
-		$filter = null;
-		$filter = function ( array $clauses ) use ( &$filter ): array {
-			global $wpdb;
+		$search_term = sanitize_text_field( $request->get_param( 'search' ) );
+		if ( ! empty( $search_term ) ) {
+			$this->apply_search_relevance( $search_term );
+		}
 
-			remove_filter( 'posts_clauses', $filter, 10 );
+		return $args;
+	}
 
-			$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS wolf_featured_meta"
-				. " ON ({$wpdb->posts}.ID = wolf_featured_meta.post_id"
-				. " AND wolf_featured_meta.meta_key = '_wolf_theme_featured')";
+	/**
+	 * Extend search results to include taxonomy name matches and order by relevance.
+	 *
+	 * - Finds taxonomy terms whose names match the query (one DB query).
+	 * - Extends the WP posts_search WHERE to OR-in posts with those terms.
+	 * - Overrides ORDER BY: title matches first, then post_date DESC.
+	 *
+	 * Only the single-word path gets taxonomy WHERE extension; multi-word queries
+	 * still benefit from title-first ordering.
+	 */
+	private function apply_search_relevance( string $search_term ): void {
+		global $wpdb;
 
-			// ISNULL puts NULLs (non-featured) last; DESC puts '1' before ''.
-			$clauses['orderby'] = 'ISNULL(wolf_featured_meta.meta_value) ASC,'
-				. ' wolf_featured_meta.meta_value DESC,'
-				. " {$wpdb->posts}.post_date DESC";
+		$like = '%' . $wpdb->esc_like( $search_term ) . '%';
+
+		// Pre-fetch taxonomy term IDs whose names match — one cheap indexed query.
+		if ( false === strpos( $search_term, ' ' ) ) {
+			$matching_term_ids = get_terms(
+				array(
+					'taxonomy'   => array( 'theme_cat', 'theme_tag', 'theme_style', 'theme_page_builder', 'theme_color' ),
+					'name__like' => $search_term,
+					'fields'     => 'ids',
+					'hide_empty' => false,
+					'number'     => 50,
+				)
+			);
+
+			if ( ! is_wp_error( $matching_term_ids ) && ! empty( $matching_term_ids ) ) {
+				$ids_sql = implode( ',', array_map( 'intval', $matching_term_ids ) );
+
+				// Extend posts_search WHERE to include taxonomy-name matches.
+				$search_filter = null;
+				$search_filter = function ( string $search ) use ( $ids_sql, $wpdb, &$search_filter ): string {
+					remove_filter( 'posts_search', $search_filter, 10 );
+
+					if ( empty( $search ) ) {
+						return $search;
+					}
+
+					$tax_or = " OR {$wpdb->posts}.ID IN ("
+						. " SELECT tr.object_id FROM {$wpdb->term_relationships} tr"
+						. " INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id"
+						. " WHERE tt.term_id IN ({$ids_sql})"
+						. ' )';
+
+					// $search = " AND (((title LIKE...) OR (...)))"
+					// Insert the taxonomy OR before the final closing paren.
+					$pos = strrpos( $search, ')' );
+					if ( false !== $pos ) {
+						return substr( $search, 0, $pos ) . $tax_or . substr( $search, $pos );
+					}
+
+					return $search;
+				};
+				add_filter( 'posts_search', $search_filter, 10, 1 );
+			}
+		}
+
+		// Override ORDER BY: title matches first, then post date.
+		$clauses_filter = null;
+		$clauses_filter = function ( array $clauses ) use ( $like, $wpdb, &$clauses_filter ): array {
+			remove_filter( 'posts_clauses', $clauses_filter, 10 );
+
+			$title_score = $wpdb->prepare(
+				"CASE WHEN {$wpdb->posts}.post_title LIKE %s THEN 0 ELSE 1 END",
+				$like
+			);
+
+			$clauses['orderby'] = "{$title_score} ASC, {$wpdb->posts}.post_date DESC";
 
 			return $clauses;
 		};
-
-		add_filter( 'posts_clauses', $filter, 10, 2 );
-
-		// Prevent WP from overriding the orderby clause.
-		$args['orderby'] = 'post__in';
-		$args['order']   = 'DESC';
-
-		return $args;
+		add_filter( 'posts_clauses', $clauses_filter, 10, 1 );
 	}
 
 	public function register_fields(): void {
