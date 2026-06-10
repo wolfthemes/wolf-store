@@ -85,6 +85,13 @@ export default function Edit({ attributes, setAttributes }) {
 			 */}
 			<InspectorControls>
 				<PanelBody title={__('Query', 'wolf-store')} initialOpen={true}>
+					<RangeControl
+						label={__('Themes per page', 'wolf-store')}
+						value={perPage}
+						onChange={value => setAttributes({ perPage: value })}
+						min={1}
+						max={48}
+					/>
 					{/*
 					 * SelectControl value is always a string, so we compare
 					 * against String(termId) and convert back to Number on change.
@@ -102,13 +109,6 @@ export default function Edit({ attributes, setAttributes }) {
 								termId: id,
 							});
 						}}
-					/>
-					<RangeControl
-						label={__('Themes per page', 'wolf-store')}
-						value={perPage}
-						onChange={value => setAttributes({ perPage: value })}
-						min={1}
-						max={48}
 					/>
 					<SelectControl
 						label={__('Pagination', 'wolf-store')}
