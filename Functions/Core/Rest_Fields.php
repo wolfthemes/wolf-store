@@ -238,6 +238,8 @@ class Rest_Fields {
 		$this->register_meta_field( 'theme_included_plugins', 'included_plugins' );
 		$this->register_meta_field( 'theme_design_features', 'design_features' );
 		$this->register_meta_field( 'theme_testimonials', 'testimonials' );
+		$this->register_meta_field( 'theme_store_headline', 'store_headline', '' );
+		$this->register_meta_field( 'theme_store_subheadline', 'store_subheadline', '' );
 
 		// --- Pricing ---
 		$this->register( 'theme_pricing', function ( $post ) {
@@ -267,10 +269,10 @@ class Rest_Fields {
 	/**
 	 * Register a single read-only REST field on wolf_theme sourced from theme_meta.json.
 	 */
-	private function register_meta_field( string $field_name, string $key ): void {
-		$this->register( $field_name, function ( $post ) use ( $key ) {
+	private function register_meta_field( string $field_name, string $key, $default = array() ): void {
+		$this->register( $field_name, function ( $post ) use ( $key, $default ) {
 			$data = Meta::get_theme_meta( Meta::get_theme_slug( $post['id'] ) );
-			return $data[ $key ] ?? array();
+			return $data[ $key ] ?? $default;
 		} );
 	}
 
