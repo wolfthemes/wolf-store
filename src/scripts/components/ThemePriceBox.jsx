@@ -1,4 +1,5 @@
 import ThemeCTAs from './ThemeCTAs';
+import ThemeBenefits from './ThemeBenefits';
 import { ACTIVE_OFFER, discounted } from '../config/offers';
 
 export default function ThemePriceBox({ theme }) {
@@ -81,6 +82,9 @@ export default function ThemePriceBox({ theme }) {
 
 			{/* CTAs */}
 			<ThemeCTAs theme={theme} layout='column' />
+
+			{/* Benefits */}
+			<ThemeBenefits/>
 		</div>
 	);
 }

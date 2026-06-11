@@ -43,9 +43,6 @@ export default function Single({ postId }) {
 				<ThemeTechnicals theme={theme} />
 				<ThemeChangelog theme={theme} />
 			</div>
-			{/* <aside className='wolf-theme-single__sidebar'> */}
-			{/*     <ThemeSidebar theme={ theme } /> */}
-			{/* </aside> */}
 			<RelatedThemes theme={theme} />
 		</div>
 	);

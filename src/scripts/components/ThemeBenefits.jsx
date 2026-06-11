@@ -1,12 +1,11 @@
 export default function ThemeBenefits() {
 	return (
 		<div className='wolf-theme-benefits'>
-			<h3 className='wolf-theme-benefits__title'>What&apos;s Included</h3>
 			<ul className='wolf-theme-benefits__list'>
-				<li>Direct support from the creator</li>
-				<li>Continuous updates included</li>
+				<li>One-click demo import</li>
+				<li>Continuous updates</li>
 				<li>
-					Direct support from the creator{' '}
+					Direct author support{' '}
 					<span
 						className='wolf-theme-benefits__info'
 						title='Direct support via email'
@@ -15,7 +14,7 @@ export default function ThemeBenefits() {
 					</span>
 				</li>
 				<li>7-day money-back guarantee</li>
-				<li>Trusted by 36,000+ customers</li>
+				<li>Multi-site licenses available</li>
 			</ul>
 		</div>
 	);
