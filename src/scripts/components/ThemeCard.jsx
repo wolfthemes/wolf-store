@@ -57,19 +57,19 @@ export default function ThemeCard({ theme }) {
 					<p className='wolf-theme-card__tagline'>{tagline}</p>
 				)}
 
-				{categories.length > 0 && (
-					<div className='wolf-theme-card__cats'>
-						{categories.map(term => (
-							<a
-								key={term.id}
-								href={term.link}
-								className='wolf-theme-card__cat'
-							>
-								{term.name}
-							</a>
-						))}
-					</div>
-				)}
+				{/* {categories.length > 0 && ( */}
+				{/* 	<div className='wolf-theme-card__cats'> */}
+				{/* 		{categories.map(term => ( */}
+				{/* 			<a */}
+				{/* 				key={term.id} */}
+				{/* 				href={term.link} */}
+				{/* 				className='wolf-theme-card__cat' */}
+				{/* 			> */}
+				{/* 				{term.name} */}
+				{/* 			</a> */}
+				{/* 		))} */}
+				{/* 	</div> */}
+				{/* )} */}
 			</div>
 
 			<footer className='wolf-theme-card__footer'>
