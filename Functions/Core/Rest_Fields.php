@@ -73,8 +73,14 @@ class Rest_Fields {
 	 * Extend search results to include taxonomy name matches and order by relevance.
 	 *
 	 * - Finds taxonomy terms whose names match the query (one DB query).
-	 * - Extends the WP posts_search WHERE to OR-in posts with those terms.
+	 * - Extends the WHERE clause to OR-in posts with those terms.
 	 * - Overrides ORDER BY: title matches first, then post_date DESC.
+	 *
+	 * Uses posts_where (not posts_search) for WHERE extension. WP 7.0 changed
+	 * search to build the WHERE directly with hash-encoded LIKE placeholders rather
+	 * than going through posts_search, so injecting via posts_search has no effect.
+	 * posts_where fires after WP builds the full WHERE and str_replace on the exact
+	 * prepared title LIKE token works regardless of WP version.
 	 *
 	 * Only the single-word path gets taxonomy WHERE extension; multi-word queries
 	 * still benefit from title-first ordering.
@@ -86,44 +92,46 @@ class Rest_Fields {
 
 		// Pre-fetch taxonomy term IDs whose names match — one cheap indexed query.
 		if ( false === strpos( $search_term, ' ' ) ) {
-			$matching_term_ids = get_terms(
-				array(
-					'taxonomy'   => array( 'theme_cat', 'theme_tag', 'theme_style', 'theme_page_builder', 'theme_color' ),
-					'name__like' => $search_term,
-					'fields'     => 'ids',
-					'hide_empty' => false,
-					'number'     => 50,
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$matching_term_ids = $wpdb->get_col(
+				$wpdb->prepare(
+					"SELECT t.term_id
+					   FROM {$wpdb->terms} t
+					   INNER JOIN {$wpdb->term_taxonomy} tt ON t.term_id = tt.term_id
+					  WHERE tt.taxonomy IN ('theme_cat','theme_tag','theme_style','theme_page_builder','theme_color')
+					    AND t.name LIKE %s
+					  LIMIT 50",
+					$like
 				)
 			);
 
-			if ( ! is_wp_error( $matching_term_ids ) && ! empty( $matching_term_ids ) ) {
+			if ( ! empty( $matching_term_ids ) ) {
 				$ids_sql = implode( ',', array_map( 'intval', $matching_term_ids ) );
 
-				// Extend posts_search WHERE to include taxonomy-name matches.
-				$search_filter = null;
-				$search_filter = function ( string $search ) use ( $ids_sql, $wpdb, &$search_filter ): string {
-					remove_filter( 'posts_search', $search_filter, 10 );
+				// Build the same prepared title LIKE token WP puts in the WHERE.
+				// $wpdb->prepare() is deterministic: same input → same hash-encoded output,
+				// so str_replace reliably finds and expands the exact substring.
+				$title_cond = $wpdb->prepare( "{$wpdb->posts}.post_title LIKE %s", $like );
+				$tax_cond   = "{$wpdb->posts}.ID IN ("
+					. " SELECT tr.object_id FROM {$wpdb->term_relationships} tr"
+					. " INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id"
+					. " WHERE tt.term_id IN ({$ids_sql})"
+					. ' )';
 
-					if ( empty( $search ) ) {
-						return $search;
-					}
+				$where_filter = null;
+				$where_filter = function ( string $where ) use ( $title_cond, $tax_cond, &$where_filter ): string {
+					remove_filter( 'posts_where', $where_filter, 10 );
 
-					$tax_or = " OR {$wpdb->posts}.ID IN ("
-						. " SELECT tr.object_id FROM {$wpdb->term_relationships} tr"
-						. " INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id"
-						. " WHERE tt.term_id IN ({$ids_sql})"
-						. ' )';
-
-					// $search = " AND (((title LIKE...) OR (...)))"
-					// Insert the taxonomy OR before the final closing paren.
-					$pos = strrpos( $search, ')' );
-					if ( false !== $pos ) {
-						return substr( $search, 0, $pos ) . $tax_or . substr( $search, $pos );
-					}
-
-					return $search;
+					// Wrap the exact title LIKE condition to include taxonomy OR.
+					// Works for both WP ≤ 6.x (title inside triple-paren OR group)
+					// and WP 7.x (title as standalone AND condition).
+					return str_replace(
+						$title_cond,
+						"({$title_cond} OR {$tax_cond})",
+						$where
+					);
 				};
-				add_filter( 'posts_search', $search_filter, 10, 1 );
+				add_filter( 'posts_where', $where_filter, 10, 1 );
 			}
 		}
 
