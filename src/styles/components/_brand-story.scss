@@ -7,6 +7,7 @@
 		background: var(--theme-subtle-bg, #f9f9f9);
 		opacity: 0;
 		transition: opacity 0.8s ease;
+		border-radius:var(--theme-border-radius);
 
 		&.is-visible {
 			opacity: 1;

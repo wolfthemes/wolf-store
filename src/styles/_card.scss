@@ -7,6 +7,7 @@
 	border: 1px solid var(--card-border-color);
 	overflow: hidden;
 	transition: border-color 0.15s ease;
+	border-radius:var(--theme-border-radius);
 
 	&__featured-badge {
 		position: absolute;
@@ -138,6 +139,7 @@
 	&__price-main {
 		font-size: 1rem;
 		font-weight: 700;
+		color:var(--strong-color);
 	}
 
 	&__price-period {
@@ -150,7 +152,7 @@
 	&__price-main.is-struck {
 		font-size: 0.75rem;
 		font-weight: 400;
-		opacity: 0.7;
+		opacity: 0.5;
 		text-decoration: line-through;
 	}
 
