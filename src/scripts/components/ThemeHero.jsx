@@ -23,10 +23,14 @@ export default function ThemeHero({ theme }) {
 			{/* <div className="noise-overlay"></div> */}
 
 			<div className='wolf-theme-hero__content wolf-core-font-light'>
-				<h1 className='wolf-theme-hero__title'>{headline || title}</h1>
+				<h1 className='wolf-theme-hero__title'>{title}</h1>
+
+				{headline && (
+					<p className='wolf-theme-hero__headline'>{headline}</p>
+				)}
 
 				{subheadline && (
-					<p className='wolf-theme-hero__tagline'>{subheadline}</p>
+					<p className='wolf-theme-hero__subheadline'>{subheadline}</p>
 				)}
 			</div>
 
