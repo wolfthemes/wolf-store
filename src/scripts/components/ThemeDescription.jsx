@@ -5,6 +5,7 @@ import ThemeStats from './ThemeStats';
 export default function ThemeDescription({ theme }) {
 	const title = theme.title?.rendered;
 	const excerpt = theme.excerpt?.rendered;
+	const subheadline = theme.theme_store_subheadline;
 	const longDescription = theme.theme_long_description;
 	const demoUrl = theme.theme_demo_url;
 	const mockup = theme.theme_mockup;
@@ -31,6 +32,11 @@ export default function ThemeDescription({ theme }) {
 		<div className='wolf-theme-description wolf-theme-single__section'>
 			<div className='wolf-theme-single__wrapper'>
 				<div className='wolf-theme-single-description__column'>
+					{subheadline && (
+						<h3 className='wolf-theme-description__subheadline'>
+							{subheadline}
+						</h3>
+					)}
 					{excerpt && (
 						<div
 							className='wolf-theme-description__excerpt'
