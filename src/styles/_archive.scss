@@ -5,18 +5,11 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 24px;
-
-	&__icon {
-		position: absolute;
-		left: 14px;
-		pointer-events: none;
-		opacity: 0.5;
-		flex-shrink: 0;
-	}
+	max-width: 220px;
 
 	&__input {
 		width: 100%;
-		padding: 10px 40px 10px 40px;
+		padding: 10px 40px 10px 12px;
 		border: 1px solid var(--card-border-color);
 		background: transparent;
 		color: inherit;

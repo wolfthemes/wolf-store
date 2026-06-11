@@ -33,28 +33,6 @@ function SearchBar({ externalValue, onSearch }) {
 
 	return (
 		<div className='wolf-store-search'>
-			<svg
-				className='wolf-store-search__icon'
-				width='16'
-				height='16'
-				viewBox='0 0 16 16'
-				fill='none'
-				aria-hidden='true'
-			>
-				<circle
-					cx='6.5'
-					cy='6.5'
-					r='4.5'
-					stroke='currentColor'
-					strokeWidth='1.5'
-				/>
-				<path
-					d='M10 10l3.5 3.5'
-					stroke='currentColor'
-					strokeWidth='1.5'
-					strokeLinecap='round'
-				/>
-			</svg>
 			<input
 				type='search'
 				className='wolf-store-search__input'
