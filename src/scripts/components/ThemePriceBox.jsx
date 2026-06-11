@@ -84,7 +84,7 @@ export default function ThemePriceBox({ theme }) {
 			<ThemeCTAs theme={theme} layout='column' />
 
 			{/* Benefits */}
-			<ThemeBenefits/>
+			<ThemeBenefits />
 		</div>
 	);
 }

@@ -15,7 +15,7 @@ export default function ThemeCard({ theme }) {
 	const tagline = theme.theme_short_description;
 	const demoUrl = theme.theme_demo_url;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
-	const categories = theme._embedded?.['wp:term']?.[0] ?? [];
+	// const categories = theme._embedded?.['wp:term']?.[0] ?? [];
 	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
 

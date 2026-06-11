@@ -25,7 +25,7 @@
 
 	&:hover {
 		// border-color: rgba(0,0,0,.3);
-		--card-border-color:rgba(0,0,0,.3);
+		--card-border-color:rgba(0, 0, 0, 0.3);
 	}
 
 	// ── Thumbnail ─────────────────────────────────────────────────────────────
@@ -166,11 +166,11 @@
 		gap: 6px;
 		flex-shrink: 0;
 		opacity: 0;
-		transition:opacity .6s var(--ease);
+		transition:opacity 0.6s var(--ease);
 	}
 
 	&:hover &__ctas {
-		opacity:1
+		opacity:1;
 	}
 
 	&__btn {
