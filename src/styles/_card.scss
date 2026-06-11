@@ -47,7 +47,7 @@
 			height: 100%;
 			object-fit: cover;
 			display: block;
-			transition: transform 0.3s ease;
+			transition: transform 0.6s ease;
 		}
 	}
 
@@ -58,7 +58,7 @@
 	}
 
 	&:hover &__thumbnail img {
-		transform: scale(1.03);
+		transform: scale(1.02);
 	}
 
 	// ── Body ──────────────────────────────────────────────────────────────────
@@ -88,8 +88,8 @@
 	}
 
 	&__tagline {
-		font-size: 0.85rem;
-		opacity: 0.8;
+		font-size: 0.95em;
+		opacity: 0.65;
 		line-height: 1.5;
 		margin: 0;
 		// Two-line clamp — keeps the grid uniform
@@ -166,7 +166,7 @@
 		gap: 6px;
 		flex-shrink: 0;
 		opacity: 0;
-		transition:opacity .3s var(--ease);
+		transition:opacity .6s var(--ease);
 	}
 
 	&:hover &__ctas {
