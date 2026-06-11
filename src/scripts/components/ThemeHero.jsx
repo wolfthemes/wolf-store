@@ -5,7 +5,6 @@ export default function ThemeHero({ theme }) {
 	const video = theme.theme_video;
 	const title = theme.title?.rendered;
 	const headline = theme.theme_store_headline;
-	const subheadline = theme.theme_store_subheadline;
 
 	return (
 		<div className='wolf-theme-hero'>
@@ -20,17 +19,12 @@ export default function ThemeHero({ theme }) {
 			)}
 
 			<div className='faded-edges-overlay'></div>
-			{/* <div className="noise-overlay"></div> */}
 
 			<div className='wolf-theme-hero__content wolf-core-font-light'>
 				<h1 className='wolf-theme-hero__title'>{title}</h1>
 
 				{headline && (
 					<p className='wolf-theme-hero__headline'>{headline}</p>
-				)}
-
-				{subheadline && (
-					<p className='wolf-theme-hero__subheadline'>{subheadline}</p>
 				)}
 			</div>
 
