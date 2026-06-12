@@ -121,6 +121,7 @@ class Taxonomy_Config {
 			'white'  => '#ffffff',
 			'beige'  => '#f5f0e8',
 			'yellow' => '#f5c842',
+			'gold'   => '#d4af37',
 			'grey'   => '#888888',
 			'blue'   => '#1e90ff',
 			'green'  => '#00cc44',
