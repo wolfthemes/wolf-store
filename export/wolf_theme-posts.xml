@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/7.0" created="2026-06-12 09:42" -->
+	<!-- generator="WordPress/7.0" created="2026-06-12 10:58" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>WolfThemes</title>
 	<link>https://staging20.wolfthemes.com</link>
 	<description>Premium Wordpress Themes</description>
-	<pubDate>Fri, 12 Jun 2026 09:42:51 +0000</pubDate>
+	<pubDate>Fri, 12 Jun 2026 10:58:36 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://staging20.wolfthemes.com</wp:base_site_url>
@@ -60,8 +60,8 @@
 		<wp:post_id>3105</wp:post_id>
 		<wp:post_date><![CDATA[2015-03-10 09:19:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2015-03-10 14:19:00]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 05:28:39]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 10:28:39]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:02:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:02:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[decibel]]></wp:post_name>
@@ -73,6 +73,8 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_tag" nicename="complete"><![CDATA[complete]]></category>
+		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_tag" nicename="discography-2"><![CDATA[discography]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
 		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
@@ -83,6 +85,7 @@
 		<category domain="theme_tag" nicename="tour-dates-2"><![CDATA[tour dates]]></category>
 		<category domain="theme_tag" nicename="video"><![CDATA[video]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -149,8 +152,8 @@
 		<wp:post_id>3109</wp:post_id>
 		<wp:post_date><![CDATA[2015-03-20 09:26:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2015-03-20 14:26:36]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 05:39:37]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 10:39:37]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:47:52]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:47:52]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[tattoopress]]></wp:post_name>
@@ -160,13 +163,22 @@
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_tag" nicename="booking"><![CDATA[booking]]></category>
 		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_style" nicename="grunge"><![CDATA[Grunge]]></category>
+		<category domain="theme_cat" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+		<category domain="theme_tag" nicename="portfolio-2"><![CDATA[portfolio]]></category>
+		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
+		<category domain="theme_tag" nicename="studio"><![CDATA[studio]]></category>
+		<category domain="theme_cat" nicename="tattoo"><![CDATA[Tattoo]]></category>
 		<category domain="theme_tag" nicename="tattoo-parlour"><![CDATA[tattoo parlour]]></category>
-		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
 		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -206,7 +218,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
@@ -237,8 +249,8 @@
 		<wp:post_id>3110</wp:post_id>
 		<wp:post_date><![CDATA[2017-06-29 09:26:37]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2017-06-29 14:26:37]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 06:11:35]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 11:11:35]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:48:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:48:38]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[tune]]></wp:post_name>
@@ -250,13 +262,16 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="49-99"><![CDATA[49.99]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_tag" nicename="classic"><![CDATA[classic]]></category>
+		<category domain="theme_style" nicename="clean"><![CDATA[Clean]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
-		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
 		<category domain="theme_cat" nicename="one-page"><![CDATA[One Page]]></category>
+		<category domain="theme_tag" nicename="one-page-2"><![CDATA[one-page]]></category>
 		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
+		<category domain="theme_tag" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
@@ -362,8 +377,8 @@
 		<wp:post_id>3112</wp:post_id>
 		<wp:post_date><![CDATA[2017-10-28 09:26:40]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2017-10-28 14:26:40]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 04:50:55]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 09:50:55]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:13:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:13:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[loud]]></wp:post_name>
@@ -375,15 +390,17 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_tag" nicename="band"><![CDATA[band]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
-		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
+		<category domain="theme_tag" nicename="bold"><![CDATA[bold]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="dramatic"><![CDATA[dramatic]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
 		<category domain="theme_color" nicename="grey"><![CDATA[Grey]]></category>
 		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
-		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
+		<category domain="theme_tag" nicename="smoke"><![CDATA[smoke]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
@@ -420,7 +437,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[254]]></wp:meta_value>
+		<wp:meta_value><![CDATA[223]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
@@ -428,7 +445,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[232]]></wp:meta_value>
+		<wp:meta_value><![CDATA[231]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
@@ -447,8 +464,8 @@
 		<wp:post_id>3113</wp:post_id>
 		<wp:post_date><![CDATA[2017-12-14 09:26:41]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2017-12-14 14:26:41]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 06:28:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 11:28:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:40:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:40:01]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[hares]]></wp:post_name>
@@ -462,16 +479,21 @@
 		<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
 		<category domain="theme_tag" nicename="barber"><![CDATA[barber]]></category>
+		<category domain="theme_tag" nicename="biker"><![CDATA[biker]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
 		<category domain="theme_tag" nicename="brewery"><![CDATA[brewery]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_tag" nicename="fishing"><![CDATA[fishing]]></category>
+		<category domain="theme_color" nicename="gold"><![CDATA[Gold]]></category>
+		<category domain="theme_style" nicename="grunge"><![CDATA[Grunge]]></category>
+		<category domain="theme_tag" nicename="grunge"><![CDATA[grunge]]></category>
+		<category domain="theme_cat" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
 		<category domain="theme_tag" nicename="photography"><![CDATA[photography]]></category>
-		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
+		<category domain="theme_tag" nicename="tattoo"><![CDATA[tattoo]]></category>
 		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
-		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -489,16 +511,20 @@
 		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31575/plan/51802/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[3355]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		<wp:meta_value><![CDATA[287]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[226]]></wp:meta_value>
+		<wp:meta_value><![CDATA[224]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
@@ -533,8 +559,8 @@
 		<wp:post_id>3114</wp:post_id>
 		<wp:post_date><![CDATA[2018-01-17 09:26:43]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-01-17 14:26:43]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 06:54:00]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 11:54:00]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:07:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:07:10]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[glytch]]></wp:post_name>
@@ -545,12 +571,19 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_style" nicename="colorful"><![CDATA[Colorful]]></category>
+		<category domain="theme_tag" nicename="electronic"><![CDATA[electronic]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_tag" nicename="glitch"><![CDATA[glitch]]></category>
+		<category domain="theme_tag" nicename="indie"><![CDATA[indie]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
+		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
+		<category domain="theme_tag" nicename="vibrant"><![CDATA[vibrant]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
@@ -610,8 +643,8 @@
 		<wp:post_id>3115</wp:post_id>
 		<wp:post_date><![CDATA[2018-03-14 09:26:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-03-14 14:26:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 06:44:52]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 11:44:52]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:35:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:35:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[superflick]]></wp:post_name>
@@ -621,8 +654,20 @@
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_tag" nicename="cinema"><![CDATA[cinema]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_tag" nicename="cinema"><![CDATA[cinema]]></category>
+		<category domain="theme_style" nicename="cinematic"><![CDATA[Cinematic]]></category>
+		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="filmmaker"><![CDATA[filmmaker]]></category>
+		<category domain="theme_tag" nicename="portfolio-2"><![CDATA[portfolio]]></category>
+		<category domain="theme_tag" nicename="reel"><![CDATA[reel]]></category>
+		<category domain="theme_tag" nicename="video"><![CDATA[video]]></category>
+		<category domain="theme_cat" nicename="video-film"><![CDATA[Video/Film]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
+		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -641,23 +686,23 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		<wp:meta_value><![CDATA[354]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[224]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[231]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
@@ -680,8 +725,8 @@
 		<wp:post_id>3116</wp:post_id>
 		<wp:post_date><![CDATA[2018-05-10 09:26:46]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-05-10 14:26:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 06:36:01]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 11:36:01]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:25:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:25:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[phase]]></wp:post_name>
@@ -693,11 +738,15 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_tag" nicename="artist-taxonomy"><![CDATA[artist-taxonomy]]></category>
+		<category domain="theme_tag" nicename="band"><![CDATA[band]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_tag" nicename="brushstroke"><![CDATA[brushstroke]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
 		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="multi-artist"><![CDATA[multi-artist]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
@@ -762,8 +811,8 @@
 		<wp:post_id>3117</wp:post_id>
 		<wp:post_date><![CDATA[2018-06-05 09:26:47]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-06-05 14:26:47]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 08:23:57]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 13:23:57]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:30:45]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:30:45]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[zample]]></wp:post_name>
@@ -774,11 +823,25 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="49-99"><![CDATA[49.99]]></category>
+		<category domain="theme_tag" nicename="animated"><![CDATA[animated]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_tag" nicename="brushstroke"><![CDATA[brushstroke]]></category>
 		<category domain="theme_tag" nicename="colorful"><![CDATA[colorful]]></category>
+		<category domain="theme_style" nicename="colorful"><![CDATA[Colorful]]></category>
+		<category domain="theme_tag" nicename="elementor"><![CDATA[elementor]]></category>
+		<category domain="theme_tag" nicename="energetic"><![CDATA[energetic]]></category>
+		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_cat" nicename="one-page"><![CDATA[One Page]]></category>
+		<category domain="theme_tag" nicename="one-page-2"><![CDATA[one-page]]></category>
+		<category domain="theme_color" nicename="orange"><![CDATA[Orange]]></category>
+		<category domain="theme_color" nicename="purple"><![CDATA[Purple]]></category>
+		<category domain="theme_tag" nicename="rainbow"><![CDATA[rainbow]]></category>
+		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
+		<category domain="theme_tag" nicename="vibrant"><![CDATA[vibrant]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
+		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -797,7 +860,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[224]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
@@ -817,7 +880,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -836,8 +899,8 @@
 		<wp:post_id>3118</wp:post_id>
 		<wp:post_date><![CDATA[2018-07-01 09:26:48]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-07-01 14:26:48]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 03:40:27]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 08:40:27]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:27:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:27:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[prequelle]]></wp:post_name>
@@ -848,11 +911,15 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_tag" nicename="boutique"><![CDATA[boutique]]></category>
+		<category domain="theme_tag" nicename="editorial"><![CDATA[editorial]]></category>
 		<category domain="theme_style" nicename="elegant"><![CDATA[Elegant]]></category>
+		<category domain="theme_cat" nicename="fashion"><![CDATA[Fashion]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_tag" nicename="luxury"><![CDATA[luxury]]></category>
-		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+		<category domain="theme_tag" nicename="minimal"><![CDATA[minimal]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -876,7 +943,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[203]]></wp:meta_value>
+		<wp:meta_value><![CDATA[260]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -949,8 +1016,8 @@
 		<wp:post_id>3120</wp:post_id>
 		<wp:post_date><![CDATA[2018-09-08 09:26:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-09-08 14:26:51]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:09:46]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:09:46]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:50:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:50:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[vonzot]]></wp:post_name>
@@ -961,12 +1028,19 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
-		<category domain="theme_color" nicename="blue"><![CDATA[Blue]]></category>
+		<category domain="theme_style" nicename="bold"><![CDATA[Bold]]></category>
+		<category domain="theme_tag" nicename="format"><![CDATA[format]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_color" nicename="pink"><![CDATA[Pink]]></category>
+		<category domain="theme_color" nicename="purple"><![CDATA[Purple]]></category>
+		<category domain="theme_tag" nicename="record-shop"><![CDATA[record-shop]]></category>
+		<category domain="theme_tag" nicename="retail"><![CDATA[retail]]></category>
 		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+		<category domain="theme_tag" nicename="vinyl"><![CDATA[vinyl]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -998,7 +1072,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[232]]></wp:meta_value>
+		<wp:meta_value><![CDATA[263]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
@@ -1010,7 +1084,11 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1025,8 +1103,8 @@
 		<wp:post_id>3121</wp:post_id>
 		<wp:post_date><![CDATA[2018-10-12 09:26:53]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-10-12 14:26:53]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 08:14:22]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 13:14:22]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:01:31]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:01:31]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[deadlift]]></wp:post_name>
@@ -1037,13 +1115,16 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_tag" nicename="crossfit"><![CDATA[crossfit]]></category>
+		<category domain="theme_cat" nicename="fitness"><![CDATA[Fitness]]></category>
 		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
 		<category domain="theme_tag" nicename="gym"><![CDATA[gym]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
-		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
 		<category domain="theme_tag" nicename="sport"><![CDATA[sport]]></category>
+		<category domain="theme_tag" nicename="trainer"><![CDATA[trainer]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_tag" nicename="workout"><![CDATA[workout]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
@@ -1064,7 +1145,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[107]]></wp:meta_value>
+		<wp:meta_value><![CDATA[279]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -1103,8 +1184,8 @@
 		<wp:post_id>3122</wp:post_id>
 		<wp:post_date><![CDATA[2018-12-06 09:26:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-12-06 14:26:54]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:01:19]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:01:19]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:12:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:12:02]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[kayo]]></wp:post_name>
@@ -1115,10 +1196,17 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_style" nicename="clean"><![CDATA[Clean]]></category>
+		<category domain="theme_tag" nicename="editorial"><![CDATA[editorial]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_tag" nicename="indie"><![CDATA[indie]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_tag" nicename="light"><![CDATA[light]]></category>
+		<category domain="theme_style" nicename="minimal"><![CDATA[Minimal]]></category>
+		<category domain="theme_tag" nicename="minimal"><![CDATA[minimal]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -1181,8 +1269,8 @@
 		<wp:post_id>3123</wp:post_id>
 		<wp:post_date><![CDATA[2019-01-15 09:26:55]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-01-15 14:26:55]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 09:37:52]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 14:37:52]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:33:22]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:33:22]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[reinar]]></wp:post_name>
@@ -1192,9 +1280,20 @@
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
+		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="discography-2"><![CDATA[discography]]></category>
+		<category domain="theme_tag" nicename="folk"><![CDATA[folk]]></category>
+		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
+		<category domain="theme_tag" nicename="metal"><![CDATA[metal]]></category>
+		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="nordic"><![CDATA[nordic]]></category>
+		<category domain="theme_tag" nicename="runic"><![CDATA[runic]]></category>
 		<category domain="theme_tag" nicename="viking"><![CDATA[viking]]></category>
+		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1225,45 +1324,56 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[254]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[231]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Beatit]]></title>
-		<link>https://staging20.wolfthemes.com/?post_type=wolf_theme&#038;p=3127</link>
-		<pubDate>Thu, 29 Aug 2019 14:27:01 +0000</pubDate>
+		<title><![CDATA[Snakepit]]></title>
+		<link>https://staging20.wolfthemes.com/theme/snakepit/</link>
+		<pubDate>Wed, 06 Mar 2019 14:26:57 +0000</pubDate>
 		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/beatit/</guid>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/snakepit/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3127</wp:post_id>
-		<wp:post_date><![CDATA[2019-08-29 09:27:01]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-08-29 14:27:01]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-10 07:22:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-10 12:22:10]]></wp:post_modified_gmt>
+		<wp:post_id>3124</wp:post_id>
+		<wp:post_date><![CDATA[2019-03-06 09:26:57]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-03-06 14:26:57]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:39:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:39:13]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[beatit]]></wp:post_name>
-		<wp:status><![CDATA[pending]]></wp:status>
+		<wp:post_name><![CDATA[snakepit]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_tag" nicename="band"><![CDATA[band]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="distressed"><![CDATA[distressed]]></category>
+		<category domain="theme_style" nicename="grunge"><![CDATA[Grunge]]></category>
+		<category domain="theme_tag" nicename="metal"><![CDATA[metal]]></category>
+		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_tag" nicename="rock"><![CDATA[rock]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1272,31 +1382,81 @@
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31594/plan/51828/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3354]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
+		<wp:meta_value><![CDATA[111]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
+		<wp:meta_value><![CDATA[224]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
+		<wp:meta_value><![CDATA[231]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Bronze]]></title>
-		<link>https://staging20.wolfthemes.com/?post_type=wolf_theme&#038;p=3130</link>
-		<pubDate>Thu, 09 Jul 2020 14:27:05 +0000</pubDate>
+		<title><![CDATA[Alceste]]></title>
+		<link>https://staging20.wolfthemes.com/theme/alceste/</link>
+		<pubDate>Sun, 28 Apr 2019 14:26:58 +0000</pubDate>
 		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/bronze/</guid>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/alceste/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3130</wp:post_id>
-		<wp:post_date><![CDATA[2020-07-09 09:27:05]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2020-07-09 14:27:05]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-10 07:21:59]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-10 12:21:59]]></wp:post_modified_gmt>
+		<wp:post_id>3125</wp:post_id>
+		<wp:post_date><![CDATA[2019-04-28 09:26:58]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-04-28 14:26:58]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 04:50:24]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 09:50:24]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[bronze]]></wp:post_name>
-		<wp:status><![CDATA[pending]]></wp:status>
+		<wp:post_name><![CDATA[alceste]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_style" nicename="bold"><![CDATA[Bold]]></category>
+		<category domain="theme_cat" nicename="fashion"><![CDATA[Fashion]]></category>
+		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="streetwear"><![CDATA[streetwear]]></category>
+		<category domain="theme_tag" nicename="urban"><![CDATA[urban]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1304,6 +1464,50 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31665/plan/51945/]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3373]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
+		<wp:meta_value><![CDATA[260]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
+		<wp:meta_value><![CDATA[223]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
+		<wp:meta_value><![CDATA[232]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1318,8 +1522,8 @@
 		<wp:post_id>3132</wp:post_id>
 		<wp:post_date><![CDATA[2014-05-07 09:27:07]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2014-05-07 14:27:07]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 04:19:47]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 09:19:47]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:42:36]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:42:36]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[speaker]]></wp:post_name>
@@ -1330,10 +1534,19 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="49-99"><![CDATA[49.99]]></category>
+		<category domain="theme_tag" nicename="band"><![CDATA[band]]></category>
+		<category domain="theme_color" nicename="beige"><![CDATA[Beige]]></category>
+		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_tag" nicename="live"><![CDATA[live]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_cat" nicename="one-page"><![CDATA[One Page]]></category>
+		<category domain="theme_tag" nicename="one-page-2"><![CDATA[one-page]]></category>
+		<category domain="theme_tag" nicename="sepia"><![CDATA[sepia]]></category>
+		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
+		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_style" nicename="warm"><![CDATA[Warm]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -1362,6 +1575,10 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -1442,22 +1659,22 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Snakepit]]></title>
-		<link>https://staging20.wolfthemes.com/theme/snakepit/</link>
-		<pubDate>Wed, 06 Mar 2019 14:26:57 +0000</pubDate>
+		<title><![CDATA[Milu]]></title>
+		<link>https://staging20.wolfthemes.com/theme/milu/</link>
+		<pubDate>Tue, 23 Jul 2019 14:26:59 +0000</pubDate>
 		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/snakepit/</guid>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/milu/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3124</wp:post_id>
-		<wp:post_date><![CDATA[2019-03-06 09:26:57]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-03-06 14:26:57]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 08:02:00]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 13:02:00]]></wp:post_modified_gmt>
+		<wp:post_id>3126</wp:post_id>
+		<wp:post_date><![CDATA[2019-07-23 09:26:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-07-23 14:26:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:18:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:18:02]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[snakepit]]></wp:post_name>
+		<wp:post_name><![CDATA[milu]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -1465,15 +1682,18 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
-		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
-		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
-		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
-		<category domain="theme_tag" nicename="metal"><![CDATA[metal]]></category>
+		<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
+		<category domain="theme_tag" nicename="app"><![CDATA[app]]></category>
+		<category domain="theme_color" nicename="blue"><![CDATA[Blue]]></category>
+		<category domain="theme_tag" nicename="elementor"><![CDATA[elementor]]></category>
+		<category domain="theme_tag" nicename="landing-page"><![CDATA[landing-page]]></category>
+		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
-		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
-		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
-		<category domain="theme_tag" nicename="rock"><![CDATA[rock]]></category>
-		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_style" nicename="playful"><![CDATA[Playful]]></category>
+		<category domain="theme_tag" nicename="saas"><![CDATA[saas]]></category>
+		<category domain="theme_tag" nicename="startup"><![CDATA[startup]]></category>
+		<category domain="theme_cat" nicename="tech-saas"><![CDATA[Tech/SaaS]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
@@ -1486,98 +1706,15 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31594/plan/51828/]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[3354]]></wp:meta_value>
+		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31651/plan/51923/]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[111]]></wp:meta_value>
+		<wp:meta_value><![CDATA[319]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[224]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[229]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[231]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
-		<wp:meta_value><![CDATA[237]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
-		<wp:meta_value><![CDATA[90]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Alceste]]></title>
-		<link>https://staging20.wolfthemes.com/theme/alceste/</link>
-		<pubDate>Sun, 28 Apr 2019 14:26:58 +0000</pubDate>
-		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/alceste/</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3125</wp:post_id>
-		<wp:post_date><![CDATA[2019-04-28 09:26:58]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-04-28 14:26:58]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 06:28:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 11:28:03]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[alceste]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
-		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
-		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
-		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
-		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
-		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
-		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wolf_theme_featured]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31665/plan/51945/]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[3373]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[203]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[223]]></wp:meta_value>
+		<wp:meta_value><![CDATA[258]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
@@ -1597,34 +1734,47 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Milu]]></title>
-		<link>https://staging20.wolfthemes.com/theme/milu/</link>
-		<pubDate>Tue, 23 Jul 2019 14:26:59 +0000</pubDate>
+		<title><![CDATA[Beatit]]></title>
+		<link>https://staging20.wolfthemes.com/theme/beatit/</link>
+		<pubDate>Thu, 29 Aug 2019 14:27:01 +0000</pubDate>
 		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/milu/</guid>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/beatit/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3126</wp:post_id>
-		<wp:post_date><![CDATA[2019-07-23 09:26:59]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-07-23 14:26:59]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 02:58:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 07:58:45]]></wp:post_modified_gmt>
+		<wp:post_id>3127</wp:post_id>
+		<wp:post_date><![CDATA[2019-08-29 09:27:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-08-29 14:27:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 04:56:48]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 09:56:48]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[milu]]></wp:post_name>
+		<wp:post_name><![CDATA[beatit]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="blue"><![CDATA[Blue]]></category>
+		<category domain="theme_tag" nicename="dark"><![CDATA[dark]]></category>
+		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="dj"><![CDATA[dj]]></category>
+		<category domain="theme_tag" nicename="electronic"><![CDATA[electronic]]></category>
+		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_color" nicename="purple"><![CDATA[Purple]]></category>
+		<category domain="theme_tag" nicename="solo-artist"><![CDATA[solo-artist]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1634,36 +1784,32 @@
 		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wolf_theme_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[https://checkout.freemius.com/theme/31651/plan/51923/]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		<wp:meta_value><![CDATA[111]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[269]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[231]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
 		<wp:meta_value><![CDATA[90]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1678,8 +1824,8 @@
 		<wp:post_id>3128</wp:post_id>
 		<wp:post_date><![CDATA[2019-12-11 09:27:02]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-12-11 14:27:02]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 06:20:34]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 11:20:34]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:10:40]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:10:40]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[herion]]></wp:post_name>
@@ -1690,8 +1836,14 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_style" nicename="clean"><![CDATA[Clean]]></category>
+		<category domain="theme_color" nicename="grey"><![CDATA[Grey]]></category>
 		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
+		<category domain="theme_tag" nicename="label-management"><![CDATA[label-management]]></category>
+		<category domain="theme_tag" nicename="multi-artist"><![CDATA[multi-artist]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_tag" nicename="roster"><![CDATA[roster]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1710,7 +1862,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[223]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
@@ -1718,7 +1870,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[305]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
@@ -1753,8 +1905,8 @@
 		<wp:post_id>3129</wp:post_id>
 		<wp:post_date><![CDATA[2020-04-21 09:27:03]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2020-04-21 14:27:03]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:30:11]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:30:11]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:46:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:46:53]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[staaw]]></wp:post_name>
@@ -1764,7 +1916,19 @@
 		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_style" nicename="bold"><![CDATA[Bold]]></category>
+		<category domain="theme_style" nicename="clean"><![CDATA[Clean]]></category>
+		<category domain="theme_tag" nicename="custom-print"><![CDATA[custom-print]]></category>
+		<category domain="theme_tag" nicename="merch"><![CDATA[merch]]></category>
+		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="no-inventory"><![CDATA[no-inventory]]></category>
+		<category domain="theme_tag" nicename="pod"><![CDATA[pod]]></category>
+		<category domain="theme_cat" nicename="print-on-demand"><![CDATA[Print-on-Demand]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1779,27 +1943,105 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[203]]></wp:meta_value>
+		<wp:meta_value><![CDATA[365]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[224]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[305]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
 		<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3395]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Bronze]]></title>
+		<link>https://staging20.wolfthemes.com/theme/bronze/</link>
+		<pubDate>Thu, 09 Jul 2020 14:27:05 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/theme/bronze/</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3130</wp:post_id>
+		<wp:post_date><![CDATA[2020-07-09 09:27:05]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2020-07-09 14:27:05]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 04:57:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 09:57:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[bronze]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wolf_theme]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
+		<category domain="theme_tag" nicename="brushstroke"><![CDATA[brushstroke]]></category>
+		<category domain="theme_tag" nicename="concert"><![CDATA[concert]]></category>
+		<category domain="theme_tag" nicename="live"><![CDATA[live]]></category>
+		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_color" nicename="orange"><![CDATA[Orange]]></category>
+		<category domain="theme_tag" nicename="organic"><![CDATA[organic]]></category>
+		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_page_builder" nicename="wpbakery-page-builder"><![CDATA[WPBakery Page Builder]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2026-05-18]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
+		<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
+		<wp:meta_value><![CDATA[234]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
+		<wp:meta_value><![CDATA[237]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_price]]></wp:meta_key>
+		<wp:meta_value><![CDATA[229]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
+		<wp:meta_value><![CDATA[254]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
+		<wp:meta_value><![CDATA[111]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_estimated-reading-time-minutes]]></wp:meta_key>
@@ -1818,8 +2060,8 @@
 		<wp:post_id>3131</wp:post_id>
 		<wp:post_date><![CDATA[2021-06-08 09:27:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-06-08 14:27:06]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 06:12:39]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 11:12:39]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:43:21]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:43:21]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[swingster]]></wp:post_name>
@@ -1831,11 +2073,14 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_tag" nicename="band"><![CDATA[band]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="elementor"><![CDATA[elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
 		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
@@ -1896,8 +2141,8 @@
 		<wp:post_id>3133</wp:post_id>
 		<wp:post_date><![CDATA[2021-08-01 09:27:09]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-08-01 14:27:09]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 03:28:58]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 08:28:58]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:22:07]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:22:07]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[nu]]></wp:post_name>
@@ -1909,14 +2154,19 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
-		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
+		<category domain="theme_color" nicename="beige"><![CDATA[Beige]]></category>
 		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
 		<category domain="theme_tag" nicename="designer"><![CDATA[designer]]></category>
+		<category domain="theme_tag" nicename="editorial"><![CDATA[editorial]]></category>
+		<category domain="theme_style" nicename="editorial"><![CDATA[Editorial]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="ink"><![CDATA[ink]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="minimal"><![CDATA[Minimal]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="portfolio-2"><![CDATA[portfolio]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -1982,8 +2232,8 @@
 		<wp:post_id>3134</wp:post_id>
 		<wp:post_date><![CDATA[2021-12-16 09:27:10]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2021-12-16 14:27:10]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:43:51]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:43:51]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:36:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:36:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[spectacle]]></wp:post_name>
@@ -1994,11 +2244,18 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
+		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_color" nicename="blue"><![CDATA[Blue]]></category>
+		<category domain="theme_tag" nicename="contemporary"><![CDATA[contemporary]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_tag" nicename="neon"><![CDATA[neon]]></category>
+		<category domain="theme_color" nicename="purple"><![CDATA[Purple]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2060,8 +2317,8 @@
 		<wp:post_id>3135</wp:post_id>
 		<wp:post_date><![CDATA[2022-02-23 09:27:11]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2022-02-23 14:27:11]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:56:27]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:56:27]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:03:09]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:03:09]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[effigy]]></wp:post_name>
@@ -2072,13 +2329,18 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_tag" nicename="acoustic"><![CDATA[acoustic]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
 		<category domain="theme_color" nicename="beige"><![CDATA[Beige]]></category>
+		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_tag" nicename="folk"><![CDATA[folk]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_tag" nicename="solo-artist"><![CDATA[solo-artist]]></category>
 		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
+		<category domain="theme_tag" nicename="warm"><![CDATA[warm]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -2141,8 +2403,8 @@
 		<wp:post_id>3136</wp:post_id>
 		<wp:post_date><![CDATA[2022-04-20 09:27:13]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2022-04-20 14:27:13]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 02:40:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 07:40:10]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:23:24]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:23:24]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[omnity]]></wp:post_name>
@@ -2153,12 +2415,17 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
+		<category domain="theme_style" nicename="clean"><![CDATA[Clean]]></category>
+		<category domain="theme_tag" nicename="direct-to-fan"><![CDATA[direct-to-fan]]></category>
+		<category domain="theme_tag" nicename="downloads"><![CDATA[downloads]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
-		<category domain="theme_style" nicename="minimal"><![CDATA[Minimal]]></category>
+		<category domain="theme_tag" nicename="merch"><![CDATA[merch]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+		<category domain="theme_tag" nicename="vinyl"><![CDATA[vinyl]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2204,6 +2471,10 @@
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wolf_theme_video_url]]></wp:meta_key>
 		<wp:meta_value><![CDATA[https://preview-v2-wolfthemes.b-cdn.net/app/uploads/sites/43/2022/04/record-record-player-vinyl-turntable-retro-Stock-Footage.mp4]]></wp:meta_value>
 		</wp:postmeta>
@@ -2220,8 +2491,8 @@
 		<wp:post_id>3137</wp:post_id>
 		<wp:post_date><![CDATA[2022-06-06 09:27:14]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2022-06-06 14:27:14]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-10 07:03:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-10 12:03:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:05:21]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:05:21]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[elsass]]></wp:post_name>
@@ -2232,14 +2503,20 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
+		<category domain="theme_color" nicename="brown"><![CDATA[Brown]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_cat" nicename="food-beverage"><![CDATA[Food &amp; Beverage]]></category>
+		<category domain="theme_color" nicename="gold"><![CDATA[Gold]]></category>
+		<category domain="theme_cat" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
-		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
-		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
+		<category domain="theme_tag" nicename="tasting"><![CDATA[tasting]]></category>
 		<category domain="theme_tag" nicename="vineyard"><![CDATA[vineyard]]></category>
 		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 		<category domain="theme_tag" nicename="wine"><![CDATA[wine]]></category>
+		<category domain="theme_tag" nicename="winery"><![CDATA[winery]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2254,7 +2531,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[203]]></wp:meta_value>
+		<wp:meta_value><![CDATA[287]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -2297,8 +2574,8 @@
 		<wp:post_id>3138</wp:post_id>
 		<wp:post_date><![CDATA[2022-10-22 09:27:16]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2022-10-22 14:27:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:17:12]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:17:12]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:24:46]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:24:46]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[overable]]></wp:post_name>
@@ -2314,10 +2591,13 @@
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
+		<category domain="theme_tag" nicename="hip-hop"><![CDATA[hip-hop]]></category>
 		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
+		<category domain="theme_tag" nicename="mainstream"><![CDATA[mainstream]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
+		<category domain="theme_tag" nicename="roster"><![CDATA[roster]]></category>
 		<category domain="theme_tag" nicename="urban"><![CDATA[urban]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
@@ -2380,8 +2660,8 @@
 		<wp:post_id>3139</wp:post_id>
 		<wp:post_date><![CDATA[2023-07-07 09:27:17]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-07-07 14:27:17]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 09:55:53]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 14:55:53]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:19:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:19:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[morvan]]></wp:post_name>
@@ -2392,14 +2672,17 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
+		<category domain="theme_tag" nicename="boutique"><![CDATA[boutique]]></category>
 		<category domain="theme_style" nicename="elegant"><![CDATA[Elegant]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_cat" nicename="fashion"><![CDATA[Fashion]]></category>
+		<category domain="theme_tag" nicename="feminine"><![CDATA[feminine]]></category>
+		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_tag" nicename="lookbook"><![CDATA[lookbook]]></category>
 		<category domain="theme_tag" nicename="luxury"><![CDATA[luxury]]></category>
-		<category domain="theme_cat" nicename="shop"><![CDATA[Shop]]></category>
-		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2410,7 +2693,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[203]]></wp:meta_value>
+		<wp:meta_value><![CDATA[260]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
@@ -2465,8 +2748,8 @@
 		<wp:post_id>3140</wp:post_id>
 		<wp:post_date><![CDATA[2023-08-17 09:27:18]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-08-17 14:27:18]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-10 06:46:05]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-10 11:46:05]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 04:59:28]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 09:59:28]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[clix]]></wp:post_name>
@@ -2478,13 +2761,19 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
+		<category domain="theme_cat" nicename="agency"><![CDATA[Agency]]></category>
 		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
 		<category domain="theme_tag" nicename="designer"><![CDATA[designer]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="elementor"><![CDATA[elementor]]></category>
+		<category domain="theme_color" nicename="green"><![CDATA[Green]]></category>
 		<category domain="theme_tag" nicename="job-listing"><![CDATA[job listing]]></category>
+		<category domain="theme_tag" nicename="job-board"><![CDATA[job-board]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
+		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2546,8 +2835,8 @@
 		<wp:post_id>3141</wp:post_id>
 		<wp:post_date><![CDATA[2023-10-11 09:27:20]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2023-10-11 14:27:20]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 04:51:16]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 09:51:16]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:05:59]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:05:59]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[gaintab]]></wp:post_name>
@@ -2559,11 +2848,15 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_tag" nicename="booking"><![CDATA[booking]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="engineer"><![CDATA[engineer]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
-		<category domain="theme_tag" nicename="recording-studio"><![CDATA[recording studio]]></category>
+		<category domain="theme_tag" nicename="producer"><![CDATA[producer]]></category>
+		<category domain="theme_tag" nicename="recording-studio-2"><![CDATA[recording-studio]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2637,8 +2930,8 @@
 		<wp:post_id>3142</wp:post_id>
 		<wp:post_date><![CDATA[2024-01-07 09:27:21]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-01-07 14:27:21]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 09:46:31]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 14:46:31]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:49:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:49:42]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[unimate]]></wp:post_name>
@@ -2650,12 +2943,19 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="art-gallery"><![CDATA[art gallery]]></category>
+		<category domain="theme_cat" nicename="art-gallery"><![CDATA[Art Gallery]]></category>
 		<category domain="theme_color" nicename="beige"><![CDATA[Beige]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
+		<category domain="theme_tag" nicename="collections"><![CDATA[collections]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_tag" nicename="exhibition"><![CDATA[exhibition]]></category>
+		<category domain="theme_tag" nicename="institution"><![CDATA[institution]]></category>
+		<category domain="theme_style" nicename="institutional"><![CDATA[Institutional]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
+		<category domain="theme_style" nicename="minimal"><![CDATA[Minimal]]></category>
 		<category domain="theme_tag" nicename="museum"><![CDATA[museum]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2674,7 +2974,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		<wp:meta_value><![CDATA[373]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -2717,8 +3017,8 @@
 		<wp:post_id>3143</wp:post_id>
 		<wp:post_date><![CDATA[2024-03-24 09:27:22]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-03-24 14:27:22]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 07:50:56]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 12:50:56]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:21:09]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:21:09]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[notescape]]></wp:post_name>
@@ -2729,15 +3029,19 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="59-99"><![CDATA[59.99]]></category>
+		<category domain="theme_tag" nicename="band"><![CDATA[band]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
+		<category domain="theme_style" nicename="bold"><![CDATA[Bold]]></category>
+		<category domain="theme_tag" nicename="brushstroke"><![CDATA[brushstroke]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="dj"><![CDATA[dj]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
 		<category domain="theme_tag" nicename="musician"><![CDATA[musician]]></category>
 		<category domain="theme_cat" nicename="one-page"><![CDATA[One Page]]></category>
+		<category domain="theme_tag" nicename="one-page-2"><![CDATA[one-page]]></category>
 		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
-		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2799,8 +3103,8 @@
 		<wp:post_id>3144</wp:post_id>
 		<wp:post_date><![CDATA[2024-05-22 09:27:24]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-05-22 14:27:24]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-08 08:08:20]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-08 13:08:20]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:04:03]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:04:03]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[8pulse]]></wp:post_name>
@@ -2811,14 +3115,17 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
+		<category domain="theme_tag" nicename="biker"><![CDATA[biker]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_cat" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
 		<category domain="theme_tag" nicename="motorcycle"><![CDATA[motorcycle]]></category>
-		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
+		<category domain="theme_cat" nicename="motorcycle"><![CDATA[Motorcycle]]></category>
 		<category domain="theme_tag" nicename="vintage"><![CDATA[vintage]]></category>
 		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -2834,7 +3141,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[107]]></wp:meta_value>
+		<wp:meta_value><![CDATA[286]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
@@ -2897,8 +3204,8 @@
 		<wp:post_id>3145</wp:post_id>
 		<wp:post_date><![CDATA[2024-07-26 09:27:25]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-07-26 14:27:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 03:10:04]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 08:10:04]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:32:30]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:32:30]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[yor]]></wp:post_name>
@@ -2909,15 +3216,20 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
-		<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
 		<category domain="theme_tag" nicename="artist"><![CDATA[artist]]></category>
+		<category domain="theme_style" nicename="artistic"><![CDATA[Artistic]]></category>
 		<category domain="theme_color" nicename="beige"><![CDATA[Beige]]></category>
+		<category domain="theme_tag" nicename="collage"><![CDATA[collage]]></category>
+		<category domain="theme_tag" nicename="collector"><![CDATA[collector]]></category>
 		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
-		<category domain="theme_tag" nicename="designer"><![CDATA[designer]]></category>
 		<category domain="theme_style" nicename="elegant"><![CDATA[Elegant]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="fine-art"><![CDATA[fine-art]]></category>
+		<category domain="theme_tag" nicename="illustrator"><![CDATA[illustrator]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="painter"><![CDATA[painter]]></category>
 		<category domain="theme_tag" nicename="photography"><![CDATA[photography]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2979,8 +3291,8 @@
 		<wp:post_id>3146</wp:post_id>
 		<wp:post_date><![CDATA[2024-11-09 09:27:26]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2024-11-09 14:27:26]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 03:57:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 08:57:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:26:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:26:38]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[poize]]></wp:post_name>
@@ -2992,15 +3304,21 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="artists"><![CDATA[artists]]></category>
+		<category domain="theme_style" nicename="bold"><![CDATA[Bold]]></category>
 		<category domain="theme_tag" nicename="bold"><![CDATA[bold]]></category>
+		<category domain="theme_tag" nicename="concert"><![CDATA[concert]]></category>
+		<category domain="theme_tag" nicename="countdown"><![CDATA[countdown]]></category>
 		<category domain="theme_tag" nicename="dj"><![CDATA[dj]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_cat" nicename="events"><![CDATA[Events]]></category>
 		<category domain="theme_tag" nicename="festival"><![CDATA[festival]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_tag" nicename="tickets"><![CDATA[tickets]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[3290]]></wp:meta_value>
@@ -3151,8 +3469,8 @@
 		<wp:post_id>3104</wp:post_id>
 		<wp:post_date><![CDATA[2025-10-02 09:19:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-10-02 14:19:00]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 03:56:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 08:56:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 04:55:26]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 09:55:26]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[aurenza]]></wp:post_name>
@@ -3163,11 +3481,15 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
 		<category domain="theme_tag" nicename="dance"><![CDATA[dance]]></category>
+		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_tag" nicename="events"><![CDATA[events]]></category>
+		<category domain="theme_color" nicename="gold"><![CDATA[Gold]]></category>
+		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_cat" nicename="performing-arts"><![CDATA[Performing Arts]]></category>
+		<category domain="theme_tag" nicename="theater"><![CDATA[theater]]></category>
 		<category domain="theme_tag" nicename="video"><![CDATA[video]]></category>
 		<category domain="theme_color" nicename="yellow"><![CDATA[Yellow]]></category>
 						<wp:postmeta>
@@ -3176,7 +3498,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		<wp:meta_value><![CDATA[264]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
@@ -3299,8 +3621,8 @@
 		<wp:post_id>3147</wp:post_id>
 		<wp:post_date><![CDATA[2025-03-26 09:27:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-03-26 14:27:28]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 03:56:47]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 08:56:47]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:15:19]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:15:19]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[mediafoundry]]></wp:post_name>
@@ -3312,12 +3634,18 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="agency"><![CDATA[agency]]></category>
+		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
 		<category domain="theme_tag" nicename="branding"><![CDATA[branding]]></category>
 		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
 		<category domain="theme_tag" nicename="designer"><![CDATA[designer]]></category>
+		<category domain="theme_style" nicename="editorial"><![CDATA[Editorial]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="elementor"><![CDATA[elementor]]></category>
+		<category domain="theme_tag" nicename="job-board"><![CDATA[job-board]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="portfolio-2"><![CDATA[portfolio]]></category>
+		<category domain="theme_tag" nicename="team"><![CDATA[team]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -3376,8 +3704,8 @@
 		<wp:post_id>3148</wp:post_id>
 		<wp:post_date><![CDATA[2025-07-26 09:27:29]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-07-26 14:27:29]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-03 09:11:11]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-03 14:11:11]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:37:48]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:37:48]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[soundkraft]]></wp:post_name>
@@ -3389,10 +3717,15 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
+		<category domain="theme_tag" nicename="dramatic"><![CDATA[dramatic]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
 		<category domain="theme_color" nicename="grey"><![CDATA[Grey]]></category>
+		<category domain="theme_tag" nicename="label"><![CDATA[label]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
+		<category domain="theme_tag" nicename="multi-artist"><![CDATA[multi-artist]]></category>
 		<category domain="theme_cat" nicename="music"><![CDATA[Music]]></category>
+		<category domain="theme_color" nicename="pink"><![CDATA[Pink]]></category>
+		<category domain="theme_tag" nicename="roster"><![CDATA[roster]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3494,8 +3827,8 @@
 		<wp:post_id>3150</wp:post_id>
 		<wp:post_date><![CDATA[2025-10-24 09:27:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-10-24 14:27:32]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 09:24:50]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 14:24:50]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:00:39]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:00:39]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[covenant]]></wp:post_name>
@@ -3511,11 +3844,13 @@
 		<category domain="theme_tag" nicename="chapel"><![CDATA[chapel]]></category>
 		<category domain="theme_tag" nicename="christian"><![CDATA[christian]]></category>
 		<category domain="theme_tag" nicename="church"><![CDATA[church]]></category>
+		<category domain="theme_cat" nicename="church"><![CDATA[Church]]></category>
 		<category domain="theme_style" nicename="elegant"><![CDATA[Elegant]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_color" nicename="gold"><![CDATA[Gold]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
-		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
 		<category domain="theme_color" nicename="red"><![CDATA[Red]]></category>
+		<category domain="theme_style" nicename="traditional"><![CDATA[Traditional]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -3535,7 +3870,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[107]]></wp:meta_value>
+		<wp:meta_value><![CDATA[277]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_color]]></wp:meta_key>
@@ -3574,8 +3909,8 @@
 		<wp:post_id>3151</wp:post_id>
 		<wp:post_date><![CDATA[2025-11-30 09:27:33]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-11-30 14:27:33]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-06 03:54:43]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-06 08:54:43]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:16:21]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:16:21]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[megahertz]]></wp:post_name>
@@ -3588,11 +3923,16 @@
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="audio"><![CDATA[audio]]></category>
 		<category domain="theme_color" nicename="black"><![CDATA[Black]]></category>
-		<category domain="theme_cat" nicename="creative"><![CDATA[Creative]]></category>
+		<category domain="theme_cat" nicename="creator"><![CDATA[Creator]]></category>
+		<category domain="theme_tag" nicename="creator"><![CDATA[creator]]></category>
 		<category domain="theme_style" nicename="dark"><![CDATA[Dark]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="episodes"><![CDATA[episodes]]></category>
 		<category domain="theme_style" nicename="modern"><![CDATA[Modern]]></category>
 		<category domain="theme_tag" nicename="podcast"><![CDATA[podcast]]></category>
+		<category domain="theme_tag" nicename="streaming"><![CDATA[streaming]]></category>
+		<category domain="theme_tag" nicename="video"><![CDATA[video]]></category>
+		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3607,7 +3947,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_cat]]></wp:meta_key>
-		<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		<wp:meta_value><![CDATA[315]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_content_score]]></wp:meta_key>
@@ -3650,8 +3990,8 @@
 		<wp:post_id>3152</wp:post_id>
 		<wp:post_date><![CDATA[2026-02-17 09:27:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2026-02-17 14:27:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-10 07:16:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-10 12:16:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:20:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:20:35]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[nordkapp]]></wp:post_name>
@@ -3663,12 +4003,18 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="theme_price" nicename="69-99"><![CDATA[69.99]]></category>
 		<category domain="theme_tag" nicename="adventure"><![CDATA[adventure]]></category>
+		<category domain="theme_style" nicename="bold"><![CDATA[Bold]]></category>
 		<category domain="theme_page_builder" nicename="elementor"><![CDATA[Elementor]]></category>
+		<category domain="theme_tag" nicename="expedition"><![CDATA[expedition]]></category>
+		<category domain="theme_tag" nicename="gear"><![CDATA[gear]]></category>
 		<category domain="theme_style" nicename="light"><![CDATA[Light]]></category>
 		<category domain="theme_color" nicename="orange"><![CDATA[Orange]]></category>
 		<category domain="theme_cat" nicename="other"><![CDATA[Other]]></category>
-		<category domain="theme_style" nicename="vintage"><![CDATA[Vintage]]></category>
+		<category domain="theme_cat" nicename="outdoor"><![CDATA[Outdoor]]></category>
+		<category domain="theme_tag" nicename="outdoor"><![CDATA[outdoor]]></category>
+		<category domain="theme_tag" nicename="travel"><![CDATA[travel]]></category>
 		<category domain="theme_color" nicename="white"><![CDATA[White]]></category>
+		<category domain="theme_tag" nicename="woocommerce"><![CDATA[woocommerce]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3699,7 +4045,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_style]]></wp:meta_key>
-		<wp:meta_value><![CDATA[234]]></wp:meta_value>
+		<wp:meta_value><![CDATA[232]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_primary_theme_page_builder]]></wp:meta_key>
@@ -4152,39 +4498,6 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:2000;s:6:"height";i:1264;s:4:"file";s:40:"2019/01/aziz-acharki-285336-unsplash.jpg";s:8:"filesize";i:278227;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-300x190.jpg";s:5:"width";i:300;s:6:"height";i:190;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:8783;}s:5:"large";a:5:{s:4:"file";s:41:"aziz-acharki-285336-unsplash-1024x647.jpg";s:5:"width";i:1024;s:6:"height";i:647;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:80838;}s:9:"thumbnail";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:4203;}s:12:"medium_large";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-768x485.jpg";s:5:"width";i:768;s:6:"height";i:485;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:48297;}s:9:"1536x1536";a:5:{s:4:"file";s:41:"aziz-acharki-285336-unsplash-1536x971.jpg";s:5:"width";i:1536;s:6:"height";i:971;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:162714;}s:13:"seijaku-photo";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22386;}s:13:"seijaku-metro";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-550x348.jpg";s:5:"width";i:550;s:6:"height";i:348;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:26238;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22386;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-400x253.jpg";s:5:"width";i:400;s:6:"height";i:253;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14578;}s:10:"seijaku-XL";a:5:{s:4:"file";s:42:"aziz-acharki-285336-unsplash-1920x1213.jpg";s:5:"width";i:1920;s:6:"height";i:1213;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:234298;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:41:"aziz-acharki-285336-unsplash-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:98754;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22386;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-500x316.jpg";s:5:"width";i:500;s:6:"height";i:316;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:22386;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:40:"aziz-acharki-285336-unsplash-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13288;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"1";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Create music and a recording studio concept - Bearded funny man guitarist recording electric guitar track in home studio]]></title>
-		<link>https://staging20.wolfthemes.com/theme/spectacle/create-music-and-a-recording-studio-concept-bearded-funny-man-guitarist-recording-electric-guitar-track-in-home-studio/</link>
-		<pubDate>Fri, 29 May 2026 13:12:58 +0000</pubDate>
-		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2021/12/man_guitar_homestudio.jpg</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[Create music and a recording studio concept - Bearded man guitarist recording electric guitar track in home studio.]]></excerpt:encoded>
-		<wp:post_id>3314</wp:post_id>
-		<wp:post_date><![CDATA[2026-05-29 08:12:58]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2026-05-29 13:12:58]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-05-29 08:12:58]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-05-29 13:12:58]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[create-music-and-a-recording-studio-concept-bearded-funny-man-guitarist-recording-electric-guitar-track-in-home-studio]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>3134</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2021/12/man_guitar_homestudio.jpg]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2021/12/man_guitar_homestudio.jpg]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1300;s:4:"file";s:33:"2021/12/man_guitar_homestudio.jpg";s:8:"filesize";i:182427;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:33:"man_guitar_homestudio-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:9975;}s:5:"large";a:5:{s:4:"file";s:34:"man_guitar_homestudio-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:60498;}s:9:"thumbnail";a:5:{s:4:"file";s:33:"man_guitar_homestudio-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5139;}s:12:"medium_large";a:5:{s:4:"file";s:33:"man_guitar_homestudio-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:39240;}s:9:"1536x1536";a:5:{s:4:"file";s:35:"man_guitar_homestudio-1536x1024.jpg";s:5:"width";i:1536;s:6:"height";i:1024;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:109252;}s:13:"seijaku-photo";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:13:"seijaku-metro";a:5:{s:4:"file";s:33:"man_guitar_homestudio-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24138;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:33:"man_guitar_homestudio-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15306;}s:10:"seijaku-XL";a:5:{s:4:"file";s:35:"man_guitar_homestudio-1920x1280.jpg";s:5:"width";i:1920;s:6:"height";i:1280;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:151378;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:34:"man_guitar_homestudio-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:69223;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:33:"man_guitar_homestudio-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13637;}}s:10:"image_meta";a:13:{s:8:"aperture";s:3:"2.8";s:6:"credit";s:25:"satura_ - stock.adobe.com";s:6:"camera";s:12:"Canon EOS 6D";s:7:"caption";s:115:"Create music and a recording studio concept - Bearded man guitarist recording electric guitar track in home studio.";s:17:"created_timestamp";s:10:"1575400098";s:9:"copyright";s:27:"©satura_ - stock.adobe.com";s:12:"focal_length";s:2:"50";s:3:"iso";s:3:"640";s:13:"shutter_speed";s:4:"0.01";s:5:"title";s:120:"Create music and a recording studio concept - Bearded funny man guitarist recording electric guitar track in home studio";s:11:"orientation";s:1:"1";s:8:"keywords";a:50:{i:0;s:6:"studio";i:1;s:5:"music";i:2;s:5:"audio";i:3;s:3:"man";i:4;s:6:"guitar";i:5;s:5:"hobby";i:6;s:9:"equipment";i:7;s:10:"instrument";i:8;s:9:"guitarist";i:9;s:6:"record";i:10;s:4:"male";i:11;s:6:"effect";i:12;s:8:"musician";i:13;s:5:"sound";i:14;s:6:"artist";i:15;s:8:"computer";i:16;s:12:"professional";i:17;s:5:"style";i:18;s:6:"screen";i:19;s:4:"solo";i:20;s:4:"play";i:21;s:10:"technology";i:22;s:5:"track";i:23;s:6:"player";i:24;s:10:"production";i:25;s:4:"home";i:26;s:6:"people";i:27;s:6:"stereo";i:28;s:4:"wave";i:29;s:4:"song";i:30;s:7:"monitor";i:31;s:8:"composer";i:32;s:10:"occupation";i:33;s:4:"data";i:34;s:7:"desktop";i:35;s:7:"digital";i:36;s:7:"display";i:37;s:8:"electric";i:38;s:13:"entertainment";i:39;s:8:"internet";i:40;s:6:"laptop";i:41;s:11:"loudspeaker";i:42;s:5:"media";i:43;s:6:"mixing";i:44;s:8:"producer";i:45;s:10:"electronic";i:46;s:10:"distortion";i:47;s:9:"amplifier";i:48;s:6:"melody";i:49;s:6:"singer";}s:3:"alt";s:0:"";}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -4749,6 +5062,39 @@
 		</wp:postmeta>
 							</item>
 					<item>
+		<title><![CDATA[flavio-gasperini-F5Dvkyr2n2g-unsplash]]></title>
+		<link>https://staging20.wolfthemes.com/theme/staaw/flavio-gasperini-f5dvkyr2n2g-unsplash/</link>
+		<pubDate>Fri, 12 Jun 2026 10:46:48 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2020/04/flavio-gasperini-F5Dvkyr2n2g-unsplash.webp</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3395</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-12 05:46:48]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-12 10:46:48]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-12 05:46:48]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-12 10:46:48]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[flavio-gasperini-f5dvkyr2n2g-unsplash]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3129</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2020/04/flavio-gasperini-F5Dvkyr2n2g-unsplash.webp]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:2000;s:6:"height";i:1335;s:4:"file";s:50:"2020/04/flavio-gasperini-F5Dvkyr2n2g-unsplash.webp";s:8:"filesize";i:155624;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-300x200.webp";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:10440;}s:5:"large";a:5:{s:4:"file";s:51:"flavio-gasperini-F5Dvkyr2n2g-unsplash-1024x684.webp";s:5:"width";i:1024;s:6:"height";i:684;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:54920;}s:9:"thumbnail";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5528;}s:12:"medium_large";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-768x513.webp";s:5:"width";i:768;s:6:"height";i:513;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:36770;}s:9:"1536x1536";a:5:{s:4:"file";s:52:"flavio-gasperini-F5Dvkyr2n2g-unsplash-1536x1025.webp";s:5:"width";i:1536;s:6:"height";i:1025;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:97270;}s:13:"seijaku-photo";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-500x334.webp";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:20754;}s:13:"seijaku-metro";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-550x367.webp";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23784;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-500x334.webp";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:20754;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-400x267.webp";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15296;}s:10:"seijaku-XL";a:5:{s:4:"file";s:52:"flavio-gasperini-F5Dvkyr2n2g-unsplash-1920x1282.webp";s:5:"width";i:1920;s:6:"height";i:1282;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:129804;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:51:"flavio-gasperini-F5Dvkyr2n2g-unsplash-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:62924;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-500x334.webp";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:20754;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-500x334.webp";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:20754;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:50:"flavio-gasperini-F5Dvkyr2n2g-unsplash-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:13278;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2020/04/flavio-gasperini-F5Dvkyr2n2g-unsplash.webp]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
 		<title><![CDATA[preview]]></title>
 		<link>https://staging20.wolfthemes.com/theme/sable/preview-5/</link>
 		<pubDate>Thu, 28 May 2026 20:00:38 +0000</pubDate>
@@ -4977,6 +5323,39 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1301;s:4:"file";s:21:"2023/10/187472829.jpg";s:8:"filesize";i:237298;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:21:"187472829-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13057;}s:5:"large";a:5:{s:4:"file";s:22:"187472829-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:84628;}s:9:"thumbnail";a:5:{s:4:"file";s:21:"187472829-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5689;}s:12:"medium_large";a:5:{s:4:"file";s:21:"187472829-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:54777;}s:9:"1536x1536";a:5:{s:4:"file";s:23:"187472829-1536x1025.jpg";s:5:"width";i:1536;s:6:"height";i:1025;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:156192;}s:13:"seijaku-photo";a:5:{s:4:"file";s:21:"187472829-500x334.jpg";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28788;}s:13:"seijaku-metro";a:5:{s:4:"file";s:21:"187472829-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:33006;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:21:"187472829-500x334.jpg";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28788;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:21:"187472829-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20141;}s:10:"seijaku-XL";a:5:{s:4:"file";s:23:"187472829-1920x1281.jpg";s:5:"width";i:1920;s:6:"height";i:1281;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:216573;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:22:"187472829-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:99675;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:21:"187472829-500x334.jpg";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28788;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:21:"187472829-500x334.jpg";s:5:"width";i:500;s:6:"height";i:334;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28788;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:21:"187472829-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15510;}}s:10:"image_meta";a:13:{s:8:"aperture";s:3:"2.5";s:6:"credit";s:32:"LIGHTFIELD STUDIOS - stock.adobe";s:6:"camera";s:10:"NIKON D810";s:7:"caption";s:88:"sound producers using tablet together at recording studio with youtube website on screen";s:17:"created_timestamp";s:10:"1513781575";s:9:"copyright";s:0:"";s:12:"focal_length";s:2:"35";s:3:"iso";s:3:"320";s:13:"shutter_speed";s:4:"0.01";s:5:"title";s:64:"sound producers using tablet together at recording studio with y";s:11:"orientation";s:1:"1";s:8:"keywords";a:47:{i:0;s:64:"table,computer,empty,equipment,studio,art,female,people,male,ind";i:1;s:5:"table";i:2;s:8:"computer";i:3;s:5:"empty";i:4;s:9:"equipment";i:5;s:6:"studio";i:6;s:3:"art";i:7;s:6:"female";i:8;s:6:"people";i:9;s:4:"male";i:10;s:6:"indoor";i:11;s:4:"band";i:12;s:10:"electronic";i:13;s:5:"sound";i:14;s:11:"electronics";i:15;s:7:"network";i:16;s:8:"internet";i:17;s:5:"audio";i:18;s:5:"music";i:19;s:8:"together";i:20;s:12:"togetherness";i:21;s:3:"web";i:22;s:9:"recording";i:23;s:10:"production";i:24;s:10:"profession";i:25;s:7:"website";i:26;s:4:"team";i:27;s:6:"analog";i:28;s:6:"gadget";i:29;s:9:"editorial";i:30;s:10:"networking";i:31;s:5:"brand";i:32;s:9:"musicians";i:33;s:5:"knobs";i:34;s:10:"colleagues";i:35;s:13:"professionals";i:36;s:10:"copy space";i:37;s:16:"african american";i:38;s:12:"blank screen";i:39;s:9:"black man";i:40;s:7:"youtube";i:41;s:15:"caucasian woman";i:42;s:10:"well known";i:43;s:14:"digital device";i:44;s:13:"caucasian man";i:45;s:17:"graphic equalizer";i:46;s:15:"sound producers";}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Create music and a recording studio concept - Bearded funny man guitarist recording electric guitar track in home studio]]></title>
+		<link>https://staging20.wolfthemes.com/theme/spectacle/create-music-and-a-recording-studio-concept-bearded-funny-man-guitarist-recording-electric-guitar-track-in-home-studio/</link>
+		<pubDate>Fri, 29 May 2026 13:12:58 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2021/12/man_guitar_homestudio.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[Create music and a recording studio concept - Bearded man guitarist recording electric guitar track in home studio.]]></excerpt:encoded>
+		<wp:post_id>3314</wp:post_id>
+		<wp:post_date><![CDATA[2026-05-29 08:12:58]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-05-29 13:12:58]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-05-29 08:12:58]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-05-29 13:12:58]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[create-music-and-a-recording-studio-concept-bearded-funny-man-guitarist-recording-electric-guitar-track-in-home-studio]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3134</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2021/12/man_guitar_homestudio.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2021/12/man_guitar_homestudio.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1300;s:4:"file";s:33:"2021/12/man_guitar_homestudio.jpg";s:8:"filesize";i:182427;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:33:"man_guitar_homestudio-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:9975;}s:5:"large";a:5:{s:4:"file";s:34:"man_guitar_homestudio-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:60498;}s:9:"thumbnail";a:5:{s:4:"file";s:33:"man_guitar_homestudio-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5139;}s:12:"medium_large";a:5:{s:4:"file";s:33:"man_guitar_homestudio-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:39240;}s:9:"1536x1536";a:5:{s:4:"file";s:35:"man_guitar_homestudio-1536x1024.jpg";s:5:"width";i:1536;s:6:"height";i:1024;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:109252;}s:13:"seijaku-photo";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:13:"seijaku-metro";a:5:{s:4:"file";s:33:"man_guitar_homestudio-550x367.jpg";s:5:"width";i:550;s:6:"height";i:367;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24138;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:33:"man_guitar_homestudio-400x267.jpg";s:5:"width";i:400;s:6:"height";i:267;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:15306;}s:10:"seijaku-XL";a:5:{s:4:"file";s:35:"man_guitar_homestudio-1920x1280.jpg";s:5:"width";i:1920;s:6:"height";i:1280;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:151378;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:34:"man_guitar_homestudio-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:69223;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:33:"man_guitar_homestudio-500x333.jpg";s:5:"width";i:500;s:6:"height";i:333;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:20895;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:33:"man_guitar_homestudio-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13637;}}s:10:"image_meta";a:13:{s:8:"aperture";s:3:"2.8";s:6:"credit";s:25:"satura_ - stock.adobe.com";s:6:"camera";s:12:"Canon EOS 6D";s:7:"caption";s:115:"Create music and a recording studio concept - Bearded man guitarist recording electric guitar track in home studio.";s:17:"created_timestamp";s:10:"1575400098";s:9:"copyright";s:27:"©satura_ - stock.adobe.com";s:12:"focal_length";s:2:"50";s:3:"iso";s:3:"640";s:13:"shutter_speed";s:4:"0.01";s:5:"title";s:120:"Create music and a recording studio concept - Bearded funny man guitarist recording electric guitar track in home studio";s:11:"orientation";s:1:"1";s:8:"keywords";a:50:{i:0;s:6:"studio";i:1;s:5:"music";i:2;s:5:"audio";i:3;s:3:"man";i:4;s:6:"guitar";i:5;s:5:"hobby";i:6;s:9:"equipment";i:7;s:10:"instrument";i:8;s:9:"guitarist";i:9;s:6:"record";i:10;s:4:"male";i:11;s:6:"effect";i:12;s:8:"musician";i:13;s:5:"sound";i:14;s:6:"artist";i:15;s:8:"computer";i:16;s:12:"professional";i:17;s:5:"style";i:18;s:6:"screen";i:19;s:4:"solo";i:20;s:4:"play";i:21;s:10:"technology";i:22;s:5:"track";i:23;s:6:"player";i:24;s:10:"production";i:25;s:4:"home";i:26;s:6:"people";i:27;s:6:"stereo";i:28;s:4:"wave";i:29;s:4:"song";i:30;s:7:"monitor";i:31;s:8:"composer";i:32;s:10:"occupation";i:33;s:4:"data";i:34;s:7:"desktop";i:35;s:7:"digital";i:36;s:7:"display";i:37;s:8:"electric";i:38;s:13:"entertainment";i:39;s:8:"internet";i:40;s:6:"laptop";i:41;s:11:"loudspeaker";i:42;s:5:"media";i:43;s:6:"mixing";i:44;s:8:"producer";i:45;s:10:"electronic";i:46;s:10:"distortion";i:47;s:9:"amplifier";i:48;s:6:"melody";i:49;s:6:"singer";}s:3:"alt";s:0:"";}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -5376,39 +5755,6 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Serene Portrait in Ethereal Light]]></title>
-		<link>https://staging20.wolfthemes.com/theme/sable/serene-portrait-in-ethereal-light/</link>
-		<pubDate>Tue, 09 Jun 2026 14:08:25 +0000</pubDate>
-		<dc:creator><![CDATA[csag]]></dc:creator>
-		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Serene-Portrait-in-Ethereal-Light.jpg</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>3375</wp:post_id>
-		<wp:post_date><![CDATA[2026-06-09 09:08:25]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2026-06-09 14:08:25]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2026-06-09 09:08:25]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2026-06-09 14:08:25]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[serene-portrait-in-ethereal-light]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>3102</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Serene-Portrait-in-Ethereal-Light.jpg]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2026/04/Serene-Portrait-in-Ethereal-Light.jpg]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1463;s:4:"file";s:45:"2026/04/Serene-Portrait-in-Ethereal-Light.jpg";s:8:"filesize";i:296697;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-267x200.jpg";s:5:"width";i:267;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:9209;}s:5:"large";a:5:{s:4:"file";s:46:"Serene-Portrait-in-Ethereal-Light-1024x768.jpg";s:5:"width";i:1024;s:6:"height";i:768;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:75785;}s:9:"thumbnail";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5126;}s:12:"medium_large";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-768x576.jpg";s:5:"width";i:768;s:6:"height";i:576;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:47339;}s:9:"1536x1536";a:5:{s:4:"file";s:47:"Serene-Portrait-in-Ethereal-Light-1536x1152.jpg";s:5:"width";i:1536;s:6:"height";i:1152;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:155403;}s:13:"seijaku-photo";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:13:"seijaku-metro";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-550x413.jpg";s:5:"width";i:550;s:6:"height";i:413;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28026;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-400x300.jpg";s:5:"width";i:400;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17043;}s:10:"seijaku-XL";a:5:{s:4:"file";s:47:"Serene-Portrait-in-Ethereal-Light-1920x1440.jpg";s:5:"width";i:1920;s:6:"height";i:1440;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:233729;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:46:"Serene-Portrait-in-Ethereal-Light-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:79289;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13974;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
 		<title><![CDATA[preview]]></title>
 		<link>https://staging20.wolfthemes.com/theme/aurenza/preview-4/</link>
 		<pubDate>Thu, 28 May 2026 19:57:50 +0000</pubDate>
@@ -5604,6 +5950,39 @@
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
 		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1219;s:4:"file";s:22:"2026/02/109204081.webp";s:8:"filesize";i:376416;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:22:"109204081-300x188.webp";s:5:"width";i:300;s:6:"height";i:188;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16280;}s:5:"large";a:5:{s:4:"file";s:23:"109204081-1024x640.webp";s:5:"width";i:1024;s:6:"height";i:640;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:160956;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"109204081-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:6892;}s:12:"medium_large";a:5:{s:4:"file";s:22:"109204081-768x480.webp";s:5:"width";i:768;s:6:"height";i:480;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:95966;}s:9:"1536x1536";a:5:{s:4:"file";s:23:"109204081-1536x960.webp";s:5:"width";i:1536;s:6:"height";i:960;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:317462;}s:13:"seijaku-photo";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:13:"seijaku-metro";a:5:{s:4:"file";s:22:"109204081-550x344.webp";s:5:"width";i:550;s:6:"height";i:344;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:50850;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:22:"109204081-400x250.webp";s:5:"width";i:400;s:6:"height";i:250;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:28728;}s:10:"seijaku-XL";a:5:{s:4:"file";s:24:"109204081-1920x1200.webp";s:5:"width";i:1920;s:6:"height";i:1200;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:437204;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:23:"109204081-1200x700.webp";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:200166;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:22:"109204081-500x313.webp";s:5:"width";i:500;s:6:"height";i:313;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:42384;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:22:"109204081-290x290.webp";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23520;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Serene Portrait in Ethereal Light]]></title>
+		<link>https://staging20.wolfthemes.com/theme/sable/serene-portrait-in-ethereal-light/</link>
+		<pubDate>Tue, 09 Jun 2026 14:08:25 +0000</pubDate>
+		<dc:creator><![CDATA[csag]]></dc:creator>
+		<guid isPermaLink="false">https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Serene-Portrait-in-Ethereal-Light.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3375</wp:post_id>
+		<wp:post_date><![CDATA[2026-06-09 09:08:25]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-06-09 14:08:25]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-06-09 09:08:25]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-06-09 14:08:25]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[serene-portrait-in-ethereal-light]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>3102</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://staging20.wolfthemes.com/wp-content/uploads/2026/04/Serene-Portrait-in-Ethereal-Light.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2026/04/Serene-Portrait-in-Ethereal-Light.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1950;s:6:"height";i:1463;s:4:"file";s:45:"2026/04/Serene-Portrait-in-Ethereal-Light.jpg";s:8:"filesize";i:296697;s:5:"sizes";a:14:{s:6:"medium";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-267x200.jpg";s:5:"width";i:267;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:9209;}s:5:"large";a:5:{s:4:"file";s:46:"Serene-Portrait-in-Ethereal-Light-1024x768.jpg";s:5:"width";i:1024;s:6:"height";i:768;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:75785;}s:9:"thumbnail";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:5126;}s:12:"medium_large";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-768x576.jpg";s:5:"width";i:768;s:6:"height";i:576;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:47339;}s:9:"1536x1536";a:5:{s:4:"file";s:47:"Serene-Portrait-in-Ethereal-Light-1536x1152.jpg";s:5:"width";i:1536;s:6:"height";i:1152;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:155403;}s:13:"seijaku-photo";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:13:"seijaku-metro";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-550x413.jpg";s:5:"width";i:550;s:6:"height";i:413;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:28026;}s:15:"seijaku-masonry";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:21:"seijaku-masonry-small";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-400x300.jpg";s:5:"width";i:400;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:17043;}s:10:"seijaku-XL";a:5:{s:4:"file";s:47:"Serene-Portrait-in-Ethereal-Light-1920x1440.jpg";s:5:"width";i:1920;s:6:"height";i:1440;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:233729;}s:15:"wolf-core-slide";a:5:{s:4:"file";s:46:"Serene-Portrait-in-Ethereal-Light-1200x700.jpg";s:5:"width";i:1200;s:6:"height";i:700;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:79289;}s:17:"wolf-core-masonry";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:15:"wolf-core-photo";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-500x375.jpg";s:5:"width";i:500;s:6:"height";i:375;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:24134;}s:30:"seijaku-related-post-thumbnail";a:5:{s:4:"file";s:45:"Serene-Portrait-in-Ethereal-Light-290x290.jpg";s:5:"width";i:290;s:6:"height";i:290;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:13974;}}s:10:"image_meta";a:13:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}s:3:"alt";s:0:"";}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
