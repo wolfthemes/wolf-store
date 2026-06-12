@@ -1,72 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useThemes } from './hooks/useThemes';
 import ThemeCard from './ThemeCard';
 import SkeletonCard from './SkeletonCard';
 import Pagination from './Pagination';
 import Sidebar from './Sidebar';
-
-function SearchBar({ externalValue, onSearch }) {
-	const [inputValue, setInputValue] = useState(externalValue || '');
-	const timerRef = useRef(null);
-
-	// Sync when parent clears the search (e.g. clearFilters).
-	useEffect(() => {
-		if (externalValue === '' && inputValue !== '') {
-			setInputValue('');
-		}
-		// Only react to external clears, not every externalValue change.
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [externalValue]);
-
-	const handleChange = e => {
-		const v = e.target.value;
-		setInputValue(v);
-		clearTimeout(timerRef.current);
-		timerRef.current = setTimeout(() => onSearch(v), 300);
-	};
-
-	const handleClear = () => {
-		setInputValue('');
-		clearTimeout(timerRef.current);
-		onSearch('');
-	};
-
-	return (
-		<div className='wolf-store-search'>
-			<input
-				type='search'
-				className='wolf-store-search__input'
-				placeholder='Search themes…'
-				value={inputValue}
-				onChange={handleChange}
-				aria-label='Search themes'
-			/>
-			{inputValue && (
-				<button
-					className='wolf-store-search__clear'
-					onClick={handleClear}
-					aria-label='Clear search'
-					type='button'
-				>
-					<svg
-						width='12'
-						height='12'
-						viewBox='0 0 12 12'
-						fill='none'
-						aria-hidden='true'
-					>
-						<path
-							d='M1 1l10 10M11 1L1 11'
-							stroke='currentColor'
-							strokeWidth='1.5'
-							strokeLinecap='round'
-						/>
-					</svg>
-				</button>
-			)}
-		</div>
-	);
-}
 
 export default function Archive({
 	taxonomy: taxonomyProp,
@@ -159,8 +96,6 @@ export default function Archive({
 				</header>
 			)}
 
-			<SearchBar externalValue={searchQuery} onSearch={handleSearch} />
-
 			{showSidebar && (
 				<div className='wolf-store-archive__filter-bar'>
 					<button
@@ -207,6 +142,8 @@ export default function Archive({
 						onChange={handleFilterChange}
 						onClear={handleClearFilters}
 						isOpen={filterOpen}
+						searchQuery={searchQuery}
+						onSearch={handleSearch}
 					/>
 				)}
 

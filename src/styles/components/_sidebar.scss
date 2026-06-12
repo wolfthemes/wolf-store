@@ -1,9 +1,68 @@
+// ── Sidebar search ────────────────────────────────────────────────────────────
+
+.wolf-store-search {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	&__input {
+		width: 100%;
+		padding: 10px 40px 10px 12px;
+		border: 1px solid var(--card-border-color);
+		background: transparent;
+		color: inherit;
+		font-size: 0.95rem;
+		outline: none;
+		transition: border-color 0.15s;
+
+		// Remove default browser search field decorations.
+		appearance: none;
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			appearance: none;
+		}
+
+		&:focus {
+			border-color: currentColor;
+		}
+
+		&::placeholder {
+			opacity: 0.4;
+		}
+	}
+
+	&__clear {
+		position: absolute;
+		right: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: inherit;
+		opacity: 0.5;
+		padding: 4px;
+		transition: opacity 0.15s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
 // ── Archive sidebar filter ────────────────────────────────────────────────────
 
 .wolf-store-sidebar {
 	width: 220px;
 	flex-shrink: 0;
 	transition: max-height 0.35s ease, opacity 0.25s ease;
+
+	&__search {
+		margin-bottom: 32px;
+	}
 
 	&__group {
 		margin-bottom: 32px;
