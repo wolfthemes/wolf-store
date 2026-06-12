@@ -65,12 +65,23 @@ function SearchBar({ externalValue, onSearch }) {
 }
 
 const FILTER_GROUPS = [
-	{ slug: 'theme_cat', label: 'Categories' },
+	{ slug: 'theme_cat', label: 'Categories', orderby: 'count', order: 'desc' },
 	{ slug: 'theme_tag', label: 'Tags', orderby: 'count', order: 'desc' },
-	{ slug: 'theme_color', label: 'Color' },
-	{ slug: 'theme_price', label: 'Price Range', prefix: '$' },
-	{ slug: 'theme_style', label: 'Style' },
-	{ slug: 'theme_page_builder', label: 'Page Builder' },
+	{ slug: 'theme_color', label: 'Color', orderby: 'count', order: 'desc' },
+	{
+		slug: 'theme_price',
+		label: 'Price Range',
+		prefix: '$',
+		orderby: 'count',
+		order: 'desc',
+	},
+	{ slug: 'theme_style', label: 'Style', orderby: 'count', order: 'desc' },
+	{
+		slug: 'theme_page_builder',
+		label: 'Page Builder',
+		orderby: 'count',
+		order: 'desc',
+	},
 ];
 
 const VISIBLE_LIMIT = 6;
