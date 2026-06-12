@@ -18,6 +18,9 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 					rel='noopener noreferrer'
 				>
 					Get {title}
+					<span className='wolf-theme-ctas__tagline'>
+						· risk-free
+					</span>
 				</a>
 			)}
 			{demoUrl && (

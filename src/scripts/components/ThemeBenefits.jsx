@@ -13,7 +13,6 @@ export default function ThemeBenefits() {
 						ⓘ
 					</span>
 				</li>
-				<li>7-day money-back guarantee</li>
 				<li>Multi-site licenses available</li>
 			</ul>
 		</div>

@@ -186,6 +186,11 @@
 		pointer-events: none;
 		margin-bottom: 0;
 
+		// Search lives in the filter-bar on mobile — hide it inside the sidebar.
+		&__search {
+			display: none;
+		}
+
 		&.is-open {
 			max-height: 4000px;
 			opacity: 1;

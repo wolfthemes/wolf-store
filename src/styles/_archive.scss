@@ -16,6 +16,11 @@
 		display: none;
 	}
 
+	// Hidden on desktop — only shown inside filter-bar on mobile.
+	&__mobile-search {
+		display: none;
+	}
+
 	&__layout {
 		display: flex;
 		gap: 48px;
@@ -62,6 +67,12 @@
 			align-items: center;
 			gap: 12px;
 			margin-bottom: 16px;
+		}
+
+		&__mobile-search {
+			display: block;
+			flex: 1;
+			min-width: 0;
 		}
 
 		&__filter-toggle {

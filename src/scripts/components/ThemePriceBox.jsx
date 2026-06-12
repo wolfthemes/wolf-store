@@ -1,5 +1,6 @@
 import ThemeCTAs from './ThemeCTAs';
 import ThemeBenefits from './ThemeBenefits';
+import CountdownTimer from './CountdownTimer';
 import { ACTIVE_OFFER, discounted } from '../config/offers';
 
 export default function ThemePriceBox({ theme }) {
@@ -31,9 +32,12 @@ export default function ThemePriceBox({ theme }) {
 					{/* Hero — single site annual */}
 					<div className='wolf-theme-price-box__hero'>
 						{ACTIVE_OFFER ? (
-							<span className='wolf-theme-price-box__badge'>
-								{ACTIVE_OFFER.label}
-							</span>
+							<>
+								<span className='wolf-theme-price-box__badge'>
+									{ACTIVE_OFFER.label}
+								</span>
+								<CountdownTimer expiry={ACTIVE_OFFER.expiry} />
+							</>
 						) : (
 							saving > 0 && (
 								<span className='wolf-theme-price-box__badge'>
@@ -82,6 +86,32 @@ export default function ThemePriceBox({ theme }) {
 
 			{/* CTAs */}
 			<ThemeCTAs theme={theme} layout='column' />
+
+			{/* Guarantee seal */}
+			<div className='wolf-theme-price-box__guarantee'>
+				<svg
+					width='18'
+					height='18'
+					viewBox='0 0 20 20'
+					fill='none'
+					aria-hidden='true'
+				>
+					<path
+						d='M10 2L3 5v5c0 4.2 3.1 7.8 7 9 3.9-1.2 7-4.8 7-9V5L10 2z'
+						stroke='currentColor'
+						strokeWidth='1.5'
+						strokeLinejoin='round'
+					/>
+					<path
+						d='M6.5 10l2.5 2.5 4.5-5'
+						stroke='currentColor'
+						strokeWidth='1.5'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+					/>
+				</svg>
+				<span>7-day money-back guarantee</span>
+			</div>
 
 			{/* Benefits */}
 			<ThemeBenefits />

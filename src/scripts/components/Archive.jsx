@@ -4,6 +4,7 @@ import ThemeCard from './ThemeCard';
 import SkeletonCard from './SkeletonCard';
 import Pagination from './Pagination';
 import Sidebar from './Sidebar';
+import SearchBar from './SearchBar';
 
 export default function Archive({
 	taxonomy: taxonomyProp,
@@ -124,6 +125,12 @@ export default function Archive({
 							</span>
 						) : null}
 					</button>
+					<div className='wolf-store-archive__mobile-search'>
+						<SearchBar
+							externalValue={searchQuery}
+							onSearch={handleSearch}
+						/>
+					</div>
 					{(activeFilterCount > 0 || hasActiveSearch) && (
 						<button
 							className='wolf-store-archive__filter-clear'

@@ -8,7 +8,12 @@ const _wpOffer = window.wolfStoreData?.offer;
 export const ACTIVE_OFFER =
 	_wpOffer !== undefined
 		? _wpOffer
-		: { coupon: 'LAUNCH20', discount: 0.2, label: '20% OFF LAUNCH OFFER' };
+		: {
+				coupon: 'LAUNCH20',
+				discount: 0.2,
+				label: '20% OFF LAUNCH OFFER',
+				expiry: '2026-06-30T23:59:59Z',
+			};
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 

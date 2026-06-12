@@ -150,4 +150,22 @@
 		opacity: 0.45;
 		font-style: italic;
 	}
+
+	// ── Money-back guarantee seal ─────────────────────────────────────────────
+
+	&__guarantee {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 0.8rem;
+		font-weight: 600;
+		opacity: 0.75;
+		padding: 8px 0;
+		border-top: 1px solid var(--card-border-color);
+
+		svg {
+			flex-shrink: 0;
+			opacity: 0.9;
+		}
+	}
 }

@@ -8,7 +8,7 @@
  * @param {Object} theme Full theme REST object
  */
 import { useEffect, useRef } from 'react';
-import { withCoupon } from '../config/offers';
+import { withCoupon, ACTIVE_OFFER, discounted } from '../config/offers';
 
 export default function ThemeComparisonTable({ theme }) {
 	const sectionRef = useRef(null);
@@ -38,11 +38,17 @@ export default function ThemeComparisonTable({ theme }) {
 		theme.theme_pricing ?? {};
 
 	const fmt = price => (price ? `$${price}` : '—');
+	const discountedAnnual =
+		ACTIVE_OFFER && price_annual ? discounted(price_annual) : null;
 
 	const rows = [
 		{
 			feature: 'Price',
-			wolf: price_annual ? `$${price_annual}/yr` : '—',
+			wolf: discountedAnnual
+				? `$${discountedAnnual}/yr`
+				: price_annual
+					? `$${price_annual}/yr`
+					: '—',
 			tf: tf_price ? `$${tf_price}` : '—',
 			wolfWins: false,
 		},
@@ -70,12 +76,6 @@ export default function ThemeComparisonTable({ theme }) {
 			tf: 'No',
 			wolfWins: true,
 		},
-		// {
-		//     feature:  'Buy direct from the author',
-		//     wolf:     'Yes',
-		//     tf:       'No',
-		//     wolfWins: true,
-		// },
 	];
 
 	return (
@@ -111,19 +111,20 @@ export default function ThemeComparisonTable({ theme }) {
 						<div className='wolf-theme-comparison-table__card-prices'>
 							{/* 1 site */}
 							<div className='wolf-theme-comparison-table__plan wolf-theme-comparison-table__plan--hero'>
-								<div className='wolf-theme-comparison-table__plan-meta'>
-									<span className='wolf-theme-comparison-table__plan-label'>
-										1 site
-									</span>
-									&nbsp;
-									{/* { tfSaving > 0 && ( */}
-									{/* 	<span className='wolf-theme-comparison-table__plan-saving'> */}
-									{/* 		${ tfSaving } less than ThemeForest */}
-									{/* 	</span> */}
-									{/* ) } */}
-								</div>
+								<span className='wolf-theme-comparison-table__plan-label'>
+									1 site
+								</span>
 								<span className='wolf-theme-comparison-table__plan-price'>
-									{fmt(price_annual)}
+									{discountedAnnual ? (
+										<>
+											<span className='wolf-theme-comparison-table__plan-price--struck'>
+												{fmt(price_annual)}
+											</span>{' '}
+											{fmt(discountedAnnual)}
+										</>
+									) : (
+										fmt(price_annual)
+									)}
 									<small>/yr</small>
 								</span>
 							</div>
@@ -177,7 +178,6 @@ export default function ThemeComparisonTable({ theme }) {
 								</span>
 								<span className='wolf-theme-comparison-table__plan-price'>
 									{fmt(tf_price)}
-									{/*<small> one-time</small>*/}
 								</span>
 							</div>
 							<div className='wolf-theme-comparison-table__plan wolf-theme-comparison-table__plan--muted'>

@@ -157,7 +157,14 @@
 		small {
 			font-weight: 400;
 			font-size: 0.75rem;
-			// opacity: 0.6;
+		}
+
+		&--struck {
+			text-decoration: line-through;
+			opacity: 0.5;
+			font-weight: 400;
+			font-size: 0.9rem;
+			margin-right: 2px;
 		}
 	}
 

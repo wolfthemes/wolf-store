@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useTheme } from './hooks/useTheme';
 import ThemeHero from './ThemeHero';
 import ThemeDescription from './ThemeDescription';
@@ -10,9 +11,11 @@ import ThemeFeatures from './ThemeFeatures';
 import ThemeChangelog from './ThemeChangelog';
 import ThemeBrandStory from './ThemeBrandStory';
 import RelatedThemes from './RelatedThemes';
+import StickyCTA from './StickyCTA';
 
 export default function Single({ postId }) {
 	const { theme, loading, error } = useTheme(postId);
+	const heroRef = useRef(null);
 
 	if (loading) {
 		return (
@@ -33,17 +36,20 @@ export default function Single({ postId }) {
 	return (
 		<div className='wolf-theme-single'>
 			<div className='wolf-theme-single__main'>
-				<ThemeHero theme={theme} />
+				<div ref={heroRef}>
+					<ThemeHero theme={theme} />
+				</div>
 				<ThemeDescription theme={theme} />
 				<ThemeGallery theme={theme} />
-				<ThemeComparisonTable theme={theme} />
 				<ThemeTestimonials theme={theme} />
+				<ThemeComparisonTable theme={theme} />
 				<ThemeFeatures theme={theme} />
 				<ThemeBrandStory />
 				<ThemeTechnicals theme={theme} />
 				<ThemeChangelog theme={theme} />
 			</div>
 			<RelatedThemes theme={theme} />
+			<StickyCTA theme={theme} heroRef={heroRef} />
 		</div>
 	);
 }
