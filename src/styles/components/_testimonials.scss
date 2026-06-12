@@ -30,6 +30,7 @@
 		transform: translateY(24px);
 		transition: opacity 0.55s ease, transform 0.55s ease;
 		border-radius: var(--theme-border-radius);
+		background: #161616;
 
 		&.is-visible {
 			opacity: 1;
@@ -38,8 +39,8 @@
 	}
 
 	&__stars {
-		color: #f5a623;
-		font-size: 0.85rem;
+		color: #ffeb00;
+		font-size: 1.5em;
 		letter-spacing: 2px;
 		margin-bottom: 16px;
 	}
