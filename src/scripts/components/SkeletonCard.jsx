@@ -8,10 +8,6 @@ export default function SkeletonCard() {
 			<div className='wolf-theme-card__body'>
 				<div className='wolf-skeleton wolf-skeleton--title' />
 				<div className='wolf-skeleton wolf-skeleton--tagline' />
-				<div className='wolf-skeleton wolf-skeleton--tagline wolf-skeleton--tagline-short' />
-				<div className='wolf-theme-card__cats'>
-					<div className='wolf-skeleton wolf-skeleton--cat' />
-				</div>
 			</div>
 
 			<footer className='wolf-theme-card__footer'>
