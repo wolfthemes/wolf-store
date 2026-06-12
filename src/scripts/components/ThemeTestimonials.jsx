@@ -65,7 +65,7 @@ export default function ThemeTestimonials({ theme }) {
 		<div className='wolf-theme-testimonials wolf-theme-single__section wolf-core-font-light'>
 			<div className='wolf-theme-single__wrapper'>
 				<h3 className='wolf-theme-testimonials__title'>
-					What customers say about {title} & WolfThemes
+					What customers say about {title} &amp; WolfThemes
 				</h3>
 				<p>1,600+ reviews · 4.5/5 average rating</p>
 				<div className='wolf-theme-testimonials__grid'>
@@ -82,11 +82,13 @@ export default function ThemeTestimonials({ theme }) {
 								{'★'.repeat(t.rating ?? 5)}
 							</div>
 							<p className='wolf-theme-testimonials__text'>
-								{t.text}
+								&ldquo;{t.text}&rdquo;
 							</p>
-							<span className='wolf-theme-testimonials__author'>
-								— {t.author}
-							</span>
+							<div className='wolf-theme-testimonials__author-block'>
+								<span className='wolf-theme-testimonials__author'>
+									{t.author}
+								</span>
+							</div>
 						</div>
 					))}
 				</div>
