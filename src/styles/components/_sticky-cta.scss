@@ -34,12 +34,14 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		color: var(--strong-color);
 	}
 
 	&__price {
 		font-size: 1.15rem;
 		font-weight: 700;
 		white-space: nowrap;
+		color: var(--strong-color);
 	}
 
 	&__period {
