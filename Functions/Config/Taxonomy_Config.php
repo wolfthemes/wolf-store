@@ -123,6 +123,7 @@ class Taxonomy_Config {
 			'yellow' => '#f5c842',
 			'gold'   => '#d4af37',
 			'grey'   => '#888888',
+			'pink'   => '#ec4899',
 			'purple' => '#8b5cf6',
 			'blue'   => '#1e90ff',
 			'green'  => '#00cc44',
