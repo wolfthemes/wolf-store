@@ -87,6 +87,15 @@ export default function ThemeTechnicals({ theme }) {
 								🗂️ Knowledge Base
 							</a>
 						</li>
+						<li>
+							<a
+								href='https://wiki.wolfthemes.com/general/server-requirements.html'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								🖥️ Server Requirements
+							</a>
+						</li>
 						<li>✉️ Direct support via Email</li>
 					</ul>
 				</div>
