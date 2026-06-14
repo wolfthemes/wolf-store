@@ -108,3 +108,5 @@ PHP must pass `WordPress` + `WordPressVIPMinimum` rulesets. All globals and func
 ### Deployment
 
 GitHub Actions (`.github/workflows/deploy.yml`) SSHes into the server and runs `git pull` + `composer install`. Push to `master` deploys to production; push to `dev` targets staging. The `build/` directory is **gitignored** — CI runs `npm ci && npm run build` and rsyncs the output to the server via rsync before swapping it into place, so the server never needs Node.
+
+Git remote: git@github.com:wolfthemes/wolf-store.git — this repo only.
