@@ -65,6 +65,14 @@ class Frontend_Handler {
 	 */
 	private function resolve_template_file(): string {
 		if ( is_single() && 'wolf_theme' === get_post_type() ) {
+			// Block (FSE) themes render the single view via their own block
+			// template (templates/single-wolf_theme.html) using the
+			// wolf-store/theme-single block, so they get the site header/footer
+			// template parts. Bail out and let core resolve the block template;
+			// the classic PHP template remains the fallback for classic themes.
+			if ( wp_is_block_theme() ) {
+				return '';
+			}
 			return 'single-wolf_theme.php';
 		}
 

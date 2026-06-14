@@ -152,6 +152,15 @@ module.exports = () => {
 				),
 				filename: './blocks/theme-index/index.js',
 			},
+			// Single theme block — editor script only. Compiles to
+			// build/blocks/theme-single/index.js (block.json editorScript path).
+			'blocks/theme-single/index': {
+				import: path.resolve(
+					__dirname,
+					'./src/scripts/blocks/theme-single/index.js'
+				),
+				filename: './blocks/theme-single/index.js',
+			},
 		},
 		output: {
 			clean: true,

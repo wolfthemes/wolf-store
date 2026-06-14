@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wolf-store/theme-single",
+	"title": "Theme Single",
+	"description": "Renders the single Wolf Store theme view. Place inside a block template (single-wolf_theme.html) so the FSE header/footer wrap it.",
+	"category": "widgets",
+	"icon": "media-default",
+	"keywords": ["theme", "single", "store", "wolf"],
+	"textdomain": "wolf-store",
+	"attributes": {},
+	"editorScript": "file:./index.js",
+	"style": ["wolf-store"]
+}
