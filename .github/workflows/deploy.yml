@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - dev
+      - stage
 
 jobs:
   check:
@@ -99,10 +99,10 @@ jobs:
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
 
-  deploy-dev:
+  deploy-stage:
     runs-on: ubuntu-latest
     needs: check
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/stage'
     steps:
       - uses: actions/checkout@v4
 
@@ -135,6 +135,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
-            git pull origin dev
+            git pull origin stage
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
