@@ -64,15 +64,13 @@ class Frontend_Handler {
 	 * Resolve which template file to use based on current request
 	 */
 	private function resolve_template_file(): string {
+		// Block (FSE) themes own all template resolution via .html block templates.
+		// The classic PHP templates are fallbacks for classic themes only.
+		if ( wp_is_block_theme() ) {
+			return '';
+		}
+
 		if ( is_single() && 'wolf_theme' === get_post_type() ) {
-			// Block (FSE) themes render the single view via their own block
-			// template (templates/single-wolf_theme.html) using the
-			// wolf-store/theme-single block, so they get the site header/footer
-			// template parts. Bail out and let core resolve the block template;
-			// the classic PHP template remains the fallback for classic themes.
-			if ( wp_is_block_theme() ) {
-				return '';
-			}
 			return 'single-wolf_theme.php';
 		}
 
