@@ -83,6 +83,7 @@ class Theme_Index_Block {
 			? $attributes['order']
 			: 'DESC';
 		$offset     = absint( $attributes['offset'] ?? 0 );
+		$sidebar    = (bool) ( $attributes['sidebar'] ?? false );
 
 		// Generate a unique ID so multiple blocks on the same page don't clash.
 		// wp_unique_id() is a lightweight WordPress helper (no DB calls).
@@ -106,7 +107,7 @@ class Theme_Index_Block {
 			data-orderby="<?php echo esc_attr( $orderby ); ?>"
 			data-order="<?php echo esc_attr( $order ); ?>"
 			data-offset="<?php echo absint( $offset ); ?>"
-			data-show-sidebar="false">
+			data-show-sidebar="<?php echo $sidebar ? 'true' : 'false'; ?>">
 		</div>
 		<?php
 		return ob_get_clean();
