@@ -15,7 +15,7 @@ export default function Edit() {
 	return (
 		<div {...blockProps}>
 			<Placeholder
-				icon="media-default"
+				icon='media-default'
 				label={__('Theme Single', 'wolf-store')}
 				instructions={__(
 					'The single theme view renders here on the frontend, using the current theme post.',
