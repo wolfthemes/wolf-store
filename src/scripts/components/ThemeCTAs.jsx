@@ -14,7 +14,7 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 			{buyUrl && (
 				<a
 					href={buyUrl}
-					className='theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy'
+					className='theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy wp-element-button'
 					rel='noopener noreferrer'
 				>
 					Get {title}
@@ -26,7 +26,7 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 			{demoUrl && (
 				<a
 					href={demoUrl}
-					className='theme-button-secondary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--demo'
+					className='theme-button-secondary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--demo wp-element-button is-style-outline'
 					target='_blank'
 					rel='noopener noreferrer'
 				>

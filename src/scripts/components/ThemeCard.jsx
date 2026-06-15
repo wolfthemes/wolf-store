@@ -102,7 +102,7 @@ export default function ThemeCard({ theme }) {
 					{demoUrl && (
 						<a
 							href={demoUrl}
-							className='theme-button-secondary wolf-theme-card__btn wolf-theme-card__btn--demo'
+							className='theme-button-secondary wolf-theme-card__btn wolf-theme-card__btn--demo wp-element-button is-style-outline'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
@@ -112,7 +112,7 @@ export default function ThemeCard({ theme }) {
 					{buyUrl && (
 						<a
 							href={buyUrl}
-							className='theme-button-primary wolf-theme-card__btn wolf-theme-card__btn--buy'
+							className='theme-button-primary wolf-theme-card__btn wolf-theme-card__btn--buy wp-element-button'
 							rel='noopener noreferrer'
 						>
 							Buy

@@ -152,7 +152,7 @@ export default function ThemeComparisonTable({ theme }) {
 						{buyUrl && (
 							<a
 								href={buyUrl}
-								className='wolf-theme-comparison-table__card-cta--wolf theme-button-primary wolf-core-button-size-md'
+								className='wolf-theme-comparison-table__card-cta--wolf theme-button-primary wolf-core-button-size-md wp-element-button'
 								rel='noopener noreferrer'
 							>
 								Get {title}
@@ -200,7 +200,7 @@ export default function ThemeComparisonTable({ theme }) {
 
 						<a
 							href={`https://wlfthm.es/${slug}`}
-							className='wolf-theme-comparison-table__card-cta theme-button-secondary wolf-core-button-size-md'
+							className='wolf-theme-comparison-table__card-cta theme-button-secondary wolf-core-button-size-md wp-element-button is-style-outline'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
