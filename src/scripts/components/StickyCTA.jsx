@@ -20,7 +20,8 @@ export default function StickyCTA({ theme, heroRef }) {
 
 	useEffect(() => {
 		document.body.classList.toggle('wolf-store-sticky-cta-open', visible);
-		return () => document.body.classList.remove('wolf-store-sticky-cta-open');
+		return () =>
+			document.body.classList.remove('wolf-store-sticky-cta-open');
 	}, [visible]);
 
 	if (!visible) {
