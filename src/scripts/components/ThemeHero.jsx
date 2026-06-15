@@ -20,7 +20,7 @@ export default function ThemeHero({ theme }) {
 
 			<div className='faded-edges-overlay'></div>
 
-			<div className='wolf-theme-hero__content wolf-core-font-light'>
+			<div className='wolf-theme-hero__content'>
 				<h1 className='wolf-theme-hero__title'>{title}</h1>
 
 				{headline && (

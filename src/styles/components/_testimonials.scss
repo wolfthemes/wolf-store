@@ -1,5 +1,5 @@
 .wolf-theme-testimonials {
-	background: #000;
+	// background: #000;
 
 	&__title {
 		font-size: 1.1rem;
@@ -30,7 +30,9 @@
 		transform: translateY(24px);
 		transition: opacity 0.55s ease, transform 0.55s ease;
 		border-radius: var(--theme-border-radius);
-		background: #161616;
+		// background: #161616;
+		border: 1px solid var(--card-border-color);
+		background: var(--theme-subtle-bg, #f9f9f9);
 
 		&.is-visible {
 			opacity: 1;

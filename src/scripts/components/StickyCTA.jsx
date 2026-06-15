@@ -18,6 +18,11 @@ export default function StickyCTA({ theme, heroRef }) {
 		return () => observer.disconnect();
 	}, [heroRef]);
 
+	useEffect(() => {
+		document.body.classList.toggle('wolf-store-sticky-cta-open', visible);
+		return () => document.body.classList.remove('wolf-store-sticky-cta-open');
+	}, [visible]);
+
 	if (!visible) {
 		return null;
 	}
