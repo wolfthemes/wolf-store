@@ -7,6 +7,7 @@
 	// border: 1px solid var(--card-border-color);
 	overflow: hidden;
 	transition: border-color 0.15s ease;
+    font-size: var(--wp--preset--font-size--sm);
 	// border-radius:var(--theme-border-radius);
 
 	&__featured-badge {
