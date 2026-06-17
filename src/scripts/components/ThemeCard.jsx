@@ -62,8 +62,14 @@ export default function ThemeCard({ theme }) {
 
 				{pageBuilders.length > 0 && (
 					<div className='wolf-theme-card__builders'>
+						<span className='wolf-theme-card__builders-label'>
+							Builder
+						</span>
 						{pageBuilders.map(pb => (
-							<span key={pb.id} className='wolf-theme-card__builder'>
+							<span
+								key={pb.id}
+								className='wolf-theme-card__builder'
+							>
 								{pb.name}
 							</span>
 						))}
