@@ -1,20 +1,46 @@
-:root {
-	--checkmark-color: #00a32a;
-	--card-border-color: rgba(0, 0, 0, 0.2);
-	--card-border-color-white: rgba(255, 255, 255, 0.2);
-	--single-theme-wrapper-width: var(--wp--style--global--wide-size, 1600px)
-	--single-theme-wrapper-width-small: var(--wp--style--global--content-size, 1000px);
-	--text-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-	--box-shadow: 5px 5px 25px #02020254;
+// ── Plugin-owned variables ─────────────────────────────────────────────────────
+// Defined and consumed exclusively by wolf-store. No external dependency.
 
-	// Alias thème → fallback si wolf-blank absent
-	--strong-color: var(--wp--preset--color--contrast, #0d0d0d);
-	--background-color: var(--wp--preset--color--base, #fff);
-	--accent-color: var(--wp--preset--color--accent, #0c10ff);
-	--accent-hover-color: var(--wp--preset--color--primary, #000);
-	--theme-border-color: var(--wolf-border-color, rgba(0, 0, 0, 0.15));
-	--theme-border-radius: var(--wolf-radius-md, 6px);
-	--button-border-radius: var(--wolf-btn-radius, 6px);
-	--theme-bg-color: var(--wp--preset--color--base, #fff);
-	--theme-subtle-bg: var(--wp--preset--color--base-2, #f5f5f5);
+:root {
+	// Layout
+	--ws-wrapper-width:    var(--wp--style--global--wide-size, 1600px);
+	--ws-wrapper-width-sm: var(--wp--style--global--content-size, 1000px);
+
+	// Borders
+	--ws-card-border-color:       rgba(0, 0, 0, 0.2);
+	--ws-card-border-color-white: rgba(255, 255, 255, 0.2);
+
+	// Shadows
+	--ws-card-shadow:         5px 5px 25px #02020254;
+	--ws-overlay-text-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+
+	// Misc
+	--ws-checkmark-color: #00a32a;
+
+	// Font scale — inherits WP/theme preset sizes, falls back to rem values.
+	// Slug names match wolf-blank's theme.json. On non-Gutenberg themes the
+	// fallback rem values apply automatically.
+	--ws-font-size-xs:   var(--wp--preset--font-size--xs, 0.65rem);
+	--ws-font-size-sm:   var(--wp--preset--font-size--sm, 0.85rem);
+	--ws-font-size-base: var(--wp--preset--font-size--md, 1rem);
+	--ws-font-size-md:   var(--wp--preset--font-size--lg, 1.2rem);
+	--ws-font-size-lg:   var(--wp--preset--font-size--xl, 1.75rem);
+	--ws-font-size-xl:   var(--wp--preset--font-size--2xl, 2.5rem);
+	--ws-font-size-2xl:  var(--wp--preset--font-size--3xl, 3.5rem);
+
+	// ── Inheritance / legacy aliases ───────────────────────────────────────────
+	// Consume WP block-editor presets and wolf-blank theme tokens, with safe
+	// fallbacks so the plugin works on non-Gutenberg and non-wolf-blank themes.
+
+	// Colors
+	--ws-strong-color:  var(--wp--preset--color--contrast, #0d0d0d);
+	--ws-bg-color:      var(--wp--preset--color--base, #fff);
+	--ws-subtle-bg:     var(--wp--preset--color--base-2, #f5f5f5);
+	--ws-accent-color:  var(--wp--preset--color--accent, #0c10ff);
+	--ws-accent-hover:  var(--wp--preset--color--primary, #000);
+
+	// Borders & radius
+	--ws-border-color:  var(--wolf-border-color, rgba(0, 0, 0, 0.15));
+	--ws-border-radius: var(--wolf-radius-md, 6px);
+	--ws-btn-radius:    var(--wolf-btn-radius, 6px);
 }

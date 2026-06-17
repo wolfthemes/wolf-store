@@ -6,10 +6,10 @@
 
 .wolf-store-related {
 	padding: 80px 0;
-	border-top: 1px solid var(--card-border-color);
+	border-top: 1px solid var(--ws-card-border-color);
 
 	&__title {
-		font-size: 1.75rem;
+		font-size: var(--ws-font-size-lg);
 		margin: 0 0 32px;
 	}
 
@@ -50,12 +50,11 @@
 	}
 
 	&__wrapper {
-		max-width: var(--single-theme-wrapper-width);
+		max-width: var(--ws-wrapper-width);
 		margin: 0 auto;
 
 		&--small {
-			max-width: var(--single-theme-wrapper-width-small);
+			max-width: var(--ws-wrapper-width-sm);
 		}
 	}
 }
-

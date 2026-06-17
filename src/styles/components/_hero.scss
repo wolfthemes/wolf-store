@@ -3,7 +3,7 @@
 	min-height: 80vh;
 	position: relative;
 
-	--background-color: #000;
+	--ws-bg-color: #000;
 
 
 	&__thumbnail {
@@ -25,7 +25,7 @@
 		position: absolute;
 		bottom: 0;
 		padding: 50px;
-		text-shadow: var(--text-shadow);
+		text-shadow: var(--ws-overlay-text-shadow);
 	}
 
 	&__title {
@@ -36,7 +36,7 @@
 
 
 	&__headline {
-		font-size: 18px;
+		font-size: var(--ws-font-size-base);
 		margin: 8px 0 4px;
 		font-weight: 700;
 		color: #fff;
@@ -79,4 +79,3 @@
 		}
 	}
 }
-

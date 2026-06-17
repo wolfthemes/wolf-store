@@ -37,7 +37,7 @@
 	}
 
 	&__title {
-		font-size: 2rem;
+		font-size: var(--ws-font-size-xl);
 		margin: 0;
 	}
 
@@ -83,7 +83,7 @@
 			border: 1px solid currentColor;
 			background: none;
 			cursor: pointer;
-			font-size: 0.9rem;
+			font-size: var(--ws-font-size-sm);
 			font-weight: 600;
 			color: inherit;
 			transition: opacity 0.15s;
@@ -105,8 +105,8 @@
 			height: 18px;
 			border-radius: 50%;
 			background: currentColor;
-			color: var(--background-color, #fff);
-			font-size: 0.7rem;
+			color: var(--ws-bg-color);
+			font-size: var(--ws-font-size-xs);
 			font-weight: 700;
 		}
 
@@ -115,7 +115,7 @@
 			background: none;
 			border: none;
 			cursor: pointer;
-			font-size: 0.85rem;
+			font-size: var(--ws-font-size-sm);
 			color: inherit;
 			opacity: 0.6;
 			padding: 0;
@@ -157,11 +157,11 @@
 		min-width: 36px;
 		height: 36px;
 		padding: 0 10px;
-		border: 1px solid var(--theme-border-color);
-		border-radius:var(--theme-border-radius);
+		border: 1px solid var(--ws-border-color);
+		border-radius:var(--ws-border-radius);
 		background: none;
 		cursor: pointer;
-		font-size: 0.9rem;
+		font-size: var(--ws-font-size-sm);
 		color: inherit;
 		transition: border-color 0.15s;
 
@@ -176,7 +176,7 @@
 
 		&--prev,
 		&--next {
-			font-size: 1.2rem;
+			font-size: var(--ws-font-size-md);
 			line-height: 1;
 		}
 	}

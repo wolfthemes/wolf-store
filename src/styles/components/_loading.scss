@@ -13,7 +13,7 @@
 
 %skeleton-base {
 	background:
- linear-gradient(90deg, var(--card-border-color, #e8e8e8) 25%, color-mix(in srgb, var(--card-border-color, #e8e8e8) 40%, transparent) 50%, var(--card-border-color, #e8e8e8) 75%);
+ linear-gradient(90deg, var(--ws-card-border-color, #e8e8e8) 25%, color-mix(in srgb, var(--ws-card-border-color, #e8e8e8) 40%, transparent) 50%, var(--ws-card-border-color, #e8e8e8) 75%);
 	background-size: 600px 100%;
 	animation: wolf-shimmer 1.4s ease-in-out infinite;
 	border-radius: 2px;

@@ -3,11 +3,11 @@
 
 	&__container {
 		padding: 40px;
-		border: 1px solid var(--card-border-color);
-		background: var(--theme-subtle-bg, #f9f9f9);
+		border: 1px solid var(--ws-card-border-color);
+		background: var(--ws-subtle-bg);
 		opacity: 0;
 		transition: opacity 0.8s ease;
-		border-radius:var(--theme-border-radius);
+		border-radius:var(--ws-border-radius);
 
 		&.is-visible {
 			opacity: 1;
@@ -35,14 +35,14 @@
 	}
 
 	&__title {
-		font-size: 1rem;
+		font-size: var(--ws-font-size-base);
 		font-weight: 700;
 		margin: 0;
 		letter-spacing: 0.02em;
 	}
 
 	&__text {
-		font-size: 0.88rem;
+		font-size: var(--ws-font-size-sm);
 		line-height: 1.8;
 		// opacity: 0.75;
 		margin: 0;
@@ -63,14 +63,14 @@
 	}
 
 	&__stat-value {
-		font-size: 1.3rem;
+		font-size: var(--ws-font-size-md);
 		font-weight: 700;
 		line-height: 1;
-		color: var(--strong-color);
+		color: var(--ws-strong-color);
 	}
 
 	&__stat-label {
-		font-size: 0.72rem;
+		font-size: var(--ws-font-size-xs);
 		// opacity: 0.5;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;

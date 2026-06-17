@@ -1,6 +1,6 @@
 .wp-theme-seijaku {
-	--theme-border-radius:4px;
-	--button-border-radius:4px;
+	--ws-border-radius:4px;
+	--ws-btn-radius:4px;
 
 	&.store-page,
 	&.store-category-page {
@@ -23,26 +23,26 @@
 	}
 
 	.theme-button-primary {
-		border-color: var(--accent-color);
+		border-color: var(--ws-accent-color);
 	}
 
 	.theme-button-secondary {
-		color: var(--accent-hover-color) !important;
-		border-color: var(--accent-hover-color) !important;
+		color: var(--ws-accent-hover) !important;
+		border-color: var(--ws-accent-hover) !important;
 
 		&:hover {
-			background-color: var(--accent-hover-color) !important;
+			background-color: var(--ws-accent-hover) !important;
 		}
 	}
 
 	.tagcloud {
 
 		a {
-			background-color: var(--accent-hover-color) !important;
-			border-color: var(--accent-hover-color) !important;
+			background-color: var(--ws-accent-hover) !important;
+			border-color: var(--ws-accent-hover) !important;
 
 			&:hover {
-				border-color: var(--accent-hover-color) !important;
+				border-color: var(--ws-accent-hover) !important;
 			}
 		}
 	}

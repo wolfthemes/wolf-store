@@ -16,7 +16,7 @@
 		opacity: 0;
 		transform: translateY(24px);
 		transition: opacity 0.55s ease, transform 0.55s ease;
-		border-radius:var(--theme-border-radius);
+		border-radius:var(--ws-border-radius);
 
 		&.is-visible {
 			opacity: 1;

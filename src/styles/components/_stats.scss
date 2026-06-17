@@ -13,14 +13,14 @@
 	}
 
 	&__value {
-		font-size: 2rem;
+		font-size: var(--ws-font-size-xl);
 		font-weight: 700;
 		line-height: 1;
-		color: var(--strong-color);
+		color: var(--ws-strong-color);
 	}
 
 	&__label {
-		font-size: 0.75rem;
+		font-size: var(--ws-font-size-sm);
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		opacity: 0.55;

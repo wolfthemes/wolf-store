@@ -12,12 +12,12 @@ body.wolf-store-sticky-cta-open {
 	right: 0;
 	z-index: 100;
 	background: #f1f1f1;
-	// color: var(--theme-bg-color, #fff);
+	// color: var(--ws-bg-color);
 	box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.18);
 	padding: 12px 24px;
 
 	&__inner {
-		max-width: var(--single-theme-wrapper-width);
+		max-width: var(--ws-wrapper-width);
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
@@ -34,22 +34,22 @@ body.wolf-store-sticky-cta-open {
 
 	&__title {
 		font-weight: 700;
-		font-size: 1rem;
+		font-size: var(--ws-font-size-base);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		color: var(--strong-color);
+		color: var(--ws-strong-color);
 	}
 
 	&__price {
-		font-size: 1.15rem;
+		font-size: var(--ws-font-size-md);
 		font-weight: 700;
 		white-space: nowrap;
-		color: var(--strong-color);
+		color: var(--ws-strong-color);
 	}
 
 	&__period {
-		font-size: 0.75rem;
+		font-size: var(--ws-font-size-sm);
 		font-weight: 400;
 		opacity: 0.6;
 	}
@@ -79,7 +79,7 @@ body.wolf-store-sticky-cta-open {
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	font-size: 0.75rem;
+	font-size: var(--ws-font-size-sm);
 	padding: 6px 10px;
 	border: 1px solid currentColor;
 	opacity: 0.85;
@@ -103,7 +103,7 @@ body.wolf-store-sticky-cta-open {
 		gap: 2px;
 
 		strong {
-			font-size: 0.9rem;
+			font-size: var(--ws-font-size-sm);
 			font-weight: 700;
 			font-variant-numeric: tabular-nums;
 		}

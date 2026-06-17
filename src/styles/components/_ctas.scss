@@ -23,10 +23,10 @@
 		// Add layout-only overrides below if needed.
 
 		&--buy {
-			// background:var(--accent-hover-color)!important;
+			// background:var(--ws-accent-hover)!important;
 			// &.theme-button-primary{
 			// 	&:hover {
-			// 		background: var(--accent-color) !important;
+			// 		background: var(--ws-accent-color) !important;
 			// 	}
 			// }
 
@@ -36,7 +36,7 @@
 			// &.theme-button-secondary{
 			// 	color:white!important;
 			// }
-			// background: var(--accent-color) !important;
+			// background: var(--ws-accent-color) !important;
 		}
 	}
 
@@ -65,4 +65,3 @@
 		}
 	}
 }
-
