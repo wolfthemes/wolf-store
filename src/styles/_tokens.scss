@@ -1,6 +1,18 @@
 // ── Plugin-owned variables ─────────────────────────────────────────────────────
 // Defined and consumed exclusively by wolf-store. No external dependency.
 
+// ---- Spacing presets ----------------------------------------
+@function space($step) {
+
+	@return var(--wp--preset--spacing--#{$step});
+}
+
+// ---- Font-size presets --------------------------------------
+@function fs($slug) {
+
+	@return var(--wp--preset--font-size--#{$slug});
+}
+
 :root {
 	// Layout
 	--ws-wrapper-width:    var(--wp--style--global--wide-size, 1600px);

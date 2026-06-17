@@ -1,3 +1,5 @@
+@use '../tokens' as *;
+
 .wolf-theme-testimonials {
 	// background: #000;
 
@@ -25,7 +27,7 @@
 	}
 
 	&__item {
-		padding: 35px;
+		padding: space(6);
 		border: 1px solid var(--ws-card-border-color);
 		border-radius: var(--ws-border-radius);
 		display: flex;
@@ -58,8 +60,8 @@
 	}
 
 	&__author-block {
-		margin-top: 32px;
-		padding-top: 24px;
+		margin-top: space(6);
+		padding-top: space(5);
 		border-top: 1px solid var(--ws-card-border-color);
 	}
 
