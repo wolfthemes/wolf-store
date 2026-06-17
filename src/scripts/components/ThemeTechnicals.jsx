@@ -16,7 +16,7 @@ export default function ThemeTechnicals({ theme }) {
 	const docUrl = `https://doc.wolfthemes.com/theme/${slug}/`;
 
 	return (
-		<div className='wolf-theme-technicals wolf-theme-single__section'>
+		<div className='wolf-theme-technicals wolf-theme-single__section is-dark has-texture'>
 			<div className='wolf-theme-single__wrapper'>
 				<div className='wolf-theme-technicals__terms-container'>
 					{/* Categories */}

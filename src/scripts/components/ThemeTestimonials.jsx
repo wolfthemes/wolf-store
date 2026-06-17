@@ -62,7 +62,7 @@ export default function ThemeTestimonials({ theme }) {
 		return null;
 	}
 	return (
-		<div className='wolf-theme-testimonials wolf-theme-single__section wolf-core-font-light'>
+		<div className='wolf-theme-testimonials wolf-theme-single__section wolf-core-font-light is-dark has-texture'>
 			<div className='wolf-theme-single__wrapper'>
 				<h3 className='wolf-theme-testimonials__title'>
 					What customers say about {title} &amp; WolfThemes

@@ -19,7 +19,7 @@
 	--ws-wrapper-width-sm: var(--wp--style--global--content-size, 1000px);
 
 	// Borders
-	--ws-card-border-color:       rgba(0, 0, 0, 0.2);
+	--ws-card-border-color: var(--wp--preset--color--border, rgba(0, 0, 0, 0.2));
 	--ws-card-border-color-white: rgba(255, 255, 255, 0.2);
 
 	// Shadows
@@ -52,7 +52,7 @@
 	--ws-accent-hover:  var(--wp--preset--color--primary, #000);
 
 	// Borders & radius
-	--ws-border-color:  var(--wolf-border-color, rgba(0, 0, 0, 0.15));
+	--ws-border-color:  var(---wp--preset--color--border, rgba(0, 0, 0, 0.15));
 	--ws-border-radius: var(--wolf-radius-md, 6px);
 	--ws-btn-radius:    var(--wolf-btn-radius, 6px);
 }

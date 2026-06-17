@@ -30,7 +30,7 @@ export default function ThemeFeatures({ theme }) {
 
 	return (
 		<div
-			className='wolf-theme-features wolf-theme-single__section'
+			className='wolf-theme-features wolf-theme-single__section is-dark has-texture'
 			ref={sectionRef}
 		>
 			<div className='wolf-theme-single__wrapper'>

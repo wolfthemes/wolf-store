@@ -37,6 +37,7 @@
 		transform: translateY(24px);
 		transition: opacity 0.55s ease, transform 0.55s ease;
 		background: var(--ws-subtle-bg);
+		color:var(--ws-strong-color);
 
 		&.is-visible {
 			opacity: 1;
