@@ -189,6 +189,7 @@ window.wolfStoreData = {
 - **Entrance animations** — scroll-triggered reveal animations on key sections and UI elements
 - **Performance** — REST response caching, lazy loading optimisations, bundle size audit
 - **PHP unit test coverage** — expand test suite to cover the Meta resolution chain and REST field registration
+- **Theme card carousel layout** — add a carousel as an optional layout mode for the archive grid, alongside the current masonry/grid view
 - **Cleanup** — remove unused npm packages, delete commented-out code, prune unused PHP functions and dead config entries
 
 ---
