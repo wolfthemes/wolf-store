@@ -241,6 +241,42 @@ class Rest_Fields {
 		$this->register_meta_field( 'theme_store_headline', 'store_headline', '' );
 		$this->register_meta_field( 'theme_store_subheadline', 'store_subheadline', '' );
 
+		// --- Taxonomy terms for card display ---
+		$this->register( 'theme_categories', function ( $post ) {
+			$terms = get_the_terms( $post['id'], 'theme_cat' );
+			if ( ! $terms || is_wp_error( $terms ) ) {
+				return array();
+			}
+			return array_map(
+				function ( $term ) {
+					return array(
+						'id'   => $term->term_id,
+						'name' => $term->name,
+						'slug' => $term->slug,
+						'link' => get_term_link( $term ),
+					);
+				},
+				$terms
+			);
+		} );
+
+		$this->register( 'theme_page_builders', function ( $post ) {
+			$terms = get_the_terms( $post['id'], 'theme_page_builder' );
+			if ( ! $terms || is_wp_error( $terms ) ) {
+				return array();
+			}
+			return array_map(
+				function ( $term ) {
+					return array(
+						'id'   => $term->term_id,
+						'name' => $term->name,
+						'slug' => $term->slug,
+					);
+				},
+				$terms
+			);
+		} );
+
 		// --- Pricing ---
 		$this->register( 'theme_pricing', function ( $post ) {
 			$data = Meta::get_config( Meta::get_theme_slug( $post['id'] ) );

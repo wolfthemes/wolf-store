@@ -15,7 +15,8 @@ export default function ThemeCard({ theme }) {
 	const tagline = theme.theme_short_description;
 	const demoUrl = theme.theme_demo_url;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
-	// const categories = theme._embedded?.['wp:term']?.[0] ?? [];
+	const mainCategory = theme.theme_categories?.[0] ?? null;
+	const pageBuilders = theme.theme_page_builders ?? [];
 	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
 
@@ -36,9 +37,6 @@ export default function ThemeCard({ theme }) {
 				tabIndex='-1'
 				aria-hidden='true'
 			>
-				{/* { theme.theme_featured && ( */}
-				{/* 	<span className='wolf-theme-card__featured-badge'>Featured</span> */}
-				{/* ) } */}
 				<div className='wolf-theme-card__thumbnail'>
 					{thumbnail ? (
 						<img src={thumbnail} alt={title} loading='lazy' />
@@ -46,6 +44,11 @@ export default function ThemeCard({ theme }) {
 						<span className='wolf-theme-card__thumbnail-placeholder' />
 					)}
 				</div>
+				{mainCategory && (
+					<span className='wolf-theme-card__cat-overlay'>
+						{mainCategory.name}
+					</span>
+				)}
 			</a>
 
 			<div className='wolf-theme-card__body'>
@@ -57,19 +60,15 @@ export default function ThemeCard({ theme }) {
 					<p className='wolf-theme-card__tagline'>{tagline}</p>
 				)}
 
-				{/* {categories.length > 0 && ( */}
-				{/* 	<div className='wolf-theme-card__cats'> */}
-				{/* 		{categories.map(term => ( */}
-				{/* 			<a */}
-				{/* 				key={term.id} */}
-				{/* 				href={term.link} */}
-				{/* 				className='wolf-theme-card__cat' */}
-				{/* 			> */}
-				{/* 				{term.name} */}
-				{/* 			</a> */}
-				{/* 		))} */}
-				{/* 	</div> */}
-				{/* )} */}
+				{pageBuilders.length > 0 && (
+					<div className='wolf-theme-card__builders'>
+						{pageBuilders.map(pb => (
+							<span key={pb.id} className='wolf-theme-card__builder'>
+								{pb.name}
+							</span>
+						))}
+					</div>
+				)}
 			</div>
 
 			<footer className='wolf-theme-card__footer'>
