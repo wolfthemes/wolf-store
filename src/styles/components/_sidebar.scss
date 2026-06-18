@@ -1,3 +1,5 @@
+@use "../tokens" as *;
+
 // ── Sidebar search ────────────────────────────────────────────────────────────
 
 .wolf-store-search {
@@ -59,19 +61,23 @@
 	width: 220px;
 	flex-shrink: 0;
 	transition: max-height 0.35s ease, opacity 0.25s ease;
+	font-size: fs(sm);
 
 	&__search {
 		margin-bottom: 32px;
+		margin-bottom: gap(4);
 	}
 
 	&__group {
 		margin-bottom: 32px;
+		margin-bottom: gap(4);
 	}
 
 	&__title {
 		// opacity: 0.;
-		font-size: var(--ws-font-size-base);
+		font-size: fs(sm);
 		margin: 0 0 12px;
+		margin: 0 0 gap(1);
 		color: var(--ws-strong-color);
 	}
 
@@ -98,7 +104,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 4px 0;
+		padding: 2px 0;
 		text-decoration: none;
 		color: inherit;
 		// font-size: 0.9rem;

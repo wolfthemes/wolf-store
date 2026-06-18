@@ -7,7 +7,7 @@ export default function ThemeHero({ theme }) {
 	const headline = theme.theme_store_headline;
 
 	return (
-		<div className='wolf-theme-hero'>
+		<div className='wolf-theme-hero has-texture'>
 			{(video || thumbnail) && (
 				<div className='wolf-theme-hero__thumbnail'>
 					{video ? (
