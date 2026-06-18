@@ -1,26 +1,31 @@
+@use "../tokens" as *;
+
 .wolf-theme-description {
 
 	.wolf-theme-single__wrapper {
 		display: flex;
 		gap: 20px;
+		gap: space(3);
 		align-items: center;
 		justify-content: space-between;
 
-		@media (max-width: 900px) {
+		@include until($bp-lg) {
 			flex-direction: column;
 		}
 	}
 
 	&__subheadline {
 		font-size: 1.6em;
+		font-size: fs(lg);
 		max-width: 700px;
 		margin-bottom: 1rem;
+		margin-bottom: space(4);
 	}
 
 	&__description {
-		font-size: 1.1em;
+		font-size: fs(base);
 		max-width: 700px;
-		margin-bottom: 2rem;
+		margin-bottom: space(6);
 	}
 
 	&__mockup {
