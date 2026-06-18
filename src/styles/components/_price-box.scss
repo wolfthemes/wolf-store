@@ -12,7 +12,7 @@
 		left: 50%;
 		width: 90%;
 		height: $thickness;
-		background: var(--black-color);
+		background: currentColor;
 		transform: translate(-50%, -50%) rotate(-20deg);
 		transform-origin: center;
 		pointer-events: none;
