@@ -9,6 +9,7 @@
 
 		& + p {
 			margin-bottom: 20px;
+			margin-bottom: space(6);
 		}
 	}
 
@@ -17,11 +18,11 @@
 		grid-template-columns: repeat(4, 1fr);
 		gap: space(5);
 
-		@media ( max-width: 1024px ) {
+		@include until($bp-lg) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@media ( max-width: 600px ) {
+		@include until($bp-sm) {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -46,10 +47,12 @@
 	}
 
 	&__stars {
-		color: #ffeb00;
+		// color: #ffeb00;
 		font-size: 1.5em;
+		font-size: fs(lg);
 		letter-spacing: 2px;
 		margin-bottom: 16px;
+		margin-bottom: space(2);
 	}
 
 	&__text {
@@ -57,7 +60,7 @@
 		// line-height: 1.7;
 		margin: 0;
 		flex: 1;
-		color: var(--ws-strong-color);
+		// color: var(--ws-strong-color);
 	}
 
 	&__author-block {

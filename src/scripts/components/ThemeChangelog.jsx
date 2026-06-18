@@ -8,7 +8,7 @@ export default function ThemeChangelog({ theme }) {
 		return null;
 	}
 	return (
-		<div className='wolf-theme-changelog wolf-theme-single__section'>
+		<div className='wolf-theme-changelog wolf-theme-single__section is-dark has-texture'>
 			<div className='wolf-theme-single__wrapper'>
 				<button
 					className='wolf-theme-changelog__toggle'

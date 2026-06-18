@@ -1,3 +1,5 @@
+@use "../tokens" as *;
+
 // ── Sticky buy CTA bar ────────────────────────────────────────────────────────
 // Appears once the hero scrolls out of view on single theme pages.
 
@@ -12,9 +14,11 @@ body.wolf-store-sticky-cta-open {
 	right: 0;
 	z-index: 100;
 	background: #f1f1f1;
+	background: var(--wp--preset--color--base);
 	// color: var(--ws-bg-color);
 	box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.18);
 	padding: 12px 24px;
+	padding: space(3) space(6);
 
 	&__inner {
 		max-width: var(--ws-wrapper-width);
@@ -60,11 +64,19 @@ body.wolf-store-sticky-cta-open {
 	}
 
 	.wolf-theme-ctas__btn {
-		padding: 10px 20px;
+		// padding: 10px 20px;
 	}
 
 	// On very small screens, hide the title to save space.
-	@media ( max-width: 480px ) {
+	// @media ( max-width: 480px ) {
+	// 	padding: 10px 16px;
+	//
+	// 	&__title {
+	// 		display: none;
+	// 	}
+	// }
+
+	@include until($bp-sm) {
 		padding: 10px 16px;
 
 		&__title {

@@ -1,3 +1,23 @@
+// ---- Breakpoints (WP + theme.json wideSize aligned) ---------
+$bp-sm: 600px;
+$bp-md: 782px; // WP mobile/tablet boundary
+$bp-lg: 1024px;
+$bp-xl: 1280px; // theme.json wideSize
+
+@mixin until($bp) {
+
+	@media (max-width: #{$bp - 0.02px}) {
+		@content;
+	}
+}
+
+@mixin from($bp) {
+
+	@media (min-width: $bp) {
+		@content;
+	}
+}
+
 // ── Plugin-owned variables ─────────────────────────────────────────────────────
 // Defined and consumed exclusively by wolf-store. No external dependency.
 
@@ -32,6 +52,7 @@
 	// Font scale — inherits WP/theme preset sizes, falls back to rem values.
 	// Slug names match wolf-blank's theme.json. On non-Gutenberg themes the
 	// fallback rem values apply automatically.
+	--ws-font-size-xxs:  var(--wp--preset--font-size--xxs, 0.5rem);
 	--ws-font-size-xs:   var(--wp--preset--font-size--xs, 0.65rem);
 	--ws-font-size-sm:   var(--wp--preset--font-size--sm, 0.85rem);
 	--ws-font-size-base: var(--wp--preset--font-size--md, 1rem);

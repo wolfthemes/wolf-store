@@ -1,3 +1,5 @@
+@use "../tokens" as *;
+
 // Changelog — toggle à faire plus tard
 .wolf-theme-changelog {
 	padding-top: 0;
@@ -11,6 +13,7 @@
 		border: none;
 		padding: 0;
 		text-decoration: underline;
+		color: var(--wp--preset--color--contrast);
 
 		&:hover {
 			opacity: 1;
@@ -18,28 +21,32 @@
 	}
 
 	&__content {
-		margin-top: 24px;
+		margin-top: space(3);
+		padding: space(6);
+		background: var(--wp--preset--color--base);
+		color: var(--wp--preset--color--contrast-2);
+		font-family: monospace;
+		font-size: fs(sm);
 
 		h1 {
 			display: none;
 		}
 
 		h4 {
-			font-size: 0.9em;
+			font-size: fs(sm);
 			margin-bottom: 0;
 			text-transform:none !important;
-			// margin: 20px 0 8px;
-			opacity: 0.8;
 		}
 
 		ul {
-			margin-top: 5px;
-			margin-bottom: 15px;
+			margin-top: space(3);
+			margin-bottom: space(5);
+			padding-left: space(4);
 		}
 
 		li {
 			font-size: 0.9em;
-			// opacity: 0.7;
+			font-size: fs(xs);
 		}
 	}
 }

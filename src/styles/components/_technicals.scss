@@ -1,17 +1,19 @@
-// Sidebar
+@use "../tokens" as *;
+
 .wolf-theme-technicals {
 
 	.wolf-theme-single__wrapper {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 40px;
+		gap: space(6);
 		align-items: flex-start;
 
-		@media (max-width: 1024px) {
+		@include until($bp-lg) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@media (max-width: 600px) {
+		@include until($bp-sm) {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -34,7 +36,7 @@
 
 	&__value {
 		font-weight: 600;
-		color: #000;
+		// color: #000;
 		text-decoration: none;
 	}
 

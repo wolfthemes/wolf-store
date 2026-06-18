@@ -1,3 +1,5 @@
+@use "tokens" as *;
+
 [data-type="single"] {
 	min-height: 100vh;
 }
@@ -9,8 +11,9 @@
 	border-top: 1px solid var(--ws-card-border-color);
 
 	&__title {
-		font-size: var(--ws-font-size-lg);
+		font-size: var(--ws-font-size-md);
 		margin: 0 0 32px;
+		margin: 0 0 space(6);
 	}
 
 	&__grid {
@@ -19,14 +22,14 @@
 		gap: 24px;
 	}
 
-	@media ( max-width: 1024px ) {
+	@include until($bp-lg) {
 
 		&__grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 
-	@media ( max-width: 600px ) {
+	@include until($bp-sm) {
 		padding: 48px 0;
 
 		&__grid {
