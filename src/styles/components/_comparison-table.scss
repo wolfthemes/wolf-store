@@ -1,3 +1,5 @@
+@use "../tokens" as *;
+
 // ── ThemeComparisonTable ──────────────────────────────────────────────────────
 
 .wolf-theme-comparison-table {
@@ -12,13 +14,15 @@
 
 
 	&__title {
-		font-size: var(--ws-font-size-lg);
+		// font-size: var(--ws-font-size-lg);
 		margin-bottom: 8px;
+		margin-bottom: space(2);
 	}
 
 	&__intro {
 		// opacity: 0.6;
 		margin-bottom: 32px;
+		margin-bottom: space(4);
 		font-size: var(--ws-font-size-sm);
 	}
 
@@ -28,9 +32,11 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 20px;
+		gap: space(3);
 		margin-bottom: 40px;
+		margin-bottom: space(8);
 
-		@media ( max-width: 600px ) {
+		@include until($bp-sm) {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -39,7 +45,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		gap: space(3);
 		padding: 24px;
+		padding: space(6);
 		border: 1px solid var(--ws-card-border-color);
 		border-radius:var(--ws-border-radius);
 
@@ -57,6 +65,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		gap: space(1);
 	}
 
 	&__card-badge {
@@ -70,6 +79,7 @@
 		color: var(--ws-bg-color);
 		align-self: flex-start;
 		margin-bottom: 6px;
+		margin-bottom: space(1);
 	}
 
 	&__card-title {
@@ -88,16 +98,19 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		gap: space(2);
 		flex: 1;
 	}
 
 	&__card-note {
 		list-style: none;
 		margin: 8px 0;
+		margin: space(2) 0;
 		padding: 0;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		gap: space(1);
 		font-size: var(--ws-font-size-sm);
 
 		li {
@@ -133,6 +146,7 @@
 		justify-content: space-between;
 		align-items: baseline;
 		padding: 8px 0;
+		padding: space(2) 0;
 		border-bottom: 1px solid var(--ws-border-color);
 		font-size: var(--ws-font-size-sm);
 
@@ -165,11 +179,13 @@
 			font-weight: 400;
 			font-size: var(--ws-font-size-sm);
 			margin-right: 2px;
+			margin-right: space(1);
 		}
 	}
 
 	&__trust {
 		margin: 0 0 24px;
+		margin: 0 0 space(3);
 		font-size: var(--ws-font-size-base);
 		font-weight: 700;
 		text-align: center;
@@ -186,6 +202,7 @@
 		th {
 			text-align: left;
 			padding: 10px 12px;
+			padding: space(3);
 			border-bottom: 2px solid var(--ws-card-border-color);
 			font-size: var(--ws-font-size-xs);
 			letter-spacing: 0.05em;
@@ -199,6 +216,7 @@
 
 		td {
 			padding: 12px;
+			padding: space(3);
 			border-bottom: 1px solid var(--ws-card-border-color);
 			vertical-align: middle;
 		}
