@@ -31,40 +31,23 @@
 	"author": "WolfThemes",
 	"license": "ISC",
 	"dependencies": {
-		"@studio-freight/lenis": "^1.0.42",
 		"@wordpress/i18n": "^4.29.0",
-		"@wordpress/scripts": "^24.6.0",
-		"@wordpress/stylelint-config": "^19.1.0",
-		"accordion-js": "^3.3.4",
-		"auto-bind": "^5.0.1",
-		"easing-utils": "^1.0.0",
-		"fontfaceobserver": "^2.3.0",
-		"gsap": "^3.12.2",
-		"html-react-parser": "^3.0.13",
-		"imagesloaded": "^5.0.0",
-		"isotope-layout": "^3.0.6",
-		"masonry-layout": "^4.2.2",
-		"motion": "^10.16.0",
-		"popmotion": "^8.6.4",
-		"react-anchor-link-smooth-scroll": "^1.0.12",
-		"stick-it": "^1.0.7",
-		"stylelint": "^13.13.1",
-		"swiper": "^11.0.4",
-		"typescript": "^5.0.0"
+		"auto-bind": "^5.0.1"
 	},
 	"devDependencies": {
 		"@svgr/webpack": "^8.1.0",
-		"@types/node": "^20.19.1",
 		"@wordpress/eslint-plugin": "^22.0.0",
-		"@wordpress/prettier-config": "^4.30.0",
 		"@wordpress/scripts": "^24.6.0",
+		"@wordpress/stylelint-config": "^19.1.0",
 		"browser-sync": "^3.0.4",
 		"browser-sync-webpack-plugin": "^2.3.0",
+		"copy-webpack-plugin": "^10.2.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.0.3",
-		"filemanager-webpack-plugin": "^7.0.0",
 		"husky": "^9.1.7",
 		"raw-loader": "^4.0.2",
-		"ts-loader": "^9.4.2"
+		"stylelint": "^13.13.1",
+		"ts-loader": "^9.4.2",
+		"typescript": "^5.0.0"
 	}
 }
