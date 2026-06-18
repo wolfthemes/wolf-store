@@ -76,8 +76,16 @@ Entry: `src/scripts/plugin.js` → compiled to `build/app.js`.
 
 The React app mounts on `#wolf-store-root` injected by PHP templates. It is a "React island" — WordPress handles header/footer/navigation in PHP.
 
-- `src/scripts/components/Archive.jsx` — theme grid with filtering
-- `src/scripts/components/Single.jsx` — theme detail page, composed from `ThemeHero`, `ThemeGallery`, `ThemeDescription`, `ThemeFeatures`, `ThemeComparisonTable`, `ThemeChangelog`, `ThemeTechnicals`, etc.
+- `src/scripts/components/Archive.jsx` — theme grid with filtering, search, and pagination
+- `src/scripts/components/Single.jsx` — theme detail page, composed from `ThemeHero`, `ThemeGallery`, `ThemeDescription`, `ThemeFeatures`, `ThemeBenefits`, `ThemeBrandStory`, `ThemeCTAs`, `ThemeComparisonTable`, `ThemeChangelog`, `ThemeTechnicals`, `ThemeTestimonials`, `StickyCTA`, `RelatedThemes`
+- `src/scripts/components/ThemeCard.jsx` — archive card showing category badge and page builder label
+- `src/scripts/components/Sidebar.jsx` — taxonomy filter panel
+- `src/scripts/components/SearchBar.jsx` — keyword search across archive
+- `src/scripts/components/RelatedThemes.jsx` — similar themes by category on single pages
+- `src/scripts/components/StickyCTA.jsx` — sticky purchase bar on single pages
+- `src/scripts/components/CountdownTimer.jsx` — offer countdown display
+- `src/scripts/components/SkeletonCard.jsx` / `SkeletonSingle.jsx` — loading skeletons
+- `src/scripts/components/ErrorBoundary.jsx` — React error boundary
 - `src/scripts/components/hooks/useThemes.js` — paginated archive fetch
 - `src/scripts/components/hooks/useTheme.js` — single theme fetch
 - `src/scripts/components/hooks/useTerms.js` — taxonomy term fetch for filters
@@ -100,6 +108,35 @@ Webpack (`@wordpress/scripts` base config + BrowserSync + ts-loader) produces fo
 ### Coding standards
 
 PHP must pass `WordPress` + `WordPressVIPMinimum` rulesets. All globals and functions must be prefixed `wolf_store_` or `Wolf_Store`. Custom escape functions (`wolf_store_kses`, `wolf_store_sanitize_html_classes`, `wolf_store_esc_style_attr`) are registered as auto-escaped in `phpcs.xml.dist`.
+
+### CSS token system
+
+All design values (spacing, color, typography sizes) are defined as `--ws-*` CSS custom properties in `src/styles/_tokens.scss`. Component SCSS files reference these tokens rather than hard-coding values. SCSS utility functions (e.g. `sp()` for spacing) are also defined there. Do not hard-code spacing or color values in component SCSS — always use a token or derive from one.
+
+### Styles structure
+
+```
+src/styles/
+├── _tokens.scss         # --ws-* CSS custom properties + SCSS functions
+├── _var.scss            # Legacy SCSS variables (being migrated to tokens)
+├── _archive.scss        # Archive grid layout
+├── _card.scss           # Theme card styles
+├── _single.scss         # Single page layout
+├── _themes.scss         # Shared theme list utilities
+├── main.scss            # Entry — imports all partials
+├── admin.scss           # Admin-only styles entry
+├── components/          # Per-component BEM partials
+│   ├── _hero.scss, _gallery.scss, _stats.scss, _features.scss
+│   ├── _benefits.scss, _brand-story.scss, _ctas.scss, _sticky-cta.scss
+│   ├── _comparison-table.scss, _price-box.scss, _changelog.scss
+│   ├── _technicals.scss, _testimonials.scss, _sidebar.scss, _loading.scss
+└── vendor/
+    └── _fancybox.scss   # Fancybox lightbox overrides
+```
+
+### Fancybox gallery
+
+`ThemeGallery.jsx` uses [Fancybox](https://fancyapps.com/fancybox/) for lightbox functionality. The library is enqueued in `Functions/Frontend/Enqueues.php`. Styles are overridden in `src/styles/vendor/_fancybox.scss` and imported via `main.scss`.
 
 ### Offer / coupon management
 

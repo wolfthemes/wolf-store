@@ -39,22 +39,37 @@ wolf-store/
 │   │   ├── config/
 │   │   │   └── offers.js        # Centralized coupon/offer config
 │   │   └── components/          # React components
-│   │       ├── Archive.jsx      # Theme grid with filtering
-│   │       ├── Single.jsx       # Single theme page (composes all sections)
+│   │       ├── Archive.jsx           # Theme grid with filtering
+│   │       ├── Single.jsx            # Single theme page (composes all sections)
+│   │       ├── ThemeCard.jsx         # Archive card with category badge + builder label
 │   │       ├── ThemeHero.jsx
 │   │       ├── ThemeDescription.jsx
-│   │       ├── ThemeStats.jsx         # Animated count-up stats
-│   │       ├── ThemeFeatures.jsx      # Key benefits / target audience columns
+│   │       ├── ThemeStats.jsx        # Animated count-up stats
+│   │       ├── ThemeFeatures.jsx     # Key benefits / target audience columns
+│   │       ├── ThemeBenefits.jsx
+│   │       ├── ThemeBrandStory.jsx
+│   │       ├── ThemeCTAs.jsx
 │   │       ├── ThemeComparisonTable.jsx  # WolfThemes vs ThemeForest pricing
 │   │       ├── ThemePriceBox.jsx
-│   │       ├── ThemeGallery.jsx
+│   │       ├── ThemeGallery.jsx      # Fancybox-powered lightbox gallery
 │   │       ├── ThemeChangelog.jsx
 │   │       ├── ThemeTechnicals.jsx
 │   │       ├── ThemeTestimonials.jsx
-│   │       └── hooks/           # useThemes, useTheme, useTerms
+│   │       ├── Sidebar.jsx           # Archive taxonomy filters
+│   │       ├── SearchBar.jsx
+│   │       ├── RelatedThemes.jsx
+│   │       ├── StickyCTA.jsx
+│   │       ├── CountdownTimer.jsx
+│   │       ├── Pagination.jsx
+│   │       ├── SkeletonCard.jsx      # Loading skeleton for archive
+│   │       ├── SkeletonSingle.jsx    # Loading skeleton for single view
+│   │       ├── ErrorBoundary.jsx
+│   │       └── hooks/               # useThemes, useTheme, useTerms
 │   └── styles/
-│       ├── main.scss            # SCSS entry — imports all component partials
-│       └── components/          # Per-component SCSS partials (BEM)
+│       ├── _tokens.scss         # Design tokens (spacing, colors, typography)
+│       ├── main.scss            # SCSS entry — imports all partials
+│       ├── components/          # Per-component SCSS partials (BEM)
+│       └── vendor/              # Third-party SCSS overrides (Fancybox)
 ├── templates/           # PHP templates (theme-overridable)
 │   ├── archive-wolf_theme.php
 │   └── single-wolf_theme.php
@@ -82,10 +97,18 @@ wolf-store/
 - Admin metabox manager with configurable field types (text, URL, select, repeatable, datepicker)
 - Settings page with tabbed UI and field dependency support
 - Template loader with theme override support
-- React archive with sidebar filtering and pagination
-- React single theme view with hero, gallery, stats, features, comparison table, changelog, and testimonials sections
+- React archive with sidebar filtering, search bar, and pagination
+- React single theme view with hero, gallery, stats, features, comparison table, changelog, testimonials, brand story, and CTA sections
+- Fancybox lightbox gallery integration
+- Theme cards show category badge and page builder label
+- Loading skeletons for archive and single views
+- Error boundary for graceful React error recovery
+- Sticky CTA bar on single theme pages
+- Related themes section on single theme pages
+- Countdown timer component for limited-time offers
 - Animated count-up stats on scroll (`IntersectionObserver` + `requestAnimationFrame`)
 - Centralized offer/coupon system — one file to enable, disable, or swap promotions (`src/scripts/config/offers.js`)
+- `--ws-*` CSS custom property system for consistent spacing, color, and typography tokens
 - REST API fields sourced from remote `theme_meta.json`: features, key benefits, selling points, target audience, use cases, included plugins, design features, testimonials, pricing
 - Schema.org `Product` microdata
 
@@ -177,6 +200,12 @@ window.wolfStoreData = {
 | REST API field exposure | ✅ Done |
 | Offer / coupon system | ✅ Done |
 | SCSS styling | 🚧 In progress |
+| Fancybox gallery | ✅ Done |
+| Loading skeletons | ✅ Done |
+| Search bar | ✅ Done |
+| Related themes | ✅ Done |
+| Sticky CTA | ✅ Done |
+| CSS token system (`--ws-*`) | ✅ Done |
 | Elementor widget | 🚧 In progress |
 
 ---
