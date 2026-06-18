@@ -29,7 +29,7 @@ class Enqueues {
 		wp_register_script(
 			'wolf-store-app',
 			WOLF_STORE_URI . '/build/app.js',
-			array( 'wp-element' ),
+			array( 'jquery', 'wp-element' ),
 			WOLF_STORE_VERSION,
 			true
 		);

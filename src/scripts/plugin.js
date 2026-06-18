@@ -6,10 +6,13 @@ import Single from './components/Single';
 import Archive from './components/Archive';
 import ErrorBoundary from './components/ErrorBoundary';
 
+import '@fancyapps/fancybox';
+
 class WolfStore {
 	constructor() {
 		AutoBind(this);
 		this.RenderRoot();
+		this.initFancybox();
 	}
 
 	RenderRoot() {
@@ -52,6 +55,16 @@ class WolfStore {
 					);
 				}
 			});
+	}
+
+	initFancybox() {
+		const $ = window.jQuery;
+
+		if (!$ || !$.fn || !$.fn.fancybox) {
+			return;
+		}
+
+		$('[data-fancybox]').fancybox({});
 	}
 }
 
