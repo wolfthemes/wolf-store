@@ -49,6 +49,12 @@ class Metabox_Config {
 				'desc'  => esc_html__( 'Display this theme first in the store.', 'wolf-store' ),
 			),
 			array(
+				'label' => esc_html__( 'Awwwards Nominee', 'wolf-store' ),
+				'id'    => '_wolf_theme_awwwards_nominee',
+				'type'  => 'checkbox',
+				'desc'  => esc_html__( 'Mark this theme as an Awwwards nominee.', 'wolf-store' ),
+			),
+			array(
 				'label' => esc_html__( 'Theme Slug', 'wolf-store' ),
 				'id'    => '_wolf_theme_slug',
 				'desc'  => esc_html__( 'e.g. sable — must match the folder name on changelog.wolfthemes.cloud', 'wolf-store' ),

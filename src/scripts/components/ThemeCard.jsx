@@ -27,6 +27,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const buyUrl = withCoupon(theme.theme_purchase_url);
 	const mainCategory = theme.theme_categories?.[0] ?? null;
 	const pageBuilders = theme.theme_page_builders ?? [];
+	const isAwwwardsNominee = theme.theme_awwwards_nominee ?? false;
 	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
 
@@ -57,6 +58,14 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 				{mainCategory && (
 					<span className='wolf-theme-card__cat-overlay'>
 						{mainCategory.name}
+					</span>
+				)}
+				{isAwwwardsNominee && (
+					<span
+						className='wolf-theme-card__awwwards-ribbon'
+						aria-label='Awwwards Nominee'
+					>
+						Awwwards
 					</span>
 				)}
 			</a>

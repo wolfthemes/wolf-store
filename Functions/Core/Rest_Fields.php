@@ -174,6 +174,10 @@ class Rest_Fields {
 			return (bool) get_post_meta( $post['id'], '_wolf_theme_featured', true );
 		} );
 
+		$this->register( 'theme_awwwards_nominee', function ( $post ) {
+			return (bool) get_post_meta( $post['id'], '_wolf_theme_awwwards_nominee', true );
+		} );
+
 		// --- From app.config.json ---
 		$this->register( 'theme_slug', function ( $post ) {
 			return Meta::get_theme_slug( $post['id'] );

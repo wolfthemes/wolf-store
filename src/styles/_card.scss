@@ -59,6 +59,25 @@
 		height: 100%;
 	}
 
+	&__awwwards-ribbon {
+		position: absolute;
+		top: 18px;
+		right: -26px;
+		width: 100px;
+		background: var(--ws-accent-color);
+		color: var(--ws-bg-color);
+		font-size: var(--ws-font-size-xxs);
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 4px 0;
+		transform: rotate(45deg);
+		z-index: 10;
+		pointer-events: none;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+	}
+
 	&__cat-overlay {
 		position: absolute;
 		top: 10px;
