@@ -40,6 +40,10 @@
 		"sidebar": {
 			"type": "boolean",
 			"default": false
+		},
+		"cardHeading": {
+			"type": "string",
+			"default": "h3"
 		}
 	},
 	"editorScript": "file:./index.js",

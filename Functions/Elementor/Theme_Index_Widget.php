@@ -86,6 +86,7 @@ class Theme_Index_Widget extends \Elementor\Widget_Base {
 			data-orderby="<?php echo esc_attr( $settings['orderby'] ?? 'date' ); ?>"
 			data-order="<?php echo esc_attr( $settings['order'] ?? 'DESC' ); ?>"
 			data-offset="<?php echo absint( $settings['offset'] ?? 0 ); ?>"
+			data-card-heading="h3"
 			data-include="<?php echo esc_attr( $settings['include_ids'] ?? '' ); ?>"
 			data-exclude="<?php echo esc_attr( $settings['exclude_ids'] ?? '' ); ?>"
 			data-show-sidebar="false">

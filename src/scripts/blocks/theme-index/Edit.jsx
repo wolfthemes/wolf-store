@@ -42,7 +42,8 @@ import { useSelect } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { termId, perPage, pagination, orderby, order, offset } = attributes;
+	const { termId, perPage, pagination, orderby, order, offset, cardHeading } =
+		attributes;
 
 	/*
 	 * useSelect reads data from a WordPress store.
@@ -173,6 +174,27 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={value => setAttributes({ offset: value })}
 						min={0}
 						max={100}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Accessibility & SEO', 'wolf-store')}
+					initialOpen={false}
+				>
+					<SelectControl
+						label={__('Card title heading level', 'wolf-store')}
+						help={__(
+							'Use H3 when this block sits under a section title (H2). Use H2 only if the block is the top-level content on the page.',
+							'wolf-store'
+						)}
+						value={cardHeading}
+						options={[
+							{ label: __('H2', 'wolf-store'), value: 'h2' },
+							{ label: __('H3', 'wolf-store'), value: 'h3' },
+							{ label: __('H4', 'wolf-store'), value: 'h4' },
+						]}
+						onChange={value =>
+							setAttributes({ cardHeading: value })
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>

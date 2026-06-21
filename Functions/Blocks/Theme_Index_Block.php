@@ -95,6 +95,26 @@ class Theme_Index_Block {
 		$offset     = absint( $attributes['offset'] ?? 0 );
 		$sidebar    = (bool) ( $attributes['sidebar'] ?? false );
 
+		// Card title heading level. The block attribute defaults to h3 because the
+		// block normally sits under a section <h2> when dropped into page content;
+		// constrained to a safe whitelist.
+		$card_heading = strtolower( sanitize_key( $attributes['cardHeading'] ?? 'h3' ) );
+		if ( ! in_array( $card_heading, array( 'h2', 'h3', 'h4' ), true ) ) {
+			$card_heading = 'h3';
+		}
+
+		// On a dedicated store archive context (CPT archive, taxonomy archive, or the
+		// store page) the block is the page's primary content directly under the page
+		// <h1> query-title, with no intervening section <h2> — so the cards must be
+		// <h2> regardless of the attribute default used for in-content placement.
+		if (
+			is_post_type_archive( 'wolf_theme' )
+			|| is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
+			|| is_page( \Wolf_Store\Core\Core::get_store_page_id() )
+		) {
+			$card_heading = 'h2';
+		}
+
 		// Generate a unique ID so multiple blocks on the same page don't clash.
 		// wp_unique_id() is a lightweight WordPress helper (no DB calls).
 		$block_id = 'wolf-store-block-' . wp_unique_id();
@@ -117,6 +137,7 @@ class Theme_Index_Block {
 			data-orderby="<?php echo esc_attr( $orderby ); ?>"
 			data-order="<?php echo esc_attr( $order ); ?>"
 			data-offset="<?php echo absint( $offset ); ?>"
+			data-card-heading="<?php echo esc_attr( $card_heading ); ?>"
 			data-show-sidebar="<?php echo $sidebar ? 'true' : 'false'; ?>">
 		</div>
 		<?php

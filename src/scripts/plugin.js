@@ -27,6 +27,7 @@ class WolfStore {
 					termName,
 					perPage,
 					pagination,
+					cardHeading,
 				} = root.dataset;
 				const app = createRoot(root);
 
@@ -50,6 +51,7 @@ class WolfStore {
 								showSidebar={
 									root.dataset.showSidebar !== 'false'
 								}
+								cardHeading={cardHeading || 'h2'}
 							/>
 						</ErrorBoundary>
 					);

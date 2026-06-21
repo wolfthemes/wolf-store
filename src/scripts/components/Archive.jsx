@@ -13,6 +13,7 @@ export default function Archive({
 	perPage,
 	pagination: paginationProp,
 	showSidebar = true,
+	cardHeading = 'h2',
 }) {
 	const [page, setPage] = useState(1);
 	const [activeFilters, setActiveFilters] = useState(() => {
@@ -170,7 +171,11 @@ export default function Archive({
 									(_, i) => <SkeletonCard key={i} />
 								)
 							: themes.map(theme => (
-									<ThemeCard key={theme.id} theme={theme} />
+									<ThemeCard
+										key={theme.id}
+										theme={theme}
+										headingTag={cardHeading}
+									/>
 								))}
 					</div>
 

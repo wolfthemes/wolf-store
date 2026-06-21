@@ -4,11 +4,21 @@
  * Used in archive grids and the (future) Elementor widget.
  * Pulls from the same REST fields as Single.jsx.
  *
- * @param {Object} theme Full theme REST object
+ * @param {Object} theme      Full theme REST object
+ * @param {string} headingTag Heading element for the card title. Defaults to
+ *                            'h2' (native archive: page <h1> → card <h2>). The
+ *                            block/Elementor widget passes 'h3' because the loop
+ *                            sits under a section <h2> title. Constrained to a
+ *                            safe whitelist so an arbitrary tag can't be injected.
  */
 import { ACTIVE_OFFER, discounted, withCoupon } from '../config/offers';
 
-export default function ThemeCard({ theme }) {
+const ALLOWED_HEADINGS = ['h2', 'h3', 'h4'];
+
+export default function ThemeCard({ theme, headingTag = 'h2' }) {
+	const HeadingTag = ALLOWED_HEADINGS.includes(headingTag)
+		? headingTag
+		: 'h2';
 	const title = theme.title?.rendered;
 	const permalink = theme.link;
 	const thumbnail = theme.theme_thumbnail;
@@ -52,9 +62,9 @@ export default function ThemeCard({ theme }) {
 			</a>
 
 			<div className='wolf-theme-card__body'>
-				<h2 className='wolf-theme-card__title'>
+				<HeadingTag className='wolf-theme-card__title'>
 					<a href={permalink}>{title}</a>
-				</h2>
+				</HeadingTag>
 
 				{tagline && (
 					<p className='wolf-theme-card__tagline'>{tagline}</p>
