@@ -82,6 +82,7 @@ class Taxonomies {
 			'show_in_nav_menus' => true,
 			'show_tagcloud'     => true,
 			'show_in_rest'      => $config['show_in_rest'] ?? true,
+			'rest_base'         => $config['rest_base'] ?? $taxonomy_slug,
 			'rewrite'           => $config['rewrite'] ?? array( 'slug' => $taxonomy_slug ),
 		);
 
