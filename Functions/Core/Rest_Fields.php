@@ -100,7 +100,7 @@ class Rest_Fields {
 					"SELECT t.term_id
 					   FROM {$wpdb->terms} t
 					   INNER JOIN {$wpdb->term_taxonomy} tt ON t.term_id = tt.term_id
-					  WHERE tt.taxonomy IN ('theme_cat','theme_tag','theme_style','theme_page_builder','theme_color')
+					  WHERE tt.taxonomy IN ('theme_cat','theme_tag','theme_post_types','theme_style','theme_page_builder','theme_color')
 					    AND t.name LIKE %s
 					  LIMIT 50",
 					$like
@@ -246,6 +246,24 @@ class Rest_Fields {
 		// --- Taxonomy terms for card display ---
 		$this->register( 'theme_categories', function ( $post ) {
 			$terms = get_the_terms( $post['id'], 'theme_cat' );
+			if ( ! $terms || is_wp_error( $terms ) ) {
+				return array();
+			}
+			return array_map(
+				function ( $term ) {
+					return array(
+						'id'   => $term->term_id,
+						'name' => $term->name,
+						'slug' => $term->slug,
+						'link' => get_term_link( $term ),
+					);
+				},
+				$terms
+			);
+		} );
+
+		$this->register( 'theme_post_types', function ( $post ) {
+			$terms = get_the_terms( $post['id'], 'theme_post_types' );
 			if ( ! $terms || is_wp_error( $terms ) ) {
 				return array();
 			}

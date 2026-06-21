@@ -27,6 +27,7 @@ class Taxonomy_Config {
 		return array(
 			'theme_cat'          => self::get_category_config(),
 			'theme_tag'          => self::get_tag_config(),
+			'theme_post_types'   => self::get_post_types_config(),
 			'theme_color'        => self::get_flat_config( 'Color', 'Colors', 'theme-color' ),
 			'theme_price'        => self::get_flat_config( 'Price Range', 'Price Ranges', 'theme-price' ),
 			'theme_style'        => self::get_flat_config( 'Style', 'Styles', 'theme-style' ),
@@ -105,6 +106,44 @@ class Taxonomy_Config {
 			'update_count_callback' => '_update_post_term_count',
 			'rewrite'               => array(
 				'slug'       => 'theme-tag',
+				'with_front' => false,
+			),
+		);
+	}
+
+	/**
+	 * Get post types taxonomy configuration
+	 *
+	 * @return array
+	 */
+	private static function get_post_types_config(): array {
+		return array(
+			'labels'                => array(
+				'name'                       => esc_html__( 'Post Types', 'wolf-store' ),
+				'singular_name'              => esc_html__( 'Post Type', 'wolf-store' ),
+				'search_items'               => esc_html__( 'Search Post Types', 'wolf-store' ),
+				'popular_items'              => esc_html__( 'Popular Post Types', 'wolf-store' ),
+				'all_items'                  => esc_html__( 'All Post Types', 'wolf-store' ),
+				'parent_item'                => esc_html__( 'Parent Post Type', 'wolf-store' ),
+				'parent_item_colon'          => esc_html__( 'Parent Post Type:', 'wolf-store' ),
+				'edit_item'                  => esc_html__( 'Edit Post Type', 'wolf-store' ),
+				'update_item'                => esc_html__( 'Update Post Type', 'wolf-store' ),
+				'add_new_item'               => esc_html__( 'Add New Post Type', 'wolf-store' ),
+				'new_item_name'              => esc_html__( 'New Post Type', 'wolf-store' ),
+				'separate_items_with_commas' => esc_html__( 'Separate post types with commas', 'wolf-store' ),
+				'add_or_remove_items'        => esc_html__( 'Add or remove post types', 'wolf-store' ),
+				'choose_from_most_used'      => esc_html__( 'Choose from the most used post types', 'wolf-store' ),
+				'not_found'                  => esc_html__( 'No post types found', 'wolf-store' ),
+				'menu_name'                  => esc_html__( 'Post Types', 'wolf-store' ),
+			),
+			'hierarchical'          => true,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_rest'          => true,
+			'query_var'             => true,
+			'update_count_callback' => '_update_post_term_count',
+			'rewrite'               => array(
+				'slug'       => 'theme-post-type',
 				'with_front' => false,
 			),
 		);

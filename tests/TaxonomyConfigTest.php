@@ -10,6 +10,7 @@ class TaxonomyConfigTest extends TestCase {
 
         $this->assertArrayHasKey( 'theme_cat', $config );
         $this->assertArrayHasKey( 'theme_tag', $config );
+        $this->assertArrayHasKey( 'theme_post_types', $config );
         $this->assertArrayHasKey( 'theme_color', $config );
         $this->assertArrayHasKey( 'theme_page_builder', $config );
     }
