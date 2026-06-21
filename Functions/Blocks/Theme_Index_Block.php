@@ -74,8 +74,18 @@ class Theme_Index_Block {
 		// Sanitise each attribute before outputting. The types in block.json
 		// are enforced by the REST API but we sanitise here as a defence-in-depth
 		// measure (render_callback can be called from other contexts).
-		$taxonomy   = sanitize_key( $attributes['taxonomy'] ?? '' );
-		$term_id    = absint( $attributes['termId'] ?? 0 );
+		$taxonomy = sanitize_key( $attributes['taxonomy'] ?? '' );
+		$term_id  = absint( $attributes['termId'] ?? 0 );
+
+		// When the block is rendered inside a taxonomy archive template, override the
+		// baked-in attributes with the actual queried term so the React app filters
+		// correctly without needing taxonomy/termId hardcoded in the block markup.
+		if ( is_tax() ) {
+			$queried  = get_queried_object();
+			$taxonomy = sanitize_key( $queried->taxonomy ?? $taxonomy );
+			$term_id  = absint( $queried->term_id ?? $term_id );
+		}
+
 		$per_page   = absint( $attributes['perPage'] ?? 12 );
 		$pagination = sanitize_text_field( $attributes['pagination'] ?? 'numbers' );
 		$orderby    = sanitize_key( $attributes['orderby'] ?? 'date' );

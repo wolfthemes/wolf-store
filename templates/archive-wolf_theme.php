@@ -12,7 +12,7 @@ $wolf_store_term      = '';
 $wolf_store_term_id   = 0;
 $wolf_store_term_name = '';
 
-if ( is_tax( 'theme_cat' ) || is_tax( 'theme_tag' ) ) {
+if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
 	$wolf_store_queried   = get_queried_object();
 	$wolf_store_taxonomy  = $wolf_store_queried->taxonomy ?? '';
 	$wolf_store_term      = $wolf_store_queried->slug     ?? '';
