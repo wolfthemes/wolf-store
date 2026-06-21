@@ -11,6 +11,8 @@
 
 namespace Wolf_Store\Core;
 
+use Wolf_Store\Config\Taxonomy_Config;
+
 defined( 'ABSPATH' ) || exit;
 
 class Rest_Fields {
@@ -158,7 +160,7 @@ class Rest_Fields {
 			'term_color',
 			array(
 				'get_callback' => function ( $term ) {
-					return \Wolf_Store\Config\Taxonomy_Config::get_term_color( $term['slug'] );
+					return Taxonomy_Config::get_term_color( $term['slug'] );
 				},
 				'schema'       => array(
 					'type'        => 'string',

@@ -12,6 +12,7 @@
 namespace Wolf_Store\Frontend;
 
 use Wolf_Store\Core\Core;
+use Wolf_Store\Config\Taxonomy_Config;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -77,7 +78,7 @@ class Frontend_Handler {
 	 * @return string[]
 	 */
 	public function inject_archive_template_slug( array $templates ): array {
-		if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
+		if ( is_tax( Taxonomy_Config::get_taxonomy_slugs() ) ) {
 			array_unshift( $templates, 'archive-wolf_theme' );
 		}
 		return $templates;
@@ -130,7 +131,7 @@ class Frontend_Handler {
 			return 'archive-wolf_theme.php';
 		}
 
-		if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
+		if ( is_tax( Taxonomy_Config::get_taxonomy_slugs() ) ) {
 			return 'archive-wolf_theme.php';
 		}
 

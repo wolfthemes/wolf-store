@@ -14,6 +14,7 @@ use Wolf_Store\Core\Utilities;
 use Wolf_Store\Core\Meta;
 use Wolf_Store\Core\Schema;
 use Wolf_Store\Core\Seo;
+use Wolf_Store\Config\Taxonomy_Config;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -55,7 +56,7 @@ class Hooks {
 		} elseif (
 			is_page( Core::get_store_page_id() ) ||
 			is_post_type_archive( 'wolf_theme' ) ||
-			is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
+			is_tax( Taxonomy_Config::get_taxonomy_slugs() )
 		) {
 			Seo::init_archive();
 		}
@@ -70,7 +71,7 @@ class Hooks {
 		} elseif (
 			is_page( Core::get_store_page_id() ) ||
 			is_post_type_archive( 'wolf_theme' ) ||
-			is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
+			is_tax( Taxonomy_Config::get_taxonomy_slugs() )
 		) {
 			Schema::output_archive();
 		}
@@ -104,7 +105,7 @@ class Hooks {
 			$classes[] = 'store-page';
 		}
 
-		if ( is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() ) ) {
+		if ( is_tax( Taxonomy_Config::get_taxonomy_slugs() ) ) {
 			$classes[] = 'store-category-page';
 		}
 

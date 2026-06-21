@@ -13,10 +13,12 @@ use Wolf_Store\Admin\Admin_Handler;
 use Wolf_Store\Blocks\Theme_Index_Block;
 use Wolf_Store\Blocks\Theme_Single_Block;
 use Wolf_Store\Frontend\Frontend_Handler;
+use Wolf_Store\Frontend\Template;
 use Wolf_Store\Post_Types\Post_Type;
 use Wolf_Store\Taxonomies\Taxonomies;
 use Wolf_Store\Core\Rest_Fields;
 use Wolf_Store\Config\Taxonomy_Config;
+use Wolf_Store\Elementor\Theme_Index_Widget;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -133,7 +135,7 @@ class Plugin {
 
 		add_action( 'elementor/widgets/register', function ( $widgets_manager ) {
 			require_once WOLF_STORE_DIR . '/Functions/Elementor/Theme_Index_Widget.php';
-			$widgets_manager->register( new \Wolf_Store\Elementor\Theme_Index_Widget() );
+			$widgets_manager->register( new Theme_Index_Widget() );
 		} );
 	}
 
@@ -148,7 +150,7 @@ class Plugin {
 		}
 	}
 
-	public function get_template(): \Wolf_Store\Frontend\Template {
+	public function get_template(): Template {
 		return $this->frontend_handler->get_template();
 	}
 

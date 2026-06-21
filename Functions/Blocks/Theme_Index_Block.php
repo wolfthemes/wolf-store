@@ -25,6 +25,9 @@
 
 namespace Wolf_Store\Blocks;
 
+use Wolf_Store\Config\Taxonomy_Config;
+use Wolf_Store\Core\Core;
+
 defined( 'ABSPATH' ) || exit;
 
 class Theme_Index_Block {
@@ -109,8 +112,8 @@ class Theme_Index_Block {
 		// <h2> regardless of the attribute default used for in-content placement.
 		if (
 			is_post_type_archive( 'wolf_theme' )
-			|| is_tax( \Wolf_Store\Config\Taxonomy_Config::get_taxonomy_slugs() )
-			|| is_page( \Wolf_Store\Core\Core::get_store_page_id() )
+			|| is_tax( Taxonomy_Config::get_taxonomy_slugs() )
+			|| is_page( Core::get_store_page_id() )
 		) {
 			$card_heading = 'h2';
 		}
