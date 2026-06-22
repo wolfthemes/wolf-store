@@ -38,7 +38,7 @@ class Admin_Columns {
 	 */
 	public function is_index_page() {
 
-		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) {
+		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$message = esc_html__( 'You are currently editing the page that shows the store.', 'wolf-store' );
 
 			$output = '<div class="notice notice-warning inline"><p>';
@@ -55,7 +55,7 @@ class Admin_Columns {
 	 * Hide the editor if we're on the admin store page
 	 */
 	public function hide_editor() {
-		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) {
+		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			remove_post_type_support( 'page', 'editor' );
 		}
 	}
@@ -64,7 +64,7 @@ class Admin_Columns {
 	 * Hide the editor if we're on the admin store page
 	 */
 	public function hide_wpb_editor() {
-		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) {
+		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) === Core::get_store_page_id() ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			?>
 			<style type="text/css">
 			.wpb-toggle-editor,
@@ -148,7 +148,7 @@ class Admin_Columns {
 		if ( 'edit.php' !== $hook ) {
 			return;
 		}
-		if ( sanitize_key( $_GET['post_type'] ?? '' ) !== 'wolf_theme' ) {
+		if ( sanitize_key( $_GET['post_type'] ?? '' ) !== 'wolf_theme' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 

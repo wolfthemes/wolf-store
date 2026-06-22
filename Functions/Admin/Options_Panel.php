@@ -241,7 +241,7 @@ class Options_Panel {
 			return;
 		}
 
-		if ( isset( $_GET['settings-updated'] ) ) {
+		if ( isset( $_GET['settings-updated'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			add_settings_error(
 				$this->option_name . '_messages',
 				$this->option_name . '_message',

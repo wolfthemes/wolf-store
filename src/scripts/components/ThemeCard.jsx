@@ -23,11 +23,11 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const title = theme.title?.rendered;
 	const permalink = theme.link;
 	const thumbnail = theme.theme_thumbnail;
-	const tagline = theme.theme_short_description;
+	// const tagline = theme.theme_short_description;
 	const demoUrl = theme.theme_demo_url;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
 	const mainCategory = theme.theme_categories?.[0] ?? null;
-	const pageBuilders = theme.theme_page_builders ?? [];
+	// const pageBuilders = theme.theme_page_builders ?? [];
 	const isAwwwardsNominee = theme.theme_awwwards_nominee ?? false;
 	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
