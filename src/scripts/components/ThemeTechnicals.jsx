@@ -3,8 +3,9 @@ export default function ThemeTechnicals({ theme }) {
 	const builder = theme.theme_builder;
 	const requires = theme.theme_requires;
 	const tested = theme.theme_tested;
-	const updated = theme.modified
-		? new Date(theme.modified).toLocaleDateString('en-US', {
+	const updatedRaw = theme.theme_updated || theme.modified;
+	const updated = updatedRaw
+		? new Date(updatedRaw).toLocaleDateString('en-US', {
 				month: 'long',
 				year: 'numeric',
 			})

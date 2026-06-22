@@ -33,7 +33,7 @@
 		border-radius: var(--ws-border-radius);
 		display: flex;
 		flex-direction: column;
-		min-height: 340px;
+		min-height: 400px;
 		opacity: 0;
 		transform: translateY(24px);
 		transition: opacity 0.55s ease, transform 0.55s ease;
@@ -47,7 +47,7 @@
 	}
 
 	&__stars {
-		// color: #ffeb00;
+		color: var(--ws-accent-color);
 		font-size: 1.5em;
 		font-size: fs(lg);
 		letter-spacing: 2px;

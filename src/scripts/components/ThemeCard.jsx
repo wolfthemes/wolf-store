@@ -11,7 +11,8 @@
  *                            sits under a section <h2> title. Constrained to a
  *                            safe whitelist so an arbitrary tag can't be injected.
  */
-import { ACTIVE_OFFER, discounted, withCoupon } from '../config/offers';
+import { ACTIVE_OFFER, withCoupon } from '../config/offers';
+import AwwwardsRibbon from '../../../assets/images/awwwards-ribbon.svg';
 
 const ALLOWED_HEADINGS = ['h2', 'h3', 'h4'];
 
@@ -61,12 +62,10 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 					</span>
 				)}
 				{isAwwwardsNominee && (
-					<span
+					<AwwwardsRibbon
 						className='wolf-theme-card__awwwards-ribbon'
 						aria-label='Awwwards Nominee'
-					>
-						Awwwards
-					</span>
+					/>
 				)}
 			</a>
 
@@ -100,22 +99,15 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 				<div className='wolf-theme-card__price'>
 					{heroPrice ? (
 						<>
-							<span
-								className={`wolf-theme-card__price-main${ACTIVE_OFFER ? ' is-struck' : ''}`}
-							>
+							<span className='wolf-theme-card__price-main'>
 								${heroPrice}
-								{!ACTIVE_OFFER && (
-									<span className='wolf-theme-card__price-period'>
-										{heroPeriod}
-									</span>
-								)}
+								<span className='wolf-theme-card__price-period'>
+									{heroPeriod}
+								</span>
 							</span>
 							{ACTIVE_OFFER && (
-								<span className='wolf-theme-card__price-main'>
-									${discounted(heroPrice)}
-									<span className='wolf-theme-card__price-period'>
-										{heroPeriod}
-									</span>
+								<span className='wolf-theme-card__price-tagline'>
+									Sale price at checkout
 								</span>
 							)}
 						</>

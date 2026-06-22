@@ -234,6 +234,7 @@ class Rest_Fields {
 		$this->register_changelog_field( 'theme_changelog', 'changelog', '' );
 		$this->register_changelog_field( 'theme_warning', 'warning', '' );
 		$this->register_changelog_field( 'theme_info', 'info', '' );
+		$this->register_changelog_field( 'theme_updated', 'updated', '' );
 
 		// --- From theme_meta.json ---
 		$this->register_meta_field( 'theme_features', 'features' );
