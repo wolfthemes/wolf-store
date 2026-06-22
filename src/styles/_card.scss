@@ -1,3 +1,5 @@
+@use "tokens" as *;
+
 // ── ThemeCard ─────────────────────────────────────────────────────────────────
 
 .wolf-theme-card {
@@ -216,6 +218,7 @@
 		font-weight: 400;
 		color: var(--ws-muted-color);
 		text-align: left;
+		margin-top: space(2);
 	}
 
 	&__ctas {
@@ -236,3 +239,5 @@
 		// Size + color delegated to theme-button-primary / theme-button-secondary
 	}
 }
+
+@media (hover: none) { .wolf-theme-card__ctas { opacity: 1; } }

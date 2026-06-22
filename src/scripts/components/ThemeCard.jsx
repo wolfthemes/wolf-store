@@ -74,11 +74,11 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 					<a href={permalink}>{title}</a>
 				</HeadingTag>
 
-				{tagline && (
+				{/* {tagline && (
 					<p className='wolf-theme-card__tagline'>{tagline}</p>
-				)}
+				)} */}
 
-				{pageBuilders.length > 0 && (
+				{/* {pageBuilders.length > 0 && (
 					<div className='wolf-theme-card__builders'>
 						<span className='wolf-theme-card__builders-label'>
 							Builder
@@ -92,7 +92,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 							</span>
 						))}
 					</div>
-				)}
+				)} */}
 			</div>
 
 			<footer className='wolf-theme-card__footer'>
