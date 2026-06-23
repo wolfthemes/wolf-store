@@ -24,8 +24,7 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
-		"type-check": "tsc --noEmit",
-		"prepare": "husky"
+		"type-check": "tsc --noEmit"
 	},
 	"keywords": [],
 	"author": "WolfThemes",
@@ -45,7 +44,6 @@
 		"copy-webpack-plugin": "^10.2.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.0.3",
-		"husky": "^9.1.7",
 		"raw-loader": "^4.0.2",
 		"stylelint": "^13.13.1",
 		"ts-loader": "^9.4.2",
