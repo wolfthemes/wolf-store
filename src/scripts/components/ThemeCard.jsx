@@ -57,9 +57,13 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 					)}
 				</div>
 				{mainCategory && (
-					<span className='wolf-theme-card__cat-overlay'>
+					<a
+						href={mainCategory.link}
+						className='wolf-theme-card__cat-overlay'
+						onClick={e => e.stopPropagation()}
+					>
 						{mainCategory.name}
-					</span>
+					</a>
 				)}
 				{isAwwwardsNominee && (
 					<AwwwardsRibbon

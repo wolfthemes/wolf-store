@@ -85,7 +85,13 @@
 		padding: 3px 8px;
 		border-radius: var(--ws-border-radius);
 		line-height: 1;
-		pointer-events: none;
+		text-decoration: none;
+		z-index: 2;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.8);
+			color: var(--wp--preset--color--white, #fff);
+		}
 	}
 
 	&:hover &__thumbnail img {
