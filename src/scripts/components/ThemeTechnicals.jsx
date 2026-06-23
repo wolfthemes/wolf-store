@@ -11,8 +11,11 @@ export default function ThemeTechnicals({ theme }) {
 			})
 		: null;
 	const slug = theme.theme_slug;
-	const categories = theme._embedded?.['wp:term']?.[0] ?? [];
-	const includes = theme.theme_post_types ?? [];
+	const terms = theme._embedded?.['wp:term'] ?? [];
+	const categories =
+		terms.find(group => group?.[0]?.taxonomy === 'theme_cat') ?? [];
+	const includes =
+		terms.find(group => group?.[0]?.taxonomy === 'theme_post_types') ?? [];
 	const wikiUrl = `https://wiki.wolfthemes.com/`;
 	const docUrl = `https://doc.wolfthemes.com/theme/${slug}/`;
 
@@ -60,9 +63,6 @@ export default function ThemeTechnicals({ theme }) {
 						</div>
 					)}
 				</div>
-
-				{/* Benefits */}
-				{/* <ThemeBenefits /> */}
 
 				{/* Support links */}
 				<div className='wolf-theme-technicals__support'>
