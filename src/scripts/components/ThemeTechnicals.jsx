@@ -12,7 +12,7 @@ export default function ThemeTechnicals({ theme }) {
 		: null;
 	const slug = theme.theme_slug;
 	const categories = theme._embedded?.['wp:term']?.[0] ?? [];
-	const tags = theme._embedded?.['wp:term']?.[1] ?? [];
+	const includes = theme.theme_post_types ?? [];
 	const wikiUrl = `https://wiki.wolfthemes.com/`;
 	const docUrl = `https://doc.wolfthemes.com/theme/${slug}/`;
 
@@ -40,14 +40,14 @@ export default function ThemeTechnicals({ theme }) {
 						</div>
 					)}
 
-					{/* Tags */}
-					{tags.length > 0 && (
+					{/* Includes */}
+					{includes.length > 0 && (
 						<div className='wolf-theme-technicals__terms'>
 							<h3 className='wolf-theme-technicals__section-title'>
-								Tags
+								Includes
 							</h3>
 							<div className='wolf-theme-technicals__tags tagcloud'>
-								{tags.map(term => (
+								{includes.map(term => (
 									<a
 										key={term.id}
 										href={term.link}
