@@ -80,6 +80,21 @@ class Theme_Index_Block {
 		$taxonomy = sanitize_key( $attributes['taxonomy'] ?? '' );
 		$term_id  = absint( $attributes['termId'] ?? 0 );
 
+		// Support hand-authored/legacy markup that uses taxonomy-specific
+		// attributes, e.g. {"theme_cat":"music"}, instead of taxonomy + termId.
+		if ( empty( $taxonomy ) && empty( $term_id ) ) {
+			$theme_cat_id = $this->resolve_term_attribute( $attributes['theme_cat'] ?? '', 'theme_cat' );
+			$theme_tag_id = $this->resolve_term_attribute( $attributes['theme_tag'] ?? '', 'theme_tag' );
+
+			if ( $theme_cat_id > 0 ) {
+				$taxonomy = 'theme_cat';
+				$term_id  = $theme_cat_id;
+			} elseif ( $theme_tag_id > 0 ) {
+				$taxonomy = 'theme_tag';
+				$term_id  = $theme_tag_id;
+			}
+		}
+
 		// When the block is rendered inside a taxonomy archive template, override the
 		// baked-in attributes with the actual queried term so the React app filters
 		// correctly without needing taxonomy/termId hardcoded in the block markup.
@@ -145,5 +160,37 @@ class Theme_Index_Block {
 		</div>
 		<?php
 		return ob_get_clean();
+	}
+
+	/**
+	 * Resolve a taxonomy-specific block attribute to a term ID.
+	 *
+	 * Accepts either the numeric term ID used by Elementor controls or the term
+	 * slug that is practical for hand-authored block markup.
+	 *
+	 * @param mixed  $value    Term ID or slug.
+	 * @param string $taxonomy Taxonomy slug.
+	 * @return int Resolved term ID, or 0 when not found.
+	 */
+	private function resolve_term_attribute( $value, string $taxonomy ): int {
+		if ( is_array( $value ) ) {
+			$value = reset( $value );
+		}
+
+		if ( is_numeric( $value ) ) {
+			return absint( $value );
+		}
+
+		$slug = sanitize_title( (string) $value );
+		if ( '' === $slug ) {
+			return 0;
+		}
+
+		$term = get_term_by( 'slug', $slug, $taxonomy );
+		if ( ! $term || is_wp_error( $term ) ) {
+			return 0;
+		}
+
+		return absint( $term->term_id );
 	}
 }

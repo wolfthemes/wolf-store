@@ -17,6 +17,14 @@
 			"type": "number",
 			"default": 0
 		},
+		"theme_cat": {
+			"type": "string",
+			"default": ""
+		},
+		"theme_tag": {
+			"type": "string",
+			"default": ""
+		},
 		"perPage": {
 			"type": "number",
 			"default": 12
