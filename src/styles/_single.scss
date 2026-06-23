@@ -8,6 +8,8 @@
 
 .wolf-store-related {
 	padding: 80px 0;
+	padding-left: var(--wp--style--root--padding-left, 24px);
+	padding-right: var(--wp--style--root--padding-right, 24px);
 	border-top: 1px solid var(--ws-card-border-color);
 
 	&__title {
