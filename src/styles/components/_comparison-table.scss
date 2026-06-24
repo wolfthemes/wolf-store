@@ -53,6 +53,8 @@
 		&--wolf {
 			border-color: currentColor;
 			position: relative;
+			background: var(--wp--preset--color--base-2);
+			box-shadow: var(--ws-card-shadow);
 		}
 
 		&--tf {
