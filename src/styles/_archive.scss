@@ -48,21 +48,13 @@
 
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 		gap: 24px;
 		gap: space(5);
 	}
 
 	&__empty {
 		opacity: 0.5;
-	}
-
-	// ── Tablet ────────────────────────────────────────────────────────────────
-	@media ( max-width: 1024px ) {
-
-		&__grid {
-			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		}
 	}
 
 	// ── Mobile ────────────────────────────────────────────────────────────────
@@ -136,13 +128,6 @@
 			flex-direction: column;
 			gap: 0;
 		}
-
-		&__grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media ( max-width: 480px ) {
 
 		&__grid {
 			grid-template-columns: 1fr;

@@ -1,5 +1,7 @@
 // ── Skeleton shimmer ──────────────────────────────────────────────────────────
 
+@use "../tokens" as *;
+
 @keyframes wolf-shimmer {
 
 	0% {
@@ -31,8 +33,8 @@
 
 	// Title line
 	&--title {
-		height: 16px;
-		width: 55%;
+		height: 24px;
+		width: 48%;
 	}
 
 	// Tagline line
@@ -44,7 +46,18 @@
 	// Price block
 	&--price {
 		height: 20px;
-		width: 80px;
+		width: 72px;
+	}
+
+	&--price-tagline {
+		height: 12px;
+		margin-top: space(2);
+		width: 120px;
+	}
+
+	&--cat {
+		width: 72px;
+		height: 16px;
 	}
 
 	// CTA buttons
@@ -59,7 +72,7 @@
 	pointer-events: none;
 
 	.wolf-theme-card__body {
-		gap: 10px;
+		gap: 0;
 	}
 }
 
