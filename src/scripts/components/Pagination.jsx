@@ -57,6 +57,10 @@ export default function Pagination({
 			<div
 				className={`wolf-store-pagination wolf-store-pagination--load-more${
 					exiting ? ' is-exiting' : ''
+				}${
+					loading && page >= totalPages
+						? ' is-loading-final-page'
+						: ''
 				}`}
 			>
 				<button

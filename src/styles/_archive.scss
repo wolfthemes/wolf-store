@@ -2,9 +2,14 @@
 
 // ── Archive grid ──────────────────────────────────────────────────────────────
 
+[data-type="archive"] {
+	min-height: 100vh;
+}
+
 .wolf-store-archive {
 	margin: 0 auto 48px;
 	margin: 0 auto space(7);
+	min-height: 100vh;
 	// max-width: 1400px;
 
 	&__filter-bar {
@@ -145,6 +150,14 @@
 	gap: 4px;
 	margin-top: 48px;
 	transition: opacity 0.24s ease, transform 0.24s ease;
+
+	&--load-more {
+		min-height: 48px;
+	}
+
+	&.is-loading-final-page {
+		margin-bottom: max(220px, 24vh);
+	}
 
 	&.is-exiting {
 		opacity: 0;
