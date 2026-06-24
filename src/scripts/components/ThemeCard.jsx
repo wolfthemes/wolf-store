@@ -79,26 +79,6 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 				<HeadingTag className='wolf-theme-card__title'>
 					<a href={permalink}>{title}</a>
 				</HeadingTag>
-
-				{/* {tagline && (
-					<p className='wolf-theme-card__tagline'>{tagline}</p>
-				)} */}
-
-				{/* {pageBuilders.length > 0 && (
-					<div className='wolf-theme-card__builders'>
-						<span className='wolf-theme-card__builders-label'>
-							Builder
-						</span>
-						{pageBuilders.map(pb => (
-							<span
-								key={pb.id}
-								className='wolf-theme-card__builder'
-							>
-								{pb.name}
-							</span>
-						))}
-					</div>
-				)} */}
 			</div>
 
 			<footer className='wolf-theme-card__footer'>
