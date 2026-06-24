@@ -47,8 +47,9 @@ class Options_Params {
 				'type'    => 'select',
 				'tab'     => 'general',
 				'choices' => array(
-					'none'    => esc_html__( 'None', 'wolf-store' ),
-					'numbers' => esc_html__( 'Numbered', 'wolf-store' ),
+					'none'      => esc_html__( 'None', 'wolf-store' ),
+					'numbers'   => esc_html__( 'Numbered', 'wolf-store' ),
+					'load_more' => esc_html__( 'Load More', 'wolf-store' ),
 				),
 				'default' => 'numbers',
 			),

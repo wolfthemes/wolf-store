@@ -41,8 +41,9 @@ class Theme_Index_Params {
 				'param_name' => 'pagination',
 				'type'       => 'select',
 				'options'    => array(
-					'none'    => esc_html__( 'None', 'wolf-store' ),
-					'numbers' => esc_html__( 'Numbered', 'wolf-store' ),
+					'none'      => esc_html__( 'None', 'wolf-store' ),
+					'numbers'   => esc_html__( 'Numbered', 'wolf-store' ),
+					'load_more' => esc_html__( 'Load More', 'wolf-store' ),
 				),
 				'default'    => 'numbers',
 				'admin_label' => true,

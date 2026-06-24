@@ -172,4 +172,13 @@
 			line-height: 1;
 		}
 	}
+
+	&__load-more {
+		cursor: pointer;
+
+		&:disabled {
+			cursor: wait;
+			opacity: 0.6;
+		}
+	}
 }

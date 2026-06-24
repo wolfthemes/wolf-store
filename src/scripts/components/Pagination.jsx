@@ -1,4 +1,10 @@
-export default function Pagination({ page, totalPages, onChange, type }) {
+export default function Pagination({
+	page,
+	totalPages,
+	onChange,
+	type,
+	loading = false,
+}) {
 	if (totalPages <= 1) {
 		return null;
 	}
@@ -42,6 +48,20 @@ export default function Pagination({ page, totalPages, onChange, type }) {
 					</button>
 				)}
 			</nav>
+		);
+	}
+
+	if ('load_more' === type && page < totalPages) {
+		return (
+			<div className='wolf-store-pagination wolf-store-pagination--load-more'>
+				<button
+					className='wolf-store-pagination__load-more wp-element-button'
+					onClick={() => onChange(page + 1)}
+					disabled={loading}
+				>
+					{loading ? 'Loading...' : 'Load More'}
+				</button>
+			</div>
 		);
 	}
 

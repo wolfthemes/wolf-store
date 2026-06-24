@@ -23,6 +23,7 @@ export default function Archive({
 		return {};
 	});
 	const [filterOpen, setFilterOpen] = useState(false);
+	const [loadedThemes, setLoadedThemes] = useState([]);
 	const [searchQuery, setSearchQuery] = useState(() => {
 		const params = new URLSearchParams(window.location.search);
 		return params.get('search') || '';
@@ -31,7 +32,9 @@ export default function Archive({
 	const { pagination: paginationGlobal, perPage: perPageGlobal } =
 		window.wolfStoreData ?? {};
 	const pagination = paginationProp || paginationGlobal;
+	const isLoadMore = 'load_more' === pagination;
 	const skeletonCount = parseInt(perPage) || parseInt(perPageGlobal) || 12;
+	const filtersKey = JSON.stringify(activeFilters);
 
 	// Sync search query to URL params.
 	useEffect(() => {
@@ -56,6 +59,31 @@ export default function Archive({
 		search: searchQuery,
 	});
 
+	useEffect(() => {
+		setLoadedThemes([]);
+	}, [filtersKey, perPage, searchQuery]);
+
+	useEffect(() => {
+		if (!isLoadMore || loading || error) {
+			return;
+		}
+
+		setLoadedThemes(prev => {
+			if (1 === page) {
+				return themes;
+			}
+
+			const existingIds = new Set(prev.map(theme => theme.id));
+			const nextThemes = themes.filter(
+				theme => !existingIds.has(theme.id)
+			);
+			return [...prev, ...nextThemes];
+		});
+	}, [error, isLoadMore, loading, page, themes]);
+
+	const visibleThemes = isLoadMore ? loadedThemes : themes;
+	const showInitialSkeletons = loading && (!isLoadMore || 1 === page);
+
 	const activeFilterCount = Object.values(activeFilters).reduce(
 		(sum, ids) => sum + ids.length,
 		0
@@ -64,7 +92,9 @@ export default function Archive({
 
 	const handlePageChange = n => {
 		setPage(n);
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+		if (!isLoadMore) {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
 	};
 
 	const handleFilterChange = (taxonomy, termId) => {
@@ -158,7 +188,7 @@ export default function Archive({
 				<div className='wolf-store-archive__content'>
 					{error && <div className='wolf-store-error'>{error}</div>}
 
-					{!loading && !error && themes.length === 0 && (
+					{!loading && !error && visibleThemes.length === 0 && (
 						<p className='wolf-store-archive__empty'>
 							No themes found
 							{hasActiveSearch ? ` for "${searchQuery}"` : ''}.
@@ -166,11 +196,11 @@ export default function Archive({
 					)}
 
 					<div className='wolf-store-archive__grid'>
-						{loading
+						{showInitialSkeletons
 							? Array.from({ length: skeletonCount }).map(
 									(_, i) => <SkeletonCard key={i} />
 								)
-							: themes.map(theme => (
+							: visibleThemes.map(theme => (
 									<ThemeCard
 										key={theme.id}
 										theme={theme}
@@ -184,6 +214,7 @@ export default function Archive({
 						totalPages={totalPages}
 						onChange={handlePageChange}
 						type={pagination}
+						loading={loading}
 					/>
 				</div>
 			</div>
