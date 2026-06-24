@@ -4,6 +4,7 @@ export default function Pagination({
 	onChange,
 	type,
 	loading = false,
+	exiting = false,
 }) {
 	if (totalPages <= 1) {
 		return null;
@@ -51,13 +52,17 @@ export default function Pagination({
 		);
 	}
 
-	if ('load_more' === type && page < totalPages) {
+	if ('load_more' === type && (page < totalPages || loading || exiting)) {
 		return (
-			<div className='wolf-store-pagination wolf-store-pagination--load-more'>
+			<div
+				className={`wolf-store-pagination wolf-store-pagination--load-more${
+					exiting ? ' is-exiting' : ''
+				}`}
+			>
 				<button
 					className='wolf-store-pagination__load-more wp-element-button'
 					onClick={() => onChange(page + 1)}
-					disabled={loading}
+					disabled={loading || exiting}
 				>
 					{loading ? 'Loading...' : 'Load More'}
 				</button>

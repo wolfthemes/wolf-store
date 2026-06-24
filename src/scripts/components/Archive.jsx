@@ -24,6 +24,8 @@ export default function Archive({
 	});
 	const [filterOpen, setFilterOpen] = useState(false);
 	const [loadedThemes, setLoadedThemes] = useState([]);
+	const [loadMoreExiting, setLoadMoreExiting] = useState(false);
+	const [loadMoreDismissed, setLoadMoreDismissed] = useState(false);
 	const [searchQuery, setSearchQuery] = useState(() => {
 		const params = new URLSearchParams(window.location.search);
 		return params.get('search') || '';
@@ -61,6 +63,8 @@ export default function Archive({
 
 	useEffect(() => {
 		setLoadedThemes([]);
+		setLoadMoreExiting(false);
+		setLoadMoreDismissed(false);
 	}, [filtersKey, perPage, searchQuery]);
 
 	useEffect(() => {
@@ -81,8 +85,28 @@ export default function Archive({
 		});
 	}, [error, isLoadMore, loading, page, themes]);
 
+	useEffect(() => {
+		if (!isLoadMore || loading || error || loadMoreDismissed) {
+			return undefined;
+		}
+
+		if (page < totalPages) {
+			setLoadMoreExiting(false);
+			return undefined;
+		}
+
+		setLoadMoreExiting(true);
+		const timeout = window.setTimeout(() => {
+			setLoadMoreExiting(false);
+			setLoadMoreDismissed(true);
+		}, 240);
+
+		return () => window.clearTimeout(timeout);
+	}, [error, isLoadMore, loadMoreDismissed, loading, page, totalPages]);
+
 	const visibleThemes = isLoadMore ? loadedThemes : themes;
 	const showInitialSkeletons = loading && (!isLoadMore || 1 === page);
+	const showLoadMoreSkeletons = isLoadMore && loading && page > 1;
 
 	const activeFilterCount = Object.values(activeFilters).reduce(
 		(sum, ids) => sum + ids.length,
@@ -196,17 +220,29 @@ export default function Archive({
 					)}
 
 					<div className='wolf-store-archive__grid'>
-						{showInitialSkeletons
-							? Array.from({ length: skeletonCount }).map(
-									(_, i) => <SkeletonCard key={i} />
-								)
-							: visibleThemes.map(theme => (
+						{showInitialSkeletons ? (
+							Array.from({ length: skeletonCount }).map(
+								(_, i) => <SkeletonCard key={i} />
+							)
+						) : (
+							<>
+								{visibleThemes.map(theme => (
 									<ThemeCard
 										key={theme.id}
 										theme={theme}
 										headingTag={cardHeading}
 									/>
 								))}
+								{showLoadMoreSkeletons &&
+									Array.from({ length: skeletonCount }).map(
+										(_, i) => (
+											<SkeletonCard
+												key={`load-more-${i}`}
+											/>
+										)
+									)}
+							</>
+						)}
 					</div>
 
 					<Pagination
@@ -215,6 +251,7 @@ export default function Archive({
 						onChange={handlePageChange}
 						type={pagination}
 						loading={loading}
+						exiting={loadMoreExiting && !loadMoreDismissed}
 					/>
 				</div>
 			</div>
