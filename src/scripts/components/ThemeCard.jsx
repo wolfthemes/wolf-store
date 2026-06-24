@@ -43,12 +43,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 
 	return (
 		<article className='wolf-theme-card'>
-			<a
-				href={permalink}
-				className='wolf-theme-card__thumbnail-link'
-				tabIndex='-1'
-				aria-hidden='true'
-			>
+			<div className='wolf-theme-card__thumbnail-wrap'>
 				<div className='wolf-theme-card__thumbnail'>
 					{thumbnail ? (
 						<img src={thumbnail} alt={title} loading='lazy' />
@@ -56,11 +51,18 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 						<span className='wolf-theme-card__thumbnail-placeholder' />
 					)}
 				</div>
+				<a
+					href={permalink}
+					className='wolf-theme-card__thumbnail-link'
+					tabIndex='-1'
+					aria-hidden='true'
+				>
+					{title}
+				</a>
 				{mainCategory && (
 					<a
 						href={mainCategory.link}
 						className='wolf-theme-card__cat-overlay'
-						onClick={e => e.stopPropagation()}
 					>
 						{mainCategory.name}
 					</a>
@@ -71,7 +73,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 						aria-label='Awwwards Nominee'
 					/>
 				)}
-			</a>
+			</div>
 
 			<div className='wolf-theme-card__body'>
 				<HeadingTag className='wolf-theme-card__title'>

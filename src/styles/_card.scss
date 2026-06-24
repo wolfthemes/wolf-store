@@ -33,11 +33,20 @@
 
 	// ── Thumbnail ─────────────────────────────────────────────────────────────
 
-	&__thumbnail-link {
+	&__thumbnail-wrap {
 		position: relative;
 		display: block;
 		overflow: hidden;
 		// box-shadow:var(--ws-card-shadow);
+	}
+
+	&__thumbnail-link {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
 	}
 
 	&__thumbnail {
@@ -86,7 +95,7 @@
 		border-radius: var(--ws-border-radius);
 		line-height: 1;
 		text-decoration: none;
-		z-index: 2;
+		z-index: 3;
 
 		&:hover {
 			background: rgba(0, 0, 0, 0.8);
