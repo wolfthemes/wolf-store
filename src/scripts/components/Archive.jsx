@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useThemes } from './hooks/useThemes';
 import ThemeCard from './ThemeCard';
 import SkeletonCard from './SkeletonCard';
@@ -26,6 +26,8 @@ export default function Archive({
 	const [loadedThemes, setLoadedThemes] = useState([]);
 	const [loadMoreExiting, setLoadMoreExiting] = useState(false);
 	const [loadMoreDismissed, setLoadMoreDismissed] = useState(false);
+	const [scrollTargetIndex, setScrollTargetIndex] = useState(null);
+	const loadMorePreviousCount = useRef(0);
 	const [searchQuery, setSearchQuery] = useState(() => {
 		const params = new URLSearchParams(window.location.search);
 		return params.get('search') || '';
@@ -65,6 +67,8 @@ export default function Archive({
 		setLoadedThemes([]);
 		setLoadMoreExiting(false);
 		setLoadMoreDismissed(false);
+		setScrollTargetIndex(null);
+		loadMorePreviousCount.current = 0;
 	}, [filtersKey, perPage, searchQuery]);
 
 	useEffect(() => {
@@ -74,6 +78,7 @@ export default function Archive({
 
 		setLoadedThemes(prev => {
 			if (1 === page) {
+				loadMorePreviousCount.current = 0;
 				return themes;
 			}
 
@@ -81,9 +86,37 @@ export default function Archive({
 			const nextThemes = themes.filter(
 				theme => !existingIds.has(theme.id)
 			);
+			if (nextThemes.length > 0) {
+				setScrollTargetIndex(loadMorePreviousCount.current);
+			}
 			return [...prev, ...nextThemes];
 		});
 	}, [error, isLoadMore, loading, page, themes]);
+
+	const visibleThemes = isLoadMore ? loadedThemes : themes;
+	const showInitialSkeletons = loading && (!isLoadMore || 1 === page);
+	const showLoadMoreSkeletons = isLoadMore && loading && page > 1;
+
+	useEffect(() => {
+		if (null === scrollTargetIndex) {
+			return undefined;
+		}
+
+		const target = document.querySelector(
+			`[data-theme-card-index="${scrollTargetIndex}"]`
+		);
+
+		if (!target) {
+			return undefined;
+		}
+
+		const timeout = window.setTimeout(() => {
+			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			setScrollTargetIndex(null);
+		}, 80);
+
+		return () => window.clearTimeout(timeout);
+	}, [scrollTargetIndex, visibleThemes.length]);
 
 	useEffect(() => {
 		if (!isLoadMore || loading || error || loadMoreDismissed) {
@@ -104,10 +137,6 @@ export default function Archive({
 		return () => window.clearTimeout(timeout);
 	}, [error, isLoadMore, loadMoreDismissed, loading, page, totalPages]);
 
-	const visibleThemes = isLoadMore ? loadedThemes : themes;
-	const showInitialSkeletons = loading && (!isLoadMore || 1 === page);
-	const showLoadMoreSkeletons = isLoadMore && loading && page > 1;
-
 	const activeFilterCount = Object.values(activeFilters).reduce(
 		(sum, ids) => sum + ids.length,
 		0
@@ -115,6 +144,9 @@ export default function Archive({
 	const hasActiveSearch = searchQuery.length > 0;
 
 	const handlePageChange = n => {
+		if (isLoadMore) {
+			loadMorePreviousCount.current = visibleThemes.length;
+		}
 		setPage(n);
 		if (!isLoadMore) {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -226,12 +258,16 @@ export default function Archive({
 							)
 						) : (
 							<>
-								{visibleThemes.map(theme => (
-									<ThemeCard
+								{visibleThemes.map((theme, index) => (
+									<div
 										key={theme.id}
-										theme={theme}
-										headingTag={cardHeading}
-									/>
+										data-theme-card-index={index}
+									>
+										<ThemeCard
+											theme={theme}
+											headingTag={cardHeading}
+										/>
+									</div>
 								))}
 								{showLoadMoreSkeletons &&
 									Array.from({ length: skeletonCount }).map(
