@@ -18,7 +18,7 @@ export default function RelatedThemes({ theme }) {
 	}
 
 	return (
-		<section className='wolf-store-related'>
+		<section className='wolf-store-related wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained'>
 			<div className='wolf-theme-single__wrapper'>
 				<h2 className='wolf-store-related__title'>
 					More {catName ? `${catName} ` : ''}Themes
