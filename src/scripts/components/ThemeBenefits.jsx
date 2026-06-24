@@ -4,15 +4,7 @@ export default function ThemeBenefits() {
 			<ul className='wolf-theme-benefits__list'>
 				<li>One-click demo import</li>
 				<li>Continuous updates</li>
-				<li>
-					Direct author support{' '}
-					<span
-						className='wolf-theme-benefits__info'
-						title='Direct support via email'
-					>
-						ⓘ
-					</span>
-				</li>
+				<li>Direct author support via email</li>
 				<li>Multi-site licenses available</li>
 			</ul>
 		</div>

@@ -1,3 +1,5 @@
+@use "../tokens" as *;
+
 // Hero
 .wolf-theme-hero {
 	min-height: 80vh;
@@ -27,8 +29,10 @@
 	&__content {
 		position: absolute;
 		bottom: 0;
+		width: 100%;
 		padding: 50px;
 		text-shadow: var(--ws-overlay-text-shadow);
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
 	}
 
 	&__title {
@@ -59,7 +63,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include until($bp-md) {
 
 	.wolf-theme-hero {
 		min-height: 100svh;

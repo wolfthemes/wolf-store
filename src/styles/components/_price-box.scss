@@ -29,7 +29,7 @@
 	gap: 12px;
 	position: absolute;
 	z-index: 10;
-	background: #fff;
+	background: var(--ws-subtle-bg);
 	right: 30px;
 	top: 30px;
 	padding: 50px;
@@ -85,8 +85,7 @@
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		padding: 3px 8px;
-		background: var(--ws-checkmark-color);
-		background: #000;
+		background: var(--ws-accent-hover);
 		color: #fff;
 		border-radius: var(--wolf-border-radius);
 	}
@@ -121,7 +120,7 @@
 		font-size: var(--ws-font-size-md);
 		font-weight: 400;
 		opacity: 0.6;
-		color: #888;
+		color: var(--ws-muted-color);
 
 		@include strike-line(2px);
 	}
@@ -151,6 +150,24 @@
 		font-size: var(--ws-font-size-sm);
 		opacity: 0.45;
 		font-style: italic;
+	}
+
+	// ── Rating ───────────────────────────────────────────────────────────────
+
+	&__rating {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		font-size: var(--ws-font-size-sm);
+	}
+
+	&__rating-stars {
+		color: var(--ws-accent-color);
+		letter-spacing: -0.02em;
+	}
+
+	&__rating-count {
+		color: var(--ws-muted-color);
 	}
 
 	// ── Money-back guarantee seal ─────────────────────────────────────────────

@@ -41,9 +41,9 @@ export default function Single({ postId }) {
 				</div>
 				<ThemeDescription theme={theme} />
 				<ThemeGallery theme={theme} />
+				<ThemeFeatures theme={theme} />
 				<ThemeTestimonials theme={theme} />
 				<ThemeComparisonTable theme={theme} />
-				<ThemeFeatures theme={theme} />
 				<ThemeBrandStory />
 				<ThemeTechnicals theme={theme} />
 				<ThemeChangelog theme={theme} />

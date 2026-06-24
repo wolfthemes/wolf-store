@@ -55,7 +55,7 @@
 		padding-left: var(--wp--style--root--padding-left, 24px);
 		padding-right: var(--wp--style--root--padding-right, 24px);
 
-		@media (max-width: 768px) {
+		@include until($bp-md) {
 			padding-top: 48px;
 			padding-bottom: 48px;
 		}

@@ -84,6 +84,14 @@ export default function ThemePriceBox({ theme }) {
 				</div>
 			)}
 
+			{/* Rating — only rendered when per-theme data exists */}
+			{theme.theme_rating && (
+				<div className='wolf-theme-price-box__rating' aria-label={`${theme.theme_rating} out of 5`}>
+					<span className='wolf-theme-price-box__rating-stars' aria-hidden='true'>★★★★⯪</span>
+					<span className='wolf-theme-price-box__rating-count'>{theme.theme_rating} / 5</span>
+				</div>
+			)}
+
 			{/* CTAs */}
 			<ThemeCTAs theme={theme} layout='column' />
 

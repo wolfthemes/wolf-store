@@ -36,7 +36,7 @@ export default function ThemeFeatures({ theme }) {
 			<div className='wolf-theme-single__wrapper'>
 				<div className='wolf-theme-features__intro'>
 					<h2 className='wolf-theme-features__heading'>
-						Built for Professionals
+						Built for {targetAudience.length > 0 ? targetAudience[0] : title + ' Users'}
 					</h2>
 					<p className='wolf-theme-features__subheading'>
 						Everything you need to showcase your work, attract
