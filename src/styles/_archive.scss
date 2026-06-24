@@ -177,7 +177,7 @@
 		cursor: pointer;
 
 		&:disabled {
-			cursor: wait;
+			// cursor: wait;
 			opacity: 0.6;
 		}
 	}
