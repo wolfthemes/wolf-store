@@ -2,6 +2,8 @@
 .wolf-theme-hero {
 	min-height: 80vh;
 	position: relative;
+	z-index: 1;
+	overflow: visible;
 
 	--ws-bg-color: #000;
 
