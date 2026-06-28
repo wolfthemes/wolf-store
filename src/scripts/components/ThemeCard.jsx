@@ -56,7 +56,13 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 									sizes='(max-width: 600px) 100vw, (max-width: 1400px) 800px, 1200px'
 								/>
 							)}
-							<img src={thumbnail} alt={title} loading='lazy' width={800} height={600} />
+							<img
+								src={thumbnail}
+								alt={title}
+								loading='lazy'
+								width={800}
+								height={600}
+							/>
 						</picture>
 					) : (
 						<span className='wolf-theme-card__thumbnail-placeholder' />
