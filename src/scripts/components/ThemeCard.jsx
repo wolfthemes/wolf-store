@@ -53,7 +53,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 								<source
 									type='image/webp'
 									srcSet={screenshotSrcSet(themeSlug)}
-									sizes='(max-width: 600px) 100vw, (max-width: 1024px) 800px, 1200px'
+									sizes='(max-width: 600px) 100vw, (max-width: 1400px) 800px, 1200px'
 								/>
 							)}
 							<img src={thumbnail} alt={title} loading='lazy' width={800} height={600} />
