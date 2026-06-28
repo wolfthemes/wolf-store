@@ -12,6 +12,7 @@
  *                            safe whitelist so an arbitrary tag can't be injected.
  */
 import { ACTIVE_OFFER, withCoupon } from '../config/offers';
+import { screenshotSrcSet } from '../config/cdn';
 import AwwwardsRibbon from '../../../assets/images/awwwards-ribbon.svg';
 
 const ALLOWED_HEADINGS = ['h2', 'h3', 'h4'];
@@ -23,6 +24,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const title = theme.title?.rendered;
 	const permalink = theme.link;
 	const thumbnail = theme.theme_thumbnail;
+	const themeSlug = theme.theme_slug;
 	// const tagline = theme.theme_short_description;
 	const demoUrl = theme.theme_demo_url;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
@@ -46,7 +48,16 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 			<div className='wolf-theme-card__thumbnail-wrap'>
 				<div className='wolf-theme-card__thumbnail'>
 					{thumbnail ? (
-						<img src={thumbnail} alt={title} loading='lazy' />
+						<picture>
+							{themeSlug && (
+								<source
+									type='image/webp'
+									srcSet={screenshotSrcSet(themeSlug)}
+									sizes='(max-width: 600px) 100vw, (max-width: 1024px) 800px, 1200px'
+								/>
+							)}
+							<img src={thumbnail} alt={title} loading='lazy' width={800} height={600} />
+						</picture>
 					) : (
 						<span className='wolf-theme-card__thumbnail-placeholder' />
 					)}

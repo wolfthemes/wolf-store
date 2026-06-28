@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Knowledge base
 
-The persistent multi-project KB is at `C:\Users\Constantin\wolfthemes-dev\wolf-claude-memory` (WSL: `/mnt/c/Users/Constantin/wolfthemes-dev/wolf-claude-memory/`). Read its `CLAUDE.md` for schema. The wolf-store product page is at `wiki/products/wolf-store/README.md`. Update the KB when architecture or significant features change.
+The persistent multi-project KB is at `C:\Users\Constantin\dev\wolf-claude-memory` (WSL: `/mnt/c/Users/Constantin/dev/wolf-claude-memory/`). Read its `CLAUDE.md` for schema. The wolf-store product page is at `wiki/products/wolf-store/README.md`. Update the KB when architecture or significant features change.
 
 ## Commands
 
@@ -151,3 +151,13 @@ src/styles/
 GitHub Actions (`.github/workflows/deploy.yml`) SSHes into the server and runs `git pull` + `composer install`. Push to `master` deploys to production; push to `dev` targets staging. The `build/` directory is **gitignored** — CI runs `npm ci && npm run build` and rsyncs the output to the server via rsync before swapping it into place, so the server never needs Node.
 
 Git remote: git@github.com:wolfthemes/wolf-store.git — this repo only.
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

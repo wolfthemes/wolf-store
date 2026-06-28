@@ -6,6 +6,10 @@ bak
 node_modules
 vendor
 
+# Local AI tooling
+.claude/
+graphify-out/
+
 # Windows image file caches
 Thumbs.db
 
