@@ -23,13 +23,17 @@ function scrollToCard(target, duration = 700) {
 		window.scrollY + target.getBoundingClientRect().top - offset;
 	const startY = window.scrollY;
 	const delta = targetY - startY;
-	if (Math.abs(delta) < 1) return;
+	if (Math.abs(delta) < 1) {
+		return;
+	}
 	const startTime = performance.now();
 	function step(now) {
 		const progress = Math.min((now - startTime) / duration, 1);
 		const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
 		window.scrollTo(0, startY + delta * eased);
-		if (progress < 1) requestAnimationFrame(step);
+		if (progress < 1) {
+			requestAnimationFrame(step);
+		}
 	}
 	requestAnimationFrame(step);
 }
