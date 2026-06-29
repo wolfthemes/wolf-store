@@ -6,6 +6,29 @@ import Pagination from './Pagination';
 import Sidebar from './Sidebar';
 import SearchBar from './SearchBar';
 
+// Scroll to a target element, offsetting for the sticky header and animating
+// at a controlled speed so it reads as deliberate rather than a jarring jump.
+function scrollToCard(target, duration = 700) {
+	// scroll-padding-top is set by the theme to header-height + breathing room —
+	// re-use it here so the offset is always in sync with anchor navigation.
+	const scrollPad =
+		parseInt(getComputedStyle(document.documentElement).scrollPaddingTop) ||
+		0;
+	const targetY =
+		window.scrollY + target.getBoundingClientRect().top - scrollPad;
+	const startY = window.scrollY;
+	const delta = targetY - startY;
+	if (Math.abs(delta) < 1) return;
+	const startTime = performance.now();
+	function step(now) {
+		const progress = Math.min((now - startTime) / duration, 1);
+		const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+		window.scrollTo(0, startY + delta * eased);
+		if (progress < 1) requestAnimationFrame(step);
+	}
+	requestAnimationFrame(step);
+}
+
 export default function Archive({
 	taxonomy: taxonomyProp,
 	termId: termIdProp,
@@ -113,7 +136,7 @@ export default function Archive({
 		}
 
 		const timeout = window.setTimeout(() => {
-			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			scrollToCard(target);
 			setScrollTargetIndex(null);
 		}, 80);
 
