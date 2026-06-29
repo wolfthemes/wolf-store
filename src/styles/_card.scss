@@ -60,7 +60,12 @@
 			height: 100%;
 			object-fit: cover;
 			display: block;
-			transition: transform 0.6s ease;
+			opacity: 0;
+			transition: transform 0.6s ease, opacity 0.45s ease;
+
+			&.is-loaded {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -252,6 +257,13 @@
 		font-size: var(--ws-font-size-xs);
 		padding: 0.1rem 0.8rem;
 		// Size + color delegated to theme-button-primary / theme-button-secondary
+	}
+}
+
+// Stagger thumbnail fade-in for the first six cards
+@for $i from 1 through 6 {
+	.wolf-theme-card:nth-child(#{$i}) .wolf-theme-card__thumbnail img {
+		transition-delay: #{($i - 1) * 0.08}s;
 	}
 }
 

@@ -21,6 +21,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const HeadingTag = ALLOWED_HEADINGS.includes(headingTag)
 		? headingTag
 		: 'h2';
+
 	const title = theme.title?.rendered;
 	const permalink = theme.link;
 	const thumbnail = theme.theme_thumbnail;
@@ -62,6 +63,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 								loading='lazy'
 								width={800}
 								height={600}
+								onLoad={e => e.currentTarget.classList.add('is-loaded')}
 							/>
 						</picture>
 					) : (
