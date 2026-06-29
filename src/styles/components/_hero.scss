@@ -74,6 +74,7 @@
 		&__content {
 			position: relative;
 			padding: 24px 20px 12px;
+			text-shadow: none;
 		}
 
 		.wolf-theme-price-box {
@@ -82,7 +83,7 @@
 			right: auto;
 			padding: 24px 20px;
 			box-shadow: none;
-			margin: 0 0 40px;
+			margin: space(4);
 		}
 	}
 }

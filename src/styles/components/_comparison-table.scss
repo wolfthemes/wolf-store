@@ -21,7 +21,7 @@
 	&__intro {
 		// opacity: 0.6;
 		margin-bottom: 32px;
-		margin-bottom: space(4);
+		margin-bottom: space(5);
 		font-size: var(--ws-font-size-sm);
 	}
 
@@ -46,7 +46,7 @@
 		gap: 20px;
 		gap: space(3);
 		padding: 24px;
-		padding: space(6);
+		padding: space(8) space(6);
 		border: 1px solid var(--ws-card-border-color);
 		border-radius:var(--ws-border-radius);
 
@@ -71,17 +71,19 @@
 
 	&__card-badge {
 		display: inline-block;
-		font-size: var(--ws-font-size-xs);
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
+		position: absolute;
+		top: -1px;
+		font-weight: 400;
+		letter-spacing: 0;
+		text-transform: none;
 		padding: 3px 8px;
-		border-radius: var(--ws-border-radius);
-		background: var(--ws-strong-color);
-		color: var(--ws-bg-color);
-		align-self: flex-start;
-		margin-bottom: 6px;
-		margin-bottom: space(1);
+		border-end-start-radius: var(--wolf-radius-md);
+        border-end-end-radius: var(--wolf-radius-md);
+        font-size: var(--wp--preset--font-size--xs);
+        background: var(--wp--preset--color--primary);
+        color: var(--wp--preset--color--base);
+        padding: var(--wp--preset--spacing--1) var(--wp--preset--spacing--3);
+        right: var(--wp--preset--spacing--5);
 	}
 
 	&__card-title {
@@ -102,6 +104,7 @@
 		gap: 10px;
 		gap: space(2);
 		flex: 1;
+        margin-bottom: space(4);
 	}
 
 	&__card-note {

@@ -38,6 +38,10 @@
 			opacity: 1;
 			transform: translateX(0);
 		}
+
+		@include until($bp-lg) {
+			margin-top: space(4);
+		}
 	}
 
 	&__column {
