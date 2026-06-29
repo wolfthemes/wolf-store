@@ -15,13 +15,15 @@ export default function Archive({
 	showSidebar = true,
 	cardHeading = 'h2',
 }) {
-	const [page, setPage] = useState(1);
-	const [activeFilters, setActiveFilters] = useState(() => {
-		if (taxonomyProp && termIdProp) {
-			return { [taxonomyProp]: [parseInt(termIdProp)] };
-		}
-		return {};
+	const [queryState, setQueryState] = useState(() => {
+		const initialFilters =
+			taxonomyProp && termIdProp
+				? { [taxonomyProp]: [parseInt(termIdProp)] }
+				: {};
+		return { filters: initialFilters, page: 1 };
 	});
+	const activeFilters = queryState.filters;
+	const page = queryState.page;
 	const [filterOpen, setFilterOpen] = useState(false);
 	const [loadedThemes, setLoadedThemes] = useState([]);
 	const [loadMoreExiting, setLoadMoreExiting] = useState(false);
@@ -147,33 +149,31 @@ export default function Archive({
 		if (isLoadMore) {
 			loadMorePreviousCount.current = visibleThemes.length;
 		}
-		setPage(n);
+		setQueryState(prev => ({ ...prev, page: n }));
 		if (!isLoadMore) {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		}
 	};
 
 	const handleFilterChange = (taxonomy, termId) => {
-		setActiveFilters(prev => {
-			const current = prev[taxonomy] || [];
+		setQueryState(prev => {
+			const current = prev.filters[taxonomy] || [];
 			const next = current.includes(termId)
 				? current.filter(id => id !== termId)
 				: [...current, termId];
-			return { ...prev, [taxonomy]: next };
+			return { filters: { ...prev.filters, [taxonomy]: next }, page: 1 };
 		});
-		setPage(1);
 	};
 
 	const handleClearFilters = () => {
-		setActiveFilters({});
+		setQueryState({ filters: {}, page: 1 });
 		setSearchQuery('');
-		setPage(1);
 		setFilterOpen(false);
 	};
 
 	const handleSearch = q => {
 		setSearchQuery(q);
-		setPage(1);
+		setQueryState(prev => ({ ...prev, page: 1 }));
 	};
 
 	return (
