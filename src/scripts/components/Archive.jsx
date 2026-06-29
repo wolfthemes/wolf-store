@@ -9,13 +9,18 @@ import SearchBar from './SearchBar';
 // Scroll to a target element, offsetting for the sticky header and animating
 // at a controlled speed so it reads as deliberate rather than a jarring jump.
 function scrollToCard(target, duration = 700) {
-	// scroll-padding-top is set by the theme to header-height + breathing room —
-	// re-use it here so the offset is always in sync with anchor navigation.
-	const scrollPad =
-		parseInt(getComputedStyle(document.documentElement).scrollPaddingTop) ||
-		0;
+	// getBoundingClientRect().top is measured from the raw viewport origin (top
+	// of the WP admin bar, y=0), not from the start of page content.  We must
+	// therefore include both the admin bar height AND the sticky site header
+	// height so the card lands fully below both bars.
+	const adminBar = document.getElementById('wpadminbar');
+	const siteHeader = document.querySelector('.wolf-header');
+	const offset =
+		(adminBar ? adminBar.offsetHeight : 0) +
+		(siteHeader ? siteHeader.offsetHeight : 0) +
+		24; // breathing room below header
 	const targetY =
-		window.scrollY + target.getBoundingClientRect().top - scrollPad;
+		window.scrollY + target.getBoundingClientRect().top - offset;
 	const startY = window.scrollY;
 	const delta = targetY - startY;
 	if (Math.abs(delta) < 1) return;
