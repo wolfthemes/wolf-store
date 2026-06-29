@@ -49,12 +49,12 @@ export default function ThemeTechnicals({ theme }) {
 							<h3 className='wolf-theme-technicals__section-title'>
 								Includes
 							</h3>
-							<div className='wolf-theme-technicals__tags tagcloud'>
+							<div className='wolf-theme-technicals__post-types'>
 								{includes.map(term => (
 									<a
 										key={term.id}
 										href={term.link}
-										className='wolf-theme-technicals__tag'
+										className='wolf-theme-technicals__post-type'
 									>
 										{term.name}
 									</a>

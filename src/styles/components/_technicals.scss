@@ -81,11 +81,37 @@
 	}
 
 	&__terms {
-		margin-bottom: 16px;
+		margin-bottom: space(6);
 	}
 
 	&__categories {
 		// placeholder
+	}
+
+	&__post-types {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--wp--preset--spacing--2);
+	}
+
+	&__post-type {
+		list-style-type: none;
+		padding-left: space(4);
+		position: relative;
+		font-size: fs(sm);
+		text-decoration: none;
+		font-weight: 600;
+
+		&::before {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			font-weight: 700;
+			color: var(--ws-checkmark-color);
+		}
 	}
 
 	&__tags {
