@@ -63,7 +63,9 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 								loading='lazy'
 								width={800}
 								height={600}
-								onLoad={e => e.currentTarget.classList.add('is-loaded')}
+								onLoad={e =>
+									e.currentTarget.classList.add('is-loaded')
+								}
 							/>
 						</picture>
 					) : (
