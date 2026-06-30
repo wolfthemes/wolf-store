@@ -7,8 +7,6 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 	if (!demoUrl && !buyUrl) {
 		return null;
 	}
-	const title = theme.title?.rendered;
-
 	return (
 		<div className={`wolf-theme-ctas wolf-theme-ctas--${layout}`}>
 			{buyUrl && (
