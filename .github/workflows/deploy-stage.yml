@@ -95,3 +95,5 @@ jobs:
             git pull origin stage
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
+            cd /home/customer/www/staging20.wolfthemes.com/public_html
+            wp cache flush

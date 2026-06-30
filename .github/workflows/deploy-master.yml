@@ -91,7 +91,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/plugins/wolf-store
+            cd /home/customer/www/wolfthemes.com/public_html/wp-content/plugins/wolf-store
             git pull origin master
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
+            cd /home/customer/www/wolfthemes.com/public_html
+            wp cache flush
