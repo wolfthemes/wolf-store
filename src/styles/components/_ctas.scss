@@ -58,19 +58,11 @@
 	}
 
 	&__arrow {
-		width: 0.9em;
-		height: 0.9em;
+		width: 0.7em;
+		height: 0.7em;
 		vertical-align: middle;
 		margin-left: 5px;
 		position: relative;
-		// top: -1px;
-
-		// rect { display: none; }
-		// path { fill: currentColor; }
-
-		path {
-			stroke-width: 20;
-			// stroke-linejoin:round;
-		}
+		top: -1px;
 	}
 }
