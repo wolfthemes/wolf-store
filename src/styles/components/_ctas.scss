@@ -23,6 +23,15 @@
 		// Add layout-only overrides below if needed.
 
 		&--buy {
+			background: var(--ws-accent-color);
+			border-color: var(--ws-accent-color);
+			transition: all var(--wolf-dur) var(--wolf-ease-elegant);
+
+			&:hover {
+				background: var(--ws-strong-color);
+				border-color: var(--ws-strong-color);
+				color: var(--wp--preset--color--base) !important;
+			}
 			// background:var(--ws-accent-hover)!important;
 			// &.theme-button-primary{
 			// 	&:hover {

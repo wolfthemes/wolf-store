@@ -17,10 +17,11 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 					className='theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy wp-element-button'
 					rel='noopener noreferrer'
 				>
-					Get {title}
-					<span className='wolf-theme-ctas__tagline'>
-						· risk-free
-					</span>
+					{/* Buy {title} */}
+					Buy Now
+					{/* <span className='wolf-theme-ctas__tagline'> */}
+					{/* 	· risk-free */}
+					{/* </span> */}
 				</a>
 			)}
 			{demoUrl && (
