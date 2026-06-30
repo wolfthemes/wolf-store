@@ -26,6 +26,15 @@ export function withCoupon(url) {
 	return u.toString();
 }
 
+export function withRef(url) {
+	if (!url) {
+		return url;
+	}
+	const u = new URL(url);
+	u.searchParams.set('ref', 'wolfthemes');
+	return u.toString();
+}
+
 export function discounted(price) {
 	if (!ACTIVE_OFFER) {
 		return price;
