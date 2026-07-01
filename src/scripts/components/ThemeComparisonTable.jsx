@@ -31,8 +31,8 @@ export default function ThemeComparisonTable({ theme }) {
 		return () => observer.disconnect();
 	}, []);
 
-	const slug = theme.theme_slug;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
+	const tfUrl = theme.theme_forest_url;
 	const title = theme.title?.rendered;
 	const { tf_price, price_annual, price_annual_3sites } =
 		theme.theme_pricing ?? {};
@@ -198,14 +198,16 @@ export default function ThemeComparisonTable({ theme }) {
 							</div>
 						</div>
 
-						<a
-							href={`https://wlfthm.es/${slug}`}
-							className='wolf-theme-comparison-table__card-cta theme-button-secondary wolf-core-button-size-md wp-element-button is-style-outline'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							View on ThemeForest
-						</a>
+						{tfUrl && (
+							<a
+								href={tfUrl}
+								className='wolf-theme-comparison-table__card-cta theme-button-secondary wolf-core-button-size-md wp-element-button is-style-outline'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								View on ThemeForest
+							</a>
+						)}
 					</div>
 				</div>
 

@@ -204,6 +204,10 @@ class Rest_Fields {
 			return Meta::get_purchase_url( $post['id'] );
 		} );
 
+		$this->register( 'theme_forest_url', function ( $post ) {
+			return esc_url( Meta::get( 'url', $post['id'] ) );
+		} );
+
 		// --- Media ---
 		$this->register( 'theme_thumbnail', function ( $post ) {
 			return Meta::get_thumbnail_url( $post['id'] );
