@@ -140,7 +140,6 @@ class Taxonomy_Config {
 			'public'                => true,
 			'show_ui'               => true,
 			'show_in_rest'          => true,
-			'rest_base'             => 'theme_post_types_terms',
 			'query_var'             => true,
 			'update_count_callback' => '_update_post_term_count',
 			'rewrite'               => array(

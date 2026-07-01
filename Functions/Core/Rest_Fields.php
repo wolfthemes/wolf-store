@@ -271,7 +271,7 @@ class Rest_Fields {
 			);
 		} );
 
-		$this->register( 'theme_post_types', function ( $post ) {
+		$this->register( 'theme_post_types_list', function ( $post ) {
 			$terms = get_the_terms( $post['id'], 'theme_post_types' );
 			if ( ! $terms || is_wp_error( $terms ) ) {
 				return array();
