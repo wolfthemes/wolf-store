@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Knowledge base
 
-The persistent multi-project KB is at `C:\Users\Constantin\dev\wolf-claude-memory` (WSL: `/mnt/c/Users/Constantin/dev/wolf-claude-memory/`). Read its `CLAUDE.md` for schema. The wolf-store product page is at `wiki/products/wolf-store/README.md`. Update the KB when architecture or significant features change.
+The persistent multi-project KB is at `C:\Users\Constantin\dev\wolf-claude-memory` (WSL: `/mnt/c/Users/Constantin/dev/wolf-claude-memory/`). Read its `CLAUDE.md` for schema. The wolf-store product page is at `wiki/products/wolf-store/wolf-store.md`. Update the KB when architecture or significant features change.
 
 ## Commands
 
