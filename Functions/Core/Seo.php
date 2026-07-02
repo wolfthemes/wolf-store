@@ -29,7 +29,7 @@ class Seo {
 		$permalink   = (string) get_permalink( $post_id );
 		$long_desc   = ! empty( $meta['long_description'] ) ? wp_strip_all_tags( $meta['long_description'] ) : '';
 		$short_desc  = ! empty( $meta['description'] ) ? wp_strip_all_tags( $meta['description'] ) : '';
-		$description = self::truncate( $long_desc ?: $short_desc, 155 );
+		$description = self::truncate( $long_desc ? $long_desc : $short_desc, 155 );
 		$image       = Meta::get_thumbnail_url( $post_id );
 		$site_name   = get_bloginfo( 'name' );
 
@@ -141,8 +141,9 @@ class Seo {
 			return $text;
 		}
 
-		$trimmed = substr( $text, 0, $length );
-		$trimmed = substr( $trimmed, 0, strrpos( $trimmed, ' ' ) ?: $length );
+		$trimmed   = substr( $text, 0, $length );
+		$space_pos = strrpos( $trimmed, ' ' );
+		$trimmed   = substr( $trimmed, 0, $space_pos ? $space_pos : $length );
 
 		return rtrim( $trimmed, " \t\n\r\0\x0B," ) . '…';
 	}
