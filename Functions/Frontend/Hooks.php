@@ -51,13 +51,23 @@ class Hooks {
 	 * Runs on template_redirect — before wp_head.
 	 */
 	public function init_seo(): void {
-		if ( is_singular( 'wolf_theme' ) ) {
-			Seo::init_single( get_the_ID() );
-		} elseif (
+		$is_store_page = is_singular( 'wolf_theme' ) ||
 			is_page( Core::get_store_page_id() ) ||
 			is_post_type_archive( 'wolf_theme' ) ||
-			is_tax( Taxonomy_Config::get_taxonomy_slugs() )
-		) {
+			is_tax( Taxonomy_Config::get_taxonomy_slugs() );
+
+		if ( ! $is_store_page ) {
+			return;
+		}
+
+		// Yoast (and similar SEO plugins) would otherwise print duplicate,
+		// stale og/twitter/description tags alongside ours on store pages.
+		// Wolf Store owns SEO here; Yoast still runs normally everywhere else.
+		remove_all_actions( 'wpseo_head' );
+
+		if ( is_singular( 'wolf_theme' ) ) {
+			Seo::init_single( get_the_ID() );
+		} else {
 			Seo::init_archive();
 		}
 	}
