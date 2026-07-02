@@ -26,11 +26,28 @@ class Seo {
 	 */
 	public static function init_single( int $post_id ): void {
 		$meta        = Meta::get_meta( $post_id );
-		$title       = get_the_title( $post_id );
 		$permalink   = (string) get_permalink( $post_id );
-		$description = ! empty( $meta['description'] ) ? wp_strip_all_tags( $meta['description'] ) : '';
+		$long_desc   = ! empty( $meta['long_description'] ) ? wp_strip_all_tags( $meta['long_description'] ) : '';
+		$short_desc  = ! empty( $meta['description'] ) ? wp_strip_all_tags( $meta['description'] ) : '';
+		$description = self::truncate( $long_desc ?: $short_desc, 155 );
 		$image       = Meta::get_thumbnail_url( $post_id );
 		$site_name   = get_bloginfo( 'name' );
+
+		$categories = get_the_terms( $post_id, 'theme_cat' );
+		$category   = ( is_array( $categories ) && ! empty( $categories ) ) ? $categories[0]->name : '';
+
+		$title = get_the_title( $post_id );
+		$title = $category
+			? sprintf( '%s — %s WordPress Theme', $title, $category )
+			: sprintf( '%s — WordPress Theme', $title );
+
+		add_filter(
+			'pre_get_document_title',
+			static function () use ( $title, $site_name ) {
+				return $title . ' | ' . $site_name;
+			},
+			20
+		);
 
 		add_action(
 			'wp_head',
@@ -111,5 +128,22 @@ class Seo {
 			},
 			1
 		);
+	}
+
+	/**
+	 * Trim text to a max length on a word boundary.
+	 *
+	 * @param string $text
+	 * @param int    $length
+	 */
+	private static function truncate( string $text, int $length ): string {
+		if ( strlen( $text ) <= $length ) {
+			return $text;
+		}
+
+		$trimmed = substr( $text, 0, $length );
+		$trimmed = substr( $trimmed, 0, strrpos( $trimmed, ' ' ) ?: $length );
+
+		return rtrim( $trimmed, " \t\n\r\0\x0B," ) . '…';
 	}
 }
