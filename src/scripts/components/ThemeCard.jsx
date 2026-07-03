@@ -11,7 +11,7 @@
  *                            sits under a section <h2> title. Constrained to a
  *                            safe whitelist so an arbitrary tag can't be injected.
  */
-import { ACTIVE_OFFER, withCoupon } from '../config/offers';
+import { ACTIVE_OFFER, withCoupon, discounted } from '../config/offers';
 import { screenshotSrcSet } from '../config/cdn';
 import AwwwardsRibbon from '../../../assets/images/awwwards-ribbon.svg';
 
@@ -106,17 +106,20 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 				<div className='wolf-theme-card__price'>
 					{heroPrice ? (
 						<>
+							{ACTIVE_OFFER && (
+								<span className='wolf-theme-card__price-main is-struck'>
+									${heroPrice}
+								</span>
+							)}
 							<span className='wolf-theme-card__price-main'>
-								${heroPrice}
+								$
+								{ACTIVE_OFFER
+									? discounted(heroPrice)
+									: heroPrice}
 								<span className='wolf-theme-card__price-period'>
 									{heroPeriod}
 								</span>
 							</span>
-							{ACTIVE_OFFER && (
-								<span className='wolf-theme-card__price-tagline'>
-									Sale price at checkout
-								</span>
-							)}
 						</>
 					) : null}
 				</div>
