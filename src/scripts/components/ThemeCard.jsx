@@ -17,7 +17,11 @@ import AwwwardsRibbon from '../../../assets/images/awwwards-ribbon.svg';
 
 const ALLOWED_HEADINGS = ['h2', 'h3', 'h4'];
 
-export default function ThemeCard({ theme, headingTag = 'h2' }) {
+export default function ThemeCard({
+	theme,
+	headingTag = 'h2',
+	isBestseller = false,
+}) {
 	const HeadingTag = ALLOWED_HEADINGS.includes(headingTag)
 		? headingTag
 		: 'h2';
@@ -30,6 +34,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const demoUrl = theme.theme_demo_url;
 	const buyUrl = withCoupon(theme.theme_purchase_url);
 	const mainCategory = theme.theme_categories?.[0] ?? null;
+	const useCase = theme.theme_target_audience?.[0] ?? null;
 	// const pageBuilders = theme.theme_page_builders ?? [];
 	const isAwwwardsNominee = theme.theme_awwwards_nominee ?? false;
 	const { price_monthly, price_annual, price_lifetime } =
@@ -88,6 +93,11 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 						{mainCategory.name}
 					</a>
 				)}
+				{isBestseller && (
+					<span className='wolf-theme-card__bestseller'>
+						⭐ Bestseller
+					</span>
+				)}
 				{isAwwwardsNominee && (
 					<AwwwardsRibbon
 						className='wolf-theme-card__awwwards-ribbon'
@@ -100,6 +110,9 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 				<HeadingTag className='wolf-theme-card__title'>
 					<a href={permalink}>{title}</a>
 				</HeadingTag>
+				{useCase && (
+					<p className='wolf-theme-card__tagline'>For {useCase}</p>
+				)}
 			</div>
 
 			<footer className='wolf-theme-card__footer'>
