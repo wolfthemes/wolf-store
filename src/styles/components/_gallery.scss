@@ -37,4 +37,15 @@
 			opacity: 0.85;
 		}
 	}
+
+	@include until($bp-sm) {
+
+		&__grid {
+			columns: 1;
+		}
+
+		&__item {
+			margin-bottom: space(3);
+		}
+	}
 }
