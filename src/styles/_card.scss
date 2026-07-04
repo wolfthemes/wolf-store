@@ -12,20 +12,6 @@
 	font-size: var(--ws-font-size-sm);
 	// border-radius:var(--ws-border-radius);
 
-	&__featured-badge {
-		position: absolute;
-		z-index: 10;
-		top: 12px;
-		left: 12px;
-		font-size: var(--ws-font-size-xs);
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		padding: 3px 8px;
-		background: var(--ws-strong-color);
-		color: var(--ws-bg-color);
-	}
-
 	&:hover {
 		// border-color: rgba(0,0,0,.3);
 		--ws-card-border-color:rgba(0, 0, 0, 0.3);
@@ -108,12 +94,12 @@
 		}
 	}
 
-	&__bestseller {
+	&__bestseller-badge {
 		position: absolute;
 		top: 10px;
 		right: 10px;
-		background: #d3a043;
-		color: #14110e;
+		background: var(--ws-strong-color);
+		color: var(--ws-bg-color);
 		font-size: var(--ws-font-size-xxs);
 		font-weight: 700;
 		letter-spacing: 0.07em;

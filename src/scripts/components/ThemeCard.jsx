@@ -17,11 +17,7 @@ import AwwwardsRibbon from '../../../assets/images/awwwards-ribbon.svg';
 
 const ALLOWED_HEADINGS = ['h2', 'h3', 'h4'];
 
-export default function ThemeCard({
-	theme,
-	headingTag = 'h2',
-	isBestseller = false,
-}) {
+export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const HeadingTag = ALLOWED_HEADINGS.includes(headingTag)
 		? headingTag
 		: 'h2';
@@ -37,6 +33,7 @@ export default function ThemeCard({
 	const useCase = theme.theme_target_audience?.[0] ?? null;
 	// const pageBuilders = theme.theme_page_builders ?? [];
 	const isAwwwardsNominee = theme.theme_awwwards_nominee ?? false;
+	const isBestSeller = theme.theme_bestseller === true;
 	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
 
@@ -93,8 +90,8 @@ export default function ThemeCard({
 						{mainCategory.name}
 					</a>
 				)}
-				{isBestseller && (
-					<span className='wolf-theme-card__bestseller'>
+				{isBestSeller && (
+					<span className='wolf-theme-card__bestseller-badge'>
 						⭐ Bestseller
 					</span>
 				)}
