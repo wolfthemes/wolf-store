@@ -258,15 +258,7 @@ class Metabox_Manager {
 	private function save_field( int $post_id, array $field ): void {
 		$field_id = $field['id'];
 
-		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified in save_metaboxes()
-		if ( ! isset( $_POST[ $field_id ] ) ) {
-			return;
-		}
-
-		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		$value = wp_unslash( $_POST[ $field_id ] );
-
-		// Checkboxes send nothing when unchecked — delete meta if not present
+		// Checkboxes send nothing in $_POST when unchecked — must check before the isset guard below.
 		if ( 'checkbox' === $field['type'] ) {
 			// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified in save_metaboxes()
 			if ( isset( $_POST[ $field_id ] ) ) {
@@ -276,6 +268,14 @@ class Metabox_Manager {
 			}
 			return;
 		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified in save_metaboxes()
+		if ( ! isset( $_POST[ $field_id ] ) ) {
+			return;
+		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$value = wp_unslash( $_POST[ $field_id ] );
 
 		// Use MetaboxConfig to determine field type handling
 		if ( in_array( $field_id, Metabox_Config::get_url_fields(), true ) ) {
