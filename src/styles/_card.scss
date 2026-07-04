@@ -108,6 +108,22 @@
 		}
 	}
 
+	&__bestseller {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: #d3a043;
+		color: #14110e;
+		font-size: var(--ws-font-size-xxs);
+		font-weight: 700;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		padding: 3px 8px;
+		border-radius: var(--ws-border-radius);
+		line-height: 1;
+		z-index: 3;
+	}
+
 	&:hover &__thumbnail img {
 		transform: scale(1.02);
 	}

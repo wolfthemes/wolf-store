@@ -298,6 +298,14 @@ export default function Archive({
 										<ThemeCard
 											theme={theme}
 											headingTag={cardHeading}
+											isBestseller={
+												// ponytail: featured #1 stands in for bestseller until real sales data exists
+												index === 0 &&
+												!hasActiveSearch &&
+												Object.keys(activeFilters)
+													.length === 0 &&
+												(isLoadMore || page === 1)
+											}
 										/>
 									</div>
 								))}
