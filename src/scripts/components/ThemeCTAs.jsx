@@ -1,5 +1,10 @@
 import UpRightArrow from '../../../assets/images/up-right-arrow.svg';
-import { withCoupon, withRef } from '../config/offers';
+import {
+	withCoupon,
+	withRef,
+	ACTIVE_OFFER,
+	discounted,
+} from '../config/offers';
 
 export default function ThemeCTAs({ theme, layout = 'row' }) {
 	const demoUrl = withRef(theme.theme_demo_url);
@@ -7,6 +12,10 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 	if (!demoUrl && !buyUrl) {
 		return null;
 	}
+	const title = theme.title?.rendered;
+	const { price_annual } = theme.theme_pricing ?? {};
+	const displayPrice =
+		ACTIVE_OFFER && price_annual ? discounted(price_annual) : price_annual;
 	return (
 		<div className={`wolf-theme-ctas wolf-theme-ctas--${layout}`}>
 			{buyUrl && (
@@ -15,11 +24,8 @@ export default function ThemeCTAs({ theme, layout = 'row' }) {
 					className='theme-button-primary wolf-core-button-size-md wolf-theme-ctas__btn wolf-theme-ctas__btn--buy wp-element-button'
 					rel='noopener noreferrer'
 				>
-					{/* Buy {title} */}
-					Buy Now
-					{/* <span className='wolf-theme-ctas__tagline'> */}
-					{/* 	· risk-free */}
-					{/* </span> */}
+					{title ? `Get ${title}` : 'Buy Now'}
+					{displayPrice ? ` — $${displayPrice}` : ''}
 				</a>
 			)}
 			{demoUrl && (

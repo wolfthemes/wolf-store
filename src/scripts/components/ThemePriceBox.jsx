@@ -36,7 +36,7 @@ export default function ThemePriceBox({ theme }) {
 								<span className='wolf-theme-price-box__badge'>
 									{ACTIVE_OFFER.label}
 								</span>
-								<CountdownTimer expiry={ACTIVE_OFFER.expiry} />
+								{/* <CountdownTimer expiry={ACTIVE_OFFER.expiry} /> */}
 							</>
 						) : (
 							saving > 0 && (
@@ -65,6 +65,10 @@ export default function ThemePriceBox({ theme }) {
 						</div>
 						<div className='wolf-theme-price-box__hero-label'>
 							1 site license
+						</div>
+						<div className='wolf-theme-price-box__hero-note'>
+							Includes 1 year of updates &amp; direct support —
+							cancel anytime
 						</div>
 					</div>
 

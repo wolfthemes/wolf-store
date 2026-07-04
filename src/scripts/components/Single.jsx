@@ -42,7 +42,7 @@ export default function Single({ postId }) {
 				<ThemeDescription theme={theme} />
 				<ThemeGallery theme={theme} />
 				<ThemeFeatures theme={theme} />
-				<ThemeTestimonials theme={theme} />
+				{/* <ThemeTestimonials theme={theme} /> */}
 				<ThemeComparisonTable theme={theme} />
 				<ThemeBrandStory />
 				<ThemeTechnicals theme={theme} />

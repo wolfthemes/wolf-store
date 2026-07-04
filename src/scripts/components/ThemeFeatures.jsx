@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import ThemeCTAs from './ThemeCTAs';
 
 export default function ThemeFeatures({ theme }) {
 	const title = theme.title?.rendered;
@@ -72,6 +73,9 @@ export default function ThemeFeatures({ theme }) {
 							</ul>
 						</div>
 					)}
+				</div>
+				<div className='wolf-theme-features__ctas'>
+					<ThemeCTAs theme={theme} layout='row' />
 				</div>
 			</div>
 		</div>
