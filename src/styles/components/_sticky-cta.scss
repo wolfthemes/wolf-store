@@ -13,7 +13,6 @@
 	background: var(--wp--preset--color--base);
 	// color: var(--ws-bg-color);
 	box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.18);
-	padding: 12px 24px;
 	padding: space(3) space(6);
 
 	&__inner {
@@ -22,13 +21,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 16px;
+		gap: space(4);
 	}
 
 	&__info {
 		display: flex;
 		align-items: baseline;
-		gap: 12px;
+		gap: space(3);
 		min-width: 0;
 	}
 
@@ -73,7 +72,7 @@
 	// }
 
 	@include until($bp-sm) {
-		padding: 10px 16px;
+		padding: 10px space(4);
 
 		&__title {
 			display: none;
@@ -86,7 +85,7 @@
 .wolf-countdown {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: space(2);
 	font-size: var(--ws-font-size-sm);
 	padding: 6px 10px;
 	border: 1px solid currentColor;

@@ -127,9 +127,9 @@
 
 		@include strike-line(2px);
 
-        &:after {
-          margin-top: -2px;
-        }
+		&::after {
+			margin-top: -2px;
+		}
 	}
 
 	&__hero-period {

@@ -10,7 +10,7 @@
 
 	&__input {
 		width: 100%;
-		padding: 10px 40px 10px 12px;
+		padding: 10px 40px 10px space(3);
 		border: 1px solid var(--ws-card-border-color);
 		border-radius: var(--ws-border-radius);
 		background: transparent;
@@ -47,7 +47,7 @@
 		cursor: pointer;
 		color: inherit;
 		opacity: 0.5;
-		padding: 4px;
+		padding: space(1);
 		transition: opacity 0.15s;
 
 		&:hover {
@@ -65,19 +65,16 @@
 	font-size: fs(sm);
 
 	&__search {
-		margin-bottom: 32px;
 		margin-bottom: space(6);
 	}
 
 	&__group {
-		margin-bottom: 32px;
 		margin-bottom: space(6);
 	}
 
 	&__title {
 		// opacity: 0.;
 		font-size: fs(sm);
-		margin: 0 0 12px;
 		margin: 0 0 space(1);
 		color: var(--ws-strong-color);
 	}
@@ -157,7 +154,7 @@
 		border-radius: 50%;
 		border: 1px solid var(--ws-border-color);
 		flex-shrink: 0;
-		margin-right: 8px;
+		margin-right: space(2);
 	}
 
 	&__label {
@@ -174,7 +171,7 @@
 	&__count {
 		font-size: var(--ws-font-size-sm);
 		opacity: 0.8;
-		margin-left: 8px;
+		margin-left: space(2);
 		// &:before{
 		// 	content:'(';
 		// }
@@ -202,8 +199,8 @@
 			max-height: 4000px;
 			opacity: 1;
 			pointer-events: auto;
-			margin-bottom: 24px;
-			padding-bottom: 8px;
+			margin-bottom: space(5);
+			padding-bottom: space(2);
 			border-bottom: 1px solid var(--ws-card-border-color);
 		}
 
@@ -214,7 +211,6 @@
 		&__list {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			gap: 0 16px;
 			gap: 0 space(2);
 		}
 	}

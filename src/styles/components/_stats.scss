@@ -2,14 +2,14 @@
 
 .wolf-theme-stats {
 	display: flex;
-	gap: 32px;
+	gap: space(6);
 
 	margin-bottom: 30px;
 
 	&__item {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: space(1);
 	}
 
 	&__value {

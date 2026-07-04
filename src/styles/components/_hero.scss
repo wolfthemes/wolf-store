@@ -44,7 +44,7 @@
 
 	&__headline {
 		font-size: var(--ws-font-size-base);
-		margin: 8px 0 4px;
+		margin: space(2) 0 space(1);
 		font-weight: 700;
 		color: #fff;
 	}
@@ -57,7 +57,7 @@
 	// }
 
 	&__description {
-		margin-bottom: 48px;
+		margin-bottom: space(7);
 		max-width: 650px;
 		line-height: 1.8;
 	}
@@ -73,7 +73,7 @@
 
 		&__content {
 			position: relative;
-			padding: 24px 20px 12px;
+			padding: space(5) 20px space(3);
 			background: none;
 		}
 

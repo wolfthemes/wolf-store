@@ -82,7 +82,7 @@
 		font-weight: 700;
 		letter-spacing: 0.07em;
 		text-transform: uppercase;
-		padding: 3px 8px;
+		padding: 3px space(2);
 		border-radius: var(--ws-border-radius);
 		line-height: 1;
 		text-decoration: none;
@@ -104,7 +104,7 @@
 		font-weight: 700;
 		letter-spacing: 0.07em;
 		text-transform: uppercase;
-		padding: 3px 8px;
+		padding: 3px space(2);
 		border-radius: var(--ws-border-radius);
 		line-height: 1;
 		z-index: 3;
@@ -121,7 +121,7 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: space(2);
 	}
 
 	&__title {
@@ -155,14 +155,14 @@
 	&__cats {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 4px;
+		gap: space(1);
 		margin-top: auto;
-		padding-top: 4px;
+		padding-top: space(1);
 	}
 
 	&__cat {
 		font-size: var(--ws-font-size-sm);
-		padding: 2px 8px;
+		padding: 2px space(2);
 		border: 1px solid var(--ws-card-border-color);
 		text-decoration: none;
 		color: inherit;
@@ -205,7 +205,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 12px;
+		gap: space(3);
 	}
 
 	&__price {

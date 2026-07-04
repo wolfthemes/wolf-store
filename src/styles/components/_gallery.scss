@@ -5,13 +5,13 @@
 
 	&__grid {
 		columns: 3;
-		column-gap: 12px;
+		column-gap: space(3);
 	}
 
 	&__item {
 		display: block;
 		break-inside: avoid;
-		margin-bottom: 12px;
+		margin-bottom: space(3);
 		overflow: hidden;
 		opacity: 0;
 		transform: translateY(24px);

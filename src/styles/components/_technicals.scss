@@ -117,7 +117,7 @@
 	&__tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 4px;
+		gap: space(1);
 	}
 
 	&__tag {
@@ -126,7 +126,7 @@
 	}
 
 	&__benefits {
-		padding: 16px;
+		padding: space(4);
 		border: 1px solid var(--ws-border-color);
 		opacity: 0.8;
 	}
@@ -157,6 +157,6 @@
 		cursor: help;
 		opacity: 0.5;
 		font-size: var(--ws-font-size-xs);
-		margin-left: 4px;
+		margin-left: space(1);
 	}
 }
