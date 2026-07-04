@@ -1,6 +1,5 @@
 import ThemeCTAs from './ThemeCTAs';
 import ThemeBenefits from './ThemeBenefits';
-import CountdownTimer from './CountdownTimer';
 import { ACTIVE_OFFER, discounted } from '../config/offers';
 
 export default function ThemePriceBox({ theme }) {

@@ -6,7 +6,6 @@ import ThemeGallery from './ThemeGallery';
 // import ThemeFooter    from './ThemeFooter';
 import ThemeTechnicals from './ThemeTechnicals';
 import ThemeComparisonTable from './ThemeComparisonTable';
-import ThemeTestimonials from './ThemeTestimonials';
 import ThemeFeatures from './ThemeFeatures';
 import ThemeChangelog from './ThemeChangelog';
 import ThemeBrandStory from './ThemeBrandStory';
