@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 export default function ThemeBrandStory() {
-	const { siteUrl } = window.wolfStoreData ?? {};
+	const { pluginUrl } = window.wolfStoreData ?? {};
 	const containerRef = useRef(null);
 
 	useEffect(() => {
@@ -32,7 +32,7 @@ export default function ThemeBrandStory() {
 					<div className='wolf-theme-brand-story__inner'>
 						<div className='wolf-theme-brand-story__avatar'>
 							<img
-								src={`${siteUrl}/wp-content/plugins/wolf-store/assets/images/avatar.jpg`}
+								src={`${pluginUrl}/assets/images/avatar.jpg`}
 								alt='Constantin — WolfThemes founder'
 							/>
 						</div>

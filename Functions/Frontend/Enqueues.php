@@ -40,6 +40,7 @@ class Enqueues {
 			'perPage'    => Options::get_option( 'posts_per_page', 12 ),
 			'pagination' => Options::get_option( 'pagination', 'numbers' ),
 			'siteUrl'    => home_url(),
+			'pluginUrl'  => WOLF_STORE_URI,
 			'offer'      => Options::get_active_offer(),
 		) );
 
