@@ -74,7 +74,8 @@
 	@include until($bp-sm) {
 		padding: 10px space(4);
 
-		&__title {
+		// Buy button already shows title + price; drop the redundant info block.
+		&__info {
 			display: none;
 		}
 	}
