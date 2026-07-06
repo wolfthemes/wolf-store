@@ -76,21 +76,21 @@
 		position: absolute;
 		top: 10px;
 		left: 10px;
-		background: rgba(0, 0, 0, 0.58);
-		color: var(--wp--preset--color--white, #fff);
+		background: var(--ws-bg-color);
+		color: var(--ws-strong-color);
+		border: 1px solid var(--ws-strong-color);
 		font-size: var(--ws-font-size-xxs);
 		font-weight: 700;
 		letter-spacing: 0.07em;
 		text-transform: uppercase;
-		padding: 3px space(2);
-		border-radius: var(--ws-border-radius);
+		padding: 5px space(2);
 		line-height: 1;
 		text-decoration: none;
 		z-index: 3;
 
 		&:hover {
-			background: rgba(0, 0, 0, 0.8);
-			color: var(--wp--preset--color--white, #fff);
+			background: var(--ws-strong-color);
+			color: var(--ws-bg-color);
 		}
 	}
 
@@ -98,14 +98,13 @@
 		position: absolute;
 		top: 10px;
 		right: 10px;
-		background: var(--ws-strong-color);
-		color: var(--ws-bg-color);
+		background: var(--ws-badge-gold);
+		color: var(--ws-strong-color);
 		font-size: var(--ws-font-size-xxs);
 		font-weight: 700;
 		letter-spacing: 0.07em;
 		text-transform: uppercase;
-		padding: 3px space(2);
-		border-radius: var(--ws-border-radius);
+		padding: 5px space(2);
 		line-height: 1;
 		z-index: 3;
 	}
@@ -122,6 +121,20 @@
 		display: flex;
 		flex-direction: column;
 		gap: space(2);
+	}
+
+	&__title-row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: space(3);
+	}
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		gap: space(2);
+		min-width: 0;
 	}
 
 	&__title {
@@ -196,22 +209,18 @@
 		line-height: 1.3;
 	}
 
-	// ── Footer ────────────────────────────────────────────────────────────────
-
-	&__footer {
-		// padding: 12px 0;
-		// border-top: 1px solid var(--ws-card-border-color);
-		padding-bottom:10px;
+	&__aside {
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: space(3);
+		flex-direction: column;
+		align-items: flex-end;
+		gap: space(2);
+		flex-shrink: 0;
 	}
 
 	&__price {
 		display: flex;
-		flex-direction: column;
-		gap: 2px;
+		align-items: baseline;
+		gap: space(1);
 		line-height: 1.2;
 	}
 

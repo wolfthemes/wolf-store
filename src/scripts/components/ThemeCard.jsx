@@ -92,7 +92,7 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 				)}
 				{isBestSeller && (
 					<span className='wolf-theme-card__bestseller-badge'>
-						⭐ Bestseller
+						Bestseller
 					</span>
 				)}
 				{isAwwwardsNominee && (
@@ -104,58 +104,62 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 			</div>
 
 			<div className='wolf-theme-card__body'>
-				<HeadingTag className='wolf-theme-card__title'>
-					<a href={permalink}>{title}</a>
-				</HeadingTag>
-				{useCase && (
-					<p className='wolf-theme-card__tagline'>For {useCase}</p>
-				)}
-			</div>
-
-			<footer className='wolf-theme-card__footer'>
-				<div className='wolf-theme-card__price'>
-					{heroPrice ? (
-						<>
-							{ACTIVE_OFFER && (
-								<span className='wolf-theme-card__price-main is-struck'>
-									${heroPrice}
-								</span>
+				<div className='wolf-theme-card__title-row'>
+					<div className='wolf-theme-card__heading'>
+						<HeadingTag className='wolf-theme-card__title'>
+							<a href={permalink}>{title}</a>
+						</HeadingTag>
+						{useCase && (
+							<p className='wolf-theme-card__tagline'>
+								For {useCase}
+							</p>
+						)}
+					</div>
+					<div className='wolf-theme-card__aside'>
+						<div className='wolf-theme-card__price'>
+							{heroPrice ? (
+								<>
+									{ACTIVE_OFFER && (
+										<span className='wolf-theme-card__price-main is-struck'>
+											${heroPrice}
+										</span>
+									)}
+									<span className='wolf-theme-card__price-main'>
+										$
+										{ACTIVE_OFFER
+											? discounted(heroPrice)
+											: heroPrice}
+										<span className='wolf-theme-card__price-period'>
+											{heroPeriod}
+										</span>
+									</span>
+								</>
+							) : null}
+						</div>
+						<div className='wolf-theme-card__ctas'>
+							{demoUrl && (
+								<a
+									href={demoUrl}
+									className='theme-button-secondary wolf-theme-card__btn wolf-theme-card__btn--demo wp-element-button is-style-outline'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									Demo
+								</a>
 							)}
-							<span className='wolf-theme-card__price-main'>
-								$
-								{ACTIVE_OFFER
-									? discounted(heroPrice)
-									: heroPrice}
-								<span className='wolf-theme-card__price-period'>
-									{heroPeriod}
-								</span>
-							</span>
-						</>
-					) : null}
+							{buyUrl && (
+								<a
+									href={buyUrl}
+									className='theme-button-primary wolf-theme-card__btn wolf-theme-card__btn--buy wp-element-button'
+									rel='noopener noreferrer'
+								>
+									Buy
+								</a>
+							)}
+						</div>
+					</div>
 				</div>
-
-				<div className='wolf-theme-card__ctas'>
-					{demoUrl && (
-						<a
-							href={demoUrl}
-							className='theme-button-secondary wolf-theme-card__btn wolf-theme-card__btn--demo wp-element-button is-style-outline'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							Demo
-						</a>
-					)}
-					{buyUrl && (
-						<a
-							href={buyUrl}
-							className='theme-button-primary wolf-theme-card__btn wolf-theme-card__btn--buy wp-element-button'
-							rel='noopener noreferrer'
-						>
-							Buy
-						</a>
-					)}
-				</div>
-			</footer>
+			</div>
 		</article>
 	);
 }
