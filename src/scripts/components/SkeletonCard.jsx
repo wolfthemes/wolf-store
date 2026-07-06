@@ -7,15 +7,16 @@ export default function SkeletonCard() {
 			</div>
 
 			<div className='wolf-theme-card__body'>
-				<div className='wolf-skeleton wolf-skeleton--title' />
-			</div>
-
-			<footer className='wolf-theme-card__footer'>
-				<div className='wolf-theme-card__price'>
-					<div className='wolf-skeleton wolf-skeleton--price' />
-					<div className='wolf-skeleton wolf-skeleton--price-tagline' />
+				<div className='wolf-theme-card__title-row'>
+					<div className='wolf-theme-card__heading'>
+						<div className='wolf-skeleton wolf-skeleton--title' />
+						<div className='wolf-skeleton wolf-skeleton--tagline' />
+					</div>
+					<div className='wolf-theme-card__aside'>
+						<div className='wolf-skeleton wolf-skeleton--price' />
+					</div>
 				</div>
-			</footer>
+			</div>
 		</article>
 	);
 }

@@ -49,12 +49,6 @@
 		width: 72px;
 	}
 
-	&--price-tagline {
-		height: 12px;
-		margin-top: space(2);
-		width: 120px;
-	}
-
 	&--cat {
 		width: 72px;
 		height: 16px;
@@ -71,8 +65,9 @@
 .wolf-theme-card--skeleton {
 	pointer-events: none;
 
-	.wolf-theme-card__body {
-		gap: 0;
+	// Heading placeholder needs to claim the row width the real title/tagline would
+	.wolf-theme-card__heading {
+		flex: 1;
 	}
 }
 

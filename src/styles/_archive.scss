@@ -51,7 +51,8 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
-		gap: space(5);
+		// Larger row gap than column gap gives each card row room to breathe
+		gap: space(7) space(5);
 	}
 
 	&__empty {

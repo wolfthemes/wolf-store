@@ -7,7 +7,6 @@
 	display: flex;
 	flex-direction: column;
 	// border: 1px solid var(--ws-card-border-color);
-	overflow: hidden;
 	transition: border-color 0.15s ease;
 	font-size: var(--ws-font-size-sm);
 	// border-radius:var(--ws-border-radius);
@@ -116,7 +115,7 @@
 	// ── Body ──────────────────────────────────────────────────────────────────
 
 	&__body {
-		padding: 10px 0;
+		padding: space(3) 0 0;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
