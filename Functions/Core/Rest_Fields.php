@@ -175,7 +175,7 @@ class Rest_Fields {
 		} );
 
 		$this->register( 'theme_awwwards_nominee', function ( $post ) {
-			return (bool) get_post_meta( $post['id'], '_wolf_theme_awwwards_nominee', true );
+			return get_post_meta( $post['id'], '_wolf_theme_awwwards_nominee', true );
 		} );
 
 		$this->register( 'theme_bestseller', function ( $post ) {

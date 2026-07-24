@@ -49,10 +49,10 @@ class Metabox_Config {
 				'desc'  => esc_html__( 'Display this theme first in the store.', 'wolf-store' ),
 			),
 			array(
-				'label' => esc_html__( 'Awwwards Nominee', 'wolf-store' ),
+				'label' => esc_html__( 'Awwwards Nominee URL', 'wolf-store' ),
 				'id'    => '_wolf_theme_awwwards_nominee',
-				'type'  => 'checkbox',
-				'desc'  => esc_html__( 'Mark this theme as an Awwwards nominee.', 'wolf-store' ),
+				'type'  => 'url',
+				'desc'  => esc_html__( 'Awwwards nominee page URL. Leave empty to hide the ribbon.', 'wolf-store' ),
 			),
 			array(
 				'label' => esc_html__( 'Best Seller', 'wolf-store' ),
@@ -94,6 +94,7 @@ class Metabox_Config {
 			'_wolf_theme_video_url',
 			'_wolf_theme_demo_url',
 			'_wolf_theme_url',
+			'_wolf_theme_awwwards_nominee',
 		);
 	}
 

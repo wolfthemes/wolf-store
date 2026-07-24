@@ -32,7 +32,11 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 	const mainCategory = theme.theme_categories?.[0] ?? null;
 	const useCase = theme.theme_target_audience?.[0] ?? null;
 	// const pageBuilders = theme.theme_page_builders ?? [];
-	const isAwwwardsNominee = theme.theme_awwwards_nominee ?? false;
+	const awwwardsNomineeUrl = theme.theme_awwwards_nominee
+		? theme.theme_awwwards_nominee === '1'
+			? '#'
+			: theme.theme_awwwards_nominee
+		: null;
 	const isBestSeller = theme.theme_bestseller === true;
 	const { price_monthly, price_annual, price_lifetime } =
 		theme.theme_pricing ?? {};
@@ -95,11 +99,16 @@ export default function ThemeCard({ theme, headingTag = 'h2' }) {
 						Bestseller
 					</span>
 				)}
-				{isAwwwardsNominee && (
-					<AwwwardsRibbon
+				{awwwardsNomineeUrl && (
+					<a
+						href={awwwardsNomineeUrl}
 						className='wolf-theme-card__awwwards-ribbon'
+						target='_blank'
+						rel='noopener noreferrer'
 						aria-label='Awwwards Nominee'
-					/>
+					>
+						<AwwwardsRibbon />
+					</a>
 				)}
 			</div>
 

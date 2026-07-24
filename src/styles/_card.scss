@@ -66,9 +66,14 @@
 		right: -7px;
 		width: 53px;
 		z-index: 10;
-		pointer-events: none;
+		display: block;
 		box-shadow: var(--ws-card-shadow);
 		transform: scale(0.75);
+
+		svg {
+			display: block;
+			width: 100%;
+		}
 	}
 
 	&__cat-overlay {
