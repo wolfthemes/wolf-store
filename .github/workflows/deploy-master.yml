@@ -72,14 +72,14 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          printf '%s' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
+          printf '%s' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github-actions-deploy
+          chmod 600 ~/.ssh/github-actions-deploy
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Rsync build to staging dir
         run: |
           rsync -az --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+            -e "ssh -i ~/.ssh/github-actions-deploy -p ${{ secrets.SSH_PORT }}" \
             build/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/wolf-store-build/
 
