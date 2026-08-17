@@ -1,4 +1,6 @@
+name: Deploy wolf-store to production
 
+on:
   push:
     branches:
       - master
@@ -43,7 +45,7 @@ jobs:
         run: npm run type-check
 
       - name: Lint PHP
-        run: ./vendor/bin/phpcs --standard=./.phpcs.xml.dist --runtime-set ignore_warnings_on_exit 1
+        run: ./vendor/bin/phpcs --standard=phpcs.xml.dist --runtime-set ignore_warnings_on_exit 1
 
       - name: Build assets
         run: npm run build
@@ -89,8 +91,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            set -euo pipefail
             cd /home/sys-admin/wolfthemes.com/wp-content/plugins/wolf-store
-            git pull origin master
+            git fetch origin master
+            git checkout -B master origin/master
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
             cd /home/sys-admin/wolfthemes.com
