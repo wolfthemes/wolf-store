@@ -92,12 +92,10 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             set -euo pipefail
-            cd /home/customer/www/wolfthemes.com/public_html/wp-content/plugins/wolf-store
+            cd /home/sys-admin/wolfthemes.com/wp-content/wp-content/plugins/wolf-store
             git fetch origin master
             git checkout -B master origin/master
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
-            cd /home/customer/www/wolfthemes.com/public_html
+            cd /home/sys-admin/wolfthemes.com
             wp cache flush
-            curl -D - -sSX PURGE http://127.0.0.1/* -H "Host: wolfthemes.com"
-
