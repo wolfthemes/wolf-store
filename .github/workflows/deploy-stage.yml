@@ -92,10 +92,10 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             set -euo pipefail
-            cd /home/sys-admin/wolfthemes.com/wp-content/plugins/wolf-store
+            cd /home/sys-admin/staging.wolfthemes.com/wp-content/plugins/wolf-store
             git fetch origin stage
             git checkout -B stage origin/stage
             rsync -a --delete /tmp/wolf-store-build/ build/
             rm -rf /tmp/wolf-store-build
-            cd /home/sys-admin/wolfthemes.com
+            cd /home/sys-admin/staging.wolfthemes.com
             wp cache flush
