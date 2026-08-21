@@ -1,5 +1,24 @@
 import { useState, useEffect } from 'react';
 
+// Fields ThemeCard (and RelatedThemes, which reuses it) actually render.
+// _links/_embedded must be listed explicitly or _fields strips them too.
+const GRID_FIELDS = [
+	'id',
+	'link',
+	'title',
+	'theme_thumbnail',
+	'theme_slug',
+	'theme_demo_url',
+	'theme_purchase_url',
+	'theme_categories',
+	'theme_target_audience',
+	'theme_awwwards_nominee',
+	'theme_bestseller',
+	'theme_pricing',
+	'_links',
+	'_embedded',
+].join(',');
+
 export function useThemes({
 	filters = {},
 	page = 1,
@@ -29,6 +48,12 @@ export function useThemes({
 
 		const params = new URLSearchParams({
 			_embed: 1,
+			// ponytail: grid cards only render this subset, but WP core still runs
+			// every register_rest_field get_callback per post unless _fields excludes
+			// it — several unused fields (gallery/changelog/testimonials) hit remote
+			// APIs on cache miss. Restricting _fields skips those callbacks entirely.
+			// Add fields here if a grid-context component starts reading more.
+			_fields: GRID_FIELDS,
 			per_page: perPage,
 			page,
 		});
